@@ -1,0 +1,16 @@
+# Vendor material is never redistributed (FNIRSI copyright). Only our own
+# tools, notes and patch-set JSON (diffs keyed to the stock CRC) are tracked.
+firmware/stock/*
+!firmware/stock/.keep
+firmware/work/*
+!firmware/work/.keep
+*.bin
+*.bps
+*.ips
+*.zip
+*.pdf
+
+# tooling
+tools/.venv/
+__pycache__/
+*.pyc

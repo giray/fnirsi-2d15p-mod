@@ -1,0 +1,11 @@
+{
+  "input_crc32": "B43E8C2D",
+  "output_name": "2D15P_V2.7.0.7_260826.bin",
+  "patches": [
+    {"note": "EXAMPLE ONLY - replace with real offsets. 4-byte swap",
+     "offset": "0x1234", "find": "01 02 03 04", "replace": "05 06 07 08"},
+    {"note": "EXAMPLE ONLY - ASCII string swap padded to field width",
+     "offset": "0x5000", "find_str": "Ramp", "replace_str": "Tri",
+     "pad": " ", "max_len": 4}
+  ]
+}

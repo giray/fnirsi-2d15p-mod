@@ -1,0 +1,4 @@
+# Vendor firmware is never redistributed. Only patch-set JSON is tracked.
+*.bin
+*.bps
+*.ips

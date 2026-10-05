@@ -1,0 +1,26 @@
+{
+ "_comment": "FNIRSI 2D15P V2.7.0.7 \u2014 DMM-first mod. Offsets are FILE offsets (MCU addr - 0x11000). See notes/re-plan.md 2026-10-05 for derivation.",
+ "input_crc32": "B43E8C2D",
+ "require_size": 1203945,
+ "output_name": "2D15P_V2.7.0.7_260826.bin",
+ "patches": [
+  {
+   "note": "Goal 1: boot page = 1 (DMM) instead of 2 (scope) when config magic is 0x55. init @0x3668E: movs r3,#2 -> movs r3,#1",
+   "offset": "0x2568E",
+   "find": "02 23",
+   "replace": "01 23"
+  },
+  {
+   "note": "Goal 3a: DDS key handler @0x2CA70: 'cmp r0,#3' -> 'cmp r0,#1' so pressing it on the DMM page returns to scope",
+   "offset": "0x1BA70",
+   "find": "03 28",
+   "replace": "01 28"
+  },
+  {
+   "note": "Goal 3b: DDS key handler @0x2CA7E: 'b.w 0x49880' (enter DDS) -> 'b.w 0x49924' (enter DMM); touch-menu DDS entry untouched",
+   "offset": "0x1BA7E",
+   "find": "1c f0 ff be",
+   "replace": "1c f0 51 bf"
+  }
+ ]
+}
