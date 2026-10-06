@@ -23,34 +23,37 @@ vector from `fw_inspect`). The string table is the way in — cross-reference fr
 labels back to the code that draws/handles each mode.
 
 Questions to answer and write up here:
-- Where is the **power-on default mode** chosen (scope vs DMM vs DDS)? Likely a
-  constant or a saved-settings default read at startup.
-- How are the **three physical buttons / knobs** dispatched to actions? Find the
-  input handler and the table/switch that maps a button to "enter DDS", etc.
-- Does stock DMM have a **relative / REL** mode already? Check the printed manual
-  and the live device first; then find where it's toggled in firmware.
+- [x] Where is the **power-on default mode** chosen? Constant `movs r3,#2` at
+      0x3668E in init 0x36018, keyed on the config-block magic. (2026-10-05)
+- [x] How are the **physical buttons / knobs** dispatched? Key scan 0x44ED0 →
+      raw→id tables 0x5535C/0x5537A → type-1 events → handler table 0x55398.
+      DDS key = id 15 → 0x2CA60. (2026-10-05)
+- [x] Does stock DMM have a **REL** mode? No (manual + strings). HOLD exists
+      (Run key on DMM page, flag +0x470). (2026-10-05)
 
 ## Phase 2 — the three changes
 
 ### Goal 1: boot into the multimeter
-- Cheapest win if the startup default is a single constant or a default written
-  to saved-settings. Change the default-mode value; same-length byte patch.
-- Fallback: if boot mode is "whatever was last used", consider forcing the
-  last-mode value, or hooking the startup to select DMM.
+- [x] Designed: single-byte change at file 0x2568E (`firmware/dmm-first.json`).
+      Boot page is always the constant (not "last used"). (2026-10-05)
+- [ ] Flashed and verified on the unit.
 
 ### Goal 3: remap DDS button → multimeter  (do before Goal 2; it's simpler)
-- Find the button-dispatch entry for the DDS button and repoint its action to
-  the "enter DMM" handler. Ideally reuse an existing handler address so it's a
-  small, same-length edit (change a jump target / table entry).
-- Relabel the physical/overlay text only if it appears in the string table; the
-  silkscreen on the case can't change, so note that the DDS key now = DMM.
+- [x] Designed: two instructions in the DDS key handler 0x2CA60 (file 0x1BA70,
+      0x1BA7E). DDS key toggles scope ↔ DMM; generator stays on the Menu
+      popup. The key has no on-screen label to relabel. (2026-10-05)
+- [ ] Flashed and verified on the unit.
 
 ### Goal 2: DMM probe zero / REL
-- If stock REL exists: the goal is to **surface** it — map it to a free button
-  or reduce taps. Smallest, safest.
-- If it doesn't exist: this is the hard one and may touch measurement code.
-  Scope it carefully, get the owner's sign-off, and treat any measurement/
-  calibration region as off-limits unless clearly understood.
+- Stock has no REL → this is the build-it path. Proposed minimal design
+  (needs owner sign-off): on a chosen key (candidate: long-press raw key 3,
+  id 31 → 0x14DC0, which already only acts on the DMM page), capture the
+  current decoded reading into a free struct slot and subtract it at display
+  time in the DMM reading widget (0x12, draw fn 0x26B99). Measurement code
+  and the calibration tables stay untouched. Requires a code cave for ~40
+  bytes of new Thumb code; candidates: unused tail of the APP part
+  (0x6B9B0.. is zero padding to 0x6B9C0 — too small) or a dead function.
+  Not started.
 
 ## Phase 3 — build, verify, flash
 
@@ -60,6 +63,13 @@ Questions to answer and write up here:
   --dry-run` — every patch must report OK and the input CRC must match.
 - Walk `SAFETY.md` → Pre-flash checklist with the owner.
 - Flash, verify the specific behaviour, log it in `notes/flashing.md`.
+
+### Goal 4: DMM readings on Linux
+- The MCU already has the decoded reading (DMM task 0x439B8 → 0x407D4). The
+  cheapest host path is to emit it over the existing USB CDC port, but that
+  port's firmware side has not been located yet (no "Virtual COM" string in
+  the APP; may be in the bootloader ROM region). Alternative: screenshot
+  polling via USB Sharing (official, slow). Not started.
 
 ## Optional side-quest — the CDC/serial port
 

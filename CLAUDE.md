@@ -140,9 +140,13 @@ file content before any byte is changed, so a mismatch aborts the whole set.
 
 ## How to work in this repo
 
-- **Read `notes/` first** every session: `prior-art.md`, `re-plan.md`,
-  `hardware.md`, `flashing.md`. Append findings as dated bullets under the
-  "Findings log" / "Flash log" headings; don't rewrite history.
+- **Read `notes/` first** every session: `re-plan.md` (plan + Phase 1 UI/event
+  map + patch design), `hardware.md` (image layout, MCU software map, struct
+  offsets, key tables, DMM data path), `flashing.md` (what is on the unit),
+  `prior-art.md`. Append findings as dated bullets; don't rewrite history.
+- Rebuild the xref database before querying in a new checkout:
+  `tools/.venv/bin/python tools/fw_xref.py firmware/stock/<bin> --build`
+  (`firmware/work/xref.json` is gitignored).
 - **Firmware files are user-supplied.** The owner downloads the official `.bin`
   from FNIRSI into `firmware/stock/`; we cannot redistribute it. Keep it
   read-only (`chmod 444`). Patched outputs go in `firmware/work/`. Never place
