@@ -82,3 +82,8 @@ It proves our goals are the *kind* of thing that's been done:
   name:100M…, USB-sharing and low-battery messages ≈ 60 B) or find other free
   space. Longer labels may need UA's 3-row menu layout change to fit; the
   remaining ~5 fixes are code-referenced strings (e.g. "2.bmpSaving...").
+- 2026-10-06: Repo published (public) at github.com/giray/fnirsi-2d15p-mod,
+  release v1.0 (pre-release, BPS files). Thank-you/credit note sent to the UA
+  author: github.com/Serhii-Povshednyi/FNIRSI-2D15P-UA/issues/1 (reused: English
+  corrections, 3-row menu constants; shared: status-bar box width, sprintf
+  buffer size, glyph-miss truncation, SCPI parser).
