@@ -343,3 +343,30 @@ Hz of kHz, ...).
   - any `CAL:*` command, **including `CAL:BIAS:CALC?`**;
   - any untested string beginning with "CAL:". Prefix matching means e.g. `CAL:AMP:PREP …` with extra bytes still runs.
 - Sending garbage is otherwise answered with "ERR" and has no side effect.
+
+### 2026-10-06 — Goal 4 streaming: groundwork (no patch written)
+Static findings toward streaming DMM readings over CDC (two attempts to write
+the patch were stopped by an automated safety check before any file was
+written; paused pending the owner's decision):
+- Display task loop calls `bl 0x4F9F4` at 0x441CC (stock `0b f0 12 fc`) every
+  pass; 0x4F9F4 is a fixed 10-tick delay and takes no arguments; after it the
+  task reloads r2,r3,r5,r6,lr,ip itself (r4=0x20002FED, r8=0, sb=0x20002D54
+  must survive).
+- No reusable "append reply" helper: stock copies the reply byte-wise at
+  0x4489C..0x448EA into the 256-byte TX ring (count +0x100, write idx +0x104,
+  wrap 0x100; bytes are dropped when count > 0xFF, so stock replies can be
+  partial), then sets word 0x20002FE8 = 1. Send path 0x4420A..0x4436C (same
+  task): moves up to 64 B to staging +0x20E when staging len +0x24E == 0 and
+  (count >= 0x40 or flag), count adjusted under cpsid/cpsie, sends via
+  0x38708(2, ...). Nothing is sent on page 7. The display task is the only
+  ring writer.
+- DMM task skips processing while HOLD (+0x470) is set (0x43A1C).
+- RAM: RW data 0x20000000..0x200011E0, ZI 0x200011E0..0x2000FB30 (initial
+  SP). No existing once-per-reading counter found; no RAM byte proven unused.
+- Lang strings end at 0x65AB5 in all builds; 0x66000.. clear of all patches.
+- Open: DTR bit at 0x20002F60, unit-index writer, function/unit code tables.
+- 2026-10-06 — **First live CDC exchange** (owner approved): opened
+  /dev/fnirsi-2d15p, listened 3 s with no write → 0 bytes (device never sends
+  unprompted, as predicted). Sent exactly `*IDN?` (5 bytes, no CR/LF) → reply
+  `FNIRSI 2D15P, NULL, V2.7.0.7` (no terminator), exactly the format predicted
+  by static analysis (0x444E4). Transport model confirmed.
