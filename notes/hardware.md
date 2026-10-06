@@ -117,3 +117,134 @@ MCU addresses; file offset = addr − 0x11000. Query with `tools/fw_xref.py`.
   task 0x43F28 → TX buffer 0x2000018B (bytes +2,+3, checksum +9).
   This is the hook for Goal 2 (REL at display time) and Goal 4 (forward
   readings to the PC).
+
+### 2026-10-06 — Language/string system (static analysis, stock 2.7.0.7)
+
+Full slot list with capacities and sharing: `firmware/work/lang_slots.json`
+(130 slots, regenerate from scratch scripts if lost; work dir is gitignored).
+
+**Language variable.** `u8 [0x20000198+0xE28]`: **1 = CN, 2 = EN** (not 0/1).
+Settings handlers 0x47100 (→1) / 0x47128 (→2) (handler table 0x555A8/0x555AC);
+first-run picker handlers 0x494D4 (→1, page 2) / 0x49584 (→2, page 2) (table
+0x55654/0x55658), picker drawn by 0x2BA74 (widget struct 0x59FA0). Saved in the
+config block (loaded at 0x3672C). Defaults are **CN**: factory reset
+`0x31DF0(0)` writes `movw r0,#0x9201` @0x31F66 (byte @file 0x20F68 = lang) and
+magic 0xAA (@0x32018) → next boot page 4 (probably the picker); blank config
+block → 0x37A78 `movs r0,#1` @0x37A7E (file 0x26A7E).
+
+**Lookup.** Almost all sites: `p = tbl[(lang-1)*N + i]`, e.g. 0x23724
+`ldrb r0,[..,#0xe28]; add r0,r0,r0,lsl#1; add r0,0x5A070,r0,lsl#2; ldr r5,[r0,#-0xc]`.
+Measurement table uses `(lang!=1)*15` (0x1F8D2). So values other than 1 act as EN
+at some sites and index garbage at others: keep exactly two languages (1, 2).
+- ROM `[2][N]` tables (CN half then EN half): 0x59FB0×3 trig mode, 0x59FC8×4,
+  0x59FE8×2, 0x59FF8×6, 0x5A028×4, 0x5A048×3, 0x5A060×2, 0x5A070×3,
+  0x5A088×13 top menu, 0x5A0F0×9 DDS waves, 0x5A138×4, 0x5A2C4×4 About,
+  0x5A2E4×6 Settings, 0x5A314/31C/324/32C/334 ×1, 0x5A33C×17 DMM functions
+  (1-based index +0x461), 0x5A440×2, 0x5A450×1, 0x5A4BC×15 measurements.
+  Non-language tables in between: 0x5A158 units, 0x5A164 timebase, 0x5A1E0
+  sample rates, 0x5A230 Stop/Run, 0x5A238.., 0x5A290 fn ptrs, 0x5A3C4 DMM
+  tokens, 0x5A3E8 units, 0x5A534.. units.
+- Code literal pairs `{CN,EN}` picked by `adr/addw + lang*4-4`: 0x1BE34,
+  0x1BE3C (await trigger / auto measurement), 0x21720 (begin), 0x24828
+  (Remove), 0x2739C, 0x273A4 (delete), 0x2A714 (USB-sharing msg), 0x2A9CC/D4/DC
+  (Saved / Save failed / Saving...), 0x2B388 (low battery), 0x28780 (Signal
+  Generator).
+- `cmp lang,#1; moveq` pairs with inline strings in the code area (4-byte padded):
+  0x274E6 Meas/测量, 0x2753E Save/保存 (0x28008/0x28000), 0x27762 Run/运行
+  (0x7B5CF/0x28018), 0x277BC Menu/菜单 (0x28028/0x28020), 0x2968C OK/确认
+  (0x2A408/0x2A400).
+- **RAM tables** `[lang][2]` at 0x20000FF4 ON/OFF, 0x20001004 CH1/CH2,
+  0x20001014 vec/dot, 0x20001024 OFF/20M, 0x20001034 AC/DC (toggle widget
+  0x2C690). They live in the **compressed RW init image** (Keil
+  `__decompress1` 0x121E4, region table 0x7C5CC: load 0x7C720 → 0x20000000,
+  0x11E0 B; blob ends 0x7C9B9, APP ends 0x7C9C0). Changing these pointers means
+  re-compressing; only in-place overwrite of their target strings is cheap
+  (capacities incl. NUL: 开启 7, 关闭 7, 矢量 7, **点 4**, 交流 7, 直流 7).
+- EN-only in both languages: status 0x27034 table (Trig'd/Auto/Ready/Arm/Roll/
+  Stop/Wait, indexed by FPGA state +0x44), OFF (0x220E6), 15min/30min/1hour
+  (0x23000..), HOLD (0x26B90), DDS, 50%, Min/2s..∞ (0x2480C). Language labels
+  `中文` 0x7B9E9 (7 B) / `English` 0x7B4E7 are code-referenced by movw/movt at
+  0x22820/0x22C04 (Settings) and 0x2BA98/0x2BAD2 (picker), shown in both
+  languages. "2.bmpSaving..." = `sprintf("%d.bmp%s")` with the format inline at
+  0x2A9E4 (9 B + 3 B padding, so "%d.bmp %s" fits).
+
+**Rendering.** Strings are **UTF-8** (decoder 0x3FC44 → code points). Draw
+routine 0x1984C(x,y,w,h, str, font, colour, flags): decodes into 0x80140000,
+fetches glyph descriptors via `font->get_glyph_dsc` (blx [font]) into
+0x80180000, word-wraps on spaces inside the box width. Width-measuring loops
+(0x23754, 0x1AFB0, ...) are the same for both languages. **A code point with
+no glyph ends the string** (`blx r6; cbz r0, done`), so unsupported letters
+(ı ş ä ß) truncate, they do not show boxes. Fonts are LVGL-style objects at RAM
+0x20001044 + n*0x30 (line heights 12/14/16/18/20/23), 4 bpp, one sparse cmap
+with absolute code points. **All six fonts contain full ASCII 0x20–0x7E**
+(plus Ω ℃ ℉ √ ∞ ∫ and PUA icons U+F014/F06A/F071/F08A/F091 in some fonts), so
+ASCII in a CN slot renders with the normal Latin glyphs.
+Language-dependent layout (CN value first):
+- Top menu + its 13 touch maps (0x1AEB0 draw; 0x4C7B0, 0x4CAF0, 0x4CCC0,
+  0x4CE90, 0x4D060, 0x4D3F0, 0x4D830, 0x4DD48, 0x4E214, 0x4E534, 0x4E7DC,
+  0x4EDAC, 0x4EF88): item padding 0xE vs 0xC (`moveq #0xe` @0x1AF00, 0x1B000,
+  and two per touch map, e.g. 0x4C7EE/0x4C810), gap 7 vs 5 (@0x1AF84). Wrap
+  at x>0x188. (UA's 3-row menu changed row height 0x1A→0x12 @0x1AF28/0x1AF56/
+  0x1B038, stride 0x20→0x14 @0x1B012 and per touch map.)
+- Status-bar trigger mode 0x2C5B6: CN uses the 14 px font 0x20001074, EN the
+  12 px 0x20001044 (`movw sb,#0x1074` @0x2C5D8, file 0x1B5DA; UA set it to 0x1044).
+- DDS list text x-offset 0x1C vs 0x10: @0x2894C (file 0x1794C) and 0x4C342
+  (file 0x3B342).
+- Settings language radio: 0x21C54 (`cmp #1`), 0x22854 (`cmp #2`).
+- `sprintf` target 0x200036B8 is **40 bytes** (next var 0x200036E0); used with
+  "%s:%.2f%s" (measurement names), "< %s" (Back), "%d.bmp%s", "%s:V%d.%d.%d.%d"
+  (version number), "%s:" (menu names). Keep those strings ≤ ~20 chars.
+
+**Space.** String pool 0x7AC00–0x7C31C, merged by the linker (suffix sharing:
+设置 is the tail of 恢复出厂设置, 占空比 of 正占空比, 'mA' of 直流电流 mA,
+Hz of kHz, ...).
+- CN segments referenced only from CN slots: **113 segments, 1348 B** (incl.
+  NULs) + 测量 7 B + inline 保存/运行/菜单/确认 4×8 B. Use ownership per byte, not
+  per pointer, before overwriting in place.
+- Chinese cm_backtrace/debug printf strings (UART only): ~2012 B. Reusable
+  only if we accept garbled fault logs.
+- **CJK glyph bitmaps**: contiguous per font, no font-header change needed if
+  left as dead glyph data: 0x5C325–0x5CA89 (1892), 0x5DDB7–0x60706 (10575),
+  0x61F16–0x629AE (2712), 0x63DAE–0x63E81 (211), **0x6545C–0x6C249 (28141)**
+  + 0x6C2B9–0x6C2D7, 0x6E8A2–0x702A6 (6660); total ≈ 50 KB. Icon U+F014 in
+  the 20 px font sits at 0x6C249–0x6C2B9 and must be kept (UA 1.0 bug).
+  Overwriting these only breaks CJK rendering, which nothing would draw once
+  every CN slot holds ASCII (the label `中文` must be replaced too).
+  UA instead rebuilt all six fonts compactly into 0x5C325–0x69D3F, which moved
+  bitmap/glyph_dsc/cmap pointers and the per-font glyph cache (+0x28/+0x2C of
+  each font object) in the RW image → blob grew → APP size in header
+  0x6A9C0→0x6A9D0 (file 0x24). We should avoid that path.
+- No proven-free padding in the APP: the 0x00/0xFF runs at 0x586xx–0x59Dxx,
+  0x5B3xx–0x5B9xx, 0x71xxx–0x79xxx sit inside image/table data; 0x7C695–0x7C71F
+  is the end of a ctype table (0x7C718 is referenced). 1600 B after APP end
+  (file 0x6B9C0–0x6C000) would need an APP size change.
+- Not in scope but noted: the APP has a SCPI-like command parser (0x44448:
+  `*IDN?`, `CAL:ADC:PREP`, `CAL:ADC:CALC`, `CAL:BIAS:CALC`, `CAL:AMP:*`,
+  `MEAS:CH`), most likely behind the CDC/serial port (not traced) — so that
+  port probably accepts **calibration** commands; reinforces SAFETY rule 5. `MEAS:CH` is relevant to Goal 4.
+
+### 2026-10-06 — fw_font.py and CN-layout patch set
+
+- `tools/fw_font.py` (stdlib only): finds the Keil region table, unpacks the RW
+  image, finds the font objects and parses their ROM descriptors. There are
+  **8 fonts**, not 6: also lh 28 (15 glyphs, range 0xA..0x2109) and lh 117
+  (24 glyphs: big digits). get_glyph_dsc 0x39044: `range_start <= cp <= cmap+4`
+  (an inclusive end, not a length), then the glyph cache (dsc+0x14/+0x18), then
+  a binary search of the u16 list. adv = glyph_dsc word >> 20, in whole pixels.
+  The measuring loops only add up adv, with no letter spacing and no kerning.
+  ofs_y is measured upward from the bottom of the line. `--runs` reproduces the
+  CJK runs (total 50221 B; largest 0x6545C–0x6C249, 28141 B). Leftover
+  aligned-word "pointers" into the runs are coincidences: instruction bytes, the
+  __scatterload relative words at 0x121DC/0x121E0, and the constant 0x60000 at
+  0x567E8.
+- +0xE29 = screen brightness (slider 0..0x92, 0x471C0; PWM at 0x400461A4).
+  Factory default `movw r0,#0x9201; strh.w r0,[sb,#0xe28]` sets lang=1 and
+  brightness=0x92. +0xE2A is also defaulted to 0x92.
+- `firmware/work/lang_layout.json`: 37 entries, **61 single-immediate changes**.
+  The CN-only layout selects are, per menu builder (draw 0x1AEB0 plus 13 touch
+  maps): padding 0xE→0xC (twice), width addend 0xC→0xA, gap 7→5. Also: status-bar
+  trigger font 0x1074→0x1044, DDS x-offset 0x1C→0x10 (twice), and default
+  language EN (0x31F66, 0x37A7E). I scanned systematically: every
+  `ldrb [..,#0xe28]` and every later `cmp` on that register. All other uses
+  index tables. Windows are unique in stock and don't overlap each other or
+  dmm-first. fw_patch dry-run on stock is OK (output crc32 CD8C01BA).

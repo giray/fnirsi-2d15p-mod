@@ -14,3 +14,6 @@ firmware/work/*
 tools/.venv/
 __pycache__/
 *.pyc
+
+# raw device screenshots (BMP); README uses the PNG copies in docs/screenshots/
+*.bmp

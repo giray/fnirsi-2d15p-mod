@@ -1,89 +1,150 @@
-# FNIRSI 2D15P firmware customisation
+# FNIRSI 2D15P: multimeter-first firmware mod
 
-Workspace for tailoring the FNIRSI 2D15P's firmware to a multimeter-first
-workflow. No vendor PC software exists for this device; all changes are made by
-editing the stock firmware image and reflashing via the device's built-in
-updater.
+An unofficial modification of the **FNIRSI 2D15P** (100 MHz 2-channel scope +
+True RMS multimeter + DDS generator) firmware for people who mainly use it as a
+**multimeter**, with **corrected English** and an optional **Turkish, German or
+Dutch** UI.
 
-**Goals (priority order):** (1) boot into the multimeter, (2) one-touch DMM probe
-zero / REL, (3) remap the DDS button to the multimeter, (4) show DMM readings
-on a Linux PC. Full detail in `CLAUDE.md`.
+> **Firmware V2.7.0.7 only** (`2D15P_V2.7.0.7_260826.bin`, CRC32 `B43E8C2D`).
+> Every patch checks this and refuses any other file. Not affiliated with
+> FNIRSI. You flash this at your own risk; read [SAFETY.md](SAFETY.md).
 
-## Status (2026-10-05)
-
-| item | state |
+| English | Turkish: DMM page |
 |---|---|
-| Target firmware | V2.7.0.7 (`2D15P_V2.7.0.7_260826.bin`, stock crc32 `B43E8C2D`) |
-| Recovery bootloader | confirmed working on the owner's unit |
-| Goal 1 (boot to DMM) + Goal 3 (DDS key → DMM) | **patch set ready**, `firmware/dmm-first.json`, not yet flashed |
-| Goal 2 (REL) | stock has no REL; needs new code, not started |
-| Goal 4 (Linux display) | DMM UART packet parser located in firmware; not started |
+| ![English settings with the 3-row menu](docs/screenshots/en-settings.png) | ![DMM page in Turkish](docs/screenshots/tr-dmm.png) |
+| **German** | **Dutch** |
+| ![German settings](docs/screenshots/de-settings.png) | ![Dutch math panel](docs/screenshots/nl-math.png) |
 
-The reverse-engineering map (page/event model, key tables, DMM data path) is in
-`notes/re-plan.md`; image layout and MCU facts in `notes/hardware.md`.
+## What it changes
 
-## Start here
+**Multimeter first** (`firmware/dmm-first.json`)
+- Boots into the **multimeter** instead of the oscilloscope.
+- The **DDS key** toggles scope ↔ multimeter. The signal generator stays
+  available from the main menu.
+- The **DDS key LED** is lit on the multimeter page (and, as before, whenever
+  the generator output is on).
+- The **Menu key** works on the multimeter page: it returns to the scope with
+  the main menu open (stock ignores it there).
 
-1. Read `CLAUDE.md` (goals, known facts, how to work here) and `SAFETY.md`
-   (do not flash without this).
-2. Read `notes/` — the lab notebook. `prior-art.md` is the highest-value file:
-   someone has already modded this exact firmware and mapped internals.
-3. Owner: put the official firmware `.bin` in `firmware/stock/` and `chmod 444`
-   it. It is gitignored and never redistributed. The official manual PDF goes
-   in the project root (also gitignored).
-4. Tools: `python3 -m venv tools/.venv && tools/.venv/bin/pip install capstone`
-   (only `fw_xref.py` needs it; the patcher and inspector are stdlib-only).
+**Languages** (`lang/`)
+- Corrected English, e.g. Level → Horizontal, Ramp → Triangle, Skew → Offset,
+  Regarding → About, Auto Shut → Auto Off, On-off → Continuity,
+  "2.bmpSaving..." → "2.bmp saving...", clearer USB and low-battery messages.
+- **One secondary language replaces Chinese**: Turkish, German or Dutch (or
+  none). Written in plain ASCII (`Turkce`, `Lautstaerke`) because the device
+  fonts have no accented letters.
+- **Three-row top menu**, so full labels fit without covering the submenu;
+  the touch zones are moved to match.
+- English is the default after a factory reset.
 
-## Layout
+Measurement, calibration and the FPGA are not touched.
 
-```
-CLAUDE.md                 project brief + rules (read every session)
-SAFETY.md                 flashing safety + pre-flash checklist
-README.md                 this file
-LICENSE                   GPL-3.0 (our code and notes only; see below)
-notes/                    lab notebook: prior-art, hardware, flashing, re-plan
-tools/fw_patch.py         CRC-gated same-length patcher (the only way images get modified)
-tools/fw_inspect.py       container header, parts, vectors, strings, pointer tables, --carve
-tools/fw_xref.py          capstone cross-reference database + disassembly queries
-firmware/dmm-first.json   Goal 1+3 patch set
-firmware/patches.example.json   patch-set template
-firmware/stock/           untouched official .bin (gitignored, read-only)
-firmware/work/            scratch / patched outputs / xref.json (gitignored)
-host/                     Linux host helpers (planned: udev rule, read-only CDC sniffer)
-```
+## Variants
 
-## Quick commands
+| Variant | Patch set | Result CRC32 |
+|---|---|---|
+| Multimeter-first only, stock languages | `firmware/dmm-first.json` | `3A36D9C7` |
+| + English fixes, no second language | `firmware/build/dmm-first+en.json` | `748774FA` |
+| + English fixes + Turkish | `firmware/build/dmm-first+tr.json` | `90602DE5` |
+| + English fixes + German | `firmware/build/dmm-first+de.json` | `28979E8C` |
+| + English fixes + Dutch | `firmware/build/dmm-first+nl.json` | `87ECCD4A` |
 
-```
-# first look at an image
-python3 tools/fw_inspect.py firmware/stock/<file>.bin --grep 'volt|dds|language'
+## Install
 
-# disassemble around an offset
-python3 tools/fw_disasm.py firmware/stock/<file>.bin 0x100 --len 0x80
+1. Download the **official** V2.7.0.7 firmware from FNIRSI and unzip it. You
+   need `2D15P_V2.7.0.7_260826.bin` (CRC32 `B43E8C2D`).
+2. Make the modified file, either way:
+   - **Browser, no install:** get the `.bps` for your variant from the
+     [Releases](../../releases) page, open
+     [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/), pick the
+     stock `.bin` as ROM and the `.bps` as patch, *Apply patch*.
+   - **Python 3 (stdlib only):**
+     ```bash
+     mkdir -p out && python3 tools/fw_patch.py 2D15P_V2.7.0.7_260826.bin firmware/build/dmm-first+de.json -o out/2D15P_V2.7.0.7_260826.bin
+     ```
+3. Check the result's CRC32 against the table above, and make sure the file is
+   named **exactly** `2D15P_V2.7.0.7_260826.bin`.
+4. On the device: **Menu → USB Sharing (USB Drive) → ON**. Copy the file into
+   the **`Upgrade file`** folder, `sync`/eject, then power-cycle. The updater
+   runs and the file disappears.
+5. For the second language: **Settings → Language**.
 
-# apply a patch set (dry run first; verifies CRC, writes nothing)
-python3 tools/fw_patch.py firmware/stock/<file>.bin firmware/<set>.json --dry-run
+**Reverting:** flash the official file the same way. **If the device doesn't
+boot:** power off, **hold the large knob and briefly press power**. The
+recovery bootloader appears as a USB drive regardless of the main firmware;
+copy the official file into `Upgrade file` and power-cycle. Try this once with
+the stock file *before* flashing anything custom ([SAFETY.md](SAFETY.md)).
 
-# cross-references (needs tools/.venv with capstone)
-tools/.venv/bin/python tools/fw_xref.py firmware/stock/<file>.bin --build
-tools/.venv/bin/python tools/fw_xref.py firmware/stock/<file>.bin --func 0x2CA60 -n 40
-```
+## Translations
 
-Addresses in the notes are MCU addresses; `file offset = address − 0x11000`
-for the APP part.
+Translations live in `lang/<code>.json`, one entry per UI string with the
+English next to it. Corrections and new languages are welcome. See
+[lang/README.md](lang/README.md) for the rules (ASCII only, length limits) and
+how to build. The builder checks everything it can before writing anything:
+ASCII, byte and pixel limits measured with the device's own fonts, and a
+self-check of every string read in the patched image.
 
-## Licence and what is (not) in this repo
+The Turkish, German and Dutch texts are first drafts. Fixes from native
+speakers are very welcome, especially for the abbreviations.
 
-Everything written here (tools, notes, patch-set JSON) is **GPL-3.0**, see
-`LICENSE`. FNIRSI's firmware, manual and the derived patched images are
-**not** included and must not be committed; `.gitignore` enforces this. A
-patch set only describes byte differences keyed to the stock CRC32, the same
-approach as the community UA mod. Modifying your own device is at your own
-risk; read `SAFETY.md`.
+## How it works
 
-## Reality check
+The image is not encrypted. The MCU application is a Keil-built FreeRTOS
+program for an ARMv8-M (Cortex-M33-class) Synwit MCU, linked at `0x12000`
+(`MCU address = file offset + 0x11000`). All changes are **same-length byte
+patches** applied by `tools/fw_patch.py`, which refuses to run unless the input
+CRC32 matches the stock image.
 
-Goals 1–3 are MCU UI/logic changes and are plausible (the prior-art mod does the
-same class of edits). The scope's acquisition quirks live in the FPGA and are
-**not** fixable from this firmware — not a goal here. Don't trust rise-time or
-overshoot below ~4.19 MHz on this scope regardless.
+- The secondary language uses the Chinese slot (language byte `1`). The new
+  strings are stored in the bitmap area of the Chinese glyphs in the six UI
+  fonts, which nothing draws any more. Slot pointers are redirected, and Chinese-mode layout
+  constants are set to the English values.
+- The UI/event model, key tables, LED driver, string tables, fonts and DMM data
+  path are documented in [notes/](notes/), the lab notebook of this project.
+
+| Tool | |
+|---|---|
+| `tools/fw_patch.py` | CRC-gated same-length patcher (stdlib) |
+| `tools/lang_build.py` | build English + one language into a patch set ([lang/README.md](lang/README.md)) |
+| `tools/build_all.sh` | rebuild every variant, make `.bps` release files and SHA256SUMS |
+| `tools/fw_font.py` | read the device fonts: widths, CJK glyph area, `--render` previews |
+| `tools/fw_inspect.py` | image header, parts, vectors, strings, pointer tables |
+| `tools/fw_xref.py` | capstone cross-reference database and disassembly queries |
+| `tools/bps_apply.py`, `tools/bps_make.py` | apply / create BPS patches |
+
+Disassembly tools need `python3 -m venv tools/.venv && tools/.venv/bin/pip install capstone keystone-engine`;
+everything else is plain Python 3.
+
+## Not done (yet)
+
+- **REL / probe zero for the DMM:** the stock firmware has no relative mode, so
+  this needs new code.
+- **DMM readings on a Linux PC:** the firmware has a SCPI-like parser
+  (`*IDN?`, `MEAS:CH`, …) that is probably reachable over the USB serial port.
+  It also has calibration commands, so we won't write to that port until it's
+  understood from static analysis.
+- Status-bar words (`Trig'd`, `Stop`, `Roll`, `HOLD`) are English in every
+  language; they are not localized in the stock firmware either.
+- Scope artefacts below ~4.19 MHz come from the FPGA and can't be fixed here.
+
+## Credits
+
+- [FNIRSI-2D15P-UA](https://github.com/Serhii-Povshednyi/FNIRSI-2D15P-UA) by
+  Serhii Povshednyi: the first public mod of this firmware. It proved the
+  bootloader accepts modified images, and it is the source of most of the
+  English corrections and of the three-row menu geometry used here.
+- [Capstone](https://www.capstone-engine.org/) and
+  [Keystone](https://www.keystone-engine.org/) for (dis)assembly,
+  [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/) for patching in
+  the browser.
+
+## Licence
+
+The tools, notes and patch sets in this repository are **GPL-3.0** ([LICENSE](LICENSE)).
+
+FNIRSI's firmware is **not** included and must be obtained from FNIRSI;
+`.gitignore` keeps `.bin`/`.bps`/`.zip`/`.pdf` files out of the repository.
+Patch sets contain only the new bytes, plus short instruction or pointer
+context so each patch can be checked before it is applied. Vendor data being
+overwritten (glyph bitmaps, Chinese strings) is checked by CRC32 instead of
+being copied. The `.bps` release files contain only new bytes.

@@ -1,24 +1,42 @@
 # tools/
 
-- `fw_patch.py` — the only way to modify a firmware image. Verifies the input
-  CRC32 (and optional size), applies same-length byte or padded-string
-  replacements from a JSON patch set, reports the output CRC32.
-  `python3 tools/fw_patch.py <stock.bin> <set.json> --dry-run` first, always.
+All tools are plain Python 3 (standard library) unless noted. Addresses are MCU
+addresses; for the APP part `file offset = address - 0x11000`.
 
-- `fw_inspect.py` — read-only first look: parses the container header, lists
-  the APP/FPGA parts with CRCs, prints the Cortex-M vector table and the
-  file→address delta (+0x11000), `--grep` over ASCII strings with addresses,
-  `--ptrs START END` to dump a pointer table as strings, `--carve DIR` to write
-  the parts out. Standard library only.
-- `fw_xref.py` — needs `.venv`. `--build` sweeps the APP part once into
-  `firmware/work/xref.json` (literal/adr/movw-movt refs, BL call graph,
-  function starts from prologues). Then `--to ADDR…` (who references),
-  `--near LO HI`, `--callers FN`, `--func ADDR -n N` (disassemble, resolves
-  pc-relative loads and strings), `--switch TBx_ADDR N` (decode tbb/tbh).
-- `.venv/` — Python venv with capstone 5 for disassembly:
-  `tools/.venv/bin/python`. Use `Cs(CS_ARCH_ARM, CS_MODE_THUMB|CS_MODE_MCLASS)`
-  and remember address = file offset + 0x11000 for the APP part.
+**Building and patching**
+- `fw_patch.py`: the only way a firmware image gets modified. It verifies the
+  input CRC32 (and optional size), applies same-length patches from a JSON patch
+  set and reports the output CRC32. Each patch is checked before it is written,
+  either by its literal `find` bytes (code, pointers) or by `find_crc32` (vendor
+  data we overwrite but don't redistribute). Always run `--dry-run` first:
+  `python3 tools/fw_patch.py <stock.bin> <set.json> --dry-run`
+- `lang_build.py`: builds English (with the fixes) plus one secondary language
+  from `lang/*.json` into a stock-CRC-gated patch set merged with
+  `firmware/dmm-first.json` and `lang/layout.json`. It checks ASCII, byte limits
+  and pixel limits, and self-checks the patched image. See `lang/README.md`.
+- `build_all.sh`: rebuilds every variant (`firmware/build/*.json`, images in
+  `firmware/work/`), makes the `.bps` release files and `SHA256SUMS` in
+  `firmware/work/release/`.
+- `bps_make.py` / `bps_apply.py`: create / apply BPS patches (the format used
+  by Rom Patcher JS and Flips), with source/target/patch CRC32 checks.
 
-Planned, not written: `fw_disasm.py` (wrapper around the above for "disassemble
-around address X") and `host/cdc_sniff.py`.
-- `bps_apply.py` — apply a BPS patch (e.g. the UA mod) with patch/source/target CRC32 checks: `python3 tools/bps_apply.py stock.bin mod.bps out.bin`
+**Analysis**
+- `fw_inspect.py`: first look at an image. Parses the container header, lists
+  the APP/FPGA parts with CRCs, prints the vector table, `--grep` over strings,
+  `--ptrs START END` to dump a pointer table, `--carve DIR` to write the parts out.
+- `fw_font.py`: reads the device fonts out of the image (via the compressed
+  RW data): glyph lookup, `text_width` exactly as the firmware measures,
+  `cjk_runs` (the Chinese glyph bitmaps reused for new strings), `--render LH
+  "text" out.pgm` previews.
+- `fw_xref.py` (needs the venv): `--build` sweeps the APP part once into
+  `firmware/work/xref.json`. Then use `--to ADDR…`, `--near LO HI`,
+  `--callers FN`, `--func ADDR -n N` (disassembly with pc-relative loads and
+  strings resolved), `--switch TBx_ADDR N`.
+
+**Venv** (only for disassembly/assembly):
+`python3 -m venv tools/.venv && tools/.venv/bin/pip install capstone keystone-engine`.
+Use `Cs(CS_ARCH_ARM, CS_MODE_THUMB|CS_MODE_MCLASS)`. Keystone mis-encodes
+Thumb-2 *conditional* wide branches (`bne.w` etc.), so hand-encode those and
+always check new code by disassembling it with capstone.
+
+Planned: `host/cdc_sniff.py` (read-only USB serial listener, Goal 4).

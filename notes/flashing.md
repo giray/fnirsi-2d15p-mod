@@ -59,6 +59,14 @@ checklist item 1 can be ticked. Unit firmware: V2.7.0.7 = our stock image.
 - Built 2026-10-06 to `firmware/work/dmm-first-menu/2D15P_V2.7.0.7_260826.bin`, crc32 `3A36D9C7`.
 - [x] Flashed 2026-10-06; result logged below
 
+## Pending: dmm-first + Turkish (Goal 5 first test)
+
+- Built 2026-10-06 by `tools/lang_build.py … tr --image` to
+  `firmware/work/dmm-first+tr/2D15P_V2.7.0.7_260826.bin`, crc32 `456B4E79`
+  (dmm-first patches 0–5 + lang/layout.json + Turkish strings). Also built:
+  +de `28979E8C`, +nl `E30EAB77`, +en `748774FA`.
+- [ ] Flashed; result logged below
+
 ## Flash log
 
 - 2026-10-05 — stock `2D15P_V2.7.0.7_260826.bin` (crc32 B43E8C2D) via recovery
@@ -79,3 +87,11 @@ checklist item 1 can be ticked. Unit firmware: V2.7.0.7 = our stock image.
   boots into DMM; DDS key scope↔DMM; DDS LED lit on DMM; Menu key on DMM →
   scope with main menu open. Owner confirmed: scope-page DDS LED was lit only because generator output
   was on (Run); with output off it is off on scope — patch 3 behaves as designed. **This is the build now on the unit.**
+- 2026-10-06 — `dmm-first+tr`, `+de`, `+nl` (crc32 456B4E79 / 28979E8C / E30EAB77)
+  flashed in turn. Owner: **all three work**: 3-row top menu, translated
+  Settings, language picker "Turkce|Deutsch|Nederlands / English", DMM page
+  ("< Geri", "Otomatik"), NL math panel (AAN/UIT, Bron A/B). Screenshots in
+  `docs/screenshots/`. Found: status-bar trigger mode "Otomatik" wraps
+  ("Otoma/tik") — the box is 34 px wide (0x2C5F6). Fixed in the builder with a
+  pixel-width check; TR "Oto", NL "Norm.". New builds (not yet flashed): +tr
+  `90602DE5`, +nl `87ECCD4A`; +de `28979E8C` and +en `748774FA` unchanged.

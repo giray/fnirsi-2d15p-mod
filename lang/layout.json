@@ -1,0 +1,553 @@
+{
+ "_comment": "Layout patches for the secondary-language slot (lang==1) and the top menu. (1) CN-mode layout constants set to the EN values (menu padding/gap/width addend in the draw routine 0x1AEB0 and all 13 touch maps, status-bar trigger font 14->12 px, DDS list x-offset); (2) English as factory-reset and blank-config default language; (3) 3-row top menu (row height 0x1A->0x12, row stride 0x20->0x14 in the draw routine; stride 0x20->0x14 and hit-box height 0x19->0x13 in the 13 touch maps), the same constants as the UA mod 1.2, so longer labels fit above the divider at y=0x68. One entry per changed instruction, disassembly in each note. Regenerate rather than hand-edit.",
+ "input_crc32": "B43E8C2D",
+ "require_size": 1203945,
+ "patches": [
+  {
+   "note": "0x1AF00 [CN layout -> EN / default EN]: moveq.w fp, #0xe -> moveq.w fp, #0xc",
+   "offset": "0x09F00",
+   "find": "4f f0 0e 0b",
+   "replace": "4f f0 0c 0b"
+  },
+  {
+   "note": "0x1AF28 [3-row menu (UA mod)]: movs r3, #0x1a -> movs r3, #0x12",
+   "offset": "0x09F28",
+   "find": "1a 23",
+   "replace": "12 23"
+  },
+  {
+   "note": "0x1AF56 [3-row menu (UA mod)]: movs r3, #0x1a -> movs r3, #0x12",
+   "offset": "0x09F56",
+   "find": "1a 23",
+   "replace": "12 23"
+  },
+  {
+   "note": "0x1AF84 [CN layout -> EN / default EN]: moveq r1, #7 -> moveq r1, #5",
+   "offset": "0x09F84",
+   "find": "07 21",
+   "replace": "05 21"
+  },
+  {
+   "note": "0x1B000 [CN layout -> EN / default EN]: moveq r7, #0xe -> moveq r7, #0xc",
+   "offset": "0x0A000",
+   "find": "0e 27",
+   "replace": "0c 27"
+  },
+  {
+   "note": "0x1B012 [3-row menu (UA mod)]: addhi r6, #0x20 -> addhi r6, #0x14",
+   "offset": "0x0A012",
+   "find": "20 36",
+   "replace": "14 36"
+  },
+  {
+   "note": "0x1B018 [CN layout -> EN / default EN]: moveq r0, #0xc -> moveq r0, #0xa",
+   "offset": "0x0A018",
+   "find": "0c 20",
+   "replace": "0a 20"
+  },
+  {
+   "note": "0x1B038 [3-row menu (UA mod)]: movs r3, #0x1a -> movs r3, #0x12",
+   "offset": "0x0A038",
+   "find": "1a 23",
+   "replace": "12 23"
+  },
+  {
+   "note": "0x2894C [CN layout -> EN / default EN]: moveq r0, #0x1c -> moveq r0, #0x10",
+   "offset": "0x1794C",
+   "find": "1c 20",
+   "replace": "10 20"
+  },
+  {
+   "note": "0x2C5D8 [CN layout -> EN / default EN]: movw sb, #0x1074 -> movw sb, #0x1044",
+   "offset": "0x1B5D8",
+   "find": "41 f2 74 09",
+   "replace": "41 f2 44 09"
+  },
+  {
+   "note": "0x31F66 [CN layout -> EN / default EN]: movw r0, #0x9201 -> movw r0, #0x9202",
+   "offset": "0x20F66",
+   "find": "49 f2 01 20",
+   "replace": "49 f2 02 20"
+  },
+  {
+   "note": "0x37A7E [CN layout -> EN / default EN]: movs r0, #1 -> movs r0, #2",
+   "offset": "0x26A7E",
+   "find": "01 20",
+   "replace": "02 20"
+  },
+  {
+   "note": "0x4C342 [CN layout -> EN / default EN]: moveq r1, #0x1c -> moveq r1, #0x10",
+   "offset": "0x3B342",
+   "find": "1c 21",
+   "replace": "10 21"
+  },
+  {
+   "note": "0x4C7EE [CN layout -> EN / default EN]: moveq.w sl, #0xe -> moveq.w sl, #0xc",
+   "offset": "0x3B7EE",
+   "find": "4f f0 0e 0a",
+   "replace": "4f f0 0c 0a"
+  },
+  {
+   "note": "0x4C810 [CN layout -> EN / default EN]: moveq r2, #0xe -> moveq r2, #0xc",
+   "offset": "0x3B810",
+   "find": "0e 22",
+   "replace": "0c 22"
+  },
+  {
+   "note": "0x4C81E [3-row menu (UA mod)]: addhi r4, #0x20 -> addhi r4, #0x14",
+   "offset": "0x3B81E",
+   "find": "20 34",
+   "replace": "14 34"
+  },
+  {
+   "note": "0x4C82C [CN layout -> EN / default EN]: moveq r1, #0xc -> moveq r1, #0xa",
+   "offset": "0x3B82C",
+   "find": "0c 21",
+   "replace": "0a 21"
+  },
+  {
+   "note": "0x4C840 [3-row menu (UA mod)]: add.w r2, r4, #0x19 -> add.w r2, r4, #0x13",
+   "offset": "0x3B840",
+   "find": "04 f1 19 02",
+   "replace": "04 f1 13 02"
+  },
+  {
+   "note": "0x4C85C [CN layout -> EN / default EN]: moveq r2, #7 -> moveq r2, #5",
+   "offset": "0x3B85C",
+   "find": "07 22",
+   "replace": "05 22"
+  },
+  {
+   "note": "0x4CB34 [CN layout -> EN / default EN]: moveq.w r8, #0xe -> moveq.w r8, #0xc",
+   "offset": "0x3BB34",
+   "find": "4f f0 0e 08",
+   "replace": "4f f0 0c 08"
+  },
+  {
+   "note": "0x4CB58 [CN layout -> EN / default EN]: moveq r2, #0xe -> moveq r2, #0xc",
+   "offset": "0x3BB58",
+   "find": "0e 22",
+   "replace": "0c 22"
+  },
+  {
+   "note": "0x4CB66 [3-row menu (UA mod)]: addhi r6, #0x20 -> addhi r6, #0x14",
+   "offset": "0x3BB66",
+   "find": "20 36",
+   "replace": "14 36"
+  },
+  {
+   "note": "0x4CB74 [CN layout -> EN / default EN]: moveq r1, #0xc -> moveq r1, #0xa",
+   "offset": "0x3BB74",
+   "find": "0c 21",
+   "replace": "0a 21"
+  },
+  {
+   "note": "0x4CB88 [3-row menu (UA mod)]: add.w r2, r6, #0x19 -> add.w r2, r6, #0x13",
+   "offset": "0x3BB88",
+   "find": "06 f1 19 02",
+   "replace": "06 f1 13 02"
+  },
+  {
+   "note": "0x4CBA4 [CN layout -> EN / default EN]: moveq r2, #7 -> moveq r2, #5",
+   "offset": "0x3BBA4",
+   "find": "07 22",
+   "replace": "05 22"
+  },
+  {
+   "note": "0x4CD04 [CN layout -> EN / default EN]: moveq.w r8, #0xe -> moveq.w r8, #0xc",
+   "offset": "0x3BD04",
+   "find": "4f f0 0e 08",
+   "replace": "4f f0 0c 08"
+  },
+  {
+   "note": "0x4CD28 [CN layout -> EN / default EN]: moveq r2, #0xe -> moveq r2, #0xc",
+   "offset": "0x3BD28",
+   "find": "0e 22",
+   "replace": "0c 22"
+  },
+  {
+   "note": "0x4CD36 [3-row menu (UA mod)]: addhi r6, #0x20 -> addhi r6, #0x14",
+   "offset": "0x3BD36",
+   "find": "20 36",
+   "replace": "14 36"
+  },
+  {
+   "note": "0x4CD44 [CN layout -> EN / default EN]: moveq r1, #0xc -> moveq r1, #0xa",
+   "offset": "0x3BD44",
+   "find": "0c 21",
+   "replace": "0a 21"
+  },
+  {
+   "note": "0x4CD58 [3-row menu (UA mod)]: add.w r2, r6, #0x19 -> add.w r2, r6, #0x13",
+   "offset": "0x3BD58",
+   "find": "06 f1 19 02",
+   "replace": "06 f1 13 02"
+  },
+  {
+   "note": "0x4CD74 [CN layout -> EN / default EN]: moveq r2, #7 -> moveq r2, #5",
+   "offset": "0x3BD74",
+   "find": "07 22",
+   "replace": "05 22"
+  },
+  {
+   "note": "0x4CED4 [CN layout -> EN / default EN]: moveq.w r8, #0xe -> moveq.w r8, #0xc",
+   "offset": "0x3BED4",
+   "find": "4f f0 0e 08",
+   "replace": "4f f0 0c 08"
+  },
+  {
+   "note": "0x4CEF8 [CN layout -> EN / default EN]: moveq r2, #0xe -> moveq r2, #0xc",
+   "offset": "0x3BEF8",
+   "find": "0e 22",
+   "replace": "0c 22"
+  },
+  {
+   "note": "0x4CF06 [3-row menu (UA mod)]: addhi r6, #0x20 -> addhi r6, #0x14",
+   "offset": "0x3BF06",
+   "find": "20 36",
+   "replace": "14 36"
+  },
+  {
+   "note": "0x4CF14 [CN layout -> EN / default EN]: moveq r1, #0xc -> moveq r1, #0xa",
+   "offset": "0x3BF14",
+   "find": "0c 21",
+   "replace": "0a 21"
+  },
+  {
+   "note": "0x4CF28 [3-row menu (UA mod)]: add.w r2, r6, #0x19 -> add.w r2, r6, #0x13",
+   "offset": "0x3BF28",
+   "find": "06 f1 19 02",
+   "replace": "06 f1 13 02"
+  },
+  {
+   "note": "0x4CF44 [CN layout -> EN / default EN]: moveq r2, #7 -> moveq r2, #5",
+   "offset": "0x3BF44",
+   "find": "07 22",
+   "replace": "05 22"
+  },
+  {
+   "note": "0x4D0DA [CN layout -> EN / default EN]: moveq.w fp, #0xe -> moveq.w fp, #0xc",
+   "offset": "0x3C0DA",
+   "find": "4f f0 0e 0b",
+   "replace": "4f f0 0c 0b"
+  },
+  {
+   "note": "0x4D0FC [CN layout -> EN / default EN]: moveq r2, #0xe -> moveq r2, #0xc",
+   "offset": "0x3C0FC",
+   "find": "0e 22",
+   "replace": "0c 22"
+  },
+  {
+   "note": "0x4D10A [3-row menu (UA mod)]: addhi r5, #0x20 -> addhi r5, #0x14",
+   "offset": "0x3C10A",
+   "find": "20 35",
+   "replace": "14 35"
+  },
+  {
+   "note": "0x4D118 [CN layout -> EN / default EN]: moveq r1, #0xc -> moveq r1, #0xa",
+   "offset": "0x3C118",
+   "find": "0c 21",
+   "replace": "0a 21"
+  },
+  {
+   "note": "0x4D12C [3-row menu (UA mod)]: add.w r2, r5, #0x19 -> add.w r2, r5, #0x13",
+   "offset": "0x3C12C",
+   "find": "05 f1 19 02",
+   "replace": "05 f1 13 02"
+  },
+  {
+   "note": "0x4D148 [CN layout -> EN / default EN]: moveq r2, #7 -> moveq r2, #5",
+   "offset": "0x3C148",
+   "find": "07 22",
+   "replace": "05 22"
+  },
+  {
+   "note": "0x4D42E [CN layout -> EN / default EN]: moveq.w sl, #0xe -> moveq.w sl, #0xc",
+   "offset": "0x3C42E",
+   "find": "4f f0 0e 0a",
+   "replace": "4f f0 0c 0a"
+  },
+  {
+   "note": "0x4D450 [CN layout -> EN / default EN]: moveq r2, #0xe -> moveq r2, #0xc",
+   "offset": "0x3C450",
+   "find": "0e 22",
+   "replace": "0c 22"
+  },
+  {
+   "note": "0x4D45E [3-row menu (UA mod)]: addhi r4, #0x20 -> addhi r4, #0x14",
+   "offset": "0x3C45E",
+   "find": "20 34",
+   "replace": "14 34"
+  },
+  {
+   "note": "0x4D46C [CN layout -> EN / default EN]: moveq r1, #0xc -> moveq r1, #0xa",
+   "offset": "0x3C46C",
+   "find": "0c 21",
+   "replace": "0a 21"
+  },
+  {
+   "note": "0x4D480 [3-row menu (UA mod)]: add.w r2, r4, #0x19 -> add.w r2, r4, #0x13",
+   "offset": "0x3C480",
+   "find": "04 f1 19 02",
+   "replace": "04 f1 13 02"
+  },
+  {
+   "note": "0x4D49C [CN layout -> EN / default EN]: moveq r2, #7 -> moveq r2, #5",
+   "offset": "0x3C49C",
+   "find": "07 22",
+   "replace": "05 22"
+  },
+  {
+   "note": "0x4D86E [CN layout -> EN / default EN]: moveq.w r8, #0xe -> moveq.w r8, #0xc",
+   "offset": "0x3C86E",
+   "find": "4f f0 0e 08",
+   "replace": "4f f0 0c 08"
+  },
+  {
+   "note": "0x4D890 [CN layout -> EN / default EN]: moveq r2, #0xe -> moveq r2, #0xc",
+   "offset": "0x3C890",
+   "find": "0e 22",
+   "replace": "0c 22"
+  },
+  {
+   "note": "0x4D89E [3-row menu (UA mod)]: addhi r4, #0x20 -> addhi r4, #0x14",
+   "offset": "0x3C89E",
+   "find": "20 34",
+   "replace": "14 34"
+  },
+  {
+   "note": "0x4D8AC [CN layout -> EN / default EN]: moveq r1, #0xc -> moveq r1, #0xa",
+   "offset": "0x3C8AC",
+   "find": "0c 21",
+   "replace": "0a 21"
+  },
+  {
+   "note": "0x4D8C0 [3-row menu (UA mod)]: add.w r2, r4, #0x19 -> add.w r2, r4, #0x13",
+   "offset": "0x3C8C0",
+   "find": "04 f1 19 02",
+   "replace": "04 f1 13 02"
+  },
+  {
+   "note": "0x4D8DC [CN layout -> EN / default EN]: moveq r2, #7 -> moveq r2, #5",
+   "offset": "0x3C8DC",
+   "find": "07 22",
+   "replace": "05 22"
+  },
+  {
+   "note": "0x4DE8C [CN layout -> EN / default EN]: moveq.w sb, #0xe -> moveq.w sb, #0xc",
+   "offset": "0x3CE8C",
+   "find": "4f f0 0e 09",
+   "replace": "4f f0 0c 09"
+  },
+  {
+   "note": "0x4DEB0 [CN layout -> EN / default EN]: moveq r2, #0xe -> moveq r2, #0xc",
+   "offset": "0x3CEB0",
+   "find": "0e 22",
+   "replace": "0c 22"
+  },
+  {
+   "note": "0x4DEBE [3-row menu (UA mod)]: addhi r4, #0x20 -> addhi r4, #0x14",
+   "offset": "0x3CEBE",
+   "find": "20 34",
+   "replace": "14 34"
+  },
+  {
+   "note": "0x4DECC [CN layout -> EN / default EN]: moveq r1, #0xc -> moveq r1, #0xa",
+   "offset": "0x3CECC",
+   "find": "0c 21",
+   "replace": "0a 21"
+  },
+  {
+   "note": "0x4DEE0 [3-row menu (UA mod)]: add.w r2, r4, #0x19 -> add.w r2, r4, #0x13",
+   "offset": "0x3CEE0",
+   "find": "04 f1 19 02",
+   "replace": "04 f1 13 02"
+  },
+  {
+   "note": "0x4DEFC [CN layout -> EN / default EN]: moveq r2, #7 -> moveq r2, #5",
+   "offset": "0x3CEFC",
+   "find": "07 22",
+   "replace": "05 22"
+  },
+  {
+   "note": "0x4E258 [CN layout -> EN / default EN]: moveq.w sb, #0xe -> moveq.w sb, #0xc",
+   "offset": "0x3D258",
+   "find": "4f f0 0e 09",
+   "replace": "4f f0 0c 09"
+  },
+  {
+   "note": "0x4E27C [CN layout -> EN / default EN]: moveq r2, #0xe -> moveq r2, #0xc",
+   "offset": "0x3D27C",
+   "find": "0e 22",
+   "replace": "0c 22"
+  },
+  {
+   "note": "0x4E28A [3-row menu (UA mod)]: addhi r5, #0x20 -> addhi r5, #0x14",
+   "offset": "0x3D28A",
+   "find": "20 35",
+   "replace": "14 35"
+  },
+  {
+   "note": "0x4E298 [CN layout -> EN / default EN]: moveq r1, #0xc -> moveq r1, #0xa",
+   "offset": "0x3D298",
+   "find": "0c 21",
+   "replace": "0a 21"
+  },
+  {
+   "note": "0x4E2AC [3-row menu (UA mod)]: add.w r2, r5, #0x19 -> add.w r2, r5, #0x13",
+   "offset": "0x3D2AC",
+   "find": "05 f1 19 02",
+   "replace": "05 f1 13 02"
+  },
+  {
+   "note": "0x4E2C8 [CN layout -> EN / default EN]: moveq r2, #7 -> moveq r2, #5",
+   "offset": "0x3D2C8",
+   "find": "07 22",
+   "replace": "05 22"
+  },
+  {
+   "note": "0x4E572 [CN layout -> EN / default EN]: moveq.w r8, #0xe -> moveq.w r8, #0xc",
+   "offset": "0x3D572",
+   "find": "4f f0 0e 08",
+   "replace": "4f f0 0c 08"
+  },
+  {
+   "note": "0x4E594 [CN layout -> EN / default EN]: moveq r2, #0xe -> moveq r2, #0xc",
+   "offset": "0x3D594",
+   "find": "0e 22",
+   "replace": "0c 22"
+  },
+  {
+   "note": "0x4E5A2 [3-row menu (UA mod)]: addhi r4, #0x20 -> addhi r4, #0x14",
+   "offset": "0x3D5A2",
+   "find": "20 34",
+   "replace": "14 34"
+  },
+  {
+   "note": "0x4E5B0 [CN layout -> EN / default EN]: moveq r1, #0xc -> moveq r1, #0xa",
+   "offset": "0x3D5B0",
+   "find": "0c 21",
+   "replace": "0a 21"
+  },
+  {
+   "note": "0x4E5C4 [3-row menu (UA mod)]: add.w r2, r4, #0x19 -> add.w r2, r4, #0x13",
+   "offset": "0x3D5C4",
+   "find": "04 f1 19 02",
+   "replace": "04 f1 13 02"
+  },
+  {
+   "note": "0x4E5E0 [CN layout -> EN / default EN]: moveq r2, #7 -> moveq r2, #5",
+   "offset": "0x3D5E0",
+   "find": "07 22",
+   "replace": "05 22"
+  },
+  {
+   "note": "0x4E81A [CN layout -> EN / default EN]: moveq.w sb, #0xe -> moveq.w sb, #0xc",
+   "offset": "0x3D81A",
+   "find": "4f f0 0e 09",
+   "replace": "4f f0 0c 09"
+  },
+  {
+   "note": "0x4E83C [CN layout -> EN / default EN]: moveq r2, #0xe -> moveq r2, #0xc",
+   "offset": "0x3D83C",
+   "find": "0e 22",
+   "replace": "0c 22"
+  },
+  {
+   "note": "0x4E84A [3-row menu (UA mod)]: addhi r4, #0x20 -> addhi r4, #0x14",
+   "offset": "0x3D84A",
+   "find": "20 34",
+   "replace": "14 34"
+  },
+  {
+   "note": "0x4E858 [CN layout -> EN / default EN]: moveq r1, #0xc -> moveq r1, #0xa",
+   "offset": "0x3D858",
+   "find": "0c 21",
+   "replace": "0a 21"
+  },
+  {
+   "note": "0x4E86C [3-row menu (UA mod)]: add.w r2, r4, #0x19 -> add.w r2, r4, #0x13",
+   "offset": "0x3D86C",
+   "find": "04 f1 19 02",
+   "replace": "04 f1 13 02"
+  },
+  {
+   "note": "0x4E888 [CN layout -> EN / default EN]: moveq r2, #7 -> moveq r2, #5",
+   "offset": "0x3D888",
+   "find": "07 22",
+   "replace": "05 22"
+  },
+  {
+   "note": "0x4EDF0 [CN layout -> EN / default EN]: moveq.w r8, #0xe -> moveq.w r8, #0xc",
+   "offset": "0x3DDF0",
+   "find": "4f f0 0e 08",
+   "replace": "4f f0 0c 08"
+  },
+  {
+   "note": "0x4EE14 [CN layout -> EN / default EN]: moveq r2, #0xe -> moveq r2, #0xc",
+   "offset": "0x3DE14",
+   "find": "0e 22",
+   "replace": "0c 22"
+  },
+  {
+   "note": "0x4EE22 [3-row menu (UA mod)]: addhi r6, #0x20 -> addhi r6, #0x14",
+   "offset": "0x3DE22",
+   "find": "20 36",
+   "replace": "14 36"
+  },
+  {
+   "note": "0x4EE30 [CN layout -> EN / default EN]: moveq r1, #0xc -> moveq r1, #0xa",
+   "offset": "0x3DE30",
+   "find": "0c 21",
+   "replace": "0a 21"
+  },
+  {
+   "note": "0x4EE44 [3-row menu (UA mod)]: add.w r2, r6, #0x19 -> add.w r2, r6, #0x13",
+   "offset": "0x3DE44",
+   "find": "06 f1 19 02",
+   "replace": "06 f1 13 02"
+  },
+  {
+   "note": "0x4EE60 [CN layout -> EN / default EN]: moveq r2, #7 -> moveq r2, #5",
+   "offset": "0x3DE60",
+   "find": "07 22",
+   "replace": "05 22"
+  },
+  {
+   "note": "0x4EFC6 [CN layout -> EN / default EN]: moveq.w sl, #0xe -> moveq.w sl, #0xc",
+   "offset": "0x3DFC6",
+   "find": "4f f0 0e 0a",
+   "replace": "4f f0 0c 0a"
+  },
+  {
+   "note": "0x4EFE8 [CN layout -> EN / default EN]: moveq r2, #0xe -> moveq r2, #0xc",
+   "offset": "0x3DFE8",
+   "find": "0e 22",
+   "replace": "0c 22"
+  },
+  {
+   "note": "0x4EFF6 [3-row menu (UA mod)]: addhi r4, #0x20 -> addhi r4, #0x14",
+   "offset": "0x3DFF6",
+   "find": "20 34",
+   "replace": "14 34"
+  },
+  {
+   "note": "0x4F004 [CN layout -> EN / default EN]: moveq r1, #0xc -> moveq r1, #0xa",
+   "offset": "0x3E004",
+   "find": "0c 21",
+   "replace": "0a 21"
+  },
+  {
+   "note": "0x4F018 [3-row menu (UA mod)]: add.w r2, r4, #0x19 -> add.w r2, r4, #0x13",
+   "offset": "0x3E018",
+   "find": "04 f1 19 02",
+   "replace": "04 f1 13 02"
+  },
+  {
+   "note": "0x4F034 [CN layout -> EN / default EN]: moveq r2, #7 -> moveq r2, #5",
+   "offset": "0x3E034",
+   "find": "07 22",
+   "replace": "05 22"
+  }
+ ]
+}

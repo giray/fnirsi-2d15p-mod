@@ -1,0 +1,2496 @@
+{
+ "_comment": "Localized string slots of FNIRSI 2D15P V2.7.0.7 (stock crc32 B43E8C2D), MCU addresses (file = addr - 0x11000). Language byte 0x20000198+0xE28: 1 = secondary (stock: Chinese), 2 = English. Derived by static analysis 2026-10-06, see notes/hardware.md \"Language/string system\". kind: rom_table/code_pool_pair = 32-bit pointer word at *_site.at (repointable); code_cmp_pair = movw/t (repointable) or pc-relative addw (in-place only, capacity incl NUL); rw_data_table = pointer in compressed RW image (in-place only).",
+ "stock_crc32": "B43E8C2D",
+ "slots": [
+  {
+   "id": "trig.mode.0",
+   "kind": "rom_table",
+   "purpose": "trigger mode (trigger panel + status bar 0x2C5BA)",
+   "en": "Auto",
+   "cn_site": {
+    "how": "word",
+    "at": "0x59fb0"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x59fbc"
+   },
+   "cn_target": "0x7bdce",
+   "en_target": "0x7b5d8",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "trig.mode.1",
+   "kind": "rom_table",
+   "purpose": "trigger mode (trigger panel + status bar 0x2C5BA)",
+   "en": "Normal",
+   "cn_site": {
+    "how": "word",
+    "at": "0x59fb4"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x59fc0"
+   },
+   "cn_target": "0x7c1a1",
+   "en_target": "0x7b52d",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 7,
+   "cn_exclusive": true
+  },
+  {
+   "id": "trig.mode.2",
+   "kind": "rom_table",
+   "purpose": "trigger mode (trigger panel + status bar 0x2C5BA)",
+   "en": "Single",
+   "cn_site": {
+    "how": "word",
+    "at": "0x59fb8"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x59fc4"
+   },
+   "cn_target": "0x7bc2b",
+   "en_target": "0x7b3f0",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 7,
+   "cn_exclusive": true
+  },
+  {
+   "id": "chan.0",
+   "kind": "rom_table",
+   "purpose": "channel panel labels",
+   "en": "Display:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x59fc8"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x59fd8"
+   },
+   "cn_target": "0x7b081",
+   "en_target": "0x7afb3",
+   "cn_inplace_capacity": 8,
+   "en_inplace_capacity": 9,
+   "cn_exclusive": true
+  },
+  {
+   "id": "chan.1",
+   "kind": "rom_table",
+   "purpose": "channel panel labels",
+   "en": "Probe:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x59fcc"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x59fdc"
+   },
+   "cn_target": "0x7b06b",
+   "en_target": "0x7af2a",
+   "cn_inplace_capacity": 8,
+   "en_inplace_capacity": 7,
+   "cn_exclusive": true
+  },
+  {
+   "id": "chan.2",
+   "kind": "rom_table",
+   "purpose": "channel panel labels",
+   "en": "BW Limit:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x59fd0"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x59fe0"
+   },
+   "cn_target": "0x7b073",
+   "en_target": "0x7af9e",
+   "cn_inplace_capacity": 14,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "chan.3",
+   "kind": "rom_table",
+   "purpose": "channel panel labels",
+   "en": "Coupling:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x59fd4"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x59fe4"
+   },
+   "cn_target": "0x7afd6",
+   "en_target": "0x7af4a",
+   "cn_inplace_capacity": 8,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "acq.0",
+   "kind": "rom_table",
+   "purpose": "acquire panel labels",
+   "en": "Roll:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x59fe8"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x59ff0"
+   },
+   "cn_target": "0x7b055",
+   "en_target": "0x7af6b",
+   "cn_inplace_capacity": 8,
+   "en_inplace_capacity": 6,
+   "cn_exclusive": true
+  },
+  {
+   "id": "acq.1",
+   "kind": "rom_table",
+   "purpose": "acquire panel labels",
+   "en": "Memory Depth:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x59fec"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x59ff4"
+   },
+   "cn_target": "0x7b047",
+   "en_target": "0x7af54",
+   "cn_inplace_capacity": 14,
+   "en_inplace_capacity": 14,
+   "cn_exclusive": true
+  },
+  {
+   "id": "disp.0",
+   "kind": "rom_table",
+   "purpose": "display panel labels",
+   "en": "Grid Lum:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x59ff8"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a010"
+   },
+   "cn_target": "0x7b039",
+   "en_target": "0x7af71",
+   "cn_inplace_capacity": 14,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "disp.1",
+   "kind": "rom_table",
+   "purpose": "display panel labels",
+   "en": "Type:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x59ffc"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a014"
+   },
+   "cn_target": "0x7afec",
+   "en_target": "0x7af44",
+   "cn_inplace_capacity": 14,
+   "en_inplace_capacity": 6,
+   "cn_exclusive": true
+  },
+  {
+   "id": "disp.2",
+   "kind": "rom_table",
+   "purpose": "display panel labels",
+   "en": "CCT:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a000"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a018"
+   },
+   "cn_target": "0x7b05d",
+   "en_target": "0x7af20",
+   "cn_inplace_capacity": 14,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "disp.3",
+   "kind": "rom_table",
+   "purpose": "display panel labels",
+   "en": "Wave Lum:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a004"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a01c"
+   },
+   "cn_target": "0x7b02b",
+   "en_target": "0x7af7b",
+   "cn_inplace_capacity": 14,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "disp.4",
+   "kind": "rom_table",
+   "purpose": "display panel labels",
+   "en": "Scale:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a008"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a020"
+   },
+   "cn_target": "0x7afde",
+   "en_target": "0x7af3d",
+   "cn_inplace_capacity": 14,
+   "en_inplace_capacity": 7,
+   "cn_exclusive": true
+  },
+  {
+   "id": "disp.5",
+   "kind": "rom_table",
+   "purpose": "display panel labels",
+   "en": "Afterglow:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a00c"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a024"
+   },
+   "cn_target": "0x7b00a",
+   "en_target": "0x7afa8",
+   "cn_inplace_capacity": 14,
+   "en_inplace_capacity": 11,
+   "cn_exclusive": true
+  },
+  {
+   "id": "math.0",
+   "kind": "rom_table",
+   "purpose": "math panel labels",
+   "en": "Operation:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a028"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a038"
+   },
+   "cn_target": "0x7b018",
+   "en_target": "0x7af85",
+   "cn_inplace_capacity": 8,
+   "en_inplace_capacity": 11,
+   "cn_exclusive": true
+  },
+  {
+   "id": "math.1",
+   "kind": "rom_table",
+   "purpose": "math panel labels",
+   "en": "Source A:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a02c"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a03c"
+   },
+   "cn_target": "0x7aefc",
+   "en_target": "0x7aef2",
+   "cn_inplace_capacity": 9,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "math.2",
+   "kind": "rom_table",
+   "purpose": "math panel labels",
+   "en": "Operator:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a030"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a040"
+   },
+   "cn_target": "0x7b020",
+   "en_target": "0x7af90",
+   "cn_inplace_capacity": 11,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "math.3",
+   "kind": "rom_table",
+   "purpose": "math panel labels",
+   "en": "Source B:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a034"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a044"
+   },
+   "cn_target": "0x7af0f",
+   "en_target": "0x7af05",
+   "cn_inplace_capacity": 9,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "pics.0",
+   "kind": "rom_table",
+   "purpose": "picture browser buttons",
+   "en": "Selection",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a048"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a054"
+   },
+   "cn_target": "0x7be09",
+   "en_target": "0x7b5c5",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "pics.1",
+   "kind": "rom_table",
+   "purpose": "picture browser buttons",
+   "en": "Select All",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a04c"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a058"
+   },
+   "cn_target": "0x7b9fe",
+   "en_target": "0x7b541",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 11,
+   "cn_exclusive": true
+  },
+  {
+   "id": "pics.2",
+   "kind": "rom_table",
+   "purpose": "picture browser buttons",
+   "en": "Delete",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a050"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a05c"
+   },
+   "cn_target": "0x7bc90",
+   "en_target": "0x7b483",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 7,
+   "cn_exclusive": true
+  },
+  {
+   "id": "pics.page.0",
+   "kind": "rom_table",
+   "purpose": "picture browser paging",
+   "en": "Up",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a060"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a068"
+   },
+   "cn_target": "0x7c10a",
+   "en_target": "0x7b5e2",
+   "cn_inplace_capacity": 10,
+   "en_inplace_capacity": 3,
+   "cn_exclusive": true
+  },
+  {
+   "id": "pics.page.1",
+   "kind": "rom_table",
+   "purpose": "picture browser paging",
+   "en": "Down",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a064"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a06c"
+   },
+   "cn_target": "0x7c114",
+   "en_target": "0x7b5d3",
+   "cn_inplace_capacity": 10,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "trig.0",
+   "kind": "rom_table",
+   "purpose": "trigger panel labels",
+   "en": "Channel:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a070"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a07c"
+   },
+   "cn_target": "0x7b002",
+   "en_target": "0x7af62",
+   "cn_inplace_capacity": 8,
+   "en_inplace_capacity": 9,
+   "cn_exclusive": true
+  },
+  {
+   "id": "trig.1",
+   "kind": "rom_table",
+   "purpose": "trigger panel labels",
+   "en": "Mode:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a074"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a080"
+   },
+   "cn_target": "0x7affa",
+   "en_target": "0x7af31",
+   "cn_inplace_capacity": 8,
+   "en_inplace_capacity": 6,
+   "cn_exclusive": true
+  },
+  {
+   "id": "trig.2",
+   "kind": "rom_table",
+   "purpose": "trigger panel labels",
+   "en": "Edge:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a078"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a084"
+   },
+   "cn_target": "0x7b09f",
+   "en_target": "0x7af37",
+   "cn_inplace_capacity": 11,
+   "en_inplace_capacity": 6,
+   "cn_exclusive": true
+  },
+  {
+   "id": "menu.0",
+   "kind": "rom_table",
+   "purpose": "top menu items",
+   "en": "Level",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a088"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a0bc"
+   },
+   "cn_target": "0x7c0fc",
+   "en_target": "0x7b53b",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 6,
+   "cn_exclusive": true
+  },
+  {
+   "id": "menu.1",
+   "kind": "rom_table",
+   "purpose": "top menu items",
+   "en": "Vertical",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a08c"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a0c0"
+   },
+   "cn_target": "0x7c103",
+   "en_target": "0x7b524",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 9,
+   "cn_exclusive": true
+  },
+  {
+   "id": "menu.2",
+   "kind": "rom_table",
+   "purpose": "top menu items",
+   "en": "Trigger",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a090"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a0c4"
+   },
+   "cn_target": "0x7baa0",
+   "en_target": "0x7b61d",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 8,
+   "cn_exclusive": true
+  },
+  {
+   "id": "menu.3",
+   "kind": "rom_table",
+   "purpose": "top menu items",
+   "en": "Display",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a094"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a0c8"
+   },
+   "cn_target": "0x7c2b9",
+   "en_target": "0x7b8a1",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 8,
+   "cn_exclusive": true
+  },
+  {
+   "id": "menu.4",
+   "kind": "rom_table",
+   "purpose": "top menu items",
+   "en": "Measure",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a098"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a0cc"
+   },
+   "cn_target": "0x7ba8b",
+   "en_target": "0x7b467",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 8,
+   "cn_exclusive": false
+  },
+  {
+   "id": "menu.5",
+   "kind": "rom_table",
+   "purpose": "top menu items",
+   "en": "Cursor",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a09c"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a0d0"
+   },
+   "cn_target": "0x7b9f0",
+   "en_target": "0x7b639",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 7,
+   "cn_exclusive": true
+  },
+  {
+   "id": "menu.6",
+   "kind": "rom_table",
+   "purpose": "top menu items",
+   "en": "Math",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a0a0"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a0d4"
+   },
+   "cn_target": "0x7bae8",
+   "en_target": "0x7b4ef",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "menu.7",
+   "kind": "rom_table",
+   "purpose": "top menu items",
+   "en": "X-Y",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a0a4"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a0d8"
+   },
+   "cn_target": "0x7b30f",
+   "en_target": "0x7b30f",
+   "cn_inplace_capacity": 4,
+   "en_inplace_capacity": 4,
+   "cn_exclusive": false
+  },
+  {
+   "id": "menu.8",
+   "kind": "rom_table",
+   "purpose": "top menu items",
+   "en": "Picture",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a0a8"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a0dc"
+   },
+   "cn_target": "0x7b9d2",
+   "en_target": "0x7b47b",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 8,
+   "cn_exclusive": true
+  },
+  {
+   "id": "menu.9",
+   "kind": "rom_table",
+   "purpose": "top menu items",
+   "en": "Calibration",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a0ac"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a0e0"
+   },
+   "cn_target": "0x7bc82",
+   "en_target": "0x7b5b9",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 12,
+   "cn_exclusive": true
+  },
+  {
+   "id": "menu.10",
+   "kind": "rom_table",
+   "purpose": "top menu items",
+   "en": "USB Sharing",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a0b0"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a0e4"
+   },
+   "cn_target": "0x7be18",
+   "en_target": "0x7b4c1",
+   "cn_inplace_capacity": 10,
+   "en_inplace_capacity": 12,
+   "cn_exclusive": true
+  },
+  {
+   "id": "menu.11",
+   "kind": "rom_table",
+   "purpose": "top menu items",
+   "en": "Key Test",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a0b4"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a0e8"
+   },
+   "cn_target": "0x7badb",
+   "en_target": "0x7b7a9",
+   "cn_inplace_capacity": 13,
+   "en_inplace_capacity": 9,
+   "cn_exclusive": true
+  },
+  {
+   "id": "menu.12",
+   "kind": "rom_table",
+   "purpose": "top menu items",
+   "en": "Set",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a0b8"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a0ec"
+   },
+   "cn_target": "0x7bf11",
+   "en_target": "0x7b773",
+   "cn_inplace_capacity": null,
+   "en_inplace_capacity": 4,
+   "cn_exclusive": false
+  },
+  {
+   "id": "dds.wave.0",
+   "kind": "rom_table",
+   "purpose": "DDS waveform names",
+   "en": "Sine",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a0f0"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a114"
+   },
+   "cn_target": "0x7bc57",
+   "en_target": "0x7b42b",
+   "cn_inplace_capacity": 10,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dds.wave.1",
+   "kind": "rom_table",
+   "purpose": "DDS waveform names",
+   "en": "Square",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a0f4"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a118"
+   },
+   "cn_target": "0x7bc4d",
+   "en_target": "0x7b460",
+   "cn_inplace_capacity": 10,
+   "en_inplace_capacity": 7,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dds.wave.2",
+   "kind": "rom_table",
+   "purpose": "DDS waveform names",
+   "en": "Ramp",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a0f8"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a11c"
+   },
+   "cn_target": "0x7bc43",
+   "en_target": "0x7b5e5",
+   "cn_inplace_capacity": 10,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dds.wave.3",
+   "kind": "rom_table",
+   "purpose": "DDS waveform names",
+   "en": "DC",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a0fc"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a120"
+   },
+   "cn_target": "0x7c14f",
+   "en_target": "0x7b21a",
+   "cn_inplace_capacity": 13,
+   "en_inplace_capacity": 3,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dds.wave.4",
+   "kind": "rom_table",
+   "purpose": "DDS waveform names",
+   "en": "Noisy",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a100"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a124"
+   },
+   "cn_target": "0x7c15c",
+   "en_target": "0x7b8b9",
+   "cn_inplace_capacity": 13,
+   "en_inplace_capacity": 6,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dds.wave.5",
+   "kind": "rom_table",
+   "purpose": "DDS waveform names",
+   "en": "Half-Wave",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a104"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a128"
+   },
+   "cn_target": "0x7bc3c",
+   "en_target": "0x7b48a",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dds.wave.6",
+   "kind": "rom_table",
+   "purpose": "DDS waveform names",
+   "en": "Full-Wave",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a108"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a12c"
+   },
+   "cn_target": "0x7bc61",
+   "en_target": "0x7b494",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dds.wave.7",
+   "kind": "rom_table",
+   "purpose": "DDS waveform names",
+   "en": "POS Stair",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a10c"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a130"
+   },
+   "cn_target": "0x7bc75",
+   "en_target": "0x7b62f",
+   "cn_inplace_capacity": 13,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dds.wave.8",
+   "kind": "rom_table",
+   "purpose": "DDS waveform names",
+   "en": "NEG Stair",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a110"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a134"
+   },
+   "cn_target": "0x7bc68",
+   "en_target": "0x7b625",
+   "cn_inplace_capacity": 13,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dds.param.0",
+   "kind": "rom_table",
+   "purpose": "DDS parameter names",
+   "en": "Frequency",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a138"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a148"
+   },
+   "cn_target": "0x7b9d9",
+   "en_target": "0x7b8a9",
+   "cn_inplace_capacity": 9,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dds.param.1",
+   "kind": "rom_table",
+   "purpose": "DDS parameter names",
+   "en": "Amplitude",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a13c"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a14c"
+   },
+   "cn_target": "0x7c2ce",
+   "en_target": "0x7b3b8",
+   "cn_inplace_capacity": 9,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dds.param.2",
+   "kind": "rom_table",
+   "purpose": "DDS parameter names",
+   "en": "Duty Cycle",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a140"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a150"
+   },
+   "cn_target": "0x7bad1",
+   "en_target": "0x7b3e5",
+   "cn_inplace_capacity": null,
+   "en_inplace_capacity": 11,
+   "cn_exclusive": false
+  },
+  {
+   "id": "dds.param.3",
+   "kind": "rom_table",
+   "purpose": "DDS parameter names",
+   "en": "Skew",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a144"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a154"
+   },
+   "cn_target": "0x7c2c7",
+   "en_target": "0x7b7d7",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "about.0",
+   "kind": "rom_table",
+   "purpose": "About page",
+   "en": "Native information",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a2c4"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a2d4"
+   },
+   "cn_target": "0x7bf18",
+   "en_target": "0x7b5a6",
+   "cn_inplace_capacity": 13,
+   "en_inplace_capacity": 19,
+   "cn_exclusive": true
+  },
+  {
+   "id": "about.1",
+   "kind": "rom_table",
+   "purpose": "About page",
+   "en": "name:100M dual channel desktop oscilloscope",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a2c8"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a2d8"
+   },
+   "cn_target": "0x7bde5",
+   "en_target": "0x7b430",
+   "cn_inplace_capacity": 36,
+   "en_inplace_capacity": 44,
+   "cn_exclusive": true
+  },
+  {
+   "id": "about.2",
+   "kind": "rom_table",
+   "purpose": "About page",
+   "en": "model:2D15P",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a2cc"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a2dc"
+   },
+   "cn_target": "0x7b29c",
+   "en_target": "0x7b290",
+   "cn_inplace_capacity": 13,
+   "en_inplace_capacity": 12,
+   "cn_exclusive": true
+  },
+  {
+   "id": "about.3",
+   "kind": "rom_table",
+   "purpose": "About page",
+   "en": "version number",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a2d0"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a2e0"
+   },
+   "cn_target": "0x7c169",
+   "en_target": "0x7b60e",
+   "cn_inplace_capacity": 10,
+   "en_inplace_capacity": 15,
+   "cn_exclusive": true
+  },
+  {
+   "id": "settings.0",
+   "kind": "rom_table",
+   "purpose": "Settings list",
+   "en": "Language",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a2e4"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a2fc"
+   },
+   "cn_target": "0x7b8e1",
+   "en_target": "0x7b3dc",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 9,
+   "cn_exclusive": true
+  },
+  {
+   "id": "settings.1",
+   "kind": "rom_table",
+   "purpose": "Settings list",
+   "en": "Volume",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a2e8"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a300"
+   },
+   "cn_target": "0x7ba99",
+   "en_target": "0x7b424",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 7,
+   "cn_exclusive": true
+  },
+  {
+   "id": "settings.2",
+   "kind": "rom_table",
+   "purpose": "Settings list",
+   "en": "Brightness",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a2ec"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a304"
+   },
+   "cn_target": "0x7bdc1",
+   "en_target": "0x7b73b",
+   "cn_inplace_capacity": 13,
+   "en_inplace_capacity": 11,
+   "cn_exclusive": true
+  },
+  {
+   "id": "settings.3",
+   "kind": "rom_table",
+   "purpose": "Settings list",
+   "en": "Auto Shut",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a2f0"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a308"
+   },
+   "cn_target": "0x7c2ac",
+   "en_target": "0x7b7b2",
+   "cn_inplace_capacity": 13,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "settings.4",
+   "kind": "rom_table",
+   "purpose": "Settings list",
+   "en": "Regarding",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a2f4"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a30c"
+   },
+   "cn_target": "0x7ba84",
+   "en_target": "0x7b4b7",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "settings.5",
+   "kind": "rom_table",
+   "purpose": "Settings list",
+   "en": "Factory Rst",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a2f8"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a310"
+   },
+   "cn_target": "0x7bf05",
+   "en_target": "0x7b79d",
+   "cn_inplace_capacity": 19,
+   "en_inplace_capacity": 12,
+   "cn_exclusive": true
+  },
+  {
+   "id": "reset.warn",
+   "kind": "rom_table",
+   "purpose": "factory reset warning",
+   "en": "Factory reset will undo all previous changes!",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a314"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a318"
+   },
+   "cn_target": "0x7acee",
+   "en_target": "0x7acc0",
+   "cn_inplace_capacity": 56,
+   "en_inplace_capacity": 46,
+   "cn_exclusive": true
+  },
+  {
+   "id": "btn.confirm",
+   "kind": "rom_table",
+   "purpose": "Confirm button",
+   "en": "Confirm",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a31c"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a320"
+   },
+   "cn_target": "0x7bb23",
+   "en_target": "0x7b555",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 8,
+   "cn_exclusive": true
+  },
+  {
+   "id": "cal.disconnect",
+   "kind": "rom_table",
+   "purpose": "calibration: disconnect prompt",
+   "en": "Please disconnect all channels",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a324"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a328"
+   },
+   "cn_target": "0x7baa7",
+   "en_target": "0x7b6c5",
+   "cn_inplace_capacity": 22,
+   "en_inplace_capacity": 31,
+   "cn_exclusive": true
+  },
+  {
+   "id": "cal.done",
+   "kind": "rom_table",
+   "purpose": "calibration done",
+   "en": "Calibration completed. Tap anywhere on the screen to exit.",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a32c"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a330"
+   },
+   "cn_target": "0x7c1b3",
+   "en_target": "0x7ae2e",
+   "cn_inplace_capacity": 43,
+   "en_inplace_capacity": 59,
+   "cn_exclusive": true
+  },
+  {
+   "id": "btn.back",
+   "kind": "rom_table",
+   "purpose": "Back button",
+   "en": "Back",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a334"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a338"
+   },
+   "cn_target": "0x7bb65",
+   "en_target": "0x7b51f",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dmm.func.0",
+   "kind": "rom_table",
+   "purpose": "DMM function names (index +0x461, 1-based)",
+   "en": "DC Voltage",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a33c"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a380"
+   },
+   "cn_target": "0x7ba16",
+   "en_target": "0x7b3d1",
+   "cn_inplace_capacity": 13,
+   "en_inplace_capacity": 11,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dmm.func.1",
+   "kind": "rom_table",
+   "purpose": "DMM function names (index +0x461, 1-based)",
+   "en": "AC Voltage",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a340"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a384"
+   },
+   "cn_target": "0x7ba09",
+   "en_target": "0x7b3c6",
+   "cn_inplace_capacity": 13,
+   "en_inplace_capacity": 11,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dmm.func.2",
+   "kind": "rom_table",
+   "purpose": "DMM function names (index +0x461, 1-based)",
+   "en": "Resistance",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a344"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a388"
+   },
+   "cn_target": "0x7c2c0",
+   "en_target": "0x7b3a7",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 11,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dmm.func.3",
+   "kind": "rom_table",
+   "purpose": "DMM function names (index +0x461, 1-based)",
+   "en": "On-off",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a348"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a38c"
+   },
+   "cn_target": "0x7be22",
+   "en_target": "0x7b4ab",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 7,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dmm.func.4",
+   "kind": "rom_table",
+   "purpose": "DMM function names (index +0x461, 1-based)",
+   "en": "Diode",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a34c"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a390"
+   },
+   "cn_target": "0x7bc32",
+   "en_target": "0x7b3b2",
+   "cn_inplace_capacity": 10,
+   "en_inplace_capacity": 6,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dmm.func.5",
+   "kind": "rom_table",
+   "purpose": "DMM function names (index +0x461, 1-based)",
+   "en": "Inductance",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a350"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a394"
+   },
+   "cn_target": "0x7bb6c",
+   "en_target": "0x7b390",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 11,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dmm.func.6",
+   "kind": "rom_table",
+   "purpose": "DMM function names (index +0x461, 1-based)",
+   "en": "Capacitance",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a354"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a398"
+   },
+   "cn_target": "0x7c1ac",
+   "en_target": "0x7b39b",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 12,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dmm.func.7",
+   "kind": "rom_table",
+   "purpose": "DMM function names (index +0x461, 1-based)",
+   "en": "DC Current mA",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a358"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a39c"
+   },
+   "cn_target": "0x7b1f4",
+   "en_target": "0x7b1d6",
+   "cn_inplace_capacity": 16,
+   "en_inplace_capacity": 14,
+   "cn_exclusive": false
+  },
+  {
+   "id": "dmm.func.8",
+   "kind": "rom_table",
+   "purpose": "DMM function names (index +0x461, 1-based)",
+   "en": "AC Current mA",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a35c"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a3a0"
+   },
+   "cn_target": "0x7b1e4",
+   "en_target": "0x7b1c8",
+   "cn_inplace_capacity": 16,
+   "en_inplace_capacity": 14,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dmm.func.9",
+   "kind": "rom_table",
+   "purpose": "DMM function names (index +0x461, 1-based)",
+   "en": "DC Current A",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a360"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a3a4"
+   },
+   "cn_target": "0x7b1b6",
+   "en_target": "0x7b19a",
+   "cn_inplace_capacity": 15,
+   "en_inplace_capacity": 13,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dmm.func.10",
+   "kind": "rom_table",
+   "purpose": "DMM function names (index +0x461, 1-based)",
+   "en": "AC Current A",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a364"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a3a8"
+   },
+   "cn_target": "0x7b1a7",
+   "en_target": "0x7b18d",
+   "cn_inplace_capacity": 15,
+   "en_inplace_capacity": 13,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dmm.func.11",
+   "kind": "rom_table",
+   "purpose": "DMM function names (index +0x461, 1-based)",
+   "en": "Temperature",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a368"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a3ac"
+   },
+   "cn_target": "0x7bdba",
+   "en_target": "0x7b46f",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 12,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dmm.func.12",
+   "kind": "rom_table",
+   "purpose": "DMM function names (index +0x461, 1-based)",
+   "en": "Frequency",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a36c"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a3b0"
+   },
+   "cn_target": "0x7b9e2",
+   "en_target": "0x7b8a9",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dmm.func.13",
+   "kind": "rom_table",
+   "purpose": "DMM function names (index +0x461, 1-based)",
+   "en": "NCV",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a370"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a3b4"
+   },
+   "cn_target": "0x7ba2a",
+   "en_target": "0x7b2d7",
+   "cn_inplace_capacity": 22,
+   "en_inplace_capacity": 4,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dmm.func.14",
+   "kind": "rom_table",
+   "purpose": "DMM function names (index +0x461, 1-based)",
+   "en": "LIVE",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a374"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a3b8"
+   },
+   "cn_target": "0x7ba40",
+   "en_target": "0x7b226",
+   "cn_inplace_capacity": 16,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dmm.func.15",
+   "kind": "rom_table",
+   "purpose": "DMM function names (index +0x461, 1-based)",
+   "en": "Automatic",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a378"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a3bc"
+   },
+   "cn_target": "0x7bdce",
+   "en_target": "0x7b344",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dmm.func.16",
+   "kind": "rom_table",
+   "purpose": "DMM function names (index +0x461, 1-based)",
+   "en": "built in self testing",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a37c"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a3c0"
+   },
+   "cn_target": "0x7b8d4",
+   "en_target": "0x7b4cd",
+   "cn_inplace_capacity": 13,
+   "en_inplace_capacity": 22,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dmm.minmax.0",
+   "kind": "rom_table",
+   "purpose": "DMM MIN/MAX labels",
+   "en": "MIN:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a440"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a448"
+   },
+   "cn_target": "0x7b089",
+   "en_target": "0x7af18",
+   "cn_inplace_capacity": 11,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dmm.minmax.1",
+   "kind": "rom_table",
+   "purpose": "DMM MIN/MAX labels",
+   "en": "MAX:",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a444"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a44c"
+   },
+   "cn_target": "0x7b094",
+   "en_target": "0x7af25",
+   "cn_inplace_capacity": 11,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "btn.cancel",
+   "kind": "rom_table",
+   "purpose": "Cancel button",
+   "en": "Cancel",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a450"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a454"
+   },
+   "cn_target": "0x7b9f7",
+   "en_target": "0x7b534",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 7,
+   "cn_exclusive": true
+  },
+  {
+   "id": "meas.0",
+   "kind": "rom_table",
+   "purpose": "measurement names (panel + on-screen readouts)",
+   "en": "A-on",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a4bc"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a4f8"
+   },
+   "cn_target": "0x7b8e8",
+   "en_target": "0x7b5a1",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "meas.1",
+   "kind": "rom_table",
+   "purpose": "measurement names (panel + on-screen readouts)",
+   "en": "A-off",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a4c0"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a4fc"
+   },
+   "cn_target": "0x7c0f5",
+   "en_target": "0x7b4a5",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 6,
+   "cn_exclusive": true
+  },
+  {
+   "id": "meas.2",
+   "kind": "rom_table",
+   "purpose": "measurement names (panel + on-screen readouts)",
+   "en": "Freq",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a4c4"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a500"
+   },
+   "cn_target": "0x7b9e2",
+   "en_target": "0x7b609",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "meas.3",
+   "kind": "rom_table",
+   "purpose": "measurement names (panel + on-screen readouts)",
+   "en": "Peri",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a4c8"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a504"
+   },
+   "cn_target": "0x7bb80",
+   "en_target": "0x7b4f4",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "meas.4",
+   "kind": "rom_table",
+   "purpose": "measurement names (panel + on-screen readouts)",
+   "en": "Duty+",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a4cc"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a508"
+   },
+   "cn_target": "0x7bace",
+   "en_target": "0x7ad3b",
+   "cn_inplace_capacity": 13,
+   "en_inplace_capacity": 6,
+   "cn_exclusive": true
+  },
+  {
+   "id": "meas.5",
+   "kind": "rom_table",
+   "purpose": "measurement names (panel + on-screen readouts)",
+   "en": "Duty-",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a4d0"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a50c"
+   },
+   "cn_target": "0x7bac1",
+   "en_target": "0x7ad46",
+   "cn_inplace_capacity": 13,
+   "en_inplace_capacity": 6,
+   "cn_exclusive": true
+  },
+  {
+   "id": "meas.6",
+   "kind": "rom_table",
+   "purpose": "measurement names (panel + on-screen readouts)",
+   "en": "Wid+",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a4d4"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a510"
+   },
+   "cn_target": "0x7c313",
+   "en_target": "0x7ad36",
+   "cn_inplace_capacity": 10,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": false
+  },
+  {
+   "id": "meas.7",
+   "kind": "rom_table",
+   "purpose": "measurement names (panel + on-screen readouts)",
+   "en": "Wid-",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a4d8"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a514"
+   },
+   "cn_target": "0x7c309",
+   "en_target": "0x7ad41",
+   "cn_inplace_capacity": 10,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "meas.8",
+   "kind": "rom_table",
+   "purpose": "measurement names (panel + on-screen readouts)",
+   "en": "Nre",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a4dc"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a518"
+   },
+   "cn_target": "0x7c0d1",
+   "en_target": "0x7b45c",
+   "cn_inplace_capacity": 16,
+   "en_inplace_capacity": 4,
+   "cn_exclusive": true
+  },
+  {
+   "id": "meas.9",
+   "kind": "rom_table",
+   "purpose": "measurement names (panel + on-screen readouts)",
+   "en": "Nfe",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a4e0"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a51c"
+   },
+   "cn_target": "0x7c0e1",
+   "en_target": "0x7b3c2",
+   "cn_inplace_capacity": 16,
+   "en_inplace_capacity": 4,
+   "cn_exclusive": true
+  },
+  {
+   "id": "meas.10",
+   "kind": "rom_table",
+   "purpose": "measurement names (panel + on-screen readouts)",
+   "en": "Vrms",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a4e4"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a520"
+   },
+   "cn_target": "0x7c2e1",
+   "en_target": "0x7b711",
+   "cn_inplace_capacity": 10,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "meas.11",
+   "kind": "rom_table",
+   "purpose": "measurement names (panel + on-screen readouts)",
+   "en": "Avg",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a4e8"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a524"
+   },
+   "cn_target": "0x7c2d7",
+   "en_target": "0x7b4e3",
+   "cn_inplace_capacity": 10,
+   "en_inplace_capacity": 4,
+   "cn_exclusive": true
+  },
+  {
+   "id": "meas.12",
+   "kind": "rom_table",
+   "purpose": "measurement names (panel + on-screen readouts)",
+   "en": "Vp-p",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a4ec"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a528"
+   },
+   "cn_target": "0x7c2ff",
+   "en_target": "0x7b5dd",
+   "cn_inplace_capacity": 10,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "meas.13",
+   "kind": "rom_table",
+   "purpose": "measurement names (panel + on-screen readouts)",
+   "en": "Vmax",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a4f0"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a52c"
+   },
+   "cn_target": "0x7c2f5",
+   "en_target": "0x7b89c",
+   "cn_inplace_capacity": 10,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "meas.14",
+   "kind": "rom_table",
+   "purpose": "measurement names (panel + on-screen readouts)",
+   "en": "Vmin",
+   "cn_site": {
+    "how": "word",
+    "at": "0x5a4f4"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x5a530"
+   },
+   "cn_target": "0x7c2eb",
+   "en_target": "0x7b59c",
+   "cn_inplace_capacity": 10,
+   "en_inplace_capacity": 5,
+   "cn_exclusive": true
+  },
+  {
+   "id": "msg.await_trig",
+   "kind": "code_pool_pair",
+   "purpose": "waiting for trigger (0x1B07E)",
+   "en": "Await Trigger...",
+   "cn_site": {
+    "how": "word",
+    "at": "0x1be34"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x1be38"
+   },
+   "cn_target": "0x7ad90",
+   "en_target": "0x7ad62",
+   "cn_inplace_capacity": 16,
+   "en_inplace_capacity": 17,
+   "cn_exclusive": true
+  },
+  {
+   "id": "msg.await_auto",
+   "kind": "code_pool_pair",
+   "purpose": "waiting for auto measurement (0x1B0AE)",
+   "en": "Awaiting Auto Measurement...",
+   "cn_site": {
+    "how": "word",
+    "at": "0x1be3c"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x1be40"
+   },
+   "cn_target": "0x7ada0",
+   "en_target": "0x7ad73",
+   "cn_inplace_capacity": 25,
+   "en_inplace_capacity": 29,
+   "cn_exclusive": true
+  },
+  {
+   "id": "cal.begin",
+   "kind": "code_pool_pair",
+   "purpose": "calibration start button (0x216F0)",
+   "en": "begin",
+   "cn_site": {
+    "how": "word",
+    "at": "0x21720"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x21724"
+   },
+   "cn_target": "0x7ba23",
+   "en_target": "0x7b596",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 6,
+   "cn_exclusive": true
+  },
+  {
+   "id": "btn.remove",
+   "kind": "code_pool_pair",
+   "purpose": "clear/remove button (0x247E6)",
+   "en": "Remove",
+   "cn_site": {
+    "how": "word",
+    "at": "0x24828"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x2482c"
+   },
+   "cn_target": "0x7bc89",
+   "en_target": "0x7b49e",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 7,
+   "cn_exclusive": true
+  },
+  {
+   "id": "msg.deleting",
+   "kind": "code_pool_pair",
+   "purpose": "deleting... (0x27370)",
+   "en": "Deleting...",
+   "cn_site": {
+    "how": "word",
+    "at": "0x2739c"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x273a0"
+   },
+   "cn_target": "0x7adc6",
+   "en_target": "0x7ad4c",
+   "cn_inplace_capacity": 13,
+   "en_inplace_capacity": 12,
+   "cn_exclusive": true
+  },
+  {
+   "id": "msg.delete_q",
+   "kind": "code_pool_pair",
+   "purpose": "delete confirm question (0x272D2)",
+   "en": "Are you sure you want to delete?",
+   "cn_site": {
+    "how": "word",
+    "at": "0x273a4"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x273a8"
+   },
+   "cn_target": "0x7b179",
+   "en_target": "0x7b158",
+   "cn_inplace_capacity": 20,
+   "en_inplace_capacity": 33,
+   "cn_exclusive": true
+  },
+  {
+   "id": "msg.usb",
+   "kind": "code_pool_pair",
+   "purpose": "USB sharing message (0x2A6E2)",
+   "en": "In USB sharing, exit by clicking anywhere on the screen.",
+   "cn_site": {
+    "how": "word",
+    "at": "0x2a714"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x2a718"
+   },
+   "cn_target": "0x7c1de",
+   "en_target": "0x7add7",
+   "cn_inplace_capacity": 43,
+   "en_inplace_capacity": 57,
+   "cn_exclusive": true
+  },
+  {
+   "id": "msg.saved",
+   "kind": "code_pool_pair",
+   "purpose": "screenshot saved (0x2A972)",
+   "en": "Saved",
+   "cn_site": {
+    "how": "word",
+    "at": "0x2a9cc"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x2a9d0"
+   },
+   "cn_target": "0x7bb73",
+   "en_target": "0x7b38a",
+   "cn_inplace_capacity": 13,
+   "en_inplace_capacity": 6,
+   "cn_exclusive": true
+  },
+  {
+   "id": "msg.save_failed",
+   "kind": "code_pool_pair",
+   "purpose": "screenshot save failed",
+   "en": "Save failed",
+   "cn_site": {
+    "how": "word",
+    "at": "0x2a9d4"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x2a9d8"
+   },
+   "cn_target": "0x7bdad",
+   "en_target": "0x7b37e",
+   "cn_inplace_capacity": 13,
+   "en_inplace_capacity": 12,
+   "cn_exclusive": true
+  },
+  {
+   "id": "msg.saving",
+   "kind": "code_pool_pair",
+   "purpose": "screenshot saving..., printed via \"%d.bmp%s\" @0x2A9E4 (0x2A982)",
+   "en": "Saving...",
+   "cn_site": {
+    "how": "word",
+    "at": "0x2a9dc"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x2a9e0"
+   },
+   "cn_target": "0x7adb9",
+   "en_target": "0x7ad58",
+   "cn_inplace_capacity": 13,
+   "en_inplace_capacity": 10,
+   "cn_exclusive": true
+  },
+  {
+   "id": "msg.low_batt",
+   "kind": "code_pool_pair",
+   "purpose": "low battery warning (0x2B324)",
+   "en": "Note: Low battery, the device will shut down shortly.",
+   "cn_site": {
+    "how": "word",
+    "at": "0x2b388"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x2b38c"
+   },
+   "cn_target": "0x7c287",
+   "en_target": "0x7ae69",
+   "cn_inplace_capacity": 37,
+   "en_inplace_capacity": 54,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dds.title",
+   "kind": "code_pool_pair",
+   "purpose": "DDS page title (0x2874C)",
+   "en": "Signal Generator",
+   "cn_site": {
+    "how": "word",
+    "at": "0x28780"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x28784"
+   },
+   "cn_target": "0x7bdd5",
+   "en_target": "0x7b640",
+   "cn_inplace_capacity": 16,
+   "en_inplace_capacity": 17,
+   "cn_exclusive": true
+  },
+  {
+   "id": "rw.onoff.0",
+   "kind": "rw_data_table",
+   "purpose": "ON/OFF toggle",
+   "en": "ON",
+   "cn_site": {
+    "how": "word",
+    "at": "0x20000ff4"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x20000ffc"
+   },
+   "cn_target": "0x7bf25",
+   "en_target": "0x7b288",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 3,
+   "cn_exclusive": true
+  },
+  {
+   "id": "rw.onoff.1",
+   "kind": "rw_data_table",
+   "purpose": "ON/OFF toggle",
+   "en": "OFF",
+   "cn_site": {
+    "how": "word",
+    "at": "0x20000ff8"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x20001000"
+   },
+   "cn_target": "0x7be29",
+   "en_target": "0x7b22b",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 4,
+   "cn_exclusive": true
+  },
+  {
+   "id": "rw.chan.0",
+   "kind": "rw_data_table",
+   "purpose": "CH1/CH2 selector",
+   "en": "CH1",
+   "cn_site": {
+    "how": "word",
+    "at": "0x20001004"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x2000100c"
+   },
+   "cn_target": "0x7aeab",
+   "en_target": "0x7aeab",
+   "cn_inplace_capacity": 4,
+   "en_inplace_capacity": 4,
+   "cn_exclusive": false
+  },
+  {
+   "id": "rw.chan.1",
+   "kind": "rw_data_table",
+   "purpose": "CH1/CH2 selector",
+   "en": "CH2",
+   "cn_site": {
+    "how": "word",
+    "at": "0x20001008"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x20001010"
+   },
+   "cn_target": "0x7aec0",
+   "en_target": "0x7aec0",
+   "cn_inplace_capacity": 4,
+   "en_inplace_capacity": 4,
+   "cn_exclusive": false
+  },
+  {
+   "id": "rw.disptype.0",
+   "kind": "rw_data_table",
+   "purpose": "display type vector/dot",
+   "en": "vec",
+   "cn_site": {
+    "how": "word",
+    "at": "0x20001014"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x2000101c"
+   },
+   "cn_target": "0x7ba92",
+   "en_target": "0x7b340",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 4,
+   "cn_exclusive": true
+  },
+  {
+   "id": "rw.disptype.1",
+   "kind": "rw_data_table",
+   "purpose": "display type vector/dot",
+   "en": "dot",
+   "cn_site": {
+    "how": "word",
+    "at": "0x20001018"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x20001020"
+   },
+   "cn_target": "0x7c1a8",
+   "en_target": "0x7b799",
+   "cn_inplace_capacity": 4,
+   "en_inplace_capacity": 4,
+   "cn_exclusive": true
+  },
+  {
+   "id": "rw.bw.0",
+   "kind": "rw_data_table",
+   "purpose": "BW limit OFF/20M",
+   "en": "OFF",
+   "cn_site": {
+    "how": "word",
+    "at": "0x20001024"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x2000102c"
+   },
+   "cn_target": "0x7be29",
+   "en_target": "0x7b22b",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 4,
+   "cn_exclusive": true
+  },
+  {
+   "id": "rw.bw.1",
+   "kind": "rw_data_table",
+   "purpose": "BW limit OFF/20M",
+   "en": "20M",
+   "cn_site": {
+    "how": "word",
+    "at": "0x20001028"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x20001030"
+   },
+   "cn_target": "0x7b25c",
+   "en_target": "0x7b25c",
+   "cn_inplace_capacity": 4,
+   "en_inplace_capacity": 4,
+   "cn_exclusive": false
+  },
+  {
+   "id": "rw.coupling.0",
+   "kind": "rw_data_table",
+   "purpose": "coupling AC/DC",
+   "en": "AC",
+   "cn_site": {
+    "how": "word",
+    "at": "0x20001034"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x2000103c"
+   },
+   "cn_target": "0x7b95f",
+   "en_target": "0x7b217",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 3,
+   "cn_exclusive": true
+  },
+  {
+   "id": "rw.coupling.1",
+   "kind": "rw_data_table",
+   "purpose": "coupling AC/DC",
+   "en": "DC",
+   "cn_site": {
+    "how": "word",
+    "at": "0x20001038"
+   },
+   "en_site": {
+    "how": "word",
+    "at": "0x20001040"
+   },
+   "cn_target": "0x7b966",
+   "en_target": "0x7b21a",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": 3,
+   "cn_exclusive": true
+  },
+  {
+   "id": "bar.meas",
+   "kind": "code_cmp_pair",
+   "purpose": "status bar: Measure button",
+   "en": "Meas",
+   "cn_site": {
+    "how": "movw/t",
+    "at": "0x274f4"
+   },
+   "en_site": {
+    "how": "addw",
+    "at": "0x274ee"
+   },
+   "cn_target": "0x7ba8b",
+   "en_target": "0x27ff8",
+   "cn_inplace_capacity": 7,
+   "en_inplace_capacity": null,
+   "cn_exclusive": false
+  },
+  {
+   "id": "bar.save",
+   "kind": "code_cmp_pair",
+   "purpose": "status bar: Save button",
+   "en": "Save",
+   "cn_site": {
+    "how": "addw",
+    "at": "0x2754c"
+   },
+   "en_site": {
+    "how": "addw",
+    "at": "0x27546"
+   },
+   "cn_target": "0x28000",
+   "en_target": "0x28008",
+   "cn_inplace_capacity": 8,
+   "en_inplace_capacity": null,
+   "cn_exclusive": true
+  },
+  {
+   "id": "bar.run",
+   "kind": "code_cmp_pair",
+   "purpose": "status bar: Run",
+   "en": "Run",
+   "cn_site": {
+    "how": "addw",
+    "at": "0x27776"
+   },
+   "en_site": {
+    "how": "movw/t",
+    "at": "0x2776a"
+   },
+   "cn_target": "0x28018",
+   "en_target": "0x7b5cf",
+   "cn_inplace_capacity": 8,
+   "en_inplace_capacity": 4,
+   "cn_exclusive": true
+  },
+  {
+   "id": "bar.menu",
+   "kind": "code_cmp_pair",
+   "purpose": "status bar: Menu button",
+   "en": "Menu",
+   "cn_site": {
+    "how": "addw",
+    "at": "0x277cc"
+   },
+   "en_site": {
+    "how": "addw",
+    "at": "0x277c4"
+   },
+   "cn_target": "0x28020",
+   "en_target": "0x28028",
+   "cn_inplace_capacity": 8,
+   "en_inplace_capacity": null,
+   "cn_exclusive": true
+  },
+  {
+   "id": "dds.ok",
+   "kind": "code_cmp_pair",
+   "purpose": "DDS keypad OK",
+   "en": "OK",
+   "cn_site": {
+    "how": "addw",
+    "at": "0x29694"
+   },
+   "en_site": {
+    "how": "addw",
+    "at": "0x29690"
+   },
+   "cn_target": "0x2a400",
+   "en_target": "0x2a408",
+   "cn_inplace_capacity": 8,
+   "en_inplace_capacity": null,
+   "cn_exclusive": true
+  }
+ ],
+ "extra": [
+  {
+   "id": "lang.name",
+   "purpose": "name of the secondary language in Settings and the first-run picker (stock \"\u4e2d\u6587\"); English label stays",
+   "kind": "movw_t_sites",
+   "sites": [
+    "0x22820",
+    "0x2ba98"
+   ],
+   "stock_target": "0x7b9e9"
+  },
+  {
+   "id": "fmt.bmp",
+   "purpose": "screenshot message sprintf format, both languages (\"%d.bmp%s\" -> \"2.bmpSaving...\")",
+   "kind": "inplace",
+   "at": "0x2a9e4",
+   "capacity": 12,
+   "stock": "%d.bmp%s"
+  }
+ ]
+}

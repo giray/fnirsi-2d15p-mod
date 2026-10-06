@@ -1,0 +1,531 @@
+{
+ "_comment": "Turkce secondary language (replaces Chinese, language slot 1). Plain ASCII only. \"text\": null = use the English text. \"en\" is the English reference (stock or lang/en.json fix); the builder warns when it no longer matches. Draft translations 2026-10-06, to be reviewed by a native speaker.",
+ "code": "tr",
+ "name": "Turkce",
+ "strings": {
+  "trig.mode.0": {
+   "en": "Auto",
+   "text": "Oto"
+  },
+  "trig.mode.1": {
+   "en": "Normal",
+   "text": "Normal"
+  },
+  "trig.mode.2": {
+   "en": "Single",
+   "text": "Tek"
+  },
+  "chan.0": {
+   "en": "Display:",
+   "text": "Ekran:"
+  },
+  "chan.1": {
+   "en": "Probe:",
+   "text": "Prob:"
+  },
+  "chan.2": {
+   "en": "BW Limit:",
+   "text": "BW Limit:"
+  },
+  "chan.3": {
+   "en": "Coupling:",
+   "text": "Kuplaj:"
+  },
+  "acq.0": {
+   "en": "Roll:",
+   "text": "Kaydir:"
+  },
+  "acq.1": {
+   "en": "Memory Depth:",
+   "text": "Bellek:"
+  },
+  "disp.0": {
+   "en": "Grid Lum:",
+   "text": "Izgara Parlak:"
+  },
+  "disp.1": {
+   "en": "Grid Type:",
+   "text": "Izgara Tipi:"
+  },
+  "disp.2": {
+   "en": "Color Temp:",
+   "text": "Renk Sic.:"
+  },
+  "disp.3": {
+   "en": "Wave Lum:",
+   "text": "Dalga Parlak:"
+  },
+  "disp.4": {
+   "en": "Wave Type:",
+   "text": "Dalga Tipi:"
+  },
+  "disp.5": {
+   "en": "Persistence:",
+   "text": "Kalicilik:"
+  },
+  "math.0": {
+   "en": "Operation:",
+   "text": "Islem:"
+  },
+  "math.1": {
+   "en": "Source A:",
+   "text": "Kaynak A:"
+  },
+  "math.2": {
+   "en": "Operator:",
+   "text": "Operator:"
+  },
+  "math.3": {
+   "en": "Source B:",
+   "text": "Kaynak B:"
+  },
+  "pics.0": {
+   "en": "Select",
+   "text": "Sec"
+  },
+  "pics.1": {
+   "en": "Select All",
+   "text": "Tumunu Sec"
+  },
+  "pics.2": {
+   "en": "Delete",
+   "text": "Sil"
+  },
+  "pics.page.0": {
+   "en": "Prev",
+   "text": "Onceki"
+  },
+  "pics.page.1": {
+   "en": "Next",
+   "text": "Sonraki"
+  },
+  "trig.0": {
+   "en": "Channel:",
+   "text": "Kanal:"
+  },
+  "trig.1": {
+   "en": "Mode:",
+   "text": "Mod:"
+  },
+  "trig.2": {
+   "en": "Edge:",
+   "text": "Kenar:"
+  },
+  "menu.0": {
+   "en": "Horizontal",
+   "text": "Yatay"
+  },
+  "menu.1": {
+   "en": "Vertical",
+   "text": "Dikey"
+  },
+  "menu.2": {
+   "en": "Trigger",
+   "text": "Tetik"
+  },
+  "menu.3": {
+   "en": "Display",
+   "text": "Ekran"
+  },
+  "menu.4": {
+   "en": "Measure",
+   "text": "Olcum"
+  },
+  "menu.5": {
+   "en": "Cursor",
+   "text": "Imlec"
+  },
+  "menu.6": {
+   "en": "Math",
+   "text": "Matematik"
+  },
+  "menu.7": {
+   "en": "X-Y",
+   "text": "X-Y"
+  },
+  "menu.8": {
+   "en": "Pictures",
+   "text": "Resimler"
+  },
+  "menu.9": {
+   "en": "Calibration",
+   "text": "Kalibrasyon"
+  },
+  "menu.10": {
+   "en": "USB Drive",
+   "text": "USB Surucu"
+  },
+  "menu.11": {
+   "en": "Key Test",
+   "text": "Tus Testi"
+  },
+  "menu.12": {
+   "en": "Settings",
+   "text": "Ayarlar"
+  },
+  "dds.wave.0": {
+   "en": "Sine",
+   "text": "Sinus"
+  },
+  "dds.wave.1": {
+   "en": "Square",
+   "text": "Kare"
+  },
+  "dds.wave.2": {
+   "en": "Triangle",
+   "text": "Ucgen"
+  },
+  "dds.wave.3": {
+   "en": "DC",
+   "text": "DC"
+  },
+  "dds.wave.4": {
+   "en": "Noise",
+   "text": "Gurultu"
+  },
+  "dds.wave.5": {
+   "en": "Half-Wave",
+   "text": "Yarim Dalga"
+  },
+  "dds.wave.6": {
+   "en": "Full-Wave",
+   "text": "Tam Dalga"
+  },
+  "dds.wave.7": {
+   "en": "Stair Up",
+   "text": "Merdiven +"
+  },
+  "dds.wave.8": {
+   "en": "Stair Down",
+   "text": "Merdiven -"
+  },
+  "dds.param.0": {
+   "en": "Frequency",
+   "text": "Frekans"
+  },
+  "dds.param.1": {
+   "en": "Amplitude",
+   "text": "Genlik"
+  },
+  "dds.param.2": {
+   "en": "Duty Cycle",
+   "text": "Doluluk"
+  },
+  "dds.param.3": {
+   "en": "Offset",
+   "text": "Ofset"
+  },
+  "about.0": {
+   "en": "Device Info",
+   "text": "Cihaz Bilgisi"
+  },
+  "about.1": {
+   "en": "Name: 100 MHz 2-channel oscilloscope",
+   "text": "Ad: 100 MHz 2 kanalli osiloskop"
+  },
+  "about.2": {
+   "en": "Model: 2D15P",
+   "text": "Model: 2D15P"
+  },
+  "about.3": {
+   "en": "Version",
+   "text": "Surum"
+  },
+  "settings.0": {
+   "en": "Language",
+   "text": "Dil"
+  },
+  "settings.1": {
+   "en": "Volume",
+   "text": "Ses"
+  },
+  "settings.2": {
+   "en": "Brightness",
+   "text": "Parlaklik"
+  },
+  "settings.3": {
+   "en": "Auto Off",
+   "text": "Oto Kapanma"
+  },
+  "settings.4": {
+   "en": "About",
+   "text": "Hakkinda"
+  },
+  "settings.5": {
+   "en": "Factory Reset",
+   "text": "Fabrika Ayari"
+  },
+  "reset.warn": {
+   "en": "Factory reset will undo all previous changes!",
+   "text": "Fabrika ayari tum degisiklikleri geri alir!"
+  },
+  "btn.confirm": {
+   "en": "Confirm",
+   "text": "Onayla"
+  },
+  "cal.disconnect": {
+   "en": "Please disconnect all channels",
+   "text": "Tum kanallari ayirin"
+  },
+  "cal.done": {
+   "en": "Calibration completed. Tap anywhere on the screen to exit.",
+   "text": "Kalibrasyon tamamlandi. Cikmak icin ekrana dokunun."
+  },
+  "btn.back": {
+   "en": "Back",
+   "text": "Geri"
+  },
+  "dmm.func.0": {
+   "en": "DC Voltage",
+   "text": "DC Gerilim"
+  },
+  "dmm.func.1": {
+   "en": "AC Voltage",
+   "text": "AC Gerilim"
+  },
+  "dmm.func.2": {
+   "en": "Resistance",
+   "text": "Direnc"
+  },
+  "dmm.func.3": {
+   "en": "Continuity",
+   "text": "Sureklilik"
+  },
+  "dmm.func.4": {
+   "en": "Diode",
+   "text": "Diyot"
+  },
+  "dmm.func.5": {
+   "en": "Inductance",
+   "text": "Induktans"
+  },
+  "dmm.func.6": {
+   "en": "Capacitance",
+   "text": "Kapasite"
+  },
+  "dmm.func.7": {
+   "en": "DC Current mA",
+   "text": "DC Akim mA"
+  },
+  "dmm.func.8": {
+   "en": "AC Current mA",
+   "text": "AC Akim mA"
+  },
+  "dmm.func.9": {
+   "en": "DC Current A",
+   "text": "DC Akim A"
+  },
+  "dmm.func.10": {
+   "en": "AC Current A",
+   "text": "AC Akim A"
+  },
+  "dmm.func.11": {
+   "en": "Temperature",
+   "text": "Sicaklik"
+  },
+  "dmm.func.12": {
+   "en": "Frequency",
+   "text": "Frekans"
+  },
+  "dmm.func.13": {
+   "en": "NCV",
+   "text": null
+  },
+  "dmm.func.14": {
+   "en": "LIVE",
+   "text": "Faz"
+  },
+  "dmm.func.15": {
+   "en": "Automatic",
+   "text": "Otomatik"
+  },
+  "dmm.func.16": {
+   "en": "Self-Test",
+   "text": "Oz Test"
+  },
+  "dmm.minmax.0": {
+   "en": "MIN:",
+   "text": null
+  },
+  "dmm.minmax.1": {
+   "en": "MAX:",
+   "text": null
+  },
+  "btn.cancel": {
+   "en": "Cancel",
+   "text": "Iptal"
+  },
+  "meas.0": {
+   "en": "All On",
+   "text": "Hepsi Acik"
+  },
+  "meas.1": {
+   "en": "All Off",
+   "text": "Hepsi Kapali"
+  },
+  "meas.2": {
+   "en": "Freq",
+   "text": "Frek"
+  },
+  "meas.3": {
+   "en": "Period",
+   "text": "Periyot"
+  },
+  "meas.4": {
+   "en": "Duty+",
+   "text": "Dolu+"
+  },
+  "meas.5": {
+   "en": "Duty-",
+   "text": "Dolu-"
+  },
+  "meas.6": {
+   "en": "Wid+",
+   "text": "Genis+"
+  },
+  "meas.7": {
+   "en": "Wid-",
+   "text": "Genis-"
+  },
+  "meas.8": {
+   "en": "Nre",
+   "text": null
+  },
+  "meas.9": {
+   "en": "Nfe",
+   "text": null
+  },
+  "meas.10": {
+   "en": "Vrms",
+   "text": null
+  },
+  "meas.11": {
+   "en": "Avg",
+   "text": "Ort"
+  },
+  "meas.12": {
+   "en": "Vp-p",
+   "text": null
+  },
+  "meas.13": {
+   "en": "Vmax",
+   "text": null
+  },
+  "meas.14": {
+   "en": "Vmin",
+   "text": null
+  },
+  "msg.await_trig": {
+   "en": "Waiting for trigger...",
+   "text": "Tetik bekleniyor..."
+  },
+  "msg.await_auto": {
+   "en": "Auto measuring...",
+   "text": "Oto olcum..."
+  },
+  "cal.begin": {
+   "en": "Start",
+   "text": "Basla"
+  },
+  "btn.remove": {
+   "en": "Remove",
+   "text": "Kaldir"
+  },
+  "msg.deleting": {
+   "en": "Deleting...",
+   "text": "Siliniyor..."
+  },
+  "msg.delete_q": {
+   "en": "Are you sure you want to delete?",
+   "text": "Silinsin mi?"
+  },
+  "msg.usb": {
+   "en": "USB drive mode. Tap anywhere to exit.",
+   "text": "USB surucu modu. Cikmak icin dokunun."
+  },
+  "msg.saved": {
+   "en": "Saved",
+   "text": "Kaydedildi"
+  },
+  "msg.save_failed": {
+   "en": "Save failed",
+   "text": "Kayit hatasi"
+  },
+  "msg.saving": {
+   "en": "Saving...",
+   "text": "Kaydediliyor..."
+  },
+  "msg.low_batt": {
+   "en": "Low battery, shutting down.",
+   "text": "Pil zayif, kapaniyor."
+  },
+  "dds.title": {
+   "en": "Signal Generator",
+   "text": "Sinyal Ureteci"
+  },
+  "rw.onoff.0": {
+   "en": "ON",
+   "text": "ACIK"
+  },
+  "rw.onoff.1": {
+   "en": "OFF",
+   "text": "KAPALI"
+  },
+  "rw.chan.0": {
+   "en": "CH1",
+   "text": null
+  },
+  "rw.chan.1": {
+   "en": "CH2",
+   "text": null
+  },
+  "rw.disptype.0": {
+   "en": "vec",
+   "text": "Vektor"
+  },
+  "rw.disptype.1": {
+   "en": "dot",
+   "text": "Nkt"
+  },
+  "rw.bw.0": {
+   "en": "OFF",
+   "text": "KAPALI"
+  },
+  "rw.bw.1": {
+   "en": "20M",
+   "text": null
+  },
+  "rw.coupling.0": {
+   "en": "AC",
+   "text": null
+  },
+  "rw.coupling.1": {
+   "en": "DC",
+   "text": null
+  },
+  "bar.meas": {
+   "en": "Meas",
+   "text": "Olcum"
+  },
+  "bar.save": {
+   "en": "Save",
+   "text": "Kaydet"
+  },
+  "bar.run": {
+   "en": "Run",
+   "text": "Calis"
+  },
+  "bar.menu": {
+   "en": "Menu",
+   "text": "Menu"
+  },
+  "dds.ok": {
+   "en": "OK",
+   "text": "Tamam"
+  },
+  "lang.name": {
+   "en": "(name of this language)",
+   "text": "Turkce"
+  }
+ }
+}

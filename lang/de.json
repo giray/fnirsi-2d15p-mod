@@ -1,0 +1,531 @@
+{
+ "_comment": "Deutsch secondary language (replaces Chinese, language slot 1). Plain ASCII only. \"text\": null = use the English text. \"en\" is the English reference (stock or lang/en.json fix); the builder warns when it no longer matches. Draft translations 2026-10-06, to be reviewed by a native speaker.",
+ "code": "de",
+ "name": "Deutsch",
+ "strings": {
+  "trig.mode.0": {
+   "en": "Auto",
+   "text": "Auto"
+  },
+  "trig.mode.1": {
+   "en": "Normal",
+   "text": "Normal"
+  },
+  "trig.mode.2": {
+   "en": "Single",
+   "text": "Einzeln"
+  },
+  "chan.0": {
+   "en": "Display:",
+   "text": "Anzeige:"
+  },
+  "chan.1": {
+   "en": "Probe:",
+   "text": "Tastkopf:"
+  },
+  "chan.2": {
+   "en": "BW Limit:",
+   "text": "BW-Limit:"
+  },
+  "chan.3": {
+   "en": "Coupling:",
+   "text": "Kopplung:"
+  },
+  "acq.0": {
+   "en": "Roll:",
+   "text": "Rollen:"
+  },
+  "acq.1": {
+   "en": "Memory Depth:",
+   "text": "Speichertiefe:"
+  },
+  "disp.0": {
+   "en": "Grid Lum:",
+   "text": "Raster-Hell.:"
+  },
+  "disp.1": {
+   "en": "Grid Type:",
+   "text": "Rastertyp:"
+  },
+  "disp.2": {
+   "en": "Color Temp:",
+   "text": "Farbtemp.:"
+  },
+  "disp.3": {
+   "en": "Wave Lum:",
+   "text": "Kurven-Hell.:"
+  },
+  "disp.4": {
+   "en": "Wave Type:",
+   "text": "Kurventyp:"
+  },
+  "disp.5": {
+   "en": "Persistence:",
+   "text": "Nachleuchten:"
+  },
+  "math.0": {
+   "en": "Operation:",
+   "text": "Operation:"
+  },
+  "math.1": {
+   "en": "Source A:",
+   "text": "Quelle A:"
+  },
+  "math.2": {
+   "en": "Operator:",
+   "text": "Operator:"
+  },
+  "math.3": {
+   "en": "Source B:",
+   "text": "Quelle B:"
+  },
+  "pics.0": {
+   "en": "Select",
+   "text": "Auswahl"
+  },
+  "pics.1": {
+   "en": "Select All",
+   "text": "Alle"
+  },
+  "pics.2": {
+   "en": "Delete",
+   "text": "Loeschen"
+  },
+  "pics.page.0": {
+   "en": "Prev",
+   "text": "Zurueck"
+  },
+  "pics.page.1": {
+   "en": "Next",
+   "text": "Weiter"
+  },
+  "trig.0": {
+   "en": "Channel:",
+   "text": "Kanal:"
+  },
+  "trig.1": {
+   "en": "Mode:",
+   "text": "Modus:"
+  },
+  "trig.2": {
+   "en": "Edge:",
+   "text": "Flanke:"
+  },
+  "menu.0": {
+   "en": "Horizontal",
+   "text": "Horizontal"
+  },
+  "menu.1": {
+   "en": "Vertical",
+   "text": "Vertikal"
+  },
+  "menu.2": {
+   "en": "Trigger",
+   "text": "Trigger"
+  },
+  "menu.3": {
+   "en": "Display",
+   "text": "Anzeige"
+  },
+  "menu.4": {
+   "en": "Measure",
+   "text": "Messen"
+  },
+  "menu.5": {
+   "en": "Cursor",
+   "text": "Cursor"
+  },
+  "menu.6": {
+   "en": "Math",
+   "text": "Mathe"
+  },
+  "menu.7": {
+   "en": "X-Y",
+   "text": "X-Y"
+  },
+  "menu.8": {
+   "en": "Pictures",
+   "text": "Bilder"
+  },
+  "menu.9": {
+   "en": "Calibration",
+   "text": "Kalibrierung"
+  },
+  "menu.10": {
+   "en": "USB Drive",
+   "text": "USB-Laufwerk"
+  },
+  "menu.11": {
+   "en": "Key Test",
+   "text": "Tastentest"
+  },
+  "menu.12": {
+   "en": "Settings",
+   "text": "Einstellungen"
+  },
+  "dds.wave.0": {
+   "en": "Sine",
+   "text": "Sinus"
+  },
+  "dds.wave.1": {
+   "en": "Square",
+   "text": "Rechteck"
+  },
+  "dds.wave.2": {
+   "en": "Triangle",
+   "text": "Dreieck"
+  },
+  "dds.wave.3": {
+   "en": "DC",
+   "text": "DC"
+  },
+  "dds.wave.4": {
+   "en": "Noise",
+   "text": "Rauschen"
+  },
+  "dds.wave.5": {
+   "en": "Half-Wave",
+   "text": "Halbwelle"
+  },
+  "dds.wave.6": {
+   "en": "Full-Wave",
+   "text": "Vollwelle"
+  },
+  "dds.wave.7": {
+   "en": "Stair Up",
+   "text": "Treppe auf"
+  },
+  "dds.wave.8": {
+   "en": "Stair Down",
+   "text": "Treppe ab"
+  },
+  "dds.param.0": {
+   "en": "Frequency",
+   "text": "Frequenz"
+  },
+  "dds.param.1": {
+   "en": "Amplitude",
+   "text": "Amplitude"
+  },
+  "dds.param.2": {
+   "en": "Duty Cycle",
+   "text": "Tastgrad"
+  },
+  "dds.param.3": {
+   "en": "Offset",
+   "text": "Offset"
+  },
+  "about.0": {
+   "en": "Device Info",
+   "text": "Geraeteinfo"
+  },
+  "about.1": {
+   "en": "Name: 100 MHz 2-channel oscilloscope",
+   "text": "Name: 100 MHz 2-Kanal-Oszilloskop"
+  },
+  "about.2": {
+   "en": "Model: 2D15P",
+   "text": "Modell: 2D15P"
+  },
+  "about.3": {
+   "en": "Version",
+   "text": "Version"
+  },
+  "settings.0": {
+   "en": "Language",
+   "text": "Sprache"
+  },
+  "settings.1": {
+   "en": "Volume",
+   "text": "Lautstaerke"
+  },
+  "settings.2": {
+   "en": "Brightness",
+   "text": "Helligkeit"
+  },
+  "settings.3": {
+   "en": "Auto Off",
+   "text": "Auto-Aus"
+  },
+  "settings.4": {
+   "en": "About",
+   "text": "Info"
+  },
+  "settings.5": {
+   "en": "Factory Reset",
+   "text": "Werksreset"
+  },
+  "reset.warn": {
+   "en": "Factory reset will undo all previous changes!",
+   "text": "Werksreset macht alle Aenderungen rueckgaengig!"
+  },
+  "btn.confirm": {
+   "en": "Confirm",
+   "text": "Bestaetigen"
+  },
+  "cal.disconnect": {
+   "en": "Please disconnect all channels",
+   "text": "Bitte alle Kanaele trennen"
+  },
+  "cal.done": {
+   "en": "Calibration completed. Tap anywhere on the screen to exit.",
+   "text": "Kalibrierung fertig. Zum Beenden Bildschirm antippen."
+  },
+  "btn.back": {
+   "en": "Back",
+   "text": "Zurueck"
+  },
+  "dmm.func.0": {
+   "en": "DC Voltage",
+   "text": "DC-Spannung"
+  },
+  "dmm.func.1": {
+   "en": "AC Voltage",
+   "text": "AC-Spannung"
+  },
+  "dmm.func.2": {
+   "en": "Resistance",
+   "text": "Widerstand"
+  },
+  "dmm.func.3": {
+   "en": "Continuity",
+   "text": "Durchgang"
+  },
+  "dmm.func.4": {
+   "en": "Diode",
+   "text": "Diode"
+  },
+  "dmm.func.5": {
+   "en": "Inductance",
+   "text": "Induktivitaet"
+  },
+  "dmm.func.6": {
+   "en": "Capacitance",
+   "text": "Kapazitaet"
+  },
+  "dmm.func.7": {
+   "en": "DC Current mA",
+   "text": "DC-Strom mA"
+  },
+  "dmm.func.8": {
+   "en": "AC Current mA",
+   "text": "AC-Strom mA"
+  },
+  "dmm.func.9": {
+   "en": "DC Current A",
+   "text": "DC-Strom A"
+  },
+  "dmm.func.10": {
+   "en": "AC Current A",
+   "text": "AC-Strom A"
+  },
+  "dmm.func.11": {
+   "en": "Temperature",
+   "text": "Temperatur"
+  },
+  "dmm.func.12": {
+   "en": "Frequency",
+   "text": "Frequenz"
+  },
+  "dmm.func.13": {
+   "en": "NCV",
+   "text": null
+  },
+  "dmm.func.14": {
+   "en": "LIVE",
+   "text": "Phase"
+  },
+  "dmm.func.15": {
+   "en": "Automatic",
+   "text": "Automatik"
+  },
+  "dmm.func.16": {
+   "en": "Self-Test",
+   "text": "Selbsttest"
+  },
+  "dmm.minmax.0": {
+   "en": "MIN:",
+   "text": null
+  },
+  "dmm.minmax.1": {
+   "en": "MAX:",
+   "text": null
+  },
+  "btn.cancel": {
+   "en": "Cancel",
+   "text": "Abbrechen"
+  },
+  "meas.0": {
+   "en": "All On",
+   "text": "Alle an"
+  },
+  "meas.1": {
+   "en": "All Off",
+   "text": "Alle aus"
+  },
+  "meas.2": {
+   "en": "Freq",
+   "text": null
+  },
+  "meas.3": {
+   "en": "Period",
+   "text": "Periode"
+  },
+  "meas.4": {
+   "en": "Duty+",
+   "text": "Tast+"
+  },
+  "meas.5": {
+   "en": "Duty-",
+   "text": "Tast-"
+  },
+  "meas.6": {
+   "en": "Wid+",
+   "text": "Breite+"
+  },
+  "meas.7": {
+   "en": "Wid-",
+   "text": "Breite-"
+  },
+  "meas.8": {
+   "en": "Nre",
+   "text": null
+  },
+  "meas.9": {
+   "en": "Nfe",
+   "text": null
+  },
+  "meas.10": {
+   "en": "Vrms",
+   "text": "Veff"
+  },
+  "meas.11": {
+   "en": "Avg",
+   "text": "Mittel"
+  },
+  "meas.12": {
+   "en": "Vp-p",
+   "text": "Vss"
+  },
+  "meas.13": {
+   "en": "Vmax",
+   "text": null
+  },
+  "meas.14": {
+   "en": "Vmin",
+   "text": null
+  },
+  "msg.await_trig": {
+   "en": "Waiting for trigger...",
+   "text": "Warte auf Trigger..."
+  },
+  "msg.await_auto": {
+   "en": "Auto measuring...",
+   "text": "Auto-Messung..."
+  },
+  "cal.begin": {
+   "en": "Start",
+   "text": "Start"
+  },
+  "btn.remove": {
+   "en": "Remove",
+   "text": "Entfernen"
+  },
+  "msg.deleting": {
+   "en": "Deleting...",
+   "text": "Loesche..."
+  },
+  "msg.delete_q": {
+   "en": "Are you sure you want to delete?",
+   "text": "Wirklich loeschen?"
+  },
+  "msg.usb": {
+   "en": "USB drive mode. Tap anywhere to exit.",
+   "text": "USB-Laufwerk. Zum Beenden antippen."
+  },
+  "msg.saved": {
+   "en": "Saved",
+   "text": "Gespeichert"
+  },
+  "msg.save_failed": {
+   "en": "Save failed",
+   "text": "Speicherfehler"
+  },
+  "msg.saving": {
+   "en": "Saving...",
+   "text": "Speichere..."
+  },
+  "msg.low_batt": {
+   "en": "Low battery, shutting down.",
+   "text": "Akku leer, schalte ab."
+  },
+  "dds.title": {
+   "en": "Signal Generator",
+   "text": "Signalgenerator"
+  },
+  "rw.onoff.0": {
+   "en": "ON",
+   "text": "EIN"
+  },
+  "rw.onoff.1": {
+   "en": "OFF",
+   "text": "AUS"
+  },
+  "rw.chan.0": {
+   "en": "CH1",
+   "text": null
+  },
+  "rw.chan.1": {
+   "en": "CH2",
+   "text": null
+  },
+  "rw.disptype.0": {
+   "en": "vec",
+   "text": "Vektor"
+  },
+  "rw.disptype.1": {
+   "en": "dot",
+   "text": "Pkt"
+  },
+  "rw.bw.0": {
+   "en": "OFF",
+   "text": "AUS"
+  },
+  "rw.bw.1": {
+   "en": "20M",
+   "text": null
+  },
+  "rw.coupling.0": {
+   "en": "AC",
+   "text": null
+  },
+  "rw.coupling.1": {
+   "en": "DC",
+   "text": null
+  },
+  "bar.meas": {
+   "en": "Meas",
+   "text": "Messen"
+  },
+  "bar.save": {
+   "en": "Save",
+   "text": "Sichern"
+  },
+  "bar.run": {
+   "en": "Run",
+   "text": "Lauf"
+  },
+  "bar.menu": {
+   "en": "Menu",
+   "text": "Menue"
+  },
+  "dds.ok": {
+   "en": "OK",
+   "text": "OK"
+  },
+  "lang.name": {
+   "en": "(name of this language)",
+   "text": "Deutsch"
+  }
+ }
+}

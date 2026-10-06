@@ -229,3 +229,24 @@ Built to `firmware/work/dmm-first/2D15P_V2.7.0.7_260826.bin`. **Not flashed.**
   (`bne.w` at 0x2C9F8 came out targeting 0x5CB5E). bl/b.w/short branches were
   fine. Always round-trip through capstone; conditional .w branches are
   hand-encoded (T3) for now.
+
+### Goal 5: languages (2026-10-06)
+- Design: English primary (slot 2, fixes in `lang/en.json`), one ASCII secondary
+  language in the Chinese slot (1). Map `lang/slots.json` (130 strings, from the
+  static analysis in notes/hardware.md "Language/string system"). Builder
+  `tools/lang_build.py` packs new strings into the CJK glyph bitmaps (largest
+  run 0x6545C–0x6C249, located by `tools/fw_font.py cjk_runs`), repoints
+  pointer words / movw-movt pairs, overwrites addw-inline and RW-table strings
+  in place, merges `firmware/dmm-first.json` + `lang/layout.json`, and
+  self-checks all 260 string reads in the patched image. Output:
+  `firmware/build/dmm-first+<code>.json` (stock-CRC gated).
+- `lang/layout.json` (91 single-byte immediates, one entry per instruction):
+  CN-mode layout constants → EN values (agent: menu draw + 13 touch maps,
+  status-bar trigger font, DDS x-offset), English default on factory reset
+  (0x31F66 0x9201→0x9202; high byte 0x92 = brightness) and blank config
+  (0x37A7E), and the UA mod's **3-row top menu** (row height 0x1A→0x12, stride
+  0x20→0x14; touch maps stride 0x20→0x14, hit height 0x19→0x13). Simulating
+  the menu draw (14 px font, item = text+10, gap 5, wrap x>0x188, divider at
+  y=0x68) showed even the corrected English needs 3 rows; with 2 rows the 3rd
+  row would collide with the divider.
+- Drafts tr/de/nl 2026-10-06, pending native review by the owner.

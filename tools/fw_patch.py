@@ -14,6 +14,8 @@ Patch file format (patches.json):
   "patches": [
     {"note": "example: replace 4 bytes at 0x1234",
      "offset": "0x1234", "find": "01 02 03 04", "replace": "05 06 07 08"},
+    {"note": "overwrite vendor data without storing it: verify by CRC32",
+     "offset": "0x5000", "find_crc32": "1A2B3C4D", "replace": "48 69 00"},
     {"note": "string swap (ASCII)",
      "offset": "0x5000", "find_str": "Ramp", "replace_str": "Triangle",
      "pad": " ", "max_len": 8}   # pad/truncate replacement to exactly the old field width
@@ -61,6 +63,13 @@ def main():
                 sys.exit(f'patch {i} ({p.get("note","")}): FIND mismatch at 0x{off:X}: '
                          f'file has {found!r}, expected {old!r}')
             data[off:off+width] = new
+        elif 'find_crc32' in p:
+            new = hexbytes(p['replace'])
+            found = bytes(data[off:off+len(new)])
+            if zlib.crc32(found) != int(p['find_crc32'], 16):
+                sys.exit(f'patch {i} ({p.get("note","")}): FIND mismatch at 0x{off:X}: '
+                         f'crc32 {zlib.crc32(found):08X}, expected {p["find_crc32"]}')
+            data[off:off+len(new)] = new
         else:
             old = hexbytes(p['find']); new = hexbytes(p['replace'])
             if len(old) != len(new):
