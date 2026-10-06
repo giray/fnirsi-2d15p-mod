@@ -21,3 +21,4 @@
 
 Planned, not written: `fw_disasm.py` (wrapper around the above for "disassemble
 around address X") and `host/cdc_sniff.py`.
+- `bps_apply.py` — apply a BPS patch (e.g. the UA mod) with patch/source/target CRC32 checks: `python3 tools/bps_apply.py stock.bin mod.bps out.bin`

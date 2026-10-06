@@ -21,6 +21,24 @@
    "offset": "0x1BA7E",
    "find": "1c f0 ff be",
    "replace": "1c f0 51 bf"
+  },
+  {
+   "note": "Goal 3c: LED refresh 0x300B4 tail @0x3011C..0x30161 rewritten: DDS LED (word 0x2000341A bit 0x800, active-low) lit when page==1 (DMM) OR generator output +0x450==1; Run/Stop green/red logic for pages 1/2/3 unchanged",
+   "offset": "0x1F11C",
+   "find": "9c f8 50 24 1a b1 01 88 21 f4 00 61 01 80 9c f8 33 1e 01 29 0a d0 03 29 17 d0 02 29 0e d1 9c f8 2f 20 01 88 3a b1 21 f4 80 51 06 e0 9c f8 70 24 01 88 00 2a f7 d0 21 f4 00 51 01 80 01 88 41 f4 00 41 01 80 00 88",
+   "replace": "9c f8 50 24 9c f8 33 1e 03 88 01 29 18 bf 01 2a 08 bf 23 f4 00 63 02 29 07 d0 03 29 07 d0 01 29 0b d1 9c f8 70 24 52 42 02 e0 9c f8 2f 20 01 2a 2c bf 23 f4 80 53 23 f4 00 53 43 f4 00 43 03 80 18 46 01 f0 69 bd"
+  },
+  {
+   "note": "Goal 3d: Menu key (type-1 id 13, handler 0x2C9E0) @0x2C9F6: 'cmp r0,#2; it ne; pop{r7,pc}' -> 'cmp r0,#2; bne.w 0x30162' (non-scope pages go to the cave)",
+   "offset": "0x1B9F6",
+   "find": "02 28 18 bf 80 bd",
+   "replace": "02 28 43 f0 b3 83"
+  },
+  {
+   "note": "Goal 3d cave @0x30162..0x3016F (REQUIRES patch 3, reuses the old tail of 0x300B4): page 1 (DMM) -> bl 0x472D0 (enter scope) + bl 0x470D8 (open main menu, same as scope Menu); other pages -> pop {r7,pc} as stock",
+   "offset": "0x1F162",
+   "find": "01 f0 67 bd 01 88 01 2a ea d0 f1 e7 00 00",
+   "replace": "01 28 03 d1 17 f0 b3 f8 16 f0 b5 ff 80 bd"
   }
  ]
 }

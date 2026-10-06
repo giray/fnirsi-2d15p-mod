@@ -36,13 +36,13 @@ Questions to answer and write up here:
 ### Goal 1: boot into the multimeter
 - [x] Designed: single-byte change at file 0x2568E (`firmware/dmm-first.json`).
       Boot page is always the constant (not "last used"). (2026-10-05)
-- [ ] Flashed and verified on the unit.
+- [x] Flashed and verified on the unit (2026-10-06, `notes/flashing.md`).
 
 ### Goal 3: remap DDS button → multimeter  (do before Goal 2; it's simpler)
 - [x] Designed: two instructions in the DDS key handler 0x2CA60 (file 0x1BA70,
       0x1BA7E). DDS key toggles scope ↔ DMM; generator stays on the Menu
       popup. The key has no on-screen label to relabel. (2026-10-05)
-- [ ] Flashed and verified on the unit.
+- [x] Flashed and verified on the unit (2026-10-06, `notes/flashing.md`).
 
 ### Goal 2: DMM probe zero / REL
 - Stock has no REL → this is the build-it path. Proposed minimal design
@@ -183,3 +183,49 @@ Built to `firmware/work/dmm-first/2D15P_V2.7.0.7_260826.bin`. **Not flashed.**
 - Press DDS key → scope; press again → DMM. Menu → generator still opens DDS.
 - Power off/on → still boots to DMM (config save path unaffected).
 - Language still correct (config block untouched). Screenshot still works.
+
+- 2026-10-06: **dmm-first flashed and verified** (boot→DMM, DDS key scope↔DMM,
+  generator via Menu, About 2.7.0.7). Owner notes: physical Menu key does
+  nothing on DMM page (stock behaviour too; touch "< Back" needed); DDS key LED
+  is off on DMM/scope pages.
+- 2026-10-06: **Front-panel LEDs.** 16-bit word `0x2000341A` is shifted out to a
+  serial register by `0x31C34` (GPIO 0x40041000 bits 4/5/8). Low byte = analog
+  front-end config (written by 0x138C8 from struct +0x2C). High byte = LEDs,
+  **active-low**, rebuilt on page change by `0x300B4` (sets 0xFF00, then clears):
+  0x200/0x400 channel LEDs (+0xA, +0x3C2), **0x800 = lit iff generator output
+  on (+0x450, toggled 0↔1 by 0x48038 which also sends hw cmd 0x16)** — believed
+  to be the DDS key LED (owner to confirm), 0x1000/0x2000 = Run/Stop green/red
+  (page 1: HOLD +0x470, page 2: run +0x2F, page 3: output +0x450), 0x8000 forced
+  off, 0x100 cleared only on USB/page-7 screens (0x45AB0, 0x4BC1C).
+- 2026-10-06: Patch 3 (Goal 3c) added to `firmware/dmm-first.json`: rewrote
+  0x3011C..0x3016F (end of 0x300B4; no other refs into the range) so 0x800 is
+  lit when page==1 OR +0x450==1; Run/Stop logic preserved (all three pages
+  now select via carry, equivalent for 0/1 flags). Assembled with keystone
+  (installed in tools/.venv), verified by capstone round-trip. New output
+  crc32 `E826ED29` → `firmware/work/dmm-first-led/`. Not flashed.
+- 2026-10-06: **dmm-first-led flashed** (E826ED29). Owner: DDS LED stays lit on
+  scope page too. Analysis: both page setters tail-call 0x300B4, so on page 2
+  the LED = generator output (+0x450). +0x450 is restored from the config block
+  at boot (init 0x3688E) and factory default is 1 (0x31FA8 `strh 0x0101`), and
+  the owner had pressed Run on the generator page during the LED test → output
+  most likely still on. To verify: generator page → Run off → scope page LED off.
+- 2026-10-06: **Menu key = type-1 id 13 (raw bit 20), handler 0x2C9E0.**
+  Earlier label "Level/run toggle" was wrong. Page 2: toggles +0xE34 0↔1 (main
+  menu panel) then 0x4BEB8 redraw; page 5 (key test): toggles +0xE3C bit 0x800;
+  page 6: toggles +0x30 1/2 (picture viewer); **page 1 (DMM): ignored.**
+  Raw bit 0 → id 14 (power, short press = bx lr). Only branch to 0x472D0
+  (enter scope) is the DDS handler; other page-2 writers: 0x37A7A, 0x45ADC,
+  0x48E28, 0x48F74, 0x493B4, 0x494E8, 0x49584 (second handler table
+  0x555E0–0x55658, users in 0x428CC/0x2CAA0/0x473C4). DMM "< Back" touch
+  handler not yet identified.
+- 2026-10-06: Owner: DMM "< Back" goes to the scope; wants Menu key on DMM =
+  go to scope + open main menu. **Patches 4+5 (Goal 3d)**: hook 0x2C9F6
+  `cmp r0,#2; bne.w 0x30162` → cave in the freed tail of 0x300B4 (needs patch 3):
+  page 1 → `bl 0x472D0` (enter scope) + `bl 0x470D8` (touch id 1 handler:
+  +0xE34=1, redraw = main menu, same as scope Menu key); else `pop {r7,pc}`.
+  Build crc32 `3A36D9C7` → `firmware/work/dmm-first-menu/`.
+  Flashed + verified 2026-10-06.
+- **Tooling gotcha:** keystone mis-encodes Thumb-2 *conditional* wide branches
+  (`bne.w` at 0x2C9F8 came out targeting 0x5CB5E). bl/b.w/short branches were
+  fine. Always round-trip through capstone; conditional .w branches are
+  hand-encoded (T3) for now.

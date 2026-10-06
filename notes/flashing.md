@@ -44,11 +44,38 @@ checklist item 1 can be ticked. Unit firmware: V2.7.0.7 = our stock image.
 - Patch set `firmware/dmm-first.json`, built 2026-10-05 to
   `firmware/work/dmm-first/2D15P_V2.7.0.7_260826.bin`, crc32 `043ECC1A`,
   4 bytes differ from stock. Verification plan in `notes/re-plan.md`.
-- [ ] Pre-flash checklist walked with owner (SAFETY.md)
+- [x] Pre-flash checklist walked with owner (SAFETY.md) 2026-10-06
+- [x] Flashed 2026-10-06; result logged below
+
+## Pending: dmm-first + DDS LED (patch 3)
+
+- Built 2026-10-06 to `firmware/work/dmm-first-led/2D15P_V2.7.0.7_260826.bin`, crc32 `E826ED29`.
+- Alternative build with UA mod 1.2 English fixes underneath: stock → `bps_apply.py` (3DD5A6F0) → `firmware/ua-dmm-first.json` → `firmware/work/ua-dmm-first/2D15P_V2.7.0.7_260826.bin`, crc32 `61CDC7F4`.
+- [x] 2026-10-06 owner: on the generator page, pressing Run (output on, +0x450=1) lights the DDS key → bit 0x800 = DDS key LED (0x1000/0x2000 is the bicolour Run/Stop LED, seen on scope page)
 - [ ] Flashed; result logged below
+
+## Pending: dmm-first + LED + Menu key (patches 0–5)
+
+- Built 2026-10-06 to `firmware/work/dmm-first-menu/2D15P_V2.7.0.7_260826.bin`, crc32 `3A36D9C7`.
+- [x] Flashed 2026-10-06; result logged below
 
 ## Flash log
 
 - 2026-10-05 — stock `2D15P_V2.7.0.7_260826.bin` (crc32 B43E8C2D) via recovery
   bootloader, from 2.6.0.7. Result: boots, About shows 2.7.0.7. Purpose:
   confirm recovery write path + align with prior-art target version.
+- 2026-10-06 — `dmm-first` (crc32 043ECC1A) via USB volume `Upgrade file/`,
+  copy verified byte-identical before unmount. Result: **works.** Boots into
+  DMM; DDS key scope→DMM and DMM→scope; Menu → signal generator still opens;
+  About shows 2.7.0.7. Owner observations (not regressions, same on stock):
+  physical Menu key does nothing on the DMM page (must touch "< Back");
+  DDS key LED is off on both DMM and scope pages (owner would like it lit on DMM).
+- 2026-10-06 — `dmm-first-led` (crc32 E826ED29). Result: boots, DDS LED lit
+  on DMM, but **also lit on scope page** — believed to be generator output left
+  on (+0x450) from the Run test, i.e. stock behaviour; owner to verify by
+  switching generator output off. Menu key still ignored on DMM (expected,
+  not patched in this build).
+- 2026-10-06 — `dmm-first-menu` (crc32 3A36D9C7, patches 0–5). Owner: **works** —
+  boots into DMM; DDS key scope↔DMM; DDS LED lit on DMM; Menu key on DMM →
+  scope with main menu open. Owner confirmed: scope-page DDS LED was lit only because generator output
+  was on (Run); with output off it is off on scope — patch 3 behaves as designed. **This is the build now on the unit.**

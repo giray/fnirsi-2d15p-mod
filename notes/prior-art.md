@@ -50,3 +50,35 @@ It proves our goals are the *kind* of thing that's been done:
   ~470×272, via USB mass storage after enabling USB Sharing) and **firmware
   update** (copy `.bin` to `Upgrade file`). Both already work on Linux with no
   vendor software. There is no raw waveform/sample export.
+
+## 2026-10-06 — UA mod 1.2 stacked with our patches
+
+- Cloned the repo to `firmware/work/ua-repo/` (BPS `2D15P_V2.7.0.7_UA-mod-1.2.bps`,
+  README says result crc32 `3DD5A6F0`; the older 4D482107 above was v1.0).
+- `tools/bps_apply.py` (new, stdlib) verifies patch/source/target CRCs:
+  stock B43E8C2D → `firmware/work/ua/…bin` 3DD5A6F0 OK.
+- Diff vs stock: 98 runs, 53,227 bytes, all in APP (FPGA untouched). Header
+  change is only the APP part size 0x6A9C0 → 0x6A9D0 (no header CRC).
+  Code edits are small (0x1AF28…0x2C5DA touch maps/menu layout, 0x4C81E…
+  0x4F01A one-byte layout tweaks); bulk is fonts (0x5C325–0x69D3F) and
+  strings (0x7ACC0–0x7C9C3). **No overlap** with any dmm-first patch, and
+  none inside the functions we patch or call (0x300B4, 0x2CA60, 0x36018 init,
+  page setters).
+- English fixes cannot cleanly be split from the Ukrainian work (string
+  tables, fonts and menu layout change together), so we take the whole mod:
+  Chinese is replaced by Ukrainian; English stays selectable and is the saved
+  setting on this unit.
+- `firmware/ua-dmm-first.json` = dmm-first's 4 patches gated on 3DD5A6F0.
+  (Deleted 2026-10-06 — UA base shelved.)
+- 2026-10-06: **Owner does not want Ukrainian** (so the full UA stack,
+  `ua-dmm-first.json`, is shelved). English-only fixes, keeping Chinese, need
+  our own patch set. UA's English fixes are mostly **pointer redirects** in the
+  CN/EN tables (24 EN slots, 0x5A014–0x5A504, e.g. Level→Horizontal,
+  Ramp→Triangle, Skew→Offset, Regarding→About, Auto Shut→Auto Off,
+  On-off→Continuity, Peri→Period, A-on/A-off→All On/All Off, Set→Settings,
+  USB Sharing→USB Drive, Afterglow→Persistence), new text placed in space UA
+  freed by deleting CJK glyphs (0x6990A..). Without that space we must pack new
+  strings into slack from shortened stock strings (Native information,
+  name:100M…, USB-sharing and low-battery messages ≈ 60 B) or find other free
+  space. Longer labels may need UA's 3-row menu layout change to fit; the
+  remaining ~5 fixes are code-referenced strings (e.g. "2.bmpSaving...").
