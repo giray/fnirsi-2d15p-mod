@@ -138,6 +138,12 @@ CRC32 matches the stock image.
 Disassembly tools need `python3 -m venv tools/.venv && tools/.venv/bin/pip install capstone keystone-engine`;
 everything else is plain Python 3.
 
+## Known issues
+
+- **mod 1.0:** right after power-on, the multimeter page doesn't draw its
+  "< Back" button. Tapping the spot still works, and the button appears once
+  you leave and re-enter the multimeter (DDS key twice). A fix is in progress.
+
 ## Not done (yet)
 
 - **REL / probe zero for the DMM:** the stock firmware has no relative mode, so
