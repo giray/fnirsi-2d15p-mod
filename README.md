@@ -1,5 +1,10 @@
 # FNIRSI 2D15P: multimeter-first firmware mod
 
+[![check](https://github.com/giray/fnirsi-2d15p-mod/actions/workflows/check.yml/badge.svg)](https://github.com/giray/fnirsi-2d15p-mod/actions/workflows/check.yml)
+**Project:** <https://github.com/giray/fnirsi-2d15p-mod>, with downloads on the
+[Releases](https://github.com/giray/fnirsi-2d15p-mod/releases) page. Current
+version: **mod 1.0**.
+
 An unofficial modification of the **FNIRSI 2D15P** (100 MHz 2-channel scope +
 True RMS multimeter + DDS generator) firmware for people who mainly use it as a
 **multimeter**, with **corrected English** and an optional **Turkish, German or
@@ -36,6 +41,8 @@ Dutch** UI.
 - **Three-row top menu**, so full labels fit without covering the submenu;
   the touch zones are moved to match.
 - English is the default after a factory reset.
+- **Settings → About** shows the mod version (`Version (mod 1.0):V2.7.0.7`),
+  so you can always tell which build is installed.
 
 Measurement, calibration and the FPGA are not touched.
 
@@ -44,10 +51,10 @@ Measurement, calibration and the FPGA are not touched.
 | Variant | Patch set | Result CRC32 |
 |---|---|---|
 | Multimeter-first only, stock languages | `firmware/dmm-first.json` | `3A36D9C7` |
-| + English fixes, no second language | `firmware/build/dmm-first+en.json` | `748774FA` |
-| + English fixes + Turkish | `firmware/build/dmm-first+tr.json` | `90602DE5` |
-| + English fixes + German | `firmware/build/dmm-first+de.json` | `28979E8C` |
-| + English fixes + Dutch | `firmware/build/dmm-first+nl.json` | `87ECCD4A` |
+| + English fixes, no second language | `firmware/build/dmm-first+en.json` | `0576CBF4` |
+| + English fixes + Turkish | `firmware/build/dmm-first+tr.json` | `725F2B1B` |
+| + English fixes + German | `firmware/build/dmm-first+de.json` | `1AB2F8B6` |
+| + English fixes + Dutch | `firmware/build/dmm-first+nl.json` | `D54F66DE` |
 
 ## Install
 
@@ -55,7 +62,7 @@ Measurement, calibration and the FPGA are not touched.
    need `2D15P_V2.7.0.7_260826.bin` (CRC32 `B43E8C2D`).
 2. Make the modified file, either way:
    - **Browser, no install:** get the `.bps` for your variant from the
-     [Releases](../../releases) page, open
+     [Releases](https://github.com/giray/fnirsi-2d15p-mod/releases) page, open
      [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/), pick the
      stock `.bin` as ROM and the `.bps` as patch, *Apply patch*.
    - **Python 3 (stdlib only):**
@@ -87,6 +94,19 @@ self-check of every string read in the patched image.
 The Turkish, German and Dutch texts are first drafts. Fixes from native
 speakers are very welcome, especially for the abbreviations.
 
+## Contributing
+
+- **Translations:** edit `lang/<code>.json` and open a pull request, or use the
+  *Translation* issue template. New languages are welcome; see
+  [lang/README.md](lang/README.md).
+- **Bugs:** open an issue with the variant, the mod version from the About
+  page and, ideally, a screenshot.
+- **Firmware changes:** read [SAFETY.md](SAFETY.md) and the lab notebook in
+  [notes/](notes/) first. Every change must be a same-length, CRC-gated patch
+  and must not touch calibration data. CI (`tools/check_repo.py`) checks
+  everything that can be checked without the firmware image;
+  `tools/build_all.sh` checks the rest locally.
+
 ## How it works
 
 The image is not encrypted. The MCU application is a Keil-built FreeRTOS
@@ -111,6 +131,7 @@ CRC32 matches the stock image.
 | `tools/fw_inspect.py` | image header, parts, vectors, strings, pointer tables |
 | `tools/fw_xref.py` | capstone cross-reference database and disassembly queries |
 | `tools/bps_apply.py`, `tools/bps_make.py` | apply / create BPS patches |
+| `tools/check_repo.py` | firmware-free checks run by CI |
 
 Disassembly tools need `python3 -m venv tools/.venv && tools/.venv/bin/pip install capstone keystone-engine`;
 everything else is plain Python 3.
@@ -130,9 +151,17 @@ everything else is plain Python 3.
 ## Credits
 
 - [FNIRSI-2D15P-UA](https://github.com/Serhii-Povshednyi/FNIRSI-2D15P-UA) by
-  Serhii Povshednyi: the first public mod of this firmware. It proved the
-  bootloader accepts modified images, and it is the source of most of the
-  English corrections and of the three-row menu geometry used here.
+  Serhii Povshednyi: the first public mod of this firmware (Ukrainian UI and
+  corrected English for V2.7.0.7). It proved the bootloader accepts modified
+  images, and its README documents the MCU/FPGA split and the sub-4.19 MHz
+  FPGA artefact. This project reuses:
+  - most of its **English corrections** (wording, checked against the
+    Chinese source strings);
+  - its **three-row top-menu geometry** (row height 0x12, stride 0x14 in the
+    draw routine and the 13 touch maps).
+
+  None of its files or font data are included. If you want Ukrainian, use his
+  mod; the two are separate builds and can't be combined.
 - [Capstone](https://www.capstone-engine.org/) and
   [Keystone](https://www.keystone-engine.org/) for (dis)assembly,
   [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/) for patching in

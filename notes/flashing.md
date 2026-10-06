@@ -95,3 +95,6 @@ checklist item 1 can be ticked. Unit firmware: V2.7.0.7 = our stock image.
   ("Otoma/tik") — the box is 34 px wide (0x2C5F6). Fixed in the builder with a
   pixel-width check; TR "Oto", NL "Norm.". New builds (not yet flashed): +tr
   `90602DE5`, +nl `87ECCD4A`; +de `28979E8C` and +en `748774FA` unchanged.
+- 2026-10-06 — mod 1.0 release builds (About shows "(mod 1.0)"): +en `0576CBF4`,
+  +tr `725F2B1B`, +de `1AB2F8B6`, +nl `D54F66DE`; dmm-first only `3A36D9C7`.
+  Not yet flashed in this exact form.

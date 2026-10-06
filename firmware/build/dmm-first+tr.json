@@ -1038,178 +1038,178 @@
    "replace": "f9 56 06 00"
   },
   {
-   "note": "about.3 slot1 -> 'Surum' @0x65706",
+   "note": "about.3 slot1 -> 'Surum (mod 1.0)' @0x65706",
    "offset": "0x492D0",
    "find": "69 c1 07 00",
    "replace": "06 57 06 00"
   },
   {
-   "note": "about.3 slot2 -> 'Version' @0x6570C",
+   "note": "about.3 slot2 -> 'Version (mod 1.0)' @0x65716",
    "offset": "0x492E0",
    "find": "0e b6 07 00",
-   "replace": "0c 57 06 00"
+   "replace": "16 57 06 00"
   },
   {
-   "note": "settings.0 slot1 -> 'Dil' @0x65714",
+   "note": "settings.0 slot1 -> 'Dil' @0x65728",
    "offset": "0x492E4",
    "find": "e1 b8 07 00",
-   "replace": "14 57 06 00"
+   "replace": "28 57 06 00"
   },
   {
-   "note": "settings.1 slot1 -> 'Ses' @0x65718",
+   "note": "settings.1 slot1 -> 'Ses' @0x6572C",
    "offset": "0x492E8",
    "find": "99 ba 07 00",
-   "replace": "18 57 06 00"
+   "replace": "2c 57 06 00"
   },
   {
-   "note": "settings.2 slot1 -> 'Parlaklik' @0x6571C",
+   "note": "settings.2 slot1 -> 'Parlaklik' @0x65730",
    "offset": "0x492EC",
    "find": "c1 bd 07 00",
-   "replace": "1c 57 06 00"
+   "replace": "30 57 06 00"
   },
   {
-   "note": "settings.3 slot1 -> 'Oto Kapanma' @0x65726",
+   "note": "settings.3 slot1 -> 'Oto Kapanma' @0x6573A",
    "offset": "0x492F0",
    "find": "ac c2 07 00",
-   "replace": "26 57 06 00"
+   "replace": "3a 57 06 00"
   },
   {
-   "note": "settings.3 slot2 -> 'Auto Off' @0x65732",
+   "note": "settings.3 slot2 -> 'Auto Off' @0x65746",
    "offset": "0x49308",
    "find": "b2 b7 07 00",
-   "replace": "32 57 06 00"
+   "replace": "46 57 06 00"
   },
   {
-   "note": "settings.4 slot1 -> 'Hakkinda' @0x6573B",
+   "note": "settings.4 slot1 -> 'Hakkinda' @0x6574F",
    "offset": "0x492F4",
    "find": "84 ba 07 00",
-   "replace": "3b 57 06 00"
+   "replace": "4f 57 06 00"
   },
   {
-   "note": "settings.4 slot2 -> 'About' @0x65744",
+   "note": "settings.4 slot2 -> 'About' @0x65758",
    "offset": "0x4930C",
    "find": "b7 b4 07 00",
-   "replace": "44 57 06 00"
-  },
-  {
-   "note": "settings.5 slot1 -> 'Fabrika Ayari' @0x6574A",
-   "offset": "0x492F8",
-   "find": "05 bf 07 00",
-   "replace": "4a 57 06 00"
-  },
-  {
-   "note": "settings.5 slot2 -> 'Factory Reset' @0x65758",
-   "offset": "0x49310",
-   "find": "9d b7 07 00",
    "replace": "58 57 06 00"
   },
   {
-   "note": "reset.warn slot1 -> 'Fabrika ayari tum degisiklikleri geri alir!' @0x65766",
+   "note": "settings.5 slot1 -> 'Fabrika Ayari' @0x6575E",
+   "offset": "0x492F8",
+   "find": "05 bf 07 00",
+   "replace": "5e 57 06 00"
+  },
+  {
+   "note": "settings.5 slot2 -> 'Factory Reset' @0x6576C",
+   "offset": "0x49310",
+   "find": "9d b7 07 00",
+   "replace": "6c 57 06 00"
+  },
+  {
+   "note": "reset.warn slot1 -> 'Fabrika ayari tum degisiklikleri geri alir!' @0x6577A",
    "offset": "0x49314",
    "find": "ee ac 07 00",
-   "replace": "66 57 06 00"
+   "replace": "7a 57 06 00"
   },
   {
-   "note": "btn.confirm slot1 -> 'Onayla' @0x65792",
+   "note": "btn.confirm slot1 -> 'Onayla' @0x657A6",
    "offset": "0x4931C",
    "find": "23 bb 07 00",
-   "replace": "92 57 06 00"
+   "replace": "a6 57 06 00"
   },
   {
-   "note": "cal.disconnect slot1 -> 'Tum kanallari ayirin' @0x65799",
+   "note": "cal.disconnect slot1 -> 'Tum kanallari ayirin' @0x657AD",
    "offset": "0x49324",
    "find": "a7 ba 07 00",
-   "replace": "99 57 06 00"
+   "replace": "ad 57 06 00"
   },
   {
-   "note": "cal.done slot1 -> 'Kalibrasyon tamamlandi. Cikmak icin ekrana dokunun.' @0x657AE",
+   "note": "cal.done slot1 -> 'Kalibrasyon tamamlandi. Cikmak icin ekrana dokunun.' @0x657C2",
    "offset": "0x4932C",
    "find": "b3 c1 07 00",
-   "replace": "ae 57 06 00"
+   "replace": "c2 57 06 00"
   },
   {
-   "note": "btn.back slot1 -> 'Geri' @0x657E2",
+   "note": "btn.back slot1 -> 'Geri' @0x657F6",
    "offset": "0x49334",
    "find": "65 bb 07 00",
-   "replace": "e2 57 06 00"
+   "replace": "f6 57 06 00"
   },
   {
-   "note": "dmm.func.0 slot1 -> 'DC Gerilim' @0x657E7",
+   "note": "dmm.func.0 slot1 -> 'DC Gerilim' @0x657FB",
    "offset": "0x4933C",
    "find": "16 ba 07 00",
-   "replace": "e7 57 06 00"
+   "replace": "fb 57 06 00"
   },
   {
-   "note": "dmm.func.1 slot1 -> 'AC Gerilim' @0x657F2",
+   "note": "dmm.func.1 slot1 -> 'AC Gerilim' @0x65806",
    "offset": "0x49340",
    "find": "09 ba 07 00",
-   "replace": "f2 57 06 00"
+   "replace": "06 58 06 00"
   },
   {
-   "note": "dmm.func.2 slot1 -> 'Direnc' @0x657FD",
+   "note": "dmm.func.2 slot1 -> 'Direnc' @0x65811",
    "offset": "0x49344",
    "find": "c0 c2 07 00",
-   "replace": "fd 57 06 00"
+   "replace": "11 58 06 00"
   },
   {
-   "note": "dmm.func.3 slot1 -> 'Sureklilik' @0x65804",
+   "note": "dmm.func.3 slot1 -> 'Sureklilik' @0x65818",
    "offset": "0x49348",
    "find": "22 be 07 00",
-   "replace": "04 58 06 00"
+   "replace": "18 58 06 00"
   },
   {
-   "note": "dmm.func.3 slot2 -> 'Continuity' @0x6580F",
+   "note": "dmm.func.3 slot2 -> 'Continuity' @0x65823",
    "offset": "0x4938C",
    "find": "ab b4 07 00",
-   "replace": "0f 58 06 00"
+   "replace": "23 58 06 00"
   },
   {
-   "note": "dmm.func.4 slot1 -> 'Diyot' @0x6581A",
+   "note": "dmm.func.4 slot1 -> 'Diyot' @0x6582E",
    "offset": "0x4934C",
    "find": "32 bc 07 00",
-   "replace": "1a 58 06 00"
+   "replace": "2e 58 06 00"
   },
   {
-   "note": "dmm.func.5 slot1 -> 'Induktans' @0x65820",
+   "note": "dmm.func.5 slot1 -> 'Induktans' @0x65834",
    "offset": "0x49350",
    "find": "6c bb 07 00",
-   "replace": "20 58 06 00"
+   "replace": "34 58 06 00"
   },
   {
-   "note": "dmm.func.6 slot1 -> 'Kapasite' @0x6582A",
+   "note": "dmm.func.6 slot1 -> 'Kapasite' @0x6583E",
    "offset": "0x49354",
    "find": "ac c1 07 00",
-   "replace": "2a 58 06 00"
-  },
-  {
-   "note": "dmm.func.7 slot1 -> 'DC Akim mA' @0x65833",
-   "offset": "0x49358",
-   "find": "f4 b1 07 00",
-   "replace": "33 58 06 00"
-  },
-  {
-   "note": "dmm.func.8 slot1 -> 'AC Akim mA' @0x6583E",
-   "offset": "0x4935C",
-   "find": "e4 b1 07 00",
    "replace": "3e 58 06 00"
   },
   {
-   "note": "dmm.func.9 slot1 -> 'DC Akim A' @0x65849",
+   "note": "dmm.func.7 slot1 -> 'DC Akim mA' @0x65847",
+   "offset": "0x49358",
+   "find": "f4 b1 07 00",
+   "replace": "47 58 06 00"
+  },
+  {
+   "note": "dmm.func.8 slot1 -> 'AC Akim mA' @0x65852",
+   "offset": "0x4935C",
+   "find": "e4 b1 07 00",
+   "replace": "52 58 06 00"
+  },
+  {
+   "note": "dmm.func.9 slot1 -> 'DC Akim A' @0x6585D",
    "offset": "0x49360",
    "find": "b6 b1 07 00",
-   "replace": "49 58 06 00"
+   "replace": "5d 58 06 00"
   },
   {
-   "note": "dmm.func.10 slot1 -> 'AC Akim A' @0x65853",
+   "note": "dmm.func.10 slot1 -> 'AC Akim A' @0x65867",
    "offset": "0x49364",
    "find": "a7 b1 07 00",
-   "replace": "53 58 06 00"
+   "replace": "67 58 06 00"
   },
   {
-   "note": "dmm.func.11 slot1 -> 'Sicaklik' @0x6585D",
+   "note": "dmm.func.11 slot1 -> 'Sicaklik' @0x65871",
    "offset": "0x49368",
    "find": "ba bd 07 00",
-   "replace": "5d 58 06 00"
+   "replace": "71 58 06 00"
   },
   {
    "note": "dmm.func.12 slot1 -> 'Frekans' @0x65676",
@@ -1218,262 +1218,262 @@
    "replace": "76 56 06 00"
   },
   {
-   "note": "dmm.func.13 slot1 -> 'NCV' @0x65866",
+   "note": "dmm.func.13 slot1 -> 'NCV' @0x6587A",
    "offset": "0x49370",
    "find": "2a ba 07 00",
-   "replace": "66 58 06 00"
+   "replace": "7a 58 06 00"
   },
   {
-   "note": "dmm.func.14 slot1 -> 'Faz' @0x6586A",
+   "note": "dmm.func.14 slot1 -> 'Faz' @0x6587E",
    "offset": "0x49374",
    "find": "40 ba 07 00",
-   "replace": "6a 58 06 00"
+   "replace": "7e 58 06 00"
   },
   {
-   "note": "dmm.func.15 slot1 -> 'Otomatik' @0x6586E",
+   "note": "dmm.func.15 slot1 -> 'Otomatik' @0x65882",
    "offset": "0x49378",
    "find": "ce bd 07 00",
-   "replace": "6e 58 06 00"
+   "replace": "82 58 06 00"
   },
   {
-   "note": "dmm.func.16 slot1 -> 'Oz Test' @0x65877",
+   "note": "dmm.func.16 slot1 -> 'Oz Test' @0x6588B",
    "offset": "0x4937C",
    "find": "d4 b8 07 00",
-   "replace": "77 58 06 00"
+   "replace": "8b 58 06 00"
   },
   {
-   "note": "dmm.func.16 slot2 -> 'Self-Test' @0x6587F",
+   "note": "dmm.func.16 slot2 -> 'Self-Test' @0x65893",
    "offset": "0x493C0",
    "find": "cd b4 07 00",
-   "replace": "7f 58 06 00"
-  },
-  {
-   "note": "dmm.minmax.0 slot1 -> 'MIN:' @0x65889",
-   "offset": "0x49440",
-   "find": "89 b0 07 00",
-   "replace": "89 58 06 00"
-  },
-  {
-   "note": "dmm.minmax.1 slot1 -> 'MAX:' @0x6588E",
-   "offset": "0x49444",
-   "find": "94 b0 07 00",
-   "replace": "8e 58 06 00"
-  },
-  {
-   "note": "btn.cancel slot1 -> 'Iptal' @0x65893",
-   "offset": "0x49450",
-   "find": "f7 b9 07 00",
    "replace": "93 58 06 00"
   },
   {
-   "note": "meas.0 slot1 -> 'Hepsi Acik' @0x65899",
+   "note": "dmm.minmax.0 slot1 -> 'MIN:' @0x6589D",
+   "offset": "0x49440",
+   "find": "89 b0 07 00",
+   "replace": "9d 58 06 00"
+  },
+  {
+   "note": "dmm.minmax.1 slot1 -> 'MAX:' @0x658A2",
+   "offset": "0x49444",
+   "find": "94 b0 07 00",
+   "replace": "a2 58 06 00"
+  },
+  {
+   "note": "btn.cancel slot1 -> 'Iptal' @0x658A7",
+   "offset": "0x49450",
+   "find": "f7 b9 07 00",
+   "replace": "a7 58 06 00"
+  },
+  {
+   "note": "meas.0 slot1 -> 'Hepsi Acik' @0x658AD",
    "offset": "0x494BC",
    "find": "e8 b8 07 00",
-   "replace": "99 58 06 00"
+   "replace": "ad 58 06 00"
   },
   {
-   "note": "meas.0 slot2 -> 'All On' @0x658A4",
+   "note": "meas.0 slot2 -> 'All On' @0x658B8",
    "offset": "0x494F8",
    "find": "a1 b5 07 00",
-   "replace": "a4 58 06 00"
-  },
-  {
-   "note": "meas.1 slot1 -> 'Hepsi Kapali' @0x658AB",
-   "offset": "0x494C0",
-   "find": "f5 c0 07 00",
-   "replace": "ab 58 06 00"
-  },
-  {
-   "note": "meas.1 slot2 -> 'All Off' @0x658B8",
-   "offset": "0x494FC",
-   "find": "a5 b4 07 00",
    "replace": "b8 58 06 00"
   },
   {
-   "note": "meas.2 slot1 -> 'Frek' @0x658C0",
+   "note": "meas.1 slot1 -> 'Hepsi Kapali' @0x658BF",
+   "offset": "0x494C0",
+   "find": "f5 c0 07 00",
+   "replace": "bf 58 06 00"
+  },
+  {
+   "note": "meas.1 slot2 -> 'All Off' @0x658CC",
+   "offset": "0x494FC",
+   "find": "a5 b4 07 00",
+   "replace": "cc 58 06 00"
+  },
+  {
+   "note": "meas.2 slot1 -> 'Frek' @0x658D4",
    "offset": "0x494C4",
    "find": "e2 b9 07 00",
-   "replace": "c0 58 06 00"
-  },
-  {
-   "note": "meas.3 slot1 -> 'Periyot' @0x658C5",
-   "offset": "0x494C8",
-   "find": "80 bb 07 00",
-   "replace": "c5 58 06 00"
-  },
-  {
-   "note": "meas.3 slot2 -> 'Period' @0x658CD",
-   "offset": "0x49504",
-   "find": "f4 b4 07 00",
-   "replace": "cd 58 06 00"
-  },
-  {
-   "note": "meas.4 slot1 -> 'Dolu+' @0x658D4",
-   "offset": "0x494CC",
-   "find": "ce ba 07 00",
    "replace": "d4 58 06 00"
   },
   {
-   "note": "meas.5 slot1 -> 'Dolu-' @0x658DA",
+   "note": "meas.3 slot1 -> 'Periyot' @0x658D9",
+   "offset": "0x494C8",
+   "find": "80 bb 07 00",
+   "replace": "d9 58 06 00"
+  },
+  {
+   "note": "meas.3 slot2 -> 'Period' @0x658E1",
+   "offset": "0x49504",
+   "find": "f4 b4 07 00",
+   "replace": "e1 58 06 00"
+  },
+  {
+   "note": "meas.4 slot1 -> 'Dolu+' @0x658E8",
+   "offset": "0x494CC",
+   "find": "ce ba 07 00",
+   "replace": "e8 58 06 00"
+  },
+  {
+   "note": "meas.5 slot1 -> 'Dolu-' @0x658EE",
    "offset": "0x494D0",
    "find": "c1 ba 07 00",
-   "replace": "da 58 06 00"
-  },
-  {
-   "note": "meas.6 slot1 -> 'Genis+' @0x658E0",
-   "offset": "0x494D4",
-   "find": "13 c3 07 00",
-   "replace": "e0 58 06 00"
-  },
-  {
-   "note": "meas.7 slot1 -> 'Genis-' @0x658E7",
-   "offset": "0x494D8",
-   "find": "09 c3 07 00",
-   "replace": "e7 58 06 00"
-  },
-  {
-   "note": "meas.8 slot1 -> 'Nre' @0x658EE",
-   "offset": "0x494DC",
-   "find": "d1 c0 07 00",
    "replace": "ee 58 06 00"
   },
   {
-   "note": "meas.9 slot1 -> 'Nfe' @0x658F2",
-   "offset": "0x494E0",
-   "find": "e1 c0 07 00",
-   "replace": "f2 58 06 00"
+   "note": "meas.6 slot1 -> 'Genis+' @0x658F4",
+   "offset": "0x494D4",
+   "find": "13 c3 07 00",
+   "replace": "f4 58 06 00"
   },
   {
-   "note": "meas.10 slot1 -> 'Vrms' @0x658F6",
-   "offset": "0x494E4",
-   "find": "e1 c2 07 00",
-   "replace": "f6 58 06 00"
-  },
-  {
-   "note": "meas.11 slot1 -> 'Ort' @0x658FB",
-   "offset": "0x494E8",
-   "find": "d7 c2 07 00",
+   "note": "meas.7 slot1 -> 'Genis-' @0x658FB",
+   "offset": "0x494D8",
+   "find": "09 c3 07 00",
    "replace": "fb 58 06 00"
   },
   {
-   "note": "meas.12 slot1 -> 'Vp-p' @0x658FF",
+   "note": "meas.8 slot1 -> 'Nre' @0x65902",
+   "offset": "0x494DC",
+   "find": "d1 c0 07 00",
+   "replace": "02 59 06 00"
+  },
+  {
+   "note": "meas.9 slot1 -> 'Nfe' @0x65906",
+   "offset": "0x494E0",
+   "find": "e1 c0 07 00",
+   "replace": "06 59 06 00"
+  },
+  {
+   "note": "meas.10 slot1 -> 'Vrms' @0x6590A",
+   "offset": "0x494E4",
+   "find": "e1 c2 07 00",
+   "replace": "0a 59 06 00"
+  },
+  {
+   "note": "meas.11 slot1 -> 'Ort' @0x6590F",
+   "offset": "0x494E8",
+   "find": "d7 c2 07 00",
+   "replace": "0f 59 06 00"
+  },
+  {
+   "note": "meas.12 slot1 -> 'Vp-p' @0x65913",
    "offset": "0x494EC",
    "find": "ff c2 07 00",
-   "replace": "ff 58 06 00"
+   "replace": "13 59 06 00"
   },
   {
-   "note": "meas.13 slot1 -> 'Vmax' @0x65904",
+   "note": "meas.13 slot1 -> 'Vmax' @0x65918",
    "offset": "0x494F0",
    "find": "f5 c2 07 00",
-   "replace": "04 59 06 00"
+   "replace": "18 59 06 00"
   },
   {
-   "note": "meas.14 slot1 -> 'Vmin' @0x65909",
+   "note": "meas.14 slot1 -> 'Vmin' @0x6591D",
    "offset": "0x494F4",
    "find": "eb c2 07 00",
-   "replace": "09 59 06 00"
+   "replace": "1d 59 06 00"
   },
   {
-   "note": "msg.await_trig slot1 -> 'Tetik bekleniyor...' @0x6590E",
+   "note": "msg.await_trig slot1 -> 'Tetik bekleniyor...' @0x65922",
    "offset": "0x0AE34",
    "find": "90 ad 07 00",
-   "replace": "0e 59 06 00"
-  },
-  {
-   "note": "msg.await_trig slot2 -> 'Waiting for trigger...' @0x65922",
-   "offset": "0x0AE38",
-   "find": "62 ad 07 00",
    "replace": "22 59 06 00"
   },
   {
-   "note": "msg.await_auto slot1 -> 'Oto olcum...' @0x65939",
+   "note": "msg.await_trig slot2 -> 'Waiting for trigger...' @0x65936",
+   "offset": "0x0AE38",
+   "find": "62 ad 07 00",
+   "replace": "36 59 06 00"
+  },
+  {
+   "note": "msg.await_auto slot1 -> 'Oto olcum...' @0x6594D",
    "offset": "0x0AE3C",
    "find": "a0 ad 07 00",
-   "replace": "39 59 06 00"
+   "replace": "4d 59 06 00"
   },
   {
-   "note": "msg.await_auto slot2 -> 'Auto measuring...' @0x65946",
+   "note": "msg.await_auto slot2 -> 'Auto measuring...' @0x6595A",
    "offset": "0x0AE40",
    "find": "73 ad 07 00",
-   "replace": "46 59 06 00"
+   "replace": "5a 59 06 00"
   },
   {
-   "note": "cal.begin slot1 -> 'Basla' @0x65958",
+   "note": "cal.begin slot1 -> 'Basla' @0x6596C",
    "offset": "0x10720",
    "find": "23 ba 07 00",
-   "replace": "58 59 06 00"
+   "replace": "6c 59 06 00"
   },
   {
-   "note": "cal.begin slot2 -> 'Start' @0x6595E",
+   "note": "cal.begin slot2 -> 'Start' @0x65972",
    "offset": "0x10724",
    "find": "96 b5 07 00",
-   "replace": "5e 59 06 00"
+   "replace": "72 59 06 00"
   },
   {
-   "note": "btn.remove slot1 -> 'Kaldir' @0x65964",
+   "note": "btn.remove slot1 -> 'Kaldir' @0x65978",
    "offset": "0x13828",
    "find": "89 bc 07 00",
-   "replace": "64 59 06 00"
-  },
-  {
-   "note": "msg.deleting slot1 -> 'Siliniyor...' @0x6596B",
-   "offset": "0x1639C",
-   "find": "c6 ad 07 00",
-   "replace": "6b 59 06 00"
-  },
-  {
-   "note": "msg.delete_q slot1 -> 'Silinsin mi?' @0x65978",
-   "offset": "0x163A4",
-   "find": "79 b1 07 00",
    "replace": "78 59 06 00"
   },
   {
-   "note": "msg.usb slot1 -> 'USB surucu modu. Cikmak icin dokunun.' @0x65985",
+   "note": "msg.deleting slot1 -> 'Siliniyor...' @0x6597F",
+   "offset": "0x1639C",
+   "find": "c6 ad 07 00",
+   "replace": "7f 59 06 00"
+  },
+  {
+   "note": "msg.delete_q slot1 -> 'Silinsin mi?' @0x6598C",
+   "offset": "0x163A4",
+   "find": "79 b1 07 00",
+   "replace": "8c 59 06 00"
+  },
+  {
+   "note": "msg.usb slot1 -> 'USB surucu modu. Cikmak icin dokunun.' @0x65999",
    "offset": "0x19714",
    "find": "de c1 07 00",
-   "replace": "85 59 06 00"
+   "replace": "99 59 06 00"
   },
   {
-   "note": "msg.usb slot2 -> 'USB drive mode. Tap anywhere to exit.' @0x659AB",
+   "note": "msg.usb slot2 -> 'USB drive mode. Tap anywhere to exit.' @0x659BF",
    "offset": "0x19718",
    "find": "d7 ad 07 00",
-   "replace": "ab 59 06 00"
+   "replace": "bf 59 06 00"
   },
   {
-   "note": "msg.saved slot1 -> 'Kaydedildi' @0x659D1",
+   "note": "msg.saved slot1 -> 'Kaydedildi' @0x659E5",
    "offset": "0x199CC",
    "find": "73 bb 07 00",
-   "replace": "d1 59 06 00"
+   "replace": "e5 59 06 00"
   },
   {
-   "note": "msg.save_failed slot1 -> 'Kayit hatasi' @0x659DC",
+   "note": "msg.save_failed slot1 -> 'Kayit hatasi' @0x659F0",
    "offset": "0x199D4",
    "find": "ad bd 07 00",
-   "replace": "dc 59 06 00"
+   "replace": "f0 59 06 00"
   },
   {
-   "note": "msg.saving slot1 -> 'Kaydediliyor...' @0x659E9",
+   "note": "msg.saving slot1 -> 'Kaydediliyor...' @0x659FD",
    "offset": "0x199DC",
    "find": "b9 ad 07 00",
-   "replace": "e9 59 06 00"
+   "replace": "fd 59 06 00"
   },
   {
-   "note": "msg.low_batt slot1 -> 'Pil zayif, kapaniyor.' @0x659F9",
+   "note": "msg.low_batt slot1 -> 'Pil zayif, kapaniyor.' @0x65A0D",
    "offset": "0x1A388",
    "find": "87 c2 07 00",
-   "replace": "f9 59 06 00"
+   "replace": "0d 5a 06 00"
   },
   {
-   "note": "msg.low_batt slot2 -> 'Low battery, shutting down.' @0x65A0F",
+   "note": "msg.low_batt slot2 -> 'Low battery, shutting down.' @0x65A23",
    "offset": "0x1A38C",
    "find": "69 ae 07 00",
-   "replace": "0f 5a 06 00"
+   "replace": "23 5a 06 00"
   },
   {
-   "note": "dds.title slot1 -> 'Sinyal Ureteci' @0x65A2B",
+   "note": "dds.title slot1 -> 'Sinyal Ureteci' @0x65A3F",
    "offset": "0x17780",
    "find": "d5 bd 07 00",
-   "replace": "2b 5a 06 00"
+   "replace": "3f 5a 06 00"
   },
   {
    "note": "rw.onoff.0 slot1 [rw_data_table] in place: 'ACIK'",
@@ -1548,10 +1548,10 @@
    "replace": "54 61 6d 61 6d 00 00 00"
   },
   {
-   "note": "lang.name 'Turkce': movw r1 lo -> 0x65A3A",
+   "note": "lang.name 'Turkce': movw r1 lo -> 0x65A4E",
    "offset": "0x11820",
    "find": "4b f6 e9 11",
-   "replace": "45 f6 3a 21"
+   "replace": "45 f6 4e 21"
   },
   {
    "note": "lang.name 'Turkce': movt r1 hi",
@@ -1560,10 +1560,10 @@
    "replace": "c0 f2 06 01"
   },
   {
-   "note": "lang.name 'Turkce': movw r0 lo -> 0x65A3A",
+   "note": "lang.name 'Turkce': movw r0 lo -> 0x65A4E",
    "offset": "0x1AA98",
    "find": "4b f6 e9 10",
-   "replace": "45 f6 3a 20"
+   "replace": "45 f6 4e 20"
   },
   {
    "note": "lang.name 'Turkce': movt r0 hi",
@@ -2022,441 +2022,441 @@
    "replace": "4d 6f 64 65 6c 3a 20 32 44 31 35 50 00"
   },
   {
-   "note": "heap string 'Surum'",
+   "note": "heap string 'Surum (mod 1.0)'",
    "offset": "0x54706",
-   "find_crc32": "B1C2A1A3",
-   "replace": "53 75 72 75 6d 00"
+   "find_crc32": "2CF5E2F8",
+   "replace": "53 75 72 75 6d 20 28 6d 6f 64 20 31 2e 30 29 00"
   },
   {
-   "note": "heap string 'Version'",
-   "offset": "0x5470C",
-   "find_crc32": "7497ED7F",
-   "replace": "56 65 72 73 69 6f 6e 00"
+   "note": "heap string 'Version (mod 1.0)'",
+   "offset": "0x54716",
+   "find_crc32": "39768FF7",
+   "replace": "56 65 72 73 69 6f 6e 20 28 6d 6f 64 20 31 2e 30 29 00"
   },
   {
    "note": "heap string 'Dil'",
-   "offset": "0x54714",
-   "find_crc32": "6F85F272",
+   "offset": "0x54728",
+   "find_crc32": "2144DF1C",
    "replace": "44 69 6c 00"
   },
   {
    "note": "heap string 'Ses'",
-   "offset": "0x54718",
-   "find_crc32": "2144DF1C",
+   "offset": "0x5472C",
+   "find_crc32": "5265AB66",
    "replace": "53 65 73 00"
   },
   {
    "note": "heap string 'Parlaklik'",
-   "offset": "0x5471C",
-   "find_crc32": "42267C78",
+   "offset": "0x54730",
+   "find_crc32": "B3DB5570",
    "replace": "50 61 72 6c 61 6b 6c 69 6b 00"
   },
   {
    "note": "heap string 'Oto Kapanma'",
-   "offset": "0x54726",
-   "find_crc32": "3A66DA86",
+   "offset": "0x5473A",
+   "find_crc32": "8BCC78C4",
    "replace": "4f 74 6f 20 4b 61 70 61 6e 6d 61 00"
   },
   {
    "note": "heap string 'Auto Off'",
-   "offset": "0x54732",
-   "find_crc32": "89A66F71",
+   "offset": "0x54746",
+   "find_crc32": "8E47366B",
    "replace": "41 75 74 6f 20 4f 66 66 00"
   },
   {
    "note": "heap string 'Hakkinda'",
-   "offset": "0x5473B",
-   "find_crc32": "A729C171",
+   "offset": "0x5474F",
+   "find_crc32": "4BEA0C60",
    "replace": "48 61 6b 6b 69 6e 64 61 00"
   },
   {
    "note": "heap string 'About'",
-   "offset": "0x54744",
-   "find_crc32": "2A150A1E",
+   "offset": "0x54758",
+   "find_crc32": "E5A01DAF",
    "replace": "41 62 6f 75 74 00"
   },
   {
    "note": "heap string 'Fabrika Ayari'",
-   "offset": "0x5474A",
-   "find_crc32": "7C586109",
+   "offset": "0x5475E",
+   "find_crc32": "602FB9F6",
    "replace": "46 61 62 72 69 6b 61 20 41 79 61 72 69 00"
   },
   {
    "note": "heap string 'Factory Reset'",
-   "offset": "0x54758",
-   "find_crc32": "175E4EC0",
+   "offset": "0x5476C",
+   "find_crc32": "C2D77018",
    "replace": "46 61 63 74 6f 72 79 20 52 65 73 65 74 00"
   },
   {
    "note": "heap string 'Fabrika ayari tum degisiklikleri geri alir!'",
-   "offset": "0x54766",
-   "find_crc32": "55FE9581",
+   "offset": "0x5477A",
+   "find_crc32": "82208ECF",
    "replace": "46 61 62 72 69 6b 61 20 61 79 61 72 69 20 74 75 6d 20 64 65 67 69 73 69 6b 6c 69 6b 6c 65 72 69 20 67 65 72 69 20 61 6c 69 72 21 00"
   },
   {
    "note": "heap string 'Onayla'",
-   "offset": "0x54792",
-   "find_crc32": "6C8AA074",
+   "offset": "0x547A6",
+   "find_crc32": "A6327592",
    "replace": "4f 6e 61 79 6c 61 00"
   },
   {
    "note": "heap string 'Tum kanallari ayirin'",
-   "offset": "0x54799",
-   "find_crc32": "233824DE",
+   "offset": "0x547AD",
+   "find_crc32": "19B5D5FC",
    "replace": "54 75 6d 20 6b 61 6e 61 6c 6c 61 72 69 20 61 79 69 72 69 6e 00"
   },
   {
    "note": "heap string 'Kalibrasyon tamamlandi. Cikmak icin ekrana dokunun.'",
-   "offset": "0x547AE",
-   "find_crc32": "23658313",
+   "offset": "0x547C2",
+   "find_crc32": "D7EBEB1E",
    "replace": "4b 61 6c 69 62 72 61 73 79 6f 6e 20 74 61 6d 61 6d 6c 61 6e 64 69 2e 20 43 69 6b 6d 61 6b 20 69 63 69 6e 20 65 6b 72 61 6e 61 20 64 6f 6b 75 6e 75 6e 2e 00"
   },
   {
    "note": "heap string 'Geri'",
-   "offset": "0x547E2",
-   "find_crc32": "1BA55880",
+   "offset": "0x547F6",
+   "find_crc32": "C622F71D",
    "replace": "47 65 72 69 00"
   },
   {
    "note": "heap string 'DC Gerilim'",
-   "offset": "0x547E7",
-   "find_crc32": "7A1FEFA2",
+   "offset": "0x547FB",
+   "find_crc32": "F1FB5418",
    "replace": "44 43 20 47 65 72 69 6c 69 6d 00"
   },
   {
    "note": "heap string 'AC Gerilim'",
-   "offset": "0x547F2",
-   "find_crc32": "6B87B1EC",
+   "offset": "0x54806",
+   "find_crc32": "E2229548",
    "replace": "41 43 20 47 65 72 69 6c 69 6d 00"
   },
   {
    "note": "heap string 'Direnc'",
-   "offset": "0x547FD",
-   "find_crc32": "C7A0FF83",
+   "offset": "0x54811",
+   "find_crc32": "5FAAFDAE",
    "replace": "44 69 72 65 6e 63 00"
   },
   {
    "note": "heap string 'Sureklilik'",
-   "offset": "0x54804",
-   "find_crc32": "B8824227",
+   "offset": "0x54818",
+   "find_crc32": "71BEF48B",
    "replace": "53 75 72 65 6b 6c 69 6c 69 6b 00"
   },
   {
    "note": "heap string 'Continuity'",
-   "offset": "0x5480F",
-   "find_crc32": "D2574BA5",
+   "offset": "0x54823",
+   "find_crc32": "940D3556",
    "replace": "43 6f 6e 74 69 6e 75 69 74 79 00"
   },
   {
    "note": "heap string 'Diyot'",
-   "offset": "0x5481A",
-   "find_crc32": "76B93B20",
+   "offset": "0x5482E",
+   "find_crc32": "5040931B",
    "replace": "44 69 79 6f 74 00"
   },
   {
    "note": "heap string 'Induktans'",
-   "offset": "0x54820",
-   "find_crc32": "AF2F71BC",
+   "offset": "0x54834",
+   "find_crc32": "CD12D70E",
    "replace": "49 6e 64 75 6b 74 61 6e 73 00"
   },
   {
    "note": "heap string 'Kapasite'",
-   "offset": "0x5482A",
-   "find_crc32": "BD02241B",
+   "offset": "0x5483E",
+   "find_crc32": "8DA1977B",
    "replace": "4b 61 70 61 73 69 74 65 00"
   },
   {
    "note": "heap string 'DC Akim mA'",
-   "offset": "0x54833",
-   "find_crc32": "451F0E94",
+   "offset": "0x54847",
+   "find_crc32": "20932637",
    "replace": "44 43 20 41 6b 69 6d 20 6d 41 00"
   },
   {
    "note": "heap string 'AC Akim mA'",
-   "offset": "0x5483E",
-   "find_crc32": "6D5504F3",
+   "offset": "0x54852",
+   "find_crc32": "62655362",
    "replace": "41 43 20 41 6b 69 6d 20 6d 41 00"
   },
   {
    "note": "heap string 'DC Akim A'",
-   "offset": "0x54849",
-   "find_crc32": "526C380B",
+   "offset": "0x5485D",
+   "find_crc32": "3E52FB17",
    "replace": "44 43 20 41 6b 69 6d 20 41 00"
   },
   {
    "note": "heap string 'AC Akim A'",
-   "offset": "0x54853",
-   "find_crc32": "449E4E33",
+   "offset": "0x54867",
+   "find_crc32": "58D1F730",
    "replace": "41 43 20 41 6b 69 6d 20 41 00"
   },
   {
    "note": "heap string 'Sicaklik'",
-   "offset": "0x5485D",
-   "find_crc32": "33E6BCC1",
+   "offset": "0x54871",
+   "find_crc32": "23CD0B56",
    "replace": "53 69 63 61 6b 6c 69 6b 00"
   },
   {
    "note": "heap string 'NCV'",
-   "offset": "0x54866",
-   "find_crc32": "551B03E7",
+   "offset": "0x5487A",
+   "find_crc32": "5019AB6C",
    "replace": "4e 43 56 00"
   },
   {
    "note": "heap string 'Faz'",
-   "offset": "0x5486A",
-   "find_crc32": "A70ACF3F",
+   "offset": "0x5487E",
+   "find_crc32": "F5AF9AD5",
    "replace": "46 61 7a 00"
   },
   {
    "note": "heap string 'Otomatik'",
-   "offset": "0x5486E",
-   "find_crc32": "97E68575",
+   "offset": "0x54882",
+   "find_crc32": "7CEA7D4C",
    "replace": "4f 74 6f 6d 61 74 69 6b 00"
   },
   {
    "note": "heap string 'Oz Test'",
-   "offset": "0x54877",
-   "find_crc32": "EEE25F83",
+   "offset": "0x5488B",
+   "find_crc32": "6522DF69",
    "replace": "4f 7a 20 54 65 73 74 00"
   },
   {
    "note": "heap string 'Self-Test'",
-   "offset": "0x5487F",
-   "find_crc32": "CE5B232B",
+   "offset": "0x54893",
+   "find_crc32": "097558BD",
    "replace": "53 65 6c 66 2d 54 65 73 74 00"
   },
   {
    "note": "heap string 'MIN:'",
-   "offset": "0x54889",
-   "find_crc32": "C622F71D",
+   "offset": "0x5489D",
+   "find_crc32": "820F73CD",
    "replace": "4d 49 4e 3a 00"
   },
   {
    "note": "heap string 'MAX:'",
-   "offset": "0x5488E",
-   "find_crc32": "C622F71D",
+   "offset": "0x548A2",
+   "find_crc32": "5E8E66DD",
    "replace": "4d 41 58 3a 00"
   },
   {
    "note": "heap string 'Iptal'",
-   "offset": "0x54893",
-   "find_crc32": "8D489134",
+   "offset": "0x548A7",
+   "find_crc32": "D8D0BCBA",
    "replace": "49 70 74 61 6c 00"
   },
   {
    "note": "heap string 'Hepsi Acik'",
-   "offset": "0x54899",
-   "find_crc32": "006A77E7",
+   "offset": "0x548AD",
+   "find_crc32": "E093AB08",
    "replace": "48 65 70 73 69 20 41 63 69 6b 00"
   },
   {
    "note": "heap string 'All On'",
-   "offset": "0x548A4",
-   "find_crc32": "352D2BCF",
+   "offset": "0x548B8",
+   "find_crc32": "0889616B",
    "replace": "41 6c 6c 20 4f 6e 00"
   },
   {
    "note": "heap string 'Hepsi Kapali'",
-   "offset": "0x548AB",
-   "find_crc32": "F8097355",
+   "offset": "0x548BF",
+   "find_crc32": "C4A7D364",
    "replace": "48 65 70 73 69 20 4b 61 70 61 6c 69 00"
   },
   {
    "note": "heap string 'All Off'",
-   "offset": "0x548B8",
-   "find_crc32": "086ADE3C",
+   "offset": "0x548CC",
+   "find_crc32": "372DC217",
    "replace": "41 6c 6c 20 4f 66 66 00"
   },
   {
    "note": "heap string 'Frek'",
-   "offset": "0x548C0",
-   "find_crc32": "9EFFC159",
+   "offset": "0x548D4",
+   "find_crc32": "D2FD1072",
    "replace": "46 72 65 6b 00"
   },
   {
    "note": "heap string 'Periyot'",
-   "offset": "0x548C5",
-   "find_crc32": "8697BCC7",
+   "offset": "0x548D9",
+   "find_crc32": "3C22E974",
    "replace": "50 65 72 69 79 6f 74 00"
   },
   {
    "note": "heap string 'Period'",
-   "offset": "0x548CD",
-   "find_crc32": "7F72F3B5",
+   "offset": "0x548E1",
+   "find_crc32": "E24D36D2",
    "replace": "50 65 72 69 6f 64 00"
   },
   {
    "note": "heap string 'Dolu+'",
-   "offset": "0x548D4",
-   "find_crc32": "6CDB028D",
+   "offset": "0x548E8",
+   "find_crc32": "09B00032",
    "replace": "44 6f 6c 75 2b 00"
   },
   {
    "note": "heap string 'Dolu-'",
-   "offset": "0x548DA",
-   "find_crc32": "02C9ABFD",
+   "offset": "0x548EE",
+   "find_crc32": "2131A548",
    "replace": "44 6f 6c 75 2d 00"
   },
   {
    "note": "heap string 'Genis+'",
-   "offset": "0x548E0",
-   "find_crc32": "8EAAE078",
+   "offset": "0x548F4",
+   "find_crc32": "54B182BF",
    "replace": "47 65 6e 69 73 2b 00"
   },
   {
    "note": "heap string 'Genis-'",
-   "offset": "0x548E7",
-   "find_crc32": "B72834DF",
+   "offset": "0x548FB",
+   "find_crc32": "E368CC49",
    "replace": "47 65 6e 69 73 2d 00"
   },
   {
    "note": "heap string 'Nre'",
-   "offset": "0x548EE",
-   "find_crc32": "512E2B93",
+   "offset": "0x54902",
+   "find_crc32": "FFFFFFFF",
    "replace": "4e 72 65 00"
   },
   {
    "note": "heap string 'Nfe'",
-   "offset": "0x548F2",
-   "find_crc32": "53432EA1",
+   "offset": "0x54906",
+   "find_crc32": "C70C9F0D",
    "replace": "4e 66 65 00"
   },
   {
    "note": "heap string 'Vrms'",
-   "offset": "0x548F6",
-   "find_crc32": "0FFFAADC",
+   "offset": "0x5490A",
+   "find_crc32": "CFD79F1A",
    "replace": "56 72 6d 73 00"
   },
   {
    "note": "heap string 'Ort'",
-   "offset": "0x548FB",
-   "find_crc32": "B4E68B10",
+   "offset": "0x5490F",
+   "find_crc32": "2144DF1C",
    "replace": "4f 72 74 00"
   },
   {
    "note": "heap string 'Vp-p'",
-   "offset": "0x548FF",
-   "find_crc32": "3BE8F8A9",
+   "offset": "0x54913",
+   "find_crc32": "812322BF",
    "replace": "56 70 2d 70 00"
   },
   {
    "note": "heap string 'Vmax'",
-   "offset": "0x54904",
-   "find_crc32": "F95F262F",
+   "offset": "0x54918",
+   "find_crc32": "CF94BB36",
    "replace": "56 6d 61 78 00"
   },
   {
    "note": "heap string 'Vmin'",
-   "offset": "0x54909",
-   "find_crc32": "8506DB11",
+   "offset": "0x5491D",
+   "find_crc32": "9F3707C0",
    "replace": "56 6d 69 6e 00"
   },
   {
    "note": "heap string 'Tetik bekleniyor...'",
-   "offset": "0x5490E",
-   "find_crc32": "9F393ED8",
+   "offset": "0x54922",
+   "find_crc32": "019D776E",
    "replace": "54 65 74 69 6b 20 62 65 6b 6c 65 6e 69 79 6f 72 2e 2e 2e 00"
   },
   {
    "note": "heap string 'Waiting for trigger...'",
-   "offset": "0x54922",
-   "find_crc32": "5684BE22",
+   "offset": "0x54936",
+   "find_crc32": "4D244E0D",
    "replace": "57 61 69 74 69 6e 67 20 66 6f 72 20 74 72 69 67 67 65 72 2e 2e 2e 00"
   },
   {
    "note": "heap string 'Oto olcum...'",
-   "offset": "0x54939",
-   "find_crc32": "2C17EBBC",
+   "offset": "0x5494D",
+   "find_crc32": "D416E3B5",
    "replace": "4f 74 6f 20 6f 6c 63 75 6d 2e 2e 2e 00"
   },
   {
    "note": "heap string 'Auto measuring...'",
-   "offset": "0x54946",
-   "find_crc32": "DDA01B86",
+   "offset": "0x5495A",
+   "find_crc32": "8139643D",
    "replace": "41 75 74 6f 20 6d 65 61 73 75 72 69 6e 67 2e 2e 2e 00"
   },
   {
    "note": "heap string 'Basla'",
-   "offset": "0x54958",
-   "find_crc32": "0DC6FED2",
+   "offset": "0x5496C",
+   "find_crc32": "49E32F38",
    "replace": "42 61 73 6c 61 00"
   },
   {
    "note": "heap string 'Start'",
-   "offset": "0x5495E",
-   "find_crc32": "544304BF",
+   "offset": "0x54972",
+   "find_crc32": "22D27AE4",
    "replace": "53 74 61 72 74 00"
   },
   {
    "note": "heap string 'Kaldir'",
-   "offset": "0x54964",
-   "find_crc32": "5F2F2BE1",
+   "offset": "0x54978",
+   "find_crc32": "EA26F040",
    "replace": "4b 61 6c 64 69 72 00"
   },
   {
    "note": "heap string 'Siliniyor...'",
-   "offset": "0x5496B",
-   "find_crc32": "464A9F85",
+   "offset": "0x5497F",
+   "find_crc32": "01395996",
    "replace": "53 69 6c 69 6e 69 79 6f 72 2e 2e 2e 00"
   },
   {
    "note": "heap string 'Silinsin mi?'",
-   "offset": "0x54978",
-   "find_crc32": "AB38B78A",
+   "offset": "0x5498C",
+   "find_crc32": "0EA9057B",
    "replace": "53 69 6c 69 6e 73 69 6e 20 6d 69 3f 00"
   },
   {
    "note": "heap string 'USB surucu modu. Cikmak icin dokunun.'",
-   "offset": "0x54985",
-   "find_crc32": "353C1ED7",
+   "offset": "0x54999",
+   "find_crc32": "940A0BAE",
    "replace": "55 53 42 20 73 75 72 75 63 75 20 6d 6f 64 75 2e 20 43 69 6b 6d 61 6b 20 69 63 69 6e 20 64 6f 6b 75 6e 75 6e 2e 00"
   },
   {
    "note": "heap string 'USB drive mode. Tap anywhere to exit.'",
-   "offset": "0x549AB",
-   "find_crc32": "BB94BD00",
+   "offset": "0x549BF",
+   "find_crc32": "9EC9AD9B",
    "replace": "55 53 42 20 64 72 69 76 65 20 6d 6f 64 65 2e 20 54 61 70 20 61 6e 79 77 68 65 72 65 20 74 6f 20 65 78 69 74 2e 00"
   },
   {
    "note": "heap string 'Kaydedildi'",
-   "offset": "0x549D1",
-   "find_crc32": "F336728D",
+   "offset": "0x549E5",
+   "find_crc32": "B99C75A1",
    "replace": "4b 61 79 64 65 64 69 6c 64 69 00"
   },
   {
    "note": "heap string 'Kayit hatasi'",
-   "offset": "0x549DC",
-   "find_crc32": "718DD837",
+   "offset": "0x549F0",
+   "find_crc32": "460DCE54",
    "replace": "4b 61 79 69 74 20 68 61 74 61 73 69 00"
   },
   {
    "note": "heap string 'Kaydediliyor...'",
-   "offset": "0x549E9",
-   "find_crc32": "117806BD",
+   "offset": "0x549FD",
+   "find_crc32": "720DAA67",
    "replace": "4b 61 79 64 65 64 69 6c 69 79 6f 72 2e 2e 2e 00"
   },
   {
    "note": "heap string 'Pil zayif, kapaniyor.'",
-   "offset": "0x549F9",
-   "find_crc32": "62CB6DB1",
+   "offset": "0x54A0D",
+   "find_crc32": "24BD8B76",
    "replace": "50 69 6c 20 7a 61 79 69 66 2c 20 6b 61 70 61 6e 69 79 6f 72 2e 00"
   },
   {
    "note": "heap string 'Low battery, shutting down.'",
-   "offset": "0x54A0F",
-   "find_crc32": "0A3AF846",
+   "offset": "0x54A23",
+   "find_crc32": "6FC24401",
    "replace": "4c 6f 77 20 62 61 74 74 65 72 79 2c 20 73 68 75 74 74 69 6e 67 20 64 6f 77 6e 2e 00"
   },
   {
    "note": "heap string 'Sinyal Ureteci'",
-   "offset": "0x54A2B",
-   "find_crc32": "99A875CD",
+   "offset": "0x54A3F",
+   "find_crc32": "3A3043CF",
    "replace": "53 69 6e 79 61 6c 20 55 72 65 74 65 63 69 00"
   },
   {
    "note": "heap string 'Turkce'",
-   "offset": "0x54A3A",
-   "find_crc32": "29D34F56",
+   "offset": "0x54A4E",
+   "find_crc32": "A06CC597",
    "replace": "54 75 72 6b 63 65 00"
   }
  ]

@@ -1038,178 +1038,178 @@
    "replace": "55 56 06 00"
   },
   {
-   "note": "about.3 slot1 -> 'Version' @0x65662",
+   "note": "about.3 slot1 -> 'Version (mod 1.0)' @0x65662",
    "offset": "0x492D0",
    "find": "69 c1 07 00",
    "replace": "62 56 06 00"
   },
   {
-   "note": "about.3 slot2 -> 'Version' @0x65662",
+   "note": "about.3 slot2 -> 'Version (mod 1.0)' @0x65662",
    "offset": "0x492E0",
    "find": "0e b6 07 00",
    "replace": "62 56 06 00"
   },
   {
-   "note": "settings.0 slot1 -> 'Language' @0x6566A",
+   "note": "settings.0 slot1 -> 'Language' @0x65674",
    "offset": "0x492E4",
    "find": "e1 b8 07 00",
-   "replace": "6a 56 06 00"
+   "replace": "74 56 06 00"
   },
   {
-   "note": "settings.1 slot1 -> 'Volume' @0x65673",
+   "note": "settings.1 slot1 -> 'Volume' @0x6567D",
    "offset": "0x492E8",
    "find": "99 ba 07 00",
-   "replace": "73 56 06 00"
+   "replace": "7d 56 06 00"
   },
   {
-   "note": "settings.2 slot1 -> 'Brightness' @0x6567A",
+   "note": "settings.2 slot1 -> 'Brightness' @0x65684",
    "offset": "0x492EC",
    "find": "c1 bd 07 00",
-   "replace": "7a 56 06 00"
+   "replace": "84 56 06 00"
   },
   {
-   "note": "settings.3 slot1 -> 'Auto Off' @0x65685",
+   "note": "settings.3 slot1 -> 'Auto Off' @0x6568F",
    "offset": "0x492F0",
    "find": "ac c2 07 00",
-   "replace": "85 56 06 00"
+   "replace": "8f 56 06 00"
   },
   {
-   "note": "settings.3 slot2 -> 'Auto Off' @0x65685",
+   "note": "settings.3 slot2 -> 'Auto Off' @0x6568F",
    "offset": "0x49308",
    "find": "b2 b7 07 00",
-   "replace": "85 56 06 00"
+   "replace": "8f 56 06 00"
   },
   {
-   "note": "settings.4 slot1 -> 'About' @0x6568E",
+   "note": "settings.4 slot1 -> 'About' @0x65698",
    "offset": "0x492F4",
    "find": "84 ba 07 00",
-   "replace": "8e 56 06 00"
+   "replace": "98 56 06 00"
   },
   {
-   "note": "settings.4 slot2 -> 'About' @0x6568E",
+   "note": "settings.4 slot2 -> 'About' @0x65698",
    "offset": "0x4930C",
    "find": "b7 b4 07 00",
-   "replace": "8e 56 06 00"
+   "replace": "98 56 06 00"
   },
   {
-   "note": "settings.5 slot1 -> 'Factory Reset' @0x65694",
+   "note": "settings.5 slot1 -> 'Factory Reset' @0x6569E",
    "offset": "0x492F8",
    "find": "05 bf 07 00",
-   "replace": "94 56 06 00"
+   "replace": "9e 56 06 00"
   },
   {
-   "note": "settings.5 slot2 -> 'Factory Reset' @0x65694",
+   "note": "settings.5 slot2 -> 'Factory Reset' @0x6569E",
    "offset": "0x49310",
    "find": "9d b7 07 00",
-   "replace": "94 56 06 00"
+   "replace": "9e 56 06 00"
   },
   {
-   "note": "reset.warn slot1 -> 'Factory reset will undo all previous changes!' @0x656A2",
+   "note": "reset.warn slot1 -> 'Factory reset will undo all previous changes!' @0x656AC",
    "offset": "0x49314",
    "find": "ee ac 07 00",
-   "replace": "a2 56 06 00"
+   "replace": "ac 56 06 00"
   },
   {
-   "note": "btn.confirm slot1 -> 'Confirm' @0x656D0",
+   "note": "btn.confirm slot1 -> 'Confirm' @0x656DA",
    "offset": "0x4931C",
    "find": "23 bb 07 00",
-   "replace": "d0 56 06 00"
+   "replace": "da 56 06 00"
   },
   {
-   "note": "cal.disconnect slot1 -> 'Please disconnect all channels' @0x656D8",
+   "note": "cal.disconnect slot1 -> 'Please disconnect all channels' @0x656E2",
    "offset": "0x49324",
    "find": "a7 ba 07 00",
-   "replace": "d8 56 06 00"
+   "replace": "e2 56 06 00"
   },
   {
-   "note": "cal.done slot1 -> 'Calibration completed. Tap anywhere on the screen to exit.' @0x656F7",
+   "note": "cal.done slot1 -> 'Calibration completed. Tap anywhere on the screen to exit.' @0x65701",
    "offset": "0x4932C",
    "find": "b3 c1 07 00",
-   "replace": "f7 56 06 00"
+   "replace": "01 57 06 00"
   },
   {
-   "note": "btn.back slot1 -> 'Back' @0x65732",
+   "note": "btn.back slot1 -> 'Back' @0x6573C",
    "offset": "0x49334",
    "find": "65 bb 07 00",
-   "replace": "32 57 06 00"
+   "replace": "3c 57 06 00"
   },
   {
-   "note": "dmm.func.0 slot1 -> 'DC Voltage' @0x65737",
+   "note": "dmm.func.0 slot1 -> 'DC Voltage' @0x65741",
    "offset": "0x4933C",
    "find": "16 ba 07 00",
-   "replace": "37 57 06 00"
+   "replace": "41 57 06 00"
   },
   {
-   "note": "dmm.func.1 slot1 -> 'AC Voltage' @0x65742",
+   "note": "dmm.func.1 slot1 -> 'AC Voltage' @0x6574C",
    "offset": "0x49340",
    "find": "09 ba 07 00",
-   "replace": "42 57 06 00"
+   "replace": "4c 57 06 00"
   },
   {
-   "note": "dmm.func.2 slot1 -> 'Resistance' @0x6574D",
+   "note": "dmm.func.2 slot1 -> 'Resistance' @0x65757",
    "offset": "0x49344",
    "find": "c0 c2 07 00",
-   "replace": "4d 57 06 00"
+   "replace": "57 57 06 00"
   },
   {
-   "note": "dmm.func.3 slot1 -> 'Continuity' @0x65758",
+   "note": "dmm.func.3 slot1 -> 'Continuity' @0x65762",
    "offset": "0x49348",
    "find": "22 be 07 00",
-   "replace": "58 57 06 00"
+   "replace": "62 57 06 00"
   },
   {
-   "note": "dmm.func.3 slot2 -> 'Continuity' @0x65758",
+   "note": "dmm.func.3 slot2 -> 'Continuity' @0x65762",
    "offset": "0x4938C",
    "find": "ab b4 07 00",
-   "replace": "58 57 06 00"
+   "replace": "62 57 06 00"
   },
   {
-   "note": "dmm.func.4 slot1 -> 'Diode' @0x65763",
+   "note": "dmm.func.4 slot1 -> 'Diode' @0x6576D",
    "offset": "0x4934C",
    "find": "32 bc 07 00",
-   "replace": "63 57 06 00"
+   "replace": "6d 57 06 00"
   },
   {
-   "note": "dmm.func.5 slot1 -> 'Inductance' @0x65769",
+   "note": "dmm.func.5 slot1 -> 'Inductance' @0x65773",
    "offset": "0x49350",
    "find": "6c bb 07 00",
-   "replace": "69 57 06 00"
+   "replace": "73 57 06 00"
   },
   {
-   "note": "dmm.func.6 slot1 -> 'Capacitance' @0x65774",
+   "note": "dmm.func.6 slot1 -> 'Capacitance' @0x6577E",
    "offset": "0x49354",
    "find": "ac c1 07 00",
-   "replace": "74 57 06 00"
+   "replace": "7e 57 06 00"
   },
   {
-   "note": "dmm.func.7 slot1 -> 'DC Current mA' @0x65780",
+   "note": "dmm.func.7 slot1 -> 'DC Current mA' @0x6578A",
    "offset": "0x49358",
    "find": "f4 b1 07 00",
-   "replace": "80 57 06 00"
+   "replace": "8a 57 06 00"
   },
   {
-   "note": "dmm.func.8 slot1 -> 'AC Current mA' @0x6578E",
+   "note": "dmm.func.8 slot1 -> 'AC Current mA' @0x65798",
    "offset": "0x4935C",
    "find": "e4 b1 07 00",
-   "replace": "8e 57 06 00"
+   "replace": "98 57 06 00"
   },
   {
-   "note": "dmm.func.9 slot1 -> 'DC Current A' @0x6579C",
+   "note": "dmm.func.9 slot1 -> 'DC Current A' @0x657A6",
    "offset": "0x49360",
    "find": "b6 b1 07 00",
-   "replace": "9c 57 06 00"
+   "replace": "a6 57 06 00"
   },
   {
-   "note": "dmm.func.10 slot1 -> 'AC Current A' @0x657A9",
+   "note": "dmm.func.10 slot1 -> 'AC Current A' @0x657B3",
    "offset": "0x49364",
    "find": "a7 b1 07 00",
-   "replace": "a9 57 06 00"
+   "replace": "b3 57 06 00"
   },
   {
-   "note": "dmm.func.11 slot1 -> 'Temperature' @0x657B6",
+   "note": "dmm.func.11 slot1 -> 'Temperature' @0x657C0",
    "offset": "0x49368",
    "find": "ba bd 07 00",
-   "replace": "b6 57 06 00"
+   "replace": "c0 57 06 00"
   },
   {
    "note": "dmm.func.12 slot1 -> 'Frequency' @0x655FE",
@@ -1218,262 +1218,262 @@
    "replace": "fe 55 06 00"
   },
   {
-   "note": "dmm.func.13 slot1 -> 'NCV' @0x657C2",
+   "note": "dmm.func.13 slot1 -> 'NCV' @0x657CC",
    "offset": "0x49370",
    "find": "2a ba 07 00",
-   "replace": "c2 57 06 00"
+   "replace": "cc 57 06 00"
   },
   {
-   "note": "dmm.func.14 slot1 -> 'LIVE' @0x657C6",
+   "note": "dmm.func.14 slot1 -> 'LIVE' @0x657D0",
    "offset": "0x49374",
    "find": "40 ba 07 00",
-   "replace": "c6 57 06 00"
+   "replace": "d0 57 06 00"
   },
   {
-   "note": "dmm.func.15 slot1 -> 'Automatic' @0x657CB",
+   "note": "dmm.func.15 slot1 -> 'Automatic' @0x657D5",
    "offset": "0x49378",
    "find": "ce bd 07 00",
-   "replace": "cb 57 06 00"
+   "replace": "d5 57 06 00"
   },
   {
-   "note": "dmm.func.16 slot1 -> 'Self-Test' @0x657D5",
+   "note": "dmm.func.16 slot1 -> 'Self-Test' @0x657DF",
    "offset": "0x4937C",
    "find": "d4 b8 07 00",
-   "replace": "d5 57 06 00"
-  },
-  {
-   "note": "dmm.func.16 slot2 -> 'Self-Test' @0x657D5",
-   "offset": "0x493C0",
-   "find": "cd b4 07 00",
-   "replace": "d5 57 06 00"
-  },
-  {
-   "note": "dmm.minmax.0 slot1 -> 'MIN:' @0x657DF",
-   "offset": "0x49440",
-   "find": "89 b0 07 00",
    "replace": "df 57 06 00"
   },
   {
-   "note": "dmm.minmax.1 slot1 -> 'MAX:' @0x657E4",
-   "offset": "0x49444",
-   "find": "94 b0 07 00",
-   "replace": "e4 57 06 00"
+   "note": "dmm.func.16 slot2 -> 'Self-Test' @0x657DF",
+   "offset": "0x493C0",
+   "find": "cd b4 07 00",
+   "replace": "df 57 06 00"
   },
   {
-   "note": "btn.cancel slot1 -> 'Cancel' @0x657E9",
-   "offset": "0x49450",
-   "find": "f7 b9 07 00",
+   "note": "dmm.minmax.0 slot1 -> 'MIN:' @0x657E9",
+   "offset": "0x49440",
+   "find": "89 b0 07 00",
    "replace": "e9 57 06 00"
   },
   {
-   "note": "meas.0 slot1 -> 'All On' @0x657F0",
+   "note": "dmm.minmax.1 slot1 -> 'MAX:' @0x657EE",
+   "offset": "0x49444",
+   "find": "94 b0 07 00",
+   "replace": "ee 57 06 00"
+  },
+  {
+   "note": "btn.cancel slot1 -> 'Cancel' @0x657F3",
+   "offset": "0x49450",
+   "find": "f7 b9 07 00",
+   "replace": "f3 57 06 00"
+  },
+  {
+   "note": "meas.0 slot1 -> 'All On' @0x657FA",
    "offset": "0x494BC",
    "find": "e8 b8 07 00",
-   "replace": "f0 57 06 00"
+   "replace": "fa 57 06 00"
   },
   {
-   "note": "meas.0 slot2 -> 'All On' @0x657F0",
+   "note": "meas.0 slot2 -> 'All On' @0x657FA",
    "offset": "0x494F8",
    "find": "a1 b5 07 00",
-   "replace": "f0 57 06 00"
+   "replace": "fa 57 06 00"
   },
   {
-   "note": "meas.1 slot1 -> 'All Off' @0x657F7",
+   "note": "meas.1 slot1 -> 'All Off' @0x65801",
    "offset": "0x494C0",
    "find": "f5 c0 07 00",
-   "replace": "f7 57 06 00"
+   "replace": "01 58 06 00"
   },
   {
-   "note": "meas.1 slot2 -> 'All Off' @0x657F7",
+   "note": "meas.1 slot2 -> 'All Off' @0x65801",
    "offset": "0x494FC",
    "find": "a5 b4 07 00",
-   "replace": "f7 57 06 00"
+   "replace": "01 58 06 00"
   },
   {
-   "note": "meas.2 slot1 -> 'Freq' @0x657FF",
+   "note": "meas.2 slot1 -> 'Freq' @0x65809",
    "offset": "0x494C4",
    "find": "e2 b9 07 00",
-   "replace": "ff 57 06 00"
+   "replace": "09 58 06 00"
   },
   {
-   "note": "meas.3 slot1 -> 'Period' @0x65804",
+   "note": "meas.3 slot1 -> 'Period' @0x6580E",
    "offset": "0x494C8",
    "find": "80 bb 07 00",
-   "replace": "04 58 06 00"
+   "replace": "0e 58 06 00"
   },
   {
-   "note": "meas.3 slot2 -> 'Period' @0x65804",
+   "note": "meas.3 slot2 -> 'Period' @0x6580E",
    "offset": "0x49504",
    "find": "f4 b4 07 00",
-   "replace": "04 58 06 00"
+   "replace": "0e 58 06 00"
   },
   {
-   "note": "meas.4 slot1 -> 'Duty+' @0x6580B",
+   "note": "meas.4 slot1 -> 'Duty+' @0x65815",
    "offset": "0x494CC",
    "find": "ce ba 07 00",
-   "replace": "0b 58 06 00"
+   "replace": "15 58 06 00"
   },
   {
-   "note": "meas.5 slot1 -> 'Duty-' @0x65811",
+   "note": "meas.5 slot1 -> 'Duty-' @0x6581B",
    "offset": "0x494D0",
    "find": "c1 ba 07 00",
-   "replace": "11 58 06 00"
+   "replace": "1b 58 06 00"
   },
   {
-   "note": "meas.6 slot1 -> 'Wid+' @0x65817",
+   "note": "meas.6 slot1 -> 'Wid+' @0x65821",
    "offset": "0x494D4",
    "find": "13 c3 07 00",
-   "replace": "17 58 06 00"
-  },
-  {
-   "note": "meas.7 slot1 -> 'Wid-' @0x6581C",
-   "offset": "0x494D8",
-   "find": "09 c3 07 00",
-   "replace": "1c 58 06 00"
-  },
-  {
-   "note": "meas.8 slot1 -> 'Nre' @0x65821",
-   "offset": "0x494DC",
-   "find": "d1 c0 07 00",
    "replace": "21 58 06 00"
   },
   {
-   "note": "meas.9 slot1 -> 'Nfe' @0x65825",
+   "note": "meas.7 slot1 -> 'Wid-' @0x65826",
+   "offset": "0x494D8",
+   "find": "09 c3 07 00",
+   "replace": "26 58 06 00"
+  },
+  {
+   "note": "meas.8 slot1 -> 'Nre' @0x6582B",
+   "offset": "0x494DC",
+   "find": "d1 c0 07 00",
+   "replace": "2b 58 06 00"
+  },
+  {
+   "note": "meas.9 slot1 -> 'Nfe' @0x6582F",
    "offset": "0x494E0",
    "find": "e1 c0 07 00",
-   "replace": "25 58 06 00"
+   "replace": "2f 58 06 00"
   },
   {
-   "note": "meas.10 slot1 -> 'Vrms' @0x65829",
+   "note": "meas.10 slot1 -> 'Vrms' @0x65833",
    "offset": "0x494E4",
    "find": "e1 c2 07 00",
-   "replace": "29 58 06 00"
+   "replace": "33 58 06 00"
   },
   {
-   "note": "meas.11 slot1 -> 'Avg' @0x6582E",
+   "note": "meas.11 slot1 -> 'Avg' @0x65838",
    "offset": "0x494E8",
    "find": "d7 c2 07 00",
-   "replace": "2e 58 06 00"
+   "replace": "38 58 06 00"
   },
   {
-   "note": "meas.12 slot1 -> 'Vp-p' @0x65832",
+   "note": "meas.12 slot1 -> 'Vp-p' @0x6583C",
    "offset": "0x494EC",
    "find": "ff c2 07 00",
-   "replace": "32 58 06 00"
-  },
-  {
-   "note": "meas.13 slot1 -> 'Vmax' @0x65837",
-   "offset": "0x494F0",
-   "find": "f5 c2 07 00",
-   "replace": "37 58 06 00"
-  },
-  {
-   "note": "meas.14 slot1 -> 'Vmin' @0x6583C",
-   "offset": "0x494F4",
-   "find": "eb c2 07 00",
    "replace": "3c 58 06 00"
   },
   {
-   "note": "msg.await_trig slot1 -> 'Waiting for trigger...' @0x65841",
+   "note": "meas.13 slot1 -> 'Vmax' @0x65841",
+   "offset": "0x494F0",
+   "find": "f5 c2 07 00",
+   "replace": "41 58 06 00"
+  },
+  {
+   "note": "meas.14 slot1 -> 'Vmin' @0x65846",
+   "offset": "0x494F4",
+   "find": "eb c2 07 00",
+   "replace": "46 58 06 00"
+  },
+  {
+   "note": "msg.await_trig slot1 -> 'Waiting for trigger...' @0x6584B",
    "offset": "0x0AE34",
    "find": "90 ad 07 00",
-   "replace": "41 58 06 00"
+   "replace": "4b 58 06 00"
   },
   {
-   "note": "msg.await_trig slot2 -> 'Waiting for trigger...' @0x65841",
+   "note": "msg.await_trig slot2 -> 'Waiting for trigger...' @0x6584B",
    "offset": "0x0AE38",
    "find": "62 ad 07 00",
-   "replace": "41 58 06 00"
+   "replace": "4b 58 06 00"
   },
   {
-   "note": "msg.await_auto slot1 -> 'Auto measuring...' @0x65858",
+   "note": "msg.await_auto slot1 -> 'Auto measuring...' @0x65862",
    "offset": "0x0AE3C",
    "find": "a0 ad 07 00",
-   "replace": "58 58 06 00"
+   "replace": "62 58 06 00"
   },
   {
-   "note": "msg.await_auto slot2 -> 'Auto measuring...' @0x65858",
+   "note": "msg.await_auto slot2 -> 'Auto measuring...' @0x65862",
    "offset": "0x0AE40",
    "find": "73 ad 07 00",
-   "replace": "58 58 06 00"
+   "replace": "62 58 06 00"
   },
   {
-   "note": "cal.begin slot1 -> 'Start' @0x6586A",
+   "note": "cal.begin slot1 -> 'Start' @0x65874",
    "offset": "0x10720",
    "find": "23 ba 07 00",
-   "replace": "6a 58 06 00"
+   "replace": "74 58 06 00"
   },
   {
-   "note": "cal.begin slot2 -> 'Start' @0x6586A",
+   "note": "cal.begin slot2 -> 'Start' @0x65874",
    "offset": "0x10724",
    "find": "96 b5 07 00",
-   "replace": "6a 58 06 00"
+   "replace": "74 58 06 00"
   },
   {
-   "note": "btn.remove slot1 -> 'Remove' @0x65870",
+   "note": "btn.remove slot1 -> 'Remove' @0x6587A",
    "offset": "0x13828",
    "find": "89 bc 07 00",
-   "replace": "70 58 06 00"
+   "replace": "7a 58 06 00"
   },
   {
-   "note": "msg.deleting slot1 -> 'Deleting...' @0x65877",
+   "note": "msg.deleting slot1 -> 'Deleting...' @0x65881",
    "offset": "0x1639C",
    "find": "c6 ad 07 00",
-   "replace": "77 58 06 00"
+   "replace": "81 58 06 00"
   },
   {
-   "note": "msg.delete_q slot1 -> 'Are you sure you want to delete?' @0x65883",
+   "note": "msg.delete_q slot1 -> 'Are you sure you want to delete?' @0x6588D",
    "offset": "0x163A4",
    "find": "79 b1 07 00",
-   "replace": "83 58 06 00"
+   "replace": "8d 58 06 00"
   },
   {
-   "note": "msg.usb slot1 -> 'USB drive mode. Tap anywhere to exit.' @0x658A4",
+   "note": "msg.usb slot1 -> 'USB drive mode. Tap anywhere to exit.' @0x658AE",
    "offset": "0x19714",
    "find": "de c1 07 00",
-   "replace": "a4 58 06 00"
+   "replace": "ae 58 06 00"
   },
   {
-   "note": "msg.usb slot2 -> 'USB drive mode. Tap anywhere to exit.' @0x658A4",
+   "note": "msg.usb slot2 -> 'USB drive mode. Tap anywhere to exit.' @0x658AE",
    "offset": "0x19718",
    "find": "d7 ad 07 00",
-   "replace": "a4 58 06 00"
+   "replace": "ae 58 06 00"
   },
   {
-   "note": "msg.saved slot1 -> 'Saved' @0x658CA",
+   "note": "msg.saved slot1 -> 'Saved' @0x658D4",
    "offset": "0x199CC",
    "find": "73 bb 07 00",
-   "replace": "ca 58 06 00"
+   "replace": "d4 58 06 00"
   },
   {
-   "note": "msg.save_failed slot1 -> 'Save failed' @0x658D0",
+   "note": "msg.save_failed slot1 -> 'Save failed' @0x658DA",
    "offset": "0x199D4",
    "find": "ad bd 07 00",
-   "replace": "d0 58 06 00"
+   "replace": "da 58 06 00"
   },
   {
-   "note": "msg.saving slot1 -> 'Saving...' @0x658DC",
+   "note": "msg.saving slot1 -> 'Saving...' @0x658E6",
    "offset": "0x199DC",
    "find": "b9 ad 07 00",
-   "replace": "dc 58 06 00"
+   "replace": "e6 58 06 00"
   },
   {
-   "note": "msg.low_batt slot1 -> 'Low battery, shutting down.' @0x658E6",
+   "note": "msg.low_batt slot1 -> 'Low battery, shutting down.' @0x658F0",
    "offset": "0x1A388",
    "find": "87 c2 07 00",
-   "replace": "e6 58 06 00"
+   "replace": "f0 58 06 00"
   },
   {
-   "note": "msg.low_batt slot2 -> 'Low battery, shutting down.' @0x658E6",
+   "note": "msg.low_batt slot2 -> 'Low battery, shutting down.' @0x658F0",
    "offset": "0x1A38C",
    "find": "69 ae 07 00",
-   "replace": "e6 58 06 00"
+   "replace": "f0 58 06 00"
   },
   {
-   "note": "dds.title slot1 -> 'Signal Generator' @0x65902",
+   "note": "dds.title slot1 -> 'Signal Generator' @0x6590C",
    "offset": "0x17780",
    "find": "d5 bd 07 00",
-   "replace": "02 59 06 00"
+   "replace": "0c 59 06 00"
   },
   {
    "note": "rw.onoff.0 slot1 [rw_data_table] in place: 'ON'",
@@ -1512,10 +1512,10 @@
    "replace": "44 43 00 00 00 00 00"
   },
   {
-   "note": "bar.meas slot1 'Meas': movw r3 lo -> 0x65913",
+   "note": "bar.meas slot1 'Meas': movw r3 lo -> 0x6591D",
    "offset": "0x164F4",
    "find": "4b f6 8b 23",
-   "replace": "45 f6 13 13"
+   "replace": "45 f6 1d 13"
   },
   {
    "note": "bar.meas slot1 'Meas': movt r3 hi",
@@ -1548,10 +1548,10 @@
    "replace": "4f 4b 00 00 00 00 00 00"
   },
   {
-   "note": "lang.name 'English': movw r1 lo -> 0x65918",
+   "note": "lang.name 'English': movw r1 lo -> 0x65922",
    "offset": "0x11820",
    "find": "4b f6 e9 11",
-   "replace": "45 f6 18 11"
+   "replace": "45 f6 22 11"
   },
   {
    "note": "lang.name 'English': movt r1 hi",
@@ -1560,10 +1560,10 @@
    "replace": "c0 f2 06 01"
   },
   {
-   "note": "lang.name 'English': movw r0 lo -> 0x65918",
+   "note": "lang.name 'English': movw r0 lo -> 0x65922",
    "offset": "0x1AA98",
    "find": "4b f6 e9 10",
-   "replace": "45 f6 18 10"
+   "replace": "45 f6 22 10"
   },
   {
    "note": "lang.name 'English': movt r0 hi",
@@ -1914,363 +1914,363 @@
    "replace": "4d 6f 64 65 6c 3a 20 32 44 31 35 50 00"
   },
   {
-   "note": "heap string 'Version'",
+   "note": "heap string 'Version (mod 1.0)'",
    "offset": "0x54662",
-   "find_crc32": "0E67A063",
-   "replace": "56 65 72 73 69 6f 6e 00"
+   "find_crc32": "6DC14243",
+   "replace": "56 65 72 73 69 6f 6e 20 28 6d 6f 64 20 31 2e 30 29 00"
   },
   {
    "note": "heap string 'Language'",
-   "offset": "0x5466A",
-   "find_crc32": "A87491C5",
+   "offset": "0x54674",
+   "find_crc32": "19223B9B",
    "replace": "4c 61 6e 67 75 61 67 65 00"
   },
   {
    "note": "heap string 'Volume'",
-   "offset": "0x54673",
-   "find_crc32": "AFF197AF",
+   "offset": "0x5467D",
+   "find_crc32": "805B5562",
    "replace": "56 6f 6c 75 6d 65 00"
   },
   {
    "note": "heap string 'Brightness'",
-   "offset": "0x5467A",
-   "find_crc32": "70A17668",
+   "offset": "0x54684",
+   "find_crc32": "D4759FF4",
    "replace": "42 72 69 67 68 74 6e 65 73 73 00"
   },
   {
    "note": "heap string 'Auto Off'",
-   "offset": "0x54685",
-   "find_crc32": "31945368",
+   "offset": "0x5468F",
+   "find_crc32": "7C063A76",
    "replace": "41 75 74 6f 20 4f 66 66 00"
   },
   {
    "note": "heap string 'About'",
-   "offset": "0x5468E",
-   "find_crc32": "8ECDB236",
+   "offset": "0x54698",
+   "find_crc32": "F0B9B0D1",
    "replace": "41 62 6f 75 74 00"
   },
   {
    "note": "heap string 'Factory Reset'",
-   "offset": "0x54694",
-   "find_crc32": "CAB2E037",
+   "offset": "0x5469E",
+   "find_crc32": "AE499158",
    "replace": "46 61 63 74 6f 72 79 20 52 65 73 65 74 00"
   },
   {
    "note": "heap string 'Factory reset will undo all previous changes!'",
-   "offset": "0x546A2",
-   "find_crc32": "A3767C9F",
+   "offset": "0x546AC",
+   "find_crc32": "80BB4470",
    "replace": "46 61 63 74 6f 72 79 20 72 65 73 65 74 20 77 69 6c 6c 20 75 6e 64 6f 20 61 6c 6c 20 70 72 65 76 69 6f 75 73 20 63 68 61 6e 67 65 73 21 00"
   },
   {
    "note": "heap string 'Confirm'",
-   "offset": "0x546D0",
-   "find_crc32": "A05C859D",
+   "offset": "0x546DA",
+   "find_crc32": "073B9CF2",
    "replace": "43 6f 6e 66 69 72 6d 00"
   },
   {
    "note": "heap string 'Please disconnect all channels'",
-   "offset": "0x546D8",
-   "find_crc32": "5FD24253",
+   "offset": "0x546E2",
+   "find_crc32": "541D1934",
    "replace": "50 6c 65 61 73 65 20 64 69 73 63 6f 6e 6e 65 63 74 20 61 6c 6c 20 63 68 61 6e 6e 65 6c 73 00"
   },
   {
    "note": "heap string 'Calibration completed. Tap anywhere on the screen to exit.'",
-   "offset": "0x546F7",
-   "find_crc32": "12171E3B",
+   "offset": "0x54701",
+   "find_crc32": "88799AEC",
    "replace": "43 61 6c 69 62 72 61 74 69 6f 6e 20 63 6f 6d 70 6c 65 74 65 64 2e 20 54 61 70 20 61 6e 79 77 68 65 72 65 20 6f 6e 20 74 68 65 20 73 63 72 65 65 6e 20 74 6f 20 65 78 69 74 2e 00"
   },
   {
    "note": "heap string 'Back'",
-   "offset": "0x54732",
-   "find_crc32": "B6480392",
+   "offset": "0x5473C",
+   "find_crc32": "DB8A7F48",
    "replace": "42 61 63 6b 00"
   },
   {
    "note": "heap string 'DC Voltage'",
-   "offset": "0x54737",
-   "find_crc32": "4564AAB3",
+   "offset": "0x54741",
+   "find_crc32": "7BE880AE",
    "replace": "44 43 20 56 6f 6c 74 61 67 65 00"
   },
   {
    "note": "heap string 'AC Voltage'",
-   "offset": "0x54742",
-   "find_crc32": "F345FE61",
+   "offset": "0x5474C",
+   "find_crc32": "EF173986",
    "replace": "41 43 20 56 6f 6c 74 61 67 65 00"
   },
   {
    "note": "heap string 'Resistance'",
-   "offset": "0x5474D",
-   "find_crc32": "C664A922",
+   "offset": "0x54757",
+   "find_crc32": "4474D92B",
    "replace": "52 65 73 69 73 74 61 6e 63 65 00"
   },
   {
    "note": "heap string 'Continuity'",
-   "offset": "0x54758",
-   "find_crc32": "731F05F3",
+   "offset": "0x54762",
+   "find_crc32": "0A73412F",
    "replace": "43 6f 6e 74 69 6e 75 69 74 79 00"
   },
   {
    "note": "heap string 'Diode'",
-   "offset": "0x54763",
-   "find_crc32": "0953E19E",
+   "offset": "0x5476D",
+   "find_crc32": "2A43615F",
    "replace": "44 69 6f 64 65 00"
   },
   {
    "note": "heap string 'Inductance'",
-   "offset": "0x54769",
-   "find_crc32": "8244B223",
+   "offset": "0x54773",
+   "find_crc32": "305BF06C",
    "replace": "49 6e 64 75 63 74 61 6e 63 65 00"
   },
   {
    "note": "heap string 'Capacitance'",
-   "offset": "0x54774",
-   "find_crc32": "AF8315D2",
+   "offset": "0x5477E",
+   "find_crc32": "39B7F0C7",
    "replace": "43 61 70 61 63 69 74 61 6e 63 65 00"
   },
   {
    "note": "heap string 'DC Current mA'",
-   "offset": "0x54780",
-   "find_crc32": "1E1D4907",
+   "offset": "0x5478A",
+   "find_crc32": "74B9203F",
    "replace": "44 43 20 43 75 72 72 65 6e 74 20 6d 41 00"
   },
   {
    "note": "heap string 'AC Current mA'",
-   "offset": "0x5478E",
-   "find_crc32": "93D94F6F",
+   "offset": "0x54798",
+   "find_crc32": "2951E990",
    "replace": "41 43 20 43 75 72 72 65 6e 74 20 6d 41 00"
   },
   {
    "note": "heap string 'DC Current A'",
-   "offset": "0x5479C",
-   "find_crc32": "156924DA",
+   "offset": "0x547A6",
+   "find_crc32": "73849E71",
    "replace": "44 43 20 43 75 72 72 65 6e 74 20 41 00"
   },
   {
    "note": "heap string 'AC Current A'",
-   "offset": "0x547A9",
-   "find_crc32": "B386870D",
+   "offset": "0x547B3",
+   "find_crc32": "4D16702A",
    "replace": "41 43 20 43 75 72 72 65 6e 74 20 41 00"
   },
   {
    "note": "heap string 'Temperature'",
-   "offset": "0x547B6",
-   "find_crc32": "B2ED923E",
+   "offset": "0x547C0",
+   "find_crc32": "FA7BCC22",
    "replace": "54 65 6d 70 65 72 61 74 75 72 65 00"
   },
   {
    "note": "heap string 'NCV'",
-   "offset": "0x547C2",
+   "offset": "0x547CC",
    "find_crc32": "2144DF1C",
    "replace": "4e 43 56 00"
   },
   {
    "note": "heap string 'LIVE'",
-   "offset": "0x547C6",
-   "find_crc32": "D63E77C9",
+   "offset": "0x547D0",
+   "find_crc32": "478CFD50",
    "replace": "4c 49 56 45 00"
   },
   {
    "note": "heap string 'Automatic'",
-   "offset": "0x547CB",
-   "find_crc32": "6224623B",
+   "offset": "0x547D5",
+   "find_crc32": "EB66FB51",
    "replace": "41 75 74 6f 6d 61 74 69 63 00"
   },
   {
    "note": "heap string 'Self-Test'",
-   "offset": "0x547D5",
-   "find_crc32": "EB66FB51",
+   "offset": "0x547DF",
+   "find_crc32": "57DE2619",
    "replace": "53 65 6c 66 2d 54 65 73 74 00"
   },
   {
    "note": "heap string 'MIN:'",
-   "offset": "0x547DF",
-   "find_crc32": "42C7676D",
+   "offset": "0x547E9",
+   "find_crc32": "C2B6088D",
    "replace": "4d 49 4e 3a 00"
   },
   {
    "note": "heap string 'MAX:'",
-   "offset": "0x547E4",
+   "offset": "0x547EE",
    "find_crc32": "C622F71D",
    "replace": "4d 41 58 3a 00"
   },
   {
    "note": "heap string 'Cancel'",
-   "offset": "0x547E9",
-   "find_crc32": "C12FBE7D",
+   "offset": "0x547F3",
+   "find_crc32": "9D6CDF7E",
    "replace": "43 61 6e 63 65 6c 00"
   },
   {
    "note": "heap string 'All On'",
-   "offset": "0x547F0",
-   "find_crc32": "9D6CDF7E",
+   "offset": "0x547FA",
+   "find_crc32": "E265E46C",
    "replace": "41 6c 6c 20 4f 6e 00"
   },
   {
    "note": "heap string 'All Off'",
-   "offset": "0x547F7",
-   "find_crc32": "55E74A74",
+   "offset": "0x54801",
+   "find_crc32": "2E12F225",
    "replace": "41 6c 6c 20 4f 66 66 00"
   },
   {
    "note": "heap string 'Freq'",
-   "offset": "0x547FF",
-   "find_crc32": "C622F71D",
+   "offset": "0x54809",
+   "find_crc32": "ED987607",
    "replace": "46 72 65 71 00"
   },
   {
    "note": "heap string 'Period'",
-   "offset": "0x54804",
-   "find_crc32": "847FC832",
+   "offset": "0x5480E",
+   "find_crc32": "FA743C2D",
    "replace": "50 65 72 69 6f 64 00"
   },
   {
    "note": "heap string 'Duty+'",
-   "offset": "0x5480B",
-   "find_crc32": "C366640C",
+   "offset": "0x54815",
+   "find_crc32": "544BF419",
    "replace": "44 75 74 79 2b 00"
   },
   {
    "note": "heap string 'Duty-'",
-   "offset": "0x54811",
-   "find_crc32": "A01FD6E0",
+   "offset": "0x5481B",
+   "find_crc32": "BEE1E7A6",
    "replace": "44 75 74 79 2d 00"
   },
   {
    "note": "heap string 'Wid+'",
-   "offset": "0x54817",
-   "find_crc32": "D2FD1072",
+   "offset": "0x54821",
+   "find_crc32": "EFD7C188",
    "replace": "57 69 64 2b 00"
   },
   {
    "note": "heap string 'Wid-'",
-   "offset": "0x5481C",
-   "find_crc32": "2DC51AD4",
+   "offset": "0x54826",
+   "find_crc32": "9E8A0160",
    "replace": "57 69 64 2d 00"
   },
   {
    "note": "heap string 'Nre'",
-   "offset": "0x54821",
-   "find_crc32": "0DBBD265",
+   "offset": "0x5482B",
+   "find_crc32": "928AB769",
    "replace": "4e 72 65 00"
   },
   {
    "note": "heap string 'Nfe'",
-   "offset": "0x54825",
-   "find_crc32": "2144DF1C",
+   "offset": "0x5482F",
+   "find_crc32": "ADEE7F57",
    "replace": "4e 66 65 00"
   },
   {
    "note": "heap string 'Vrms'",
-   "offset": "0x54829",
-   "find_crc32": "A8F23A5F",
+   "offset": "0x54833",
+   "find_crc32": "320B126D",
    "replace": "56 72 6d 73 00"
   },
   {
    "note": "heap string 'Avg'",
-   "offset": "0x5482E",
-   "find_crc32": "589867B8",
+   "offset": "0x54838",
+   "find_crc32": "70A3329B",
    "replace": "41 76 67 00"
   },
   {
    "note": "heap string 'Vp-p'",
-   "offset": "0x54832",
-   "find_crc32": "39F69EF7",
+   "offset": "0x5483C",
+   "find_crc32": "59B76124",
    "replace": "56 70 2d 70 00"
   },
   {
    "note": "heap string 'Vmax'",
-   "offset": "0x54837",
-   "find_crc32": "97C51A9A",
+   "offset": "0x54841",
+   "find_crc32": "3CEB5E0C",
    "replace": "56 6d 61 78 00"
   },
   {
    "note": "heap string 'Vmin'",
-   "offset": "0x5483C",
-   "find_crc32": "59B76124",
+   "offset": "0x54846",
+   "find_crc32": "8B677A3E",
    "replace": "56 6d 69 6e 00"
   },
   {
    "note": "heap string 'Waiting for trigger...'",
-   "offset": "0x54841",
-   "find_crc32": "91D4BA7A",
+   "offset": "0x5484B",
+   "find_crc32": "9FDFCAD0",
    "replace": "57 61 69 74 69 6e 67 20 66 6f 72 20 74 72 69 67 67 65 72 2e 2e 2e 00"
   },
   {
    "note": "heap string 'Auto measuring...'",
-   "offset": "0x54858",
-   "find_crc32": "86486FDD",
+   "offset": "0x54862",
+   "find_crc32": "A935BC6D",
    "replace": "41 75 74 6f 20 6d 65 61 73 75 72 69 6e 67 2e 2e 2e 00"
   },
   {
    "note": "heap string 'Start'",
-   "offset": "0x5486A",
-   "find_crc32": "12DC40E8",
+   "offset": "0x54874",
+   "find_crc32": "6398BF23",
    "replace": "53 74 61 72 74 00"
   },
   {
    "note": "heap string 'Remove'",
-   "offset": "0x54870",
-   "find_crc32": "EC834EA5",
+   "offset": "0x5487A",
+   "find_crc32": "C7610D99",
    "replace": "52 65 6d 6f 76 65 00"
   },
   {
    "note": "heap string 'Deleting...'",
-   "offset": "0x54877",
-   "find_crc32": "F85826B3",
+   "offset": "0x54881",
+   "find_crc32": "C6DA2AFC",
    "replace": "44 65 6c 65 74 69 6e 67 2e 2e 2e 00"
   },
   {
    "note": "heap string 'Are you sure you want to delete?'",
-   "offset": "0x54883",
-   "find_crc32": "5D7B34E4",
+   "offset": "0x5488D",
+   "find_crc32": "09B16444",
    "replace": "41 72 65 20 79 6f 75 20 73 75 72 65 20 79 6f 75 20 77 61 6e 74 20 74 6f 20 64 65 6c 65 74 65 3f 00"
   },
   {
    "note": "heap string 'USB drive mode. Tap anywhere to exit.'",
-   "offset": "0x548A4",
-   "find_crc32": "0C8E740E",
+   "offset": "0x548AE",
+   "find_crc32": "2F0A3947",
    "replace": "55 53 42 20 64 72 69 76 65 20 6d 6f 64 65 2e 20 54 61 70 20 61 6e 79 77 68 65 72 65 20 74 6f 20 65 78 69 74 2e 00"
   },
   {
    "note": "heap string 'Saved'",
-   "offset": "0x548CA",
-   "find_crc32": "E2046C09",
+   "offset": "0x548D4",
+   "find_crc32": "6CDB028D",
    "replace": "53 61 76 65 64 00"
   },
   {
    "note": "heap string 'Save failed'",
-   "offset": "0x548D0",
-   "find_crc32": "E0B42FD9",
+   "offset": "0x548DA",
+   "find_crc32": "BD5F20E6",
    "replace": "53 61 76 65 20 66 61 69 6c 65 64 00"
   },
   {
    "note": "heap string 'Saving...'",
-   "offset": "0x548DC",
-   "find_crc32": "25008EFF",
+   "offset": "0x548E6",
+   "find_crc32": "8209237E",
    "replace": "53 61 76 69 6e 67 2e 2e 2e 00"
   },
   {
    "note": "heap string 'Low battery, shutting down.'",
-   "offset": "0x548E6",
-   "find_crc32": "45681543",
+   "offset": "0x548F0",
+   "find_crc32": "E39325D6",
    "replace": "4c 6f 77 20 62 61 74 74 65 72 79 2c 20 73 68 75 74 74 69 6e 67 20 64 6f 77 6e 2e 00"
   },
   {
    "note": "heap string 'Signal Generator'",
-   "offset": "0x54902",
-   "find_crc32": "1124A7DC",
+   "offset": "0x5490C",
+   "find_crc32": "1CC239AD",
    "replace": "53 69 67 6e 61 6c 20 47 65 6e 65 72 61 74 6f 72 00"
   },
   {
    "note": "heap string 'Meas'",
-   "offset": "0x54913",
-   "find_crc32": "812322BF",
+   "offset": "0x5491D",
+   "find_crc32": "9F3707C0",
    "replace": "4d 65 61 73 00"
   },
   {
    "note": "heap string 'English'",
-   "offset": "0x54918",
-   "find_crc32": "5E697B74",
+   "offset": "0x54922",
+   "find_crc32": "6522DF69",
    "replace": "45 6e 67 6c 69 73 68 00"
   }
  ]

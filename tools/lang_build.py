@@ -166,6 +166,7 @@ def build(img, code, base_set):
         check_ascii(k, v, 'lang/en.json')
 
     english = {sid: en_fix.get(sid, s['en']) for sid, s in by_id.items()}
+    mod_version = load_json(os.path.join(ROOT, 'lang', 'en.json')).get('mod_version')
     second, warn = {}, []
     if sec:
         for sid, e in sec['strings'].items():
@@ -177,6 +178,9 @@ def build(img, code, base_set):
     for sid in by_id:
         t = sec['strings'].get(sid, {}).get('text') if sec else None
         second[sid] = t if t is not None else english[sid]
+    if mod_version:   # About shows "<Version> (mod X.Y):V2.7.0.7" in both languages
+        for d in (english, second):
+            d['about.3'] = f"{d['about.3']} (mod {mod_version})"
     lang_name = (sec['strings'].get('lang.name', {}).get('text') if sec else None) or (sec['name'] if sec else 'English')
     check_ascii('lang.name', lang_name, 'language name')
 

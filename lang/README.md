@@ -39,6 +39,8 @@ replacing Chinese. Each secondary language is its own firmware build.
   firmware's row breaking and stops if the labels need a fourth row
   (`python3 tools/fw_font.py <stock.bin> --width 14 "Label"` gives a label's
   width in pixels).
+- `about.3` ("Version") gets ` (mod X.Y)` appended from `mod_version` in
+  `en.json`, so the About page shows which mod build is installed.
 - `lang.name` is how the language appears in Settings and the first-boot
   language picker (next to "English").
 
