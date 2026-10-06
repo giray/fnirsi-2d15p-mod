@@ -106,3 +106,7 @@ checklist item 1 can be ticked. Unit firmware: V2.7.0.7 = our stock image.
   handlers (0x48DB2/0x48DE2); 0x1A7F8's page-1 list doesn't include it.
   Suspect the boot-into-DMM path (no 0x49924 entry) leaves it undrawn.
   Awaiting owner observation.
+- 2026-10-06 — Owner confirmed (EN and TR builds): after a cold boot the DMM
+  "< Back" button is **not drawn**, tapping its spot **works**, and it appears
+  after DDS→scope→DDS. Bug in the Goal-1 boot patch (boot path skips the
+  normal DMM entry 0x49924). Fix under investigation; v1.0 stays pre-release.
