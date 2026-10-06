@@ -98,3 +98,11 @@ checklist item 1 can be ticked. Unit firmware: V2.7.0.7 = our stock image.
 - 2026-10-06 — mod 1.0 release builds (About shows "(mod 1.0)"): +en `0576CBF4`,
   +tr `725F2B1B`, +de `1AB2F8B6`, +nl `D54F66DE`; dmm-first only `3A36D9C7`.
   Not yet flashed in this exact form.
+- 2026-10-06 — v1.0 `dmm-first+tr` (725F2B1B) flashed. Owner screenshots:
+  status-bar trigger mode "Oto" fits (wrap fixed). **Open:** one DMM-page
+  screenshot shows no "< Geri" back button (top-left widget 0xC, x=10 y=11
+  55x26) while HOLD (0x11) is drawn; an earlier one (dmm-first+tr 456B4E79)
+  showed it. Widget 0xC is only re-invalidated by the touch press/release
+  handlers (0x48DB2/0x48DE2); 0x1A7F8's page-1 list doesn't include it.
+  Suspect the boot-into-DMM path (no 0x49924 entry) leaves it undrawn.
+  Awaiting owner observation.

@@ -19,6 +19,8 @@ Dutch** UI.
 | ![English settings with the 3-row menu](docs/screenshots/en-settings.png) | ![DMM page in Turkish](docs/screenshots/tr-dmm.png) |
 | **German** | **Dutch** |
 | ![German settings](docs/screenshots/de-settings.png) | ![Dutch math panel](docs/screenshots/nl-math.png) |
+| **Turkish** | **Dutch** |
+| ![Turkish horizontal panel](docs/screenshots/tr-horizontal.png) | ![Dutch settings](docs/screenshots/nl-settings.png) |
 
 ## What it changes
 
