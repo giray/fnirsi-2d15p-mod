@@ -90,6 +90,9 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--port', help='serial device (default: auto)')
     ap.add_argument('--csv', help='append readings to this CSV file')
+    ap.add_argument('--all', action='store_true',
+                    help='log every line to CSV (default: skip identical consecutive readings; '
+                         'the device streams at its loop rate, so readings repeat)')
     ap.add_argument('--raw', action='store_true', help='print received lines unchanged')
     ap.add_argument('--idn', action='store_true', help='send *IDN? and print the reply')
     a = ap.parse_args()
@@ -120,6 +123,7 @@ def main():
             out.writerow(['time', 'function', 'value', 'unit', 'hold'])
 
     print(f'Listening on {port}. Show the multimeter page on the device. Ctrl-C to stop.', file=sys.stderr)
+    last = None
     try:
         for line in lines(fd):
             if a.raw:
@@ -132,10 +136,12 @@ def main():
             hold = '  HOLD' if r['hold'] else ''
             print(f"\r{now:%H:%M:%S}  {r['function']:<5} {r['value']:>10} {r['unit']:<5}{hold}   ",
                   end='', flush=True)
-            if out:
+            key = (r['function'], r['value'], r['unit'], r['hold'])
+            if out and (a.all or key != last):
                 out.writerow([now.isoformat(timespec='milliseconds'), r['function'], r['value'], r['unit'],
                               int(r['hold'])])
                 out_f.flush()
+            last = key
     except KeyboardInterrupt:
         print(file=sys.stderr)
     finally:

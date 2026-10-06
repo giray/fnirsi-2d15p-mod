@@ -370,3 +370,29 @@ written; paused pending the owner's decision):
   unprompted, as predicted). Sent exactly `*IDN?` (5 bytes, no CR/LF) → reply
   `FNIRSI 2D15P, NULL, V2.7.0.7` (no terminator), exactly the format predicted
   by static analysis (0x444E4). Transport model confirmed.
+
+### 2026-10-06 — Goal 4 streaming patch (firmware/dmm-stream.json, verified, NOT yet flashed)
+Streams DMM readings over the CDC port. Single hook, no new global RAM.
+- **Hook:** `bl 0x4F9F4` (loop delay) @0x441CC → `bl 0x66100` (cave does the
+  delay then emits). The display/USB task 0x44170 is the only TX-ring writer.
+- **Cave** at 0x66100 (code) with ASCII tables at 0x66000 (17 function codes,
+  6 B each) and 0x66066 (22 units, 5 B each), formats at 0x660D4/0x660E8;
+  548 B total (0x66000..0x66224) in the dead 20 px CJK glyph run (reserved by
+  lang_build CODE_RESERVED). Executable flash, no MPU.
+- **Emit when** page==1 (DMM, +0xE33) AND DTR set (port 0x20002D54 +0x20C bit0),
+  once per loop pass. No dedup in firmware (host dedups); no cross-task state.
+- **Line:** `DMM,<fn>,<value|token>,<unit>,<hold>\r\n`, always ASCII English
+  regardless of UI language. value = `%.*f` of +0x464 float with +0x468
+  decimals; if token +0x469!=0 the stock token string is sent instead (".OL"
+  for overrange, "AUTO", "CAL"...). Formatted into the stock float buffer
+  0x200036B8 (reused, same task) then copied whole-line-or-nothing into the
+  ring (free = 0x100 - count +0x100), then TXFLAG 0x20002FE8 = 1.
+- **Verified by unicorn** (tools/.venv): DCV/ACV/CAP/FREQ/negative/HOLD/.OL all
+  format correctly; gating (page!=1, DTR=0, ring-full) all skip. Max cave stack
+  476 B (task stack 1024 B; stock *IDN? path already uses a comparable depth).
+  f2d 0x54D28 is software (no FPU). Formatting floats to a STACK buffer garbles
+  under emulation and stock never does it — hence the global 0x200036B8.
+- **CRCs:** stock+stream EBB89313; dmm-first+stream 0859047B; (dmm-first+tr)
+  +stream 6A7DE5AA. Composes with dmm-first and the language builds (lang
+  strings end 0x65AB5, below the cave). Standalone patch; stack it last.
+- **Host:** host/dmm_read.py (live view + CSV, consecutive-dedup unless --all).
