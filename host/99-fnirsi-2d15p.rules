@@ -1,0 +1,9 @@
+# FNIRSI 2D15P USB serial port (CDC ACM, VID 0416 PID 50A1, normal operation).
+# - Stop ModemManager from probing it: it may send AT commands, and this
+#   port also accepts calibration commands.
+# - Let the plugdev group open it, and add a stable name /dev/fnirsi-2d15p.
+# Install:
+#   sudo cp host/99-fnirsi-2d15p.rules /etc/udev/rules.d/
+#   sudo udevadm control --reload-rules && sudo udevadm trigger
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0416", ATTRS{idProduct}=="50a1", ENV{ID_MM_DEVICE_IGNORE}="1"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0416", ATTRS{idProduct}=="50a1", ENV{ID_MM_DEVICE_IGNORE}="1", MODE="0660", GROUP="plugdev", SYMLINK+="fnirsi-2d15p"

@@ -34,6 +34,9 @@ BASE = 0x11000            # MCU address = file offset + BASE
 STOCK_CRC = 0xB43E8C2D
 STOCK_NAME = '2D15P_V2.7.0.7_260826.bin'
 APP_END = 0x7C9C0
+# CJK glyph area kept free for new code (Goal 4 DMM streaming); strings never go here
+CODE_RESERVED = [(0x66000, 0x6C249)]
+HEAP_FIRST = 0x6545C
 # sprintf target 0x200036B8 is 40 bytes; these ids are formatted into it
 SPRINTF_LIMIT = {'meas.': 20, 'btn.back': 20, 'about.3': 20}
 # fixed-width boxes: id prefix -> (font line height, max pixels, where)
@@ -121,7 +124,9 @@ def span(p):
 
 class Heap:
     def __init__(self, runs):
-        self.runs = [[a, b] for a, b in sorted(runs, key=lambda r: r[1] - r[0], reverse=True)]
+        # the 20 px font's run first (where strings have always gone, keeps
+        # released builds byte-identical), then the rest by size
+        self.runs = [[a, b] for a, b in sorted(runs, key=lambda r: (r[0] != HEAP_FIRST, -(r[1] - r[0])))]
         self.placed = {}
 
     def put(self, text):
@@ -140,7 +145,16 @@ class Heap:
 def cjk_runs(img):
     try:
         import fw_font
-        return [(r[0], r[1]) for r in fw_font.cjk_runs(img)]
+        runs = []
+        for a, b, *_ in fw_font.cjk_runs(img):
+            for ra, rb in CODE_RESERVED:      # cut reserved ranges out of the run
+                if a < rb and ra < b:
+                    if a < ra:
+                        runs.append((a, ra))
+                    a = max(a, rb)
+            if a < b:
+                runs.append((a, b))
+        return runs
     except ImportError:
         die('tools/fw_font.py not found (needed to locate the free CJK glyph area)')
 

@@ -36,8 +36,16 @@ Only after this round-trip succeeds should any modified image be flashed.
 - **Calibration is sacred.** Do not write to any region that might hold DMM or
   scope calibration. If a byte range's purpose is unknown, treat it as off-limits
   and ask before touching it. Calibration loss may be permanent.
-- **No writes to the USB CDC/serial port on a live unit** until its command set
-  is understood from static analysis. Reading (passive) is fine; writing is not.
+- **USB serial port (CDC, 0416:50A1): listen freely, send only what is on
+  the safe list.** Static analysis (notes/hardware.md, "USB CDC / SCPI
+  interface", 2026-10-06) mapped every command. Opening the port and setting
+  baud/DTR/RTS have no side effects.
+  - **Safe:** `*IDN?` and `MEAS:CH1:`/`MEAS:CH2:` + `VRMS|VAVG|VPP|VMAX|VMIN`
+    (scope page only). Send them as one write with **no CR/LF**.
+  - **Never:** anything starting with `CAL:`, including `CAL:BIAS:CALC?`.
+    These run calibration steps that become permanent at the next settings
+    save. Prefix matching means extra bytes don't make them safe.
+  - Install `host/99-fnirsi-2d15p.rules` so ModemManager never probes the port.
 - **Flush before power-cycle.** `sync` and unmount the upgrade volume every time,
   or the write may be truncated.
 

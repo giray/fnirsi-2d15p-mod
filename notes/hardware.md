@@ -248,3 +248,98 @@ Hz of kHz, ...).
   `ldrb [..,#0xe28]` and every later `cmp` on that register. All other uses
   index tables. Windows are unique in stock and don't overlap each other or
   dmm-first. fw_patch dry-run on stock is OK (output crc32 CD8C01BA).
+
+### 2026-10-06 — USB personalities (observed, passive)
+- Normal operation: CDC ACM **0416:50A1**, bcdDevice 3.00 → `/dev/ttyACM0`
+  (kernel log). USB Sharing / recovery: mass storage **0416:5020**.
+- The host's ModemManager grabs/releases ttyACM0 on every plug-in and logs
+  "not supported by any plugin" (likely rejected before any AT probe, but not
+  provable). `host/99-fnirsi-2d15p.rules` sets ID_MM_DEVICE_IGNORE, gives
+  plugdev access (owner is not in dialout) and a `/dev/fnirsi-2d15p` symlink.
+  Install it before anything opens the port.
+
+### 2026-10-06 — USB CDC / SCPI interface (static analysis only; nothing was sent to the device)
+
+**Two USB personalities.** Both descriptor sets live in the RW init image (RAM).
+- **CDC** (normal operation):
+  - Device descriptor 0x200000E0: class 02, **VID 0x0416, PID 0x50A1**, bcdDevice 0x0300.
+  - Config 0x200000F2 (67 B): IF0 = CDC ACM with notify EP 0x81 (interrupt, 8 B); IF1 = data, bulk **EP 0x82 IN / EP 0x02 OUT**, 64 B each.
+  - Strings: "Synwit" (0x20000139) and "USB Virtual COM" (0x20000147). No serial number.
+- **MSC** (USB Sharing only):
+  - Device descriptor 0x2000002B: **VID 0x0416, PID 0x5020**, bcdDevice 0x0100.
+  - Config 0x2000003D: class 08/06/50, bulk 0x81 / 0x01.
+  - Strings: "Synwit", "Mass Storage", serial "A0000080401150".
+- **When each is active:**
+  - The USB task 0x457F0 installs the CDC descriptors at start (0x45824..) and initialises USB (0x3825C). So **CDC is up whenever the APP runs and USB Sharing is off**, on every page.
+  - 0x4BC1C (USB Sharing ON) sets page 7 and re-enumerates as MSC.
+  - 0x45AB0 (exit sharing) sets page 2 and re-enumerates as CDC.
+  - The recovery bootloader's MSC is not in the APP.
+- **CDC class requests** (0x38B10): SET_LINE_CODING (0x20) only stores 7 B at 0x20000178, and GET_LINE_CODING (0x21) returns them. SET_CONTROL_LINE_STATE (0x22) only stores wValue at 0x20002F60. Nothing reads either value for any action. **No DTR/RTS action, no auto-command on connect.**
+- The only producer for the TX ring is the reply code in the display task. So **the device never sends anything unprompted**; opening the port and listening is passive.
+
+**Transport.**
+- Port state struct at 0x20002D54 (`sb`):
+  - TX ring +0x000..0xFF (write index +0x104, read index +0x102, count +0x100);
+  - line buffer +0x106 (length +0x206; write index +0x20A, which wraps at 0x100);
+  - EP2 OUT packet buffer +0x250 (count +0x290, flag +0x292);
+  - TX staging +0x20E (length +0x24E).
+- The ISR (IRQ77, 0x38854) fills the OUT packet buffer. The **display/key task 0x44170** copies it into the line buffer (0x443B0) and, **on the same loop pass**, NUL-terminates it and parses it (0x44422).
+- There is **no line terminator handling**: one USB OUT transfer is one command. Exact commands are compared with `memcmp(buf, "CMD", strlen+1)` (0x13680 is memcmp), so **"CMD\r\n" does not match and gets "ERR"**. Prefix commands (MEAS:CH, CAL:AMP:PREP) ignore trailing bytes. Matching is case-sensitive. Max length 256 (indexes wrap).
+- Replies go through the TX ring → EP2 IN (0x44238..0x4436C, up to 64 B per packet, `0x38708(2,…)`), with **no terminating newline**.
+- Unknown command → "ERR". Page/state gates → "ERR1" (not page 2), "ERR2" (+0x2E busy), "ERR3" (+0x2D set / bad channel), "ERR4" (bad argument).
+- The parser is skipped while page == 7 (0x44204).
+
+**Command table** (all handlers are inside 0x44170; the type-5 input-event table is at 0x44158):
+
+| Command | Match | Handler | Gate | Effect / reply | Class |
+|---|---|---|---|---|---|
+| `*IDN?` | exact | 0x444E4 | none | `FNIRSI 2D15P, NULL, V%d.%d.%d.%d` (version nibbles at +0xE2E) | **READ-ONLY** |
+| `MEAS:CH1:` / `MEAS:CH2:` + `VRMS` / `VAVG` / `VPP` / `VMAX` / `VMIN` | prefix | 0x44824 → 0x4545C | page 2 (else ERR1) | `%.2f%s` scope measurement (float at struct +0x70+ch*0x34+k*4, unit from a table near 0x457A4) | **READ-ONLY** (scope only) |
+| `CAL:ADC:PREP` | exact | 0x4453A | page 2, idle | posts input {5,0} → 0x50034: rewrites channel config (+0xA..+0x45) and sends FPGA cal commands 0x76..0xA2 | **CALIBRATION** |
+| `CAL:ADC:CALC` | exact | 0x445B4 | page 2, idle | status 0x20002FED=0x7F, {5,1} → 0x5053C. Result arrives later as "SUCC" / "ERR%d" (0x44904/0x452FE); hw-sync 0x1739E/0x174C4 stores results (+0x3BD/+0x3C1) | **CALIBRATION** |
+| `CAL:AMP:CALC` | exact | 0x446E4 | page 2, idle | {5,2} → 0x50690 | **CALIBRATION** |
+| `CAL:AMP:PREP ` + `CH1, ` / `CH2, ` / `ALL, ` + `100mv` / `200mv` / `500mv` / `10v`… | prefix | 0x4475C → 0x45548 | page 2, idle | writes 0x20002FEE, {5,3} → 0x507E4 (channel config + FPGA cal commands) | **CALIBRATION** |
+| `CAL:BIAS:CALC` | exact | 0x44656 | page 2, idle | {5,4} → `b.w 0x4B8D4` = starts the on-screen self-calibration (page 0xA, same as Menu → Calibration) | **CALIBRATION** |
+| `CAL:BIAS:CALC?` | exact | 0x446C6 | none | busy → "1"; **on page 0xA it posts {5,5} → 0x48F60 (leaves the calibration page)**; else "0" | **CHANGES-SETTINGS** (not a pure query) |
+
+- **Flash:** the only internal-flash writer in the APP is 0x31DF0 (ROM API 0x11000471/0x11000401/0x110004C1), which saves the settings struct, including the calibration-range fields, to the config block at 0x11000. It runs on power-off, low battery, factory reset and 0x46218.
+- **So CAL changes become permanent** at the next save, even though the CAL handlers do not write flash themselves.
+
+**DMM readings.**
+- No command returns them. MEAS:CH is scope-only and returns ERR1 on the DMM page.
+- The decoded reading is written by the DMM task (0x43B60..0x43C4C) into the settings struct (0x20000198 + offset):
+  - **+0x464 float** (value in display units; already sign-applied);
+  - +0x468 u8 decimals (drawn with `"%.<n>f"`);
+  - **+0x469 u8 token**: if non-zero, the display shows `table 0x5A3C4[token-1]` instead of the number (1 AUTO, **2 ".OL" = overrange**, 3 " ", 4 CAL, 5 PAS, 6 Er1, 7 Er2, 8 Er3, 9 ErC);
+  - **+0x46C u8 unit** → `0x5A3E8[unit]` (mV V Ω kΩ MΩ nH uH mH H nF uF mF F uA mA A ℃ ℉ Hz kHz MHz, …);
+  - +0x460 function, +0x46A/+0x46E secondary "%d Hz" field, +0x470 HOLD.
+  - Absolute addresses: value 0x200005FC, token 0x20000601, unit 0x20000604.
+- Display: draw fn 0x269E4 (widget 0x10). It runs once per DMM packet, ending in `bl 0x142C8` at **0x43E88**.
+
+**Proposed Goal-4 patch (design only; not written).** Stream one line per reading; the host never writes.
+- **Hook:** at 0x43E88 change `bl 0x142C8` to `bl cave` (4 B, same length).
+- **Cave** (Thumb, about 140–180 B):
+  - push; `bl 0x142C8`;
+  - if page byte (+0xE33) == 1 (optional): build the line in a stack buffer (~48 B), reusing the firmware's own `sprintf` 0x12424 / `snprintf` 0x12450 and the float→double helper 0x54D28 exactly like 0x269E4:
+    - `snprintf(fmt,10,"%%.%df",dec)` then `sprintf(buf,fmt,val)`, or the token string;
+    - then append `" " + unit + (HOLD?" H":"") + "\r\n"`;
+  - then, between cpsid i / cpsie i, copy the bytes into the TX ring at 0x20002D54 (write index +0x104, count +0x100, drop if count would exceed 0xFF, the same rule as stock), and set [0x20002FE8]=1;
+  - pop.
+  - The display task (any page except 7) drains the ring to EP 0x82.
+  - Unit strings are UTF-8 (Ω, ℃). Either emit an ASCII name table (≈60 B) or let the host decode UTF-8.
+- **Cave location:** the tail of the 20 px CJK glyph run, 0x66000..0x6C249 (lang_build uses ~1.6 KB from 0x6545C). It is executable flash: the APP sits in the Code region, there is **no MPU/SAU setup anywhere** (no references to 0xE000ED90.. / 0xE000EDD0..), and no XN.
+- **Must avoid:** dmm-first (0x3011C..0x3016F incl. the cave 0x30162), lang/layout.json and boot_fix (0x985E).
+- **To check before writing it:**
+  - the DMM task's stack size (xTaskCreate args near 0x34A54) for the ~64-byte frame;
+  - that the DMM task is the only writer at that point. The TX ring is otherwise produced only by the display task, and ring count updates there run without a lock, hence the cpsid in the cave.
+- **Alternative:** a new query (e.g. reuse the unknown-command branch 0x444D2) handled inside the display task. That avoids cross-task ring access but needs host writes.
+
+**Safety verdict for SAFETY.md rule 5.**
+- **Safe:**
+  - opening/listening on the CDC port (any DTR/RTS/baud);
+  - `*IDN?` sent with no CR/LF;
+  - `MEAS:CH1:VRMS`-style queries (read-only, page 2 only).
+- **Never send:**
+  - any `CAL:*` command, **including `CAL:BIAS:CALC?`**;
+  - any untested string beginning with "CAL:". Prefix matching means e.g. `CAL:AMP:PREP …` with extra bytes still runs.
+- Sending garbage is otherwise answered with "ERR" and has no side effect.
