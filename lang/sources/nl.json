@@ -1,0 +1,23 @@
+{
+  "changes": [
+    {"id": "meas.12", "current": "Vtt", "suggested": null, "confidence": "high",
+     "evidence": "'Vtt' (top-top) is school-physics usage, not vendor UI. Fluke's Dutch 123B manual keeps the readout 'Vpk-pk' and spells it out as 'Spanning piek-piek'; Velleman EDU06 glossary uses 'Peak-to-peak'. Keep 'Vp-p'. https://euro-index.be/files/secured/documents/fluke-123b-124b-125b-hl-vl.pdf ; https://cdn.velleman.eu/downloads/0/user/usermanual_edu06_nl.pdf"},
+    {"id": "meas.11", "current": "Gem", "suggested": null, "confidence": "medium",
+     "evidence": "Fluke Dutch 110-117 manual keeps the display tag: 'de lage (MIN), gemiddelde (AVG) en huidige meetwaarden'. That matches the other kept tags (Vrms, Vmax, MIN/MAX). https://euro-index.be/files/secured/documents/fluke-110-113-114-115-117-hl-vl.pdf"},
+    {"id": "disp.5", "current": "Nagloei:", "suggested": null, "confidence": "medium",
+     "evidence": "'Nagloei' is not a Dutch word (the verb is nagloeien). Fluke's Dutch ScopeMeter manual leaves the term in English: 'golfvormen van de Persistence-modus te wissen'. If a Dutch word is wanted, use 'Nagloeien:' or 'Persistentie:'. https://euro-index.be/files/secured/documents/fluke-123b-124b-125b-hl-vl.pdf"},
+    {"id": "acq.0", "current": "Rollen:", "suggested": "Rol:", "confidence": "medium",
+     "evidence": "Fluke 123B Dutch UI: 'Gebruik YZ om het bijwerken als Rol te markeren'; also 'De functie van de rolmodus'. https://euro-index.be/files/secured/documents/fluke-123b-124b-125b-hl-vl.pdf"},
+    {"id": "dmm.func.5", "current": "Inductie", "suggested": "Inductiviteit", "confidence": "medium",
+     "evidence": "'Inductie' names the effect; the measured quantity is 'inductiviteit' (synonyms inductantie, zelfinductie), parallel to 'Capaciteit'. Wikipedia NL 'Zelfinductie' lists Inductiviteit/Inductantie. https://nl.wikipedia.org/wiki/Zelfinductie"},
+    {"id": "dds.wave.5", "current": "Halve golf", "suggested": "Enkelzijdig", "confidence": "low",
+     "evidence": "Velleman EDU06 (Dutch): 'gelijkgerichte wisselspanning, enkelzijdig' / 'Enkelzijdige gelijkrichter'. 'Halve golf' is understandable but is not the standard term. https://cdn.velleman.eu/downloads/0/user/usermanual_edu06_nl.pdf"},
+    {"id": "dds.wave.6", "current": "Hele golf", "suggested": "Dubbelzijdig", "confidence": "low",
+     "evidence": "Velleman EDU06 (Dutch): 'gelijkgerichte wisselspanning, dubbelzijdig' / 'Dubbelzijdig gelijkgerichte AC'. https://cdn.velleman.eu/downloads/0/user/usermanual_edu06_nl.pdf"},
+    {"id": "dmm.func.14", "current": "Fase", "suggested": null, "confidence": "low",
+     "evidence": "The Voltcraft VC33 Dutch manual keeps the display/key label 'Live' ('Houd de knop LIVE/NCV ingedrukt'; section 'Live- en nuldraden detecteren'), the same way NCV is kept. 'Fase' is acceptable Dutch if a translated word is preferred. https://asset.conrad.com/media10/add/160267/c1/-/nl/002589628ML03/navodila-za-uporabo-2589628-voltcraft-vc33-rocni-multimeter-digitalni-prikaz-stetje-5999.pdf"},
+    {"id": "settings.3", "current": "Auto uit", "suggested": "Auto-uit", "confidence": "medium",
+     "evidence": "Voltcraft VC33 Dutch manual: 'Als de automatische uitschakelfunctie (auto-uit) is ingeschakeld'. Hyphenated, as Dutch spelling requires. https://asset.conrad.com/media10/add/160267/c1/-/nl/002589628ML03/navodila-za-uporabo-2589628-voltcraft-vc33-rocni-multimeter-digitalni-prikaz-stetje-5999.pdf"}
+  ],
+  "keep_notes": "Checked the Dutch manuals for Fluke 123B/124B ScopeMeter (UI terms: 'Enkel' for single, 'Normaal', 'flank', 'AC-koppeling', 'Cursor', 'Helderheid', 'Taal', 'wacht op een trigger', 'Duty cycle' and 'Pulsbreedte' kept or translated), Fluke 110-117, PeakTech 2035 (keeps 'NCV' and 'duty cycle'), Voltcraft VC33, Velleman EDU06 (raster, koppeling, stijgende/dalende flank, blokgolf, Vrms kept) and Velleman DVM20FGC (sinus, blokgolf, driehoek, offset, amplitude). These sources confirm the current drafts for the trigger modes (Auto/Norm./Enkel), Flank, Koppeling, Probe, Geheugendiepte, Raster, Doorgang, Capaciteit, Duty cycle, Offset, Blok/Driehoek/Ruis, Wacht op trigger, Opslaan/Opgeslagen and the kept English tags (Freq, Vrms, Vmax/Vmin, Duty+/-, NCV, MIN/MAX). I found no Dutch vendor UI for 'Math', so 'Wiskunde' is unverified and was left alone."
+}

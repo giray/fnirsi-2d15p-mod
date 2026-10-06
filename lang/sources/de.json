@@ -1,0 +1,110 @@
+{
+ "changes": [
+  {
+   "id": "trig.mode.2",
+   "current": "Einzeln",
+   "suggested": "Einzel",
+   "confidence": "medium",
+   "evidence": "Siglent SDS1000X-E German quick guide: 'Single-(Einzel)-Trigger'; Rigol DS1000Z DE manual: 'Einzelfolge (Single)'; R&S RTB2000 DE: 'Einzelerfassung'. 'Einzeln' (adverb) is not used by any vendor. Alternative: keep English 'Single' (Rigol/R&S key label). https://media.elv.com/file/250163_bda_deutsch.pdf ; https://asset.conrad.com/media10/add/160267/c1/-/de/001392205ML01/manual-1392205-rigol-ds1054z-digital-50-mhz-4-channel-1-gss-24-mp-8-bit-digital-storage-dso-1-pcs.pdf ; https://scdn.rohde-schwarz.com/ur/pws/dl_downloads/pdm/cl_manuals/user_manual/1333_1611_01/RTB_UserManual_de_12.pdf"
+  },
+  {
+   "id": "meas.10",
+   "current": "Veff",
+   "suggested": null,
+   "confidence": "high",
+   "evidence": "Rigol DS1000Z DE manual keeps 'Vrms: Effektivwert der Spannung'; R&S RTB2000 DE measurement table symbol 'RMS' (Messart 'RMS-Wert'). https://asset.conrad.com/media10/add/160267/c1/-/de/001392205ML01/manual-1392205-rigol-ds1054z-digital-50-mhz-4-channel-1-gss-24-mp-8-bit-digital-storage-dso-1-pcs.pdf ; https://scdn.rohde-schwarz.com/ur/pws/dl_downloads/pdm/cl_manuals/user_manual/1333_1611_01/RTB_UserManual_de_12.pdf"
+  },
+  {
+   "id": "meas.12",
+   "current": "Vss",
+   "suggested": null,
+   "confidence": "high",
+   "evidence": "R&S RTB2000 DE: symbol 'Vpp' = 'Spitze-Spitze-Wert'; Rigol DS1000Z DE keeps 'Vpp' as the measurement name (Vss only appears as an alternative unit 'Vpp/Vss' for generator amplitude). https://scdn.rohde-schwarz.com/ur/pws/dl_downloads/pdm/cl_manuals/user_manual/1333_1611_01/RTB_UserManual_de_12.pdf ; https://asset.conrad.com/media10/add/160267/c1/-/de/001392205ML01/manual-1392205-rigol-ds1054z-digital-50-mhz-4-channel-1-gss-24-mp-8-bit-digital-storage-dso-1-pcs.pdf"
+  },
+  {
+   "id": "meas.4",
+   "current": "Tast+",
+   "suggested": null,
+   "confidence": "medium",
+   "evidence": "Rigol DS1000Z DE: '+ Duty: +Tastverhaeltnis (+Duty)'; R&S RTB2000 DE symbol 'Dty+' ('Tastverhaeltnis +'). Vendors keep the English abbreviation on screen; 'Tast+' is not a recognised abbreviation. https://asset.conrad.com/media10/add/160267/c1/-/de/001392205ML01/manual-1392205-rigol-ds1054z-digital-50-mhz-4-channel-1-gss-24-mp-8-bit-digital-storage-dso-1-pcs.pdf ; https://scdn.rohde-schwarz.com/ur/pws/dl_downloads/pdm/cl_manuals/user_manual/1333_1611_01/RTB_UserManual_de_12.pdf"
+  },
+  {
+   "id": "meas.5",
+   "current": "Tast-",
+   "suggested": null,
+   "confidence": "medium",
+   "evidence": "Rigol DS1000Z DE: '- Duty: -Tastverhaeltnis (-Duty)'; R&S RTB2000 DE symbol 'Dty-'. https://asset.conrad.com/media10/add/160267/c1/-/de/001392205ML01/manual-1392205-rigol-ds1054z-digital-50-mhz-4-channel-1-gss-24-mp-8-bit-digital-storage-dso-1-pcs.pdf ; https://scdn.rohde-schwarz.com/ur/pws/dl_downloads/pdm/cl_manuals/user_manual/1333_1611_01/RTB_UserManual_de_12.pdf"
+  },
+  {
+   "id": "meas.6",
+   "current": "Breite+",
+   "suggested": null,
+   "confidence": "medium",
+   "evidence": "R&S RTB2000 DE measurement table: 'Pulsbreite +' with on-screen symbol 'PW+'; Rigol DE manual keeps English measurement names (Period, Frequency, Rise Time ...). Keep English 'Wid+' for consistency with Freq/Nre/Nfe/Vmax. https://scdn.rohde-schwarz.com/ur/pws/dl_downloads/pdm/cl_manuals/user_manual/1333_1611_01/RTB_UserManual_de_12.pdf ; https://asset.conrad.com/media10/add/160267/c1/-/de/001392205ML01/manual-1392205-rigol-ds1054z-digital-50-mhz-4-channel-1-gss-24-mp-8-bit-digital-storage-dso-1-pcs.pdf"
+  },
+  {
+   "id": "meas.7",
+   "current": "Breite-",
+   "suggested": null,
+   "confidence": "medium",
+   "evidence": "R&S RTB2000 DE: 'Pulsbreite -' symbol 'PW-'. https://scdn.rohde-schwarz.com/ur/pws/dl_downloads/pdm/cl_manuals/user_manual/1333_1611_01/RTB_UserManual_de_12.pdf"
+  },
+  {
+   "id": "bar.run",
+   "current": "Lauf",
+   "suggested": null,
+   "confidence": "medium",
+   "evidence": "Rigol DS1000Z DE: 'Run/Stop-Taste (RUN/STOP)'; Siglent DE: Zustand 'RUN' oder 'STOP'. No vendor translates Run as 'Lauf'. https://asset.conrad.com/media10/add/160267/c1/-/de/001392205ML01/manual-1392205-rigol-ds1054z-digital-50-mhz-4-channel-1-gss-24-mp-8-bit-digital-storage-dso-1-pcs.pdf ; https://media.elv.com/file/250163_bda_deutsch.pdf"
+  },
+  {
+   "id": "menu.6",
+   "current": "Mathe",
+   "suggested": "Math",
+   "confidence": "low",
+   "evidence": "Rigol DS1000Z DE: 'Tasten MATH -> Math -> Operator'; R&S uses full 'Mathematik' (too long). 'Mathe' is colloquial/school German. https://asset.conrad.com/media10/add/160267/c1/-/de/001392205ML01/manual-1392205-rigol-ds1054z-digital-50-mhz-4-channel-1-gss-24-mp-8-bit-digital-storage-dso-1-pcs.pdf ; https://scdn.rohde-schwarz.com/ur/pws/dl_downloads/pdm/cl_manuals/user_manual/1333_1611_01/RTB_UserManual_de_12.pdf"
+  },
+  {
+   "id": "disp.3",
+   "current": "Kurven-Hell.:",
+   "suggested": "Signalhell.:",
+   "confidence": "low",
+   "evidence": "Rigol DS1000Z DE display menu: 'Signalhelligkeit (Intensity), Rasterhelligkeit (Brightness)'. Matches the 'Raster...' pattern of disp.0. Current is acceptable too. https://asset.conrad.com/media10/add/160267/c1/-/de/001392205ML01/manual-1392205-rigol-ds1054z-digital-50-mhz-4-channel-1-gss-24-mp-8-bit-digital-storage-dso-1-pcs.pdf"
+  },
+  {
+   "id": "settings.5",
+   "current": "Werksreset",
+   "suggested": "Werkseinstell.",
+   "confidence": "medium",
+   "evidence": "Rigol DS1000Z DE: 'Werkseinstellungen (Factory)'; R&S RTB2000 DE: 'Werkseinstellungen wiederherstellen'. 'Werksreset' is an anglicism no vendor uses; use full 'Werkseinstellungen' if the list row fits 18 chars. https://asset.conrad.com/media10/add/160267/c1/-/de/001392205ML01/manual-1392205-rigol-ds1054z-digital-50-mhz-4-channel-1-gss-24-mp-8-bit-digital-storage-dso-1-pcs.pdf ; https://scdn.rohde-schwarz.com/ur/pws/dl_downloads/pdm/cl_manuals/user_manual/1333_1611_01/RTB_UserManual_de_12.pdf"
+  },
+  {
+   "id": "reset.warn",
+   "current": "Werksreset macht alle Aenderungen rueckgaengig!",
+   "suggested": "Werkseinstellungen: alle Aenderungen gehen verloren!",
+   "confidence": "low",
+   "evidence": "Terminology follows R&S RTB2000 DE: 'Alle Geraeteeinstellungen werden auf die Werkseinstellungen zurueckgesetzt'. If width is tight, 'Alle Aenderungen gehen verloren!' alone. https://scdn.rohde-schwarz.com/ur/pws/dl_downloads/pdm/cl_manuals/user_manual/1333_1611_01/RTB_UserManual_de_12.pdf"
+  },
+  {
+   "id": "settings.3",
+   "current": "Auto-Aus",
+   "suggested": "Abschaltautomatik",
+   "confidence": "low",
+   "evidence": "PeakTech P 1071 datasheet: 'Abschaltautomatik und Batteriezustandsanzeige'; Voltcraft uses the same term. Only if 17 chars fit the settings row; otherwise keep 'Auto-Aus'. https://www.peaktech.de/datasheet/719a3c108b454e17b0fd5be538ebae2a"
+  },
+  {
+   "id": "msg.save_failed",
+   "current": "Speicherfehler",
+   "suggested": "Speichern fehlgeschlagen",
+   "confidence": "medium",
+   "evidence": "'Speicherfehler' reads as 'memory error'. German instrument manuals use the '... fehlgeschlagen' pattern, e.g. R&S RTB2000 DE 'Verbindung fehlgeschlagen', Rigol DE 'Verbindungsaufbau ... fehlgeschlagen'. https://scdn.rohde-schwarz.com/ur/pws/dl_downloads/pdm/cl_manuals/user_manual/1333_1611_01/RTB_UserManual_de_12.pdf ; https://asset.conrad.com/media10/add/160267/c1/-/de/001392205ML01/manual-1392205-rigol-ds1054z-digital-50-mhz-4-channel-1-gss-24-mp-8-bit-digital-storage-dso-1-pcs.pdf"
+  },
+  {
+   "id": "dmm.func.14",
+   "current": "Phase",
+   "suggested": null,
+   "confidence": "low",
+   "evidence": "PeakTech P 1071 (German datasheet) keeps the English label: 'Live-Test und NCV Spannungspruefer ... der LIVE-Test als einpoliger Phasenpruefer'. Keeping 'LIVE' also matches NCV, which is already kept in English. 'Phase' is still understandable. https://www.peaktech.de/datasheet/719a3c108b454e17b0fd5be538ebae2a"
+  }
+ ],
+ "keep_notes": "Checked against the German manuals of R&S RTB2000, Rigol DS1000Z, Siglent SDS1000X-E, Rigol DG1000Z, Voltcraft VC850 and a PeakTech P 1071 datasheet. These confirm the current draft for Flanke, Kopplung, Speichertiefe, Rollen, Nachleuchten, Raster, Quelle, Operator/Operation, BW-Limit (Siglent DE uses it literally), Tastgrad (Rigol DG1000Z DE), Sinus/Rechteck/Rauschen, Treppe (Rigol: 'Treppensignalverlauf steigend/fallend'), Durchgang, Diode, Werks-/Selbsttest wording, Sprache and Helligkeit. DC-/AC-Spannung was kept: it is short and common, although Voltcraft and PeakTech prose uses Gleichspannung/Wechselspannung. Halbwelle/Vollwelle, Mittel (Avg) and Periode were also kept."
+}

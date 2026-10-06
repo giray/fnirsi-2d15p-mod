@@ -33,7 +33,7 @@
   },
   "acq.0": {
    "en": "Roll:",
-   "text": "Rollen:"
+   "text": "Rol:"
   },
   "acq.1": {
    "en": "Memory Depth:",
@@ -61,7 +61,7 @@
   },
   "disp.5": {
    "en": "Persistence:",
-   "text": "Nagloei:"
+   "text": "Persistentie:"
   },
   "math.0": {
    "en": "Operation:",
@@ -245,7 +245,7 @@
   },
   "settings.3": {
    "en": "Auto Off",
-   "text": "Auto uit"
+   "text": "Auto-uit"
   },
   "settings.4": {
    "en": "About",
@@ -297,7 +297,7 @@
   },
   "dmm.func.5": {
    "en": "Inductance",
-   "text": "Inductie"
+   "text": "Inductiviteit"
   },
   "dmm.func.6": {
    "en": "Capacitance",
@@ -333,7 +333,7 @@
   },
   "dmm.func.14": {
    "en": "LIVE",
-   "text": "Fase"
+   "text": null
   },
   "dmm.func.15": {
    "en": "Automatic",
@@ -401,11 +401,11 @@
   },
   "meas.11": {
    "en": "Avg",
-   "text": "Gem"
+   "text": null
   },
   "meas.12": {
    "en": "Vp-p",
-   "text": "Vtt"
+   "text": null
   },
   "meas.13": {
    "en": "Vmax",

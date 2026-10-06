@@ -3,7 +3,7 @@
 [![check](https://github.com/giray/fnirsi-2d15p-mod/actions/workflows/check.yml/badge.svg)](https://github.com/giray/fnirsi-2d15p-mod/actions/workflows/check.yml)
 **Project:** <https://github.com/giray/fnirsi-2d15p-mod>, with downloads on the
 [Releases](https://github.com/giray/fnirsi-2d15p-mod/releases) page. Current
-version: **mod 1.1**.
+version: **mod 1.2**.
 
 An unofficial modification of the **FNIRSI 2D15P** (100 MHz 2-channel scope +
 True RMS multimeter + DDS generator) firmware for people who mainly use it as a
@@ -20,9 +20,9 @@ Dutch** UI.
 | **German** | **Dutch** |
 | ![German settings](docs/screenshots/de-settings.png) | ![Dutch math panel](docs/screenshots/nl-math.png) |
 | **Turkish** | **Dutch** |
-| ![Turkish horizontal panel](docs/screenshots/tr-horizontal.png) | ![Dutch settings](docs/screenshots/nl-settings.png) |
-| **Turkish: About** | |
-| ![Turkish About page showing mod 1.1](docs/screenshots/tr-about.png) | |
+| ![Turkish vertical panel](docs/screenshots/tr-vertical.png) | ![Dutch settings](docs/screenshots/nl-settings.png) |
+| **Turkish: About** | **Turkish: generator** |
+| ![Turkish About page showing the mod version](docs/screenshots/tr-about.png) | ![Turkish signal generator page](docs/screenshots/tr-generator.png) |
 
 ## What it changes
 
@@ -45,7 +45,7 @@ Dutch** UI.
 - **Three-row top menu**, so full labels fit without covering the submenu;
   the touch zones are moved to match.
 - English is the default after a factory reset.
-- **Settings → About** shows the mod version (`Version (mod 1.1):V2.7.0.7`),
+- **Settings → About** shows the mod version (`Version (mod 1.2):V2.7.0.7`),
   so you can always tell which build is installed.
 
 Measurement, calibration and the FPGA are not touched.
@@ -55,10 +55,10 @@ Measurement, calibration and the FPGA are not touched.
 | Variant | Patch set | Result CRC32 |
 |---|---|---|
 | Multimeter-first only, stock languages | `firmware/dmm-first.json` | `57DF1B45` |
-| + English fixes, no second language | `firmware/build/dmm-first+en.json` | `096FE918` |
-| + English fixes + Turkish | `firmware/build/dmm-first+tr.json` | `674C3282` |
-| + English fixes + German | `firmware/build/dmm-first+de.json` | `72C87100` |
-| + English fixes + Dutch | `firmware/build/dmm-first+nl.json` | `15C8D21E` |
+| + English fixes, no second language | `firmware/build/dmm-first+en.json` | `AB7EC9AA` |
+| + English fixes + Turkish | `firmware/build/dmm-first+tr.json` | `35FBFA94` |
+| + English fixes + German | `firmware/build/dmm-first+de.json` | `15BE3738` |
+| + English fixes + Dutch | `firmware/build/dmm-first+nl.json` | `A59271F0` |
 
 ## Install
 
@@ -95,8 +95,9 @@ how to build. The builder checks everything it can before writing anything:
 ASCII, byte and pixel limits measured with the device's own fonts, and a
 self-check of every string read in the patched image.
 
-The Turkish, German and Dutch texts are first drafts. Fixes from native
-speakers are very welcome, especially for the abbreviations.
+The Turkish, German and Dutch texts were checked against vendor manuals and
+technical references in each language (evidence in `lang/sources/`).
+Corrections from native speakers are still very welcome.
 
 ## Contributing
 
@@ -142,6 +143,12 @@ everything else is plain Python 3.
 
 ## Changelog
 
+- **mod 1.2:** translations reviewed against vendor manuals and Turkish
+  engineering sources (sources in `lang/sources/`). For example: TR Dusey,
+  Tetikleme, Olcme, Enduktans, Kapasitans; DE Einzel, Werkseinst.,
+  "Speichern fehlgeschlagen"; NL Inductiviteit, Persistentie, Rol. Measurement
+  readouts use the international abbreviations (Vrms, Vp-p, Duty±), as vendor
+  UIs in these languages do.
 - **mod 1.1:** fixes the multimeter page's "< Back" button not being drawn
   right after power-on (mod 1.0).
 - **mod 1.0:** first release.

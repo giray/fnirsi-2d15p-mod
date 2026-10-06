@@ -1,0 +1,54 @@
+{
+  "changes": [
+    {
+      "id": "dmm.func.5",
+      "current": "Induktans",
+      "suggested": "Enduktans",
+      "confidence": "high",
+      "evidence": "Standard Turkish spelling is 'endüktans' (not 'indüktans'): 'Hantek 1833C Dijital LCR Metre ile direnç, endüktans ve kapasitans değerleri ölçümü yapılır' https://www.direnc.net/hantek1833c-dijital-lcr-metre ; also https://kureansiklopedi.com/tr/detay/elektrik-olcum-aletleri-8e1ef"
+    },
+    {
+      "id": "dmm.func.6",
+      "current": "Kapasite",
+      "suggested": "Kapasitans",
+      "confidence": "medium",
+      "evidence": "Fluke Turkish 87V / 287 / 175 manuals use 'kapasitans' as the function name ('diyot, kapasitans, frekans', 'süreklilik, kapasitans') https://pdf.direnc.net/upload/fluke-87-v.pdf , https://pdf.direnc.net/upload/fluke-287-datasheet.pdf ; LCR listings: 'endüktans, kapasitans' https://www.direnc.net/hantek1833c-dijital-lcr-metre . 'Kapasite' is common in retail copy but 'Kapasitans' is the vendor/technical term and pairs with 'Enduktans'."
+    },
+    {
+      "id": "acq.0",
+      "current": "Kaydir:",
+      "suggested": null,
+      "confidence": "medium",
+      "evidence": "Turkish spec/lab texts keep ROLL in English: GW Instek GOS spec 'Süpürme modu: AUTO, NORM, ROLL' https://labsis.cumhuriyet.edu.tr/Home/CihazDetay/1822 ; AKU lab sheet 'Roll butonu ile Timebase oranını ... değiştirebilirsiniz' https://mekatronik.aku.edu.tr/wp-content/uploads/sites/37/2024/10/Elektronik1_DeneyFoyu.pdf . 'Kaydir' reads as the imperative 'scroll/shift' and could be mistaken for horizontal position."
+    },
+    {
+      "id": "disp.0",
+      "current": "Izgara Parlak:",
+      "suggested": "Izgara Parl.:",
+      "confidence": "low",
+      "evidence": "'Parlak' is the adjective 'bright'; the noun is 'parlaklık' (already chosen for Brightness from EMO). 'Izgara' for grid confirmed in AKU lab sheet ('Kullanıcı ızgarayı, yoğunluğu, gratikülü... ayarlayabilir') https://mekatronik.aku.edu.tr/wp-content/uploads/sites/37/2024/10/Elektronik1_DeneyFoyu.pdf . Abbreviate the noun rather than use the adjective; keep if a dot looks wrong on the font."
+    },
+    {
+      "id": "disp.3",
+      "current": "Dalga Parlak:",
+      "suggested": "Dalga Parl.:",
+      "confidence": "low",
+      "evidence": "Same reasoning as disp.0 (noun 'parlaklık', not adjective 'parlak'); see https://mekatronik.aku.edu.tr/wp-content/uploads/sites/37/2024/10/Elektronik1_DeneyFoyu.pdf"
+    },
+    {
+      "id": "meas.4",
+      "current": "Dolu+",
+      "suggested": null,
+      "confidence": "low",
+      "evidence": "Turkish usage for duty cycle is split ('görev döngüsü' per tr.wikipedia https://tr.wikipedia.org/wiki/Görev_döngüsü and Fluke TR blog https://www.fluke.com/tr-tr/bilgi-edinin/blog/dijital-multimetreler/dijital-multimetre-ile-gorev-dongusu-nasil-olculur ; 'görev periyodu' in Fluke 87V TR manual https://pdf.direnc.net/upload/fluke-87-v.pdf ; 'çalışma oranı' in Sakarya lab sheet https://eee.sakarya.edu.tr/sites/eee.sakarya.edu.tr/file/Osiloskop_Kullanimi.pdf ), and Fluke TR blog uses '(duty cycle)' in parentheses. Truncated 'Dolu+' ('full+') is cryptic as a readout label; English 'Duty+' is likely clearer. Keep 'Doluluk' for the DDS parameter (dds.param.2)."
+    },
+    {
+      "id": "meas.5",
+      "current": "Dolu-",
+      "suggested": null,
+      "confidence": "low",
+      "evidence": "Same as meas.4; https://www.fluke.com/tr-tr/bilgi-edinin/blog/dijital-multimetreler/dijital-multimetre-ile-gorev-dongusu-nasil-olculur"
+    }
+  ],
+  "keep_notes": "Checked Turkish Fluke multimeter manuals (87V, 287, 175), university lab sheets (Sakarya, AKU, KTUN, OMU, DPU), the EMO article, Turkish Wikipedia and Turkish retail listings of FNIRSI/Victor/GW Instek gear. They confirm the drafts for trigger modes (otomatik/normal/tek; 'Oto' abbreviation fine), Kuplaj (KTUN/OMU 'giriş kuplajı'), Kenar (KTUN/Sakarya 'yükselen/alçalan kenar'), Imlec (Sakarya/AKU 'Cursor (İmleç)'), Izgara, Bellek (AKU 'bellek derinliği'; 'Bellek:' acceptable short form), Ortalama/Ort, Sureklilik, Diyot, Sicaklik, Frekans, Otomatik Kapanma (Fluke TR), Faz for LIVE (Victor 925/923E 'Live faz hattı tespiti'), Ofset, Genlik, Doluluk, Darbe genisligi (Genis+), and English Vrms/Vpp/Vmax/Vmin/NCV/MIN/MAX/HOLD; no Turkish vendor UI was found for persistence, so 'Kalicilik' is kept."
+}

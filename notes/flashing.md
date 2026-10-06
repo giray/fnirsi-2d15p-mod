@@ -118,3 +118,9 @@ checklist item 1 can be ticked. Unit firmware: V2.7.0.7 = our stock image.
   "< Geri" drawn right after cold boot (boot-draw fix confirmed), About shows
   "Surum (mod 1.1):V2.7.0.7". Screenshots docs/screenshots/tr-dmm.png,
   tr-about.png. **This is the build now on the unit.** Released as v1.1.
+- 2026-10-06 — mod 1.2 `dmm-first+tr` (35FBFA94) flashed. Owner: works.
+  Screenshots: About "Surum (mod 1.2)", 3-row menu with Dusey/Tetikleme/Olcme,
+  vertical panel, generator page ("Doluluk" fits, no keypad issue). English
+  Settings unchanged. **This is the build now on the unit.** DE/NL 1.2 builds
+  (15BE3738 / A59271F0) not flashed in this exact form (text-only changes
+  vs. the flashed 1.0 drafts; all builder width/row checks pass).

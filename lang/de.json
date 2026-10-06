@@ -13,7 +13,7 @@
   },
   "trig.mode.2": {
    "en": "Single",
-   "text": "Einzeln"
+   "text": "Einzel"
   },
   "chan.0": {
    "en": "Display:",
@@ -53,7 +53,7 @@
   },
   "disp.3": {
    "en": "Wave Lum:",
-   "text": "Kurven-Hell.:"
+   "text": "Signalhell.:"
   },
   "disp.4": {
    "en": "Wave Type:",
@@ -253,11 +253,11 @@
   },
   "settings.5": {
    "en": "Factory Reset",
-   "text": "Werksreset"
+   "text": "Werkseinst."
   },
   "reset.warn": {
    "en": "Factory reset will undo all previous changes!",
-   "text": "Werksreset macht alle Aenderungen rueckgaengig!"
+   "text": "Werkseinstellungen: alle Aenderungen gehen verloren!"
   },
   "btn.confirm": {
    "en": "Confirm",
@@ -333,7 +333,7 @@
   },
   "dmm.func.14": {
    "en": "LIVE",
-   "text": "Phase"
+   "text": null
   },
   "dmm.func.15": {
    "en": "Automatic",
@@ -373,19 +373,19 @@
   },
   "meas.4": {
    "en": "Duty+",
-   "text": "Tast+"
+   "text": null
   },
   "meas.5": {
    "en": "Duty-",
-   "text": "Tast-"
+   "text": null
   },
   "meas.6": {
    "en": "Wid+",
-   "text": "Breite+"
+   "text": null
   },
   "meas.7": {
    "en": "Wid-",
-   "text": "Breite-"
+   "text": null
   },
   "meas.8": {
    "en": "Nre",
@@ -397,7 +397,7 @@
   },
   "meas.10": {
    "en": "Vrms",
-   "text": "Veff"
+   "text": null
   },
   "meas.11": {
    "en": "Avg",
@@ -405,7 +405,7 @@
   },
   "meas.12": {
    "en": "Vp-p",
-   "text": "Vss"
+   "text": null
   },
   "meas.13": {
    "en": "Vmax",
@@ -449,7 +449,7 @@
   },
   "msg.save_failed": {
    "en": "Save failed",
-   "text": "Speicherfehler"
+   "text": "Speichern fehlgeschlagen"
   },
   "msg.saving": {
    "en": "Saving...",
@@ -513,7 +513,7 @@
   },
   "bar.run": {
    "en": "Run",
-   "text": "Lauf"
+   "text": null
   },
   "bar.menu": {
    "en": "Menu",

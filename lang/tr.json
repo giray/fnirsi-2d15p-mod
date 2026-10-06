@@ -33,7 +33,7 @@
   },
   "acq.0": {
    "en": "Roll:",
-   "text": "Kaydir:"
+   "text": null
   },
   "acq.1": {
    "en": "Memory Depth:",
@@ -41,7 +41,7 @@
   },
   "disp.0": {
    "en": "Grid Lum:",
-   "text": "Izgara Parlak:"
+   "text": "Izgara Parl.:"
   },
   "disp.1": {
    "en": "Grid Type:",
@@ -53,7 +53,7 @@
   },
   "disp.3": {
    "en": "Wave Lum:",
-   "text": "Dalga Parlak:"
+   "text": "Dalga Parl.:"
   },
   "disp.4": {
    "en": "Wave Type:",
@@ -117,11 +117,11 @@
   },
   "menu.1": {
    "en": "Vertical",
-   "text": "Dikey"
+   "text": "Dusey"
   },
   "menu.2": {
    "en": "Trigger",
-   "text": "Tetik"
+   "text": "Tetikleme"
   },
   "menu.3": {
    "en": "Display",
@@ -129,7 +129,7 @@
   },
   "menu.4": {
    "en": "Measure",
-   "text": "Olcum"
+   "text": "Olcme"
   },
   "menu.5": {
    "en": "Cursor",
@@ -297,11 +297,11 @@
   },
   "dmm.func.5": {
    "en": "Inductance",
-   "text": "Induktans"
+   "text": "Enduktans"
   },
   "dmm.func.6": {
    "en": "Capacitance",
-   "text": "Kapasite"
+   "text": "Kapasitans"
   },
   "dmm.func.7": {
    "en": "DC Current mA",
@@ -373,11 +373,11 @@
   },
   "meas.4": {
    "en": "Duty+",
-   "text": "Dolu+"
+   "text": null
   },
   "meas.5": {
    "en": "Duty-",
-   "text": "Dolu-"
+   "text": null
   },
   "meas.6": {
    "en": "Wid+",
@@ -417,7 +417,7 @@
   },
   "msg.await_trig": {
    "en": "Waiting for trigger...",
-   "text": "Tetik bekleniyor..."
+   "text": "Tetikleme bekleniyor..."
   },
   "msg.await_auto": {
    "en": "Auto measuring...",
@@ -505,7 +505,7 @@
   },
   "bar.meas": {
    "en": "Meas",
-   "text": "Olcum"
+   "text": "Olcme"
   },
   "bar.save": {
    "en": "Save",
