@@ -250,3 +250,82 @@ Built to `firmware/work/dmm-first/2D15P_V2.7.0.7_260826.bin`. **Not flashed.**
   y=0x68) showed even the corrected English needs 3 rows; with 2 rows the 3rd
   row would collide with the divider.
 - Drafts tr/de/nl 2026-10-06, pending native review by the owner.
+
+### 2026-10-06 — Boot Back-button bug (DMM page, cold boot with dmm-first)
+
+**How widgets are drawn.**
+- `0x13C84(id)` posts the widget id (1 byte) to queue `[0x20003248]` (64 entries, created at
+  0x34948). It de-duplicates using pending bitmap 0x200036E1 and last id
+  0x200036E0. A post is skipped only if >10 entries are already waiting and the
+  id equals the last id posted, or if ≥21 are waiting and the id is already
+  pending. If the queue is still NULL it only logs.
+- The consumer is the UI task (loop at 0x429F8). It receives an id, clears its
+  pending bit, and calls **`0x3FAD8(id)`**.
+- The widget table base is **0x59D20** (id*16; fields x,y,w,h u16, flag u8 at +8,
+  draw fn at +0xC). It is used directly from ROM by 0x3FAD8, not copied. So the
+  "0x59D30" numbering is off by one: **Back = id 0x0D** (10,11,55×26, flag 0,
+  fn 0x26391) and **HOLD = id 0x12** (fn 0x26B09). Page 1's list in 0x1A7F8
+  (0, D, E, F, 10, 12, 13, 14) does contain Back.
+- `0x3FAD8` copies the rect to 0x20000FE0 (the draw context, which draw
+  primitives use as origin), then switches on the flag:
+  - **0**: the draw fn renders into a per-widget scratch buffer `[0x20000FF0]`
+    (pitch w, no background), then DMA2D (regs 0x4000C008..) copies it to the
+    frame buffer 0x80000000 at (x,y).
+  - **1**: same, but the scratch is first filled with background colour 0x18C3.
+  - **2**: DMA2D register-to-memory fill of the whole 480×272 screen with 0x18C3
+    (id 0 = clear screen).
+  - **3**: nothing.
+  - **4**: the draw fn is called directly (it draws by itself).
+  - In every DMA case the task then blocks on binary semaphore `[0x20003260]`,
+    which the DMA2D completion ISR (IRQ88, 0x14148) gives.
+  - Ids 0 and 0x11 never call a draw fn.
+
+**Cause (most likely).**
+- At boot, init (0x36018) calls 0x1A7F8 at 0x3779C, so the queue holds
+  0, D, E, F, 10, 12, 13, 14 before the scheduler starts. Normal DMM entry
+  (0x49924) posts the same list. The only difference is when it runs.
+- Main enables the DMA2D IRQ (ISER2 bit 24 at 0x33CBC; peripheral IE=2) and
+  starts a full-screen DMA2D fill at 0x33CEA. Only later does it create the
+  semaphore (0x34A36) and drain it once (0x34A42, timeout 0).
+- That completion therefore most likely leaves a stale "give" behind. The
+  first semaphore take in the UI task (after id 0's screen fill) returns before
+  the fill has finished. The next widget's DMA2D start is then issued while the
+  engine is still busy and is lost. That widget is the first one after the clear.
+  - Stock boots to page 2. There the first widget after the clear is id 1, which
+    the UI loop re-posts every idle pass (0x43956 → 0x4395C), so the loss never
+    shows.
+  - With page 1 the lost widget is Back, and nothing re-posts it. HOLD (6th in
+    the list) is unaffected.
+- **Not proven statically.** I could not show exactly how the extra give
+  survives. An early ISR with a NULL semaphore would hit configASSERT
+  (0x5107C) and hang, so presumably the IRQ stays pending until the semaphore
+  exists. Either way the observation fits: "the first widget after the boot
+  clear is lost".
+
+**Fix: `firmware/work/boot_fix.json`** (1 entry, 2 bytes, file 0x985E).
+- Swap the first two ids of 0x1A7F8's page-1 list:
+  `0x1A85E movs r0,#0xd → #0xe` and `0x1A864 movs r0,#0xe → #0xd`. The list
+  becomes 0, E, D, F, 10, 12, 13, 14.
+- The widget now exposed to the loss is the DMM function label 0x0E. Init
+  re-posts it at boot via `0x14184` (called at 0x37A36; on page 1 it posts
+  0xE, 0x10, 0x14). About 9–10 entries are waiting at that point, so it is not
+  de-duplicated. The DMM task (0x43CCA) also re-posts it.
+- Normal DMM entries only change drawing order; D and E don't overlap.
+- No overlap with dmm-first or lang/layout.json.
+- Results: dry-run on stock OK (crc32 D9D74EAF). Stacked on dmm-first
+  (3A36D9C7, input CRC gate removed) OK → **57DF1B45**.
+
+**Alternatives considered.**
+- (b) Keep boot page 2 and inject DMM entry at startup (post {1,15}):
+  - it needs a code cave and a hand-encoded `bl` or queue send;
+  - the scope page and hw-sync commands would run first (scope flash, FPGA
+    mode switch);
+  - 0x49924 sends hw cmd 9 and redraws the touch map before the scheduler.
+  Larger and riskier.
+- Re-posting 0x0D from a cave at the end of init would also work. It needs 6+
+  bytes of cave plus a hook, so the swap is strictly smaller.
+
+**Device test.**
+- Cold boot: "< Back", the function label and HOLD should all be visible.
+- If the function label is ever missing at boot, the lost-widget mechanism is
+  confirmed but the re-post isn't landing. Fallback: re-post via a cave.

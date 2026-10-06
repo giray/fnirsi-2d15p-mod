@@ -39,6 +39,12 @@
    "offset": "0x1F162",
    "find": "01 f0 67 bd 01 88 01 2a ea d0 f1 e7 00 00",
    "replace": "01 28 03 d1 17 f0 b3 f8 16 f0 b5 ff 80 bd"
+  },
+  {
+   "note": "Goal 1 fix (boot draw): 0x1A7F8 page-1 list: MCU 0x1A85E 'movs r0,#0xd' -> 'movs r0,#0xe' and 0x1A864 'movs r0,#0xe' -> 'movs r0,#0xd' (list becomes 0,E,D,F,10,12,13,14). capstone: 1A85E: movs r0, #0xd -> movs r0, #0xe; 1A864: movs r0, #0xe -> movs r0, #0xd",
+   "offset": "0x985E",
+   "find": "0d 20 f9 f7 10 fa 0e 20 f9 f7",
+   "replace": "0e 20 f9 f7 10 fa 0d 20 f9 f7"
   }
  ]
 }

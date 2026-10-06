@@ -3,7 +3,7 @@
 [![check](https://github.com/giray/fnirsi-2d15p-mod/actions/workflows/check.yml/badge.svg)](https://github.com/giray/fnirsi-2d15p-mod/actions/workflows/check.yml)
 **Project:** <https://github.com/giray/fnirsi-2d15p-mod>, with downloads on the
 [Releases](https://github.com/giray/fnirsi-2d15p-mod/releases) page. Current
-version: **mod 1.0**.
+version: **mod 1.1**.
 
 An unofficial modification of the **FNIRSI 2D15P** (100 MHz 2-channel scope +
 True RMS multimeter + DDS generator) firmware for people who mainly use it as a
@@ -21,6 +21,8 @@ Dutch** UI.
 | ![German settings](docs/screenshots/de-settings.png) | ![Dutch math panel](docs/screenshots/nl-math.png) |
 | **Turkish** | **Dutch** |
 | ![Turkish horizontal panel](docs/screenshots/tr-horizontal.png) | ![Dutch settings](docs/screenshots/nl-settings.png) |
+| **Turkish: About** | |
+| ![Turkish About page showing mod 1.1](docs/screenshots/tr-about.png) | |
 
 ## What it changes
 
@@ -43,7 +45,7 @@ Dutch** UI.
 - **Three-row top menu**, so full labels fit without covering the submenu;
   the touch zones are moved to match.
 - English is the default after a factory reset.
-- **Settings → About** shows the mod version (`Version (mod 1.0):V2.7.0.7`),
+- **Settings → About** shows the mod version (`Version (mod 1.1):V2.7.0.7`),
   so you can always tell which build is installed.
 
 Measurement, calibration and the FPGA are not touched.
@@ -52,11 +54,11 @@ Measurement, calibration and the FPGA are not touched.
 
 | Variant | Patch set | Result CRC32 |
 |---|---|---|
-| Multimeter-first only, stock languages | `firmware/dmm-first.json` | `3A36D9C7` |
-| + English fixes, no second language | `firmware/build/dmm-first+en.json` | `0576CBF4` |
-| + English fixes + Turkish | `firmware/build/dmm-first+tr.json` | `725F2B1B` |
-| + English fixes + German | `firmware/build/dmm-first+de.json` | `1AB2F8B6` |
-| + English fixes + Dutch | `firmware/build/dmm-first+nl.json` | `D54F66DE` |
+| Multimeter-first only, stock languages | `firmware/dmm-first.json` | `57DF1B45` |
+| + English fixes, no second language | `firmware/build/dmm-first+en.json` | `096FE918` |
+| + English fixes + Turkish | `firmware/build/dmm-first+tr.json` | `674C3282` |
+| + English fixes + German | `firmware/build/dmm-first+de.json` | `72C87100` |
+| + English fixes + Dutch | `firmware/build/dmm-first+nl.json` | `15C8D21E` |
 
 ## Install
 
@@ -138,11 +140,11 @@ CRC32 matches the stock image.
 Disassembly tools need `python3 -m venv tools/.venv && tools/.venv/bin/pip install capstone keystone-engine`;
 everything else is plain Python 3.
 
-## Known issues
+## Changelog
 
-- **mod 1.0:** right after power-on, the multimeter page doesn't draw its
-  "< Back" button. Tapping the spot still works, and the button appears once
-  you leave and re-enter the multimeter (DDS key twice). A fix is in progress.
+- **mod 1.1:** fixes the multimeter page's "< Back" button not being drawn
+  right after power-on (mod 1.0).
+- **mod 1.0:** first release.
 
 ## Not done (yet)
 

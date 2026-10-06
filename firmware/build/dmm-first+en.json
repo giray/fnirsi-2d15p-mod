@@ -42,6 +42,12 @@
    "replace": "01 28 03 d1 17 f0 b3 f8 16 f0 b5 ff 80 bd"
   },
   {
+   "note": "Goal 1 fix (boot draw): 0x1A7F8 page-1 list: MCU 0x1A85E 'movs r0,#0xd' -> 'movs r0,#0xe' and 0x1A864 'movs r0,#0xe' -> 'movs r0,#0xd' (list becomes 0,E,D,F,10,12,13,14). capstone: 1A85E: movs r0, #0xd -> movs r0, #0xe; 1A864: movs r0, #0xe -> movs r0, #0xd",
+   "offset": "0x985E",
+   "find": "0d 20 f9 f7 10 fa 0e 20 f9 f7",
+   "replace": "0e 20 f9 f7 10 fa 0d 20 f9 f7"
+  },
+  {
    "note": "0x1AF00 [CN layout -> EN / default EN]: moveq.w fp, #0xe -> moveq.w fp, #0xc",
    "offset": "0x09F00",
    "find": "4f f0 0e 0b",
@@ -1038,13 +1044,13 @@
    "replace": "55 56 06 00"
   },
   {
-   "note": "about.3 slot1 -> 'Version (mod 1.0)' @0x65662",
+   "note": "about.3 slot1 -> 'Version (mod 1.1)' @0x65662",
    "offset": "0x492D0",
    "find": "69 c1 07 00",
    "replace": "62 56 06 00"
   },
   {
-   "note": "about.3 slot2 -> 'Version (mod 1.0)' @0x65662",
+   "note": "about.3 slot2 -> 'Version (mod 1.1)' @0x65662",
    "offset": "0x492E0",
    "find": "0e b6 07 00",
    "replace": "62 56 06 00"
@@ -1914,10 +1920,10 @@
    "replace": "4d 6f 64 65 6c 3a 20 32 44 31 35 50 00"
   },
   {
-   "note": "heap string 'Version (mod 1.0)'",
+   "note": "heap string 'Version (mod 1.1)'",
    "offset": "0x54662",
    "find_crc32": "6DC14243",
-   "replace": "56 65 72 73 69 6f 6e 20 28 6d 6f 64 20 31 2e 30 29 00"
+   "replace": "56 65 72 73 69 6f 6e 20 28 6d 6f 64 20 31 2e 31 29 00"
   },
   {
    "note": "heap string 'Language'",

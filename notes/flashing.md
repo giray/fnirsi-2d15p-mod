@@ -110,3 +110,11 @@ checklist item 1 can be ticked. Unit firmware: V2.7.0.7 = our stock image.
   "< Back" button is **not drawn**, tapping its spot **works**, and it appears
   after DDS→scope→DDS. Bug in the Goal-1 boot patch (boot path skips the
   normal DMM entry 0x49924). Fix under investigation; v1.0 stays pre-release.
+- 2026-10-06 — Boot-draw fix added as dmm-first patch 6 (swap ids 0xD/0xE in
+  0x1A7F8's page-1 list, file 0x985E; see notes/re-plan.md). mod 1.1 builds,
+  not yet flashed: dmm-first `57DF1B45`, +en / +tr / +de / +nl CRCs printed by
+  tools/build_all.sh (release/SHA256SUMS).
+- 2026-10-06 — mod 1.1 `dmm-first+tr` (674C3282) flashed. Owner: **works**:
+  "< Geri" drawn right after cold boot (boot-draw fix confirmed), About shows
+  "Surum (mod 1.1):V2.7.0.7". Screenshots docs/screenshots/tr-dmm.png,
+  tr-about.png. **This is the build now on the unit.** Released as v1.1.
