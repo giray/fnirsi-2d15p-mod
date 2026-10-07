@@ -124,3 +124,9 @@ checklist item 1 can be ticked. Unit firmware: V2.7.0.7 = our stock image.
   Settings unchanged. **This is the build now on the unit.** DE/NL 1.2 builds
   (15BE3738 / A59271F0) not flashed in this exact form (text-only changes
   vs. the flashed 1.0 drafts; all builder width/row checks pass).
+- 2026-10-07 — DMM-over-USB streaming **device-tested** on dmm-first+tr+stream
+  (6A7DE5AA): host/dmm_read.py showed live readings, e.g. `RES .OL MOhm`
+  (overrange on MOhm range). Feature confirmed working on the unit. Released as
+  mod 1.3 (streaming folded into all variants); the 1.3 images differ from the
+  tested one only by the version label "1.2"->"1.3" (2 bytes), streaming code
+  byte-identical.

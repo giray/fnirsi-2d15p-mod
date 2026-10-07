@@ -3,7 +3,7 @@
 [![check](https://github.com/giray/fnirsi-2d15p-mod/actions/workflows/check.yml/badge.svg)](https://github.com/giray/fnirsi-2d15p-mod/actions/workflows/check.yml)
 **Project:** <https://github.com/giray/fnirsi-2d15p-mod>, with downloads on the
 [Releases](https://github.com/giray/fnirsi-2d15p-mod/releases) page. Current
-version: **mod 1.2**.
+version: **mod 1.3**.
 
 An unofficial modification of the **FNIRSI 2D15P** (100 MHz 2-channel scope +
 True RMS multimeter + DDS generator) firmware for people who mainly use it as a
@@ -45,7 +45,7 @@ Dutch** UI.
 - **Three-row top menu**, so full labels fit without covering the submenu;
   the touch zones are moved to match.
 - English is the default after a factory reset.
-- **Settings → About** shows the mod version (`Version (mod 1.2):V2.7.0.7`),
+- **Settings → About** shows the mod version (`Version (mod 1.3):V2.7.0.7`),
   so you can always tell which build is installed.
 
 Measurement, calibration and the FPGA are not touched.
@@ -54,11 +54,11 @@ Measurement, calibration and the FPGA are not touched.
 
 | Variant | Patch set | Result CRC32 |
 |---|---|---|
-| Multimeter-first only, stock languages | `firmware/dmm-first.json` | `57DF1B45` |
-| + English fixes, no second language | `firmware/build/dmm-first+en.json` | `AB7EC9AA` |
-| + English fixes + Turkish | `firmware/build/dmm-first+tr.json` | `35FBFA94` |
-| + English fixes + German | `firmware/build/dmm-first+de.json` | `15BE3738` |
-| + English fixes + Dutch | `firmware/build/dmm-first+nl.json` | `A59271F0` |
+| Multimeter-first only, stock languages | `firmware/dmm-first.json` | `0859047B` |
+| + English fixes, no second language | `firmware/build/dmm-first+en.json` | `950836FA` |
+| + English fixes + Turkish | `firmware/build/dmm-first+tr.json` | `12873EB1` |
+| + English fixes + German | `firmware/build/dmm-first+de.json` | `101C467A` |
+| + English fixes + Dutch | `firmware/build/dmm-first+nl.json` | `B25C2FC2` |
 
 ## Install
 
@@ -99,6 +99,25 @@ The Turkish, German and Dutch texts were checked against vendor manuals and
 technical references in each language (evidence in `lang/sources/`).
 Corrections from native speakers are still very welcome.
 
+## Multimeter readings on Linux
+
+With any mod 1.3 image, the multimeter can stream its readings to a PC. On the
+device, show the multimeter page and turn USB Sharing **off** (so it enumerates
+as a serial port, not a USB drive). Then:
+
+```bash
+# optional: stop ModemManager probing the port, add /dev/fnirsi-2d15p and group access
+sudo cp host/99-fnirsi-2d15p.rules /etc/udev/rules.d/ && sudo udevadm control --reload-rules && sudo udevadm trigger
+
+python3 host/dmm_read.py              # live readings
+python3 host/dmm_read.py --csv log.csv   # also log (identical consecutive readings collapsed; --all keeps every sample)
+```
+
+The device sends one `DMM,<function>,<value>,<unit>,<hold>` line per update
+while the port is open (e.g. `DMM,DCV,12.345,V,0`, overrange `DMM,RES,OL,Ohm,0`).
+The reader can also send the read-only `*IDN?` query (`--idn`); it never sends
+anything else. Nothing is streamed unless a program has the port open.
+
 ## Contributing
 
 - **Translations:** edit `lang/<code>.json` and open a pull request, or use the
@@ -136,12 +155,18 @@ CRC32 matches the stock image.
 | `tools/fw_inspect.py` | image header, parts, vectors, strings, pointer tables |
 | `tools/fw_xref.py` | capstone cross-reference database and disassembly queries |
 | `tools/bps_apply.py`, `tools/bps_make.py` | apply / create BPS patches |
+| `host/dmm_read.py` | read/log multimeter readings over USB (mod 1.3) |
 | `tools/check_repo.py` | firmware-free checks run by CI |
 
 Disassembly tools need `python3 -m venv tools/.venv && tools/.venv/bin/pip install capstone keystone-engine`;
 everything else is plain Python 3.
 
 ## Changelog
+
+- **mod 1.3:** multimeter readings can be streamed to a Linux PC over the USB
+  serial port (`host/dmm_read.py`). While the multimeter page is shown and a PC
+  has the port open, the device sends `DMM,<function>,<value>,<unit>,<hold>`
+  lines. No effect if unused.
 
 - **mod 1.2:** translations reviewed against vendor manuals and Turkish
   engineering sources (sources in `lang/sources/`). For example: TR Dusey,
@@ -157,10 +182,6 @@ everything else is plain Python 3.
 
 - **REL / probe zero for the DMM:** the stock firmware has no relative mode, so
   this needs new code.
-- **DMM readings on a Linux PC:** the firmware has a SCPI-like parser
-  (`*IDN?`, `MEAS:CH`, …) that is probably reachable over the USB serial port.
-  It also has calibration commands, so we won't write to that port until it's
-  understood from static analysis.
 - Status-bar words (`Trig'd`, `Stop`, `Roll`, `HOLD`) are English in every
   language; they are not localized in the stock firmware either.
 - Scope artefacts below ~4.19 MHz come from the FPGA and can't be fixed here.

@@ -2,7 +2,7 @@
  "_comment": "English text fixes (language slot 2). Only ids listed here change; everything else keeps the stock English. Plain ASCII only. Many corrections follow the UA mod 1.2 (github.com/Serhii-Povshednyi/FNIRSI-2D15P-UA), checked against the Chinese source text.",
  "code": "en",
  "name": "English",
- "mod_version": "1.2",
+ "mod_version": "1.3",
  "strings": {
   "disp.1": "Grid Type:",
   "disp.2": "Color Temp:",

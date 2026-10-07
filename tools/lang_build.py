@@ -280,7 +280,9 @@ def build(img, code, base_set):
     if not layout:
         warn.append('lang/layout.json missing: secondary language keeps the Chinese-mode layout constants')
 
-    allp = list(base_set) + list(layout) + out
+    stream_path = os.path.join(ROOT, 'firmware', 'dmm-stream.json')
+    stream = load_json(stream_path)['patches'] if os.path.exists(stream_path) else []
+    allp = list(base_set) + list(layout) + list(stream) + out
     spans = sorted((span(p) + (p['note'],) for p in allp))
     for (a0, a1, n0), (b0, b1, n1) in zip(spans, spans[1:]):
         if b0 < a1:
