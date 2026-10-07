@@ -1,38 +1,38 @@
 {
- "_comment": "Goal 2: DMM REL / probe-zero. Long-press HOLD (raw bit16 -> id16) captures the current reading as an offset; the display shows value-offset with a 'REL' marker; same long-press clears it; auto-clears if function/range changes. Code in the dead CJK glyph area 0x66400 (after the Goal-4 streaming cave). Offset/flag/captured-fn/range in proven-unused RAM (0x20000FDC/0x200005FB/0x20000609/0x2000060A). Verified by unicorn emulation; see notes/re-plan.md. Composes on top of dmm-first, the language builds and dmm-stream.",
+ "_comment": "Goal 2: DMM REL / probe-zero. Long-press HOLD (raw bit16->id16) toggles REL; display shows value-offset with a 'REL' marker; auto-clears on function/range change. Code in dead CJK glyphs 0x66400 (after streaming cave). RAM: offset 0x20000FDC, flag 0x200005FB, capfn 0x20000609, caprng 0x2000060A. Marker font 16px (0x200010A4). Verified by emulation; see notes/re-plan.md. Composes on dmm-first + language builds + dmm-stream.",
  "input_crc32": "B43E8C2D",
  "require_size": 1203945,
  "output_name": "2D15P_V2.7.0.7_260826.bin",
  "patches": [
   {
-   "note": "REL value hook: 'ldr.w r0,[r7,#0x464]' @0x26A2E -> 'bl 0x66404' (rel_value: subtract offset when active)",
+   "note": "REL value hook @0x26A2E 'ldr.w r0,[r7,#0x464]' -> bl 0x66404",
    "offset": "0x15A2E",
    "find": "d7 f8 64 04",
    "replace": "3f f0 e9 fc"
   },
   {
-   "note": "REL indicator hook: unit-draw 'bl 0x1984C' @0x26AF0 -> 'bl 0x66458' (rel_ind: draw unit then 'REL' marker)",
+   "note": "REL indicator hook @0x26AF0 unit 'bl 0x1984C' -> bl 0x66458",
    "offset": "0x15AF0",
    "find": "f2 f7 ac fe",
    "replace": "3f f0 b2 fc"
   },
   {
-   "note": "REL key: id16 handler table[15] @0x553D4 0x2CA95(stub) -> 0x66499 (rel_toggle)",
+   "note": "REL key: id16 handler table[15] @0x553D4 0x2CA95 -> 0x66499",
    "offset": "0x443D4",
    "find": "95 ca 02 00",
    "replace": "99 64 06 00"
   },
   {
-   "note": "REL key: long-press raw table[16] @0x5538A 0 -> 16 (long-press HOLD fires id16)",
+   "note": "REL key: long raw table[16] @0x5538A 0 -> 16",
    "offset": "0x4438A",
    "find": "00",
    "replace": "10"
   },
   {
-   "note": "REL cave+string @0x66400..0x664F0 (240 B) in dead CJK glyph data",
+   "note": "REL cave+string @0x66400 (240 B) in dead CJK glyphs",
    "offset": "0x55400",
    "find_crc32": "3A4DFEAC",
-   "replace": "52 45 4c 00 d7 f8 64 04 40 f2 fb 51 c2 f2 00 01 0a 78 02 b3 97 f8 60 24 40 f2 09 63 c2 f2 00 03 19 78 8a 42 11 d1 97 f8 62 24 59 78 8a 42 0c d1 00 ee 10 0a 40 f6 dc 71 c2 f2 00 01 d1 ed 00 0a 30 ee 60 0a 10 ee 10 0a 70 47 00 22 40 f2 fb 51 c2 f2 00 01 0a 70 70 47 74 46 b3 f7 f7 f9 40 f2 fb 50 c2 f2 00 00 00 78 a0 b1 46 f2 00 40 c0 f2 06 00 00 90 41 f2 64 10 c2 f2 00 00 01 90 4f f6 ff 70 02 90 01 20 03 90 0c 20 2e 21 28 22 12 23 b3 f7 dc f9 a6 46 70 47 10 b5 40 f2 98 14 c2 f2 00 04 94 f8 33 0e 01 28 21 d1 40 f2 fb 51 c2 f2 00 01 08 78 b0 b9 94 f8 69 04 c0 b9 d4 f8 64 04 40 f6 dc 72 c2 f2 00 02 10 60 94 f8 60 04 40 f2 09 62 c2 f2 00 02 10 70 94 f8 62 04 50 70 01 20 08 70 01 e0 00 20 08 70 10 20 ad f7 cb fb 10 bd"
+   "replace": "52 45 4c 00 d7 f8 64 04 40 f2 fb 51 c2 f2 00 01 0a 78 02 b3 97 f8 60 24 40 f2 09 63 c2 f2 00 03 19 78 8a 42 11 d1 97 f8 62 24 59 78 8a 42 0c d1 00 ee 10 0a 40 f6 dc 71 c2 f2 00 01 d1 ed 00 0a 30 ee 60 0a 10 ee 10 0a 70 47 00 22 40 f2 fb 51 c2 f2 00 01 0a 70 70 47 74 46 b3 f7 f7 f9 40 f2 fb 50 c2 f2 00 00 00 78 a0 b1 46 f2 00 40 c0 f2 06 00 00 90 41 f2 a4 00 c2 f2 00 00 01 90 4f f6 ff 70 02 90 01 20 03 90 0c 20 2e 21 28 22 12 23 b3 f7 dc f9 a6 46 70 47 10 b5 40 f2 98 14 c2 f2 00 04 94 f8 33 0e 01 28 21 d1 40 f2 fb 51 c2 f2 00 01 08 78 b0 b9 94 f8 69 04 c0 b9 d4 f8 64 04 40 f6 dc 72 c2 f2 00 02 10 60 94 f8 60 04 40 f2 09 62 c2 f2 00 02 10 70 94 f8 62 04 50 70 01 20 08 70 01 e0 00 20 08 70 10 20 ad f7 cb fb 10 bd"
   }
  ]
 }
