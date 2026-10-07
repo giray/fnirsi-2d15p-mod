@@ -329,3 +329,132 @@ Built to `firmware/work/dmm-first/2D15P_V2.7.0.7_260826.bin`. **Not flashed.**
 - Cold boot: "< Back", the function label and HOLD should all be visible.
 - If the function label is ever missing at boot, the lost-widget mechanism is
   confirmed but the re-post isn't landing. Fallback: re-post via a cave.
+
+### 2026-10-07 — Goal 2 (DMM REL / probe-zero) static analysis
+
+All MCU addresses; file = addr − 0x11000. Struct base `S = 0x20000198`.
+
+**1. DMM-page (page==1) key map** (type-1 table 0x55398[id−1]; raw→id short
+0x5535C, long 0x5537A). Scan loop 0x44ED0: a key held to 0x46 ticks fires the
+**long** id once and suppresses the short; released at 2..0x45 ticks fires the
+**short** id. Short and long are mutually exclusive (verified).
+Physical key → short id → page-1 action:
+- raw3→id10 (Vertical): enters DMM sub-state (+0xE24=1) for function 2 only.
+- raw4→id12, raw21→id11: send DMM-chip cmds 0x501/0x503 only when +0xE24≥2.
+- raw6→id6: resets +0x460=0,+0xE24=0, cmd 0x514 (exit sub-menu).
+- raw16→id5 (Run/Stop): **HOLD toggle** (+0x470), handler 0x2DC06; blocked when
+  +0xE24>1.
+- raw17→id4 (Auto): active (autorange/reset, writes +0x3DE).
+- raw19→id19 (0x2CAD2): MIN/MAX-type secondary, only for functions 1/6/7
+  (`tst (1<<fn),#0xC2`); otherwise returns.
+- raw7→id15 (DDS) and raw20→id13 (Menu): leave to scope (our dmm-first mod).
+- **Do NOTHING on page 1 (early-out `cmp page,#2; bxne lr`):** id1 (raw13,
+  Measure), id3 (raw5, Cursor), id9 (raw8, Math), id2 (raw9, Trigger), id7
+  (raw10), id8 (raw12), id20 (raw2), id21 (raw11), id22 (raw15), id23/24 (knob),
+  id25/26/27/28/29/30.
+- **Long-press:** only raw0→id32 (save+off) and raw3→id31 (0x14DC0) are mapped;
+  **all other raw bits have longtable=0 (no action).** id31 on page 1 acts only
+  when +0xE24==1 (→ sets 2, cmd 0x2a0); idle in the normal reading state.
+- Dead stubs: ids 16/17/18 (0x2CA94/98/9C) are `bx lr` and are not reachable
+  from any raw key — free handler-table slots to repoint.
+
+**Recommended REL key: long-press of HOLD / Run-Stop (raw bit 16).**
+- Discoverable (HOLD+REL are the paired freeze/null idiom on bench meters).
+- Zero displacement: longtable[16] (file 0x4438A) is 0 today; short HOLD stays.
+- Implementation outline (for the patch author): set longtable[16] = a spare id
+  (e.g. 16), repoint handler table[15] (0x55398+4*15 = file 0x443D4, stock
+  0x2CA95 `bx lr`) to the REL cave (addr|1).
+- Alternative if a single short tap is preferred: repurpose an idle short key’s
+  page-1 branch (e.g. id3/Cursor raw5, or id1/Measure raw13) — permanently
+  gives up that (unused-on-DMM) key.
+
+**2. Display hook (routine 0x269E4, widget id 0x10).** Token path at 0x269F0:
+`ldrb +0x469; cbz → 0x26A1C` (number) else draw token string (OL etc.). Number
+path formats at:
+- 0x26A2E `ldr.w r0,[r7,#0x464]` (r7=S, value float bits) → 0x26A32
+  `bl 0x54D28` (= `__aeabi_f2d`, soft-float → double for `%f`) → sprintf 0x12424
+  into scratch 0x200036B8 → draw 0x1984C.
+- **Minimal hook:** replace the 4-byte `ldr.w r0,[r7,#0x464]` at **0x26A2E
+  (file 0x1BA2E)** with `bl <cave>`. Cave produces the REL-adjusted float BITS
+  in r0 (device has VFP — DMM task uses vmov/vneg at 0x43C3E): load value
+  (0x200005FC) and, if REL active and current fn/range still match the captured
+  ones, `vsub.f32` the offset (0x20000FDC); else pass through. Everything after
+  (f2d, decimals +0x468, unit) is unchanged. Subtracting into r0 before the
+  existing format is cleaner than rebuilding the format path.
+- **REL indicator:** the unit is drawn last at 0x26AF0 `bl 0x1984C`
+  (file 0x1BAF0) — replace with `bl <cave2>` that first forwards to 0x1984C
+  (unit, args already set) then, if the REL flag is set, calls 0x1984C again for
+  a "REL" label. **0x1984C signature** (as used here): r0=x, r1=y, r2=w, r3=h,
+  [sp]=char* string, [sp+4]=font object ptr, [sp+8]=colour (0xFFFF), [sp+0xC]=
+  flags (1). Coords are widget-relative (draw-ctx origin = widget x,y = 10,45).
+  The big number is at rel (0x36,0x28); free space at top-left — suggest rel
+  (6,4) with font 0x200010A4 (16 px) or 0x20001074 (14 px). The "REL" string
+  (ASCII, 4 B incl. NUL) lives in the cave.
+
+**3. Persistent RAM (all proven: no load/store to these struct offsets anywhere
+in the APP).**
+- REL offset (float, 4 B): **0x20000FDC** (S+0xE44) — gap between the last
+  struct field (+0xE43) and the draw context 0x20000FE0.
+- REL flag (1 B): **0x200005FB** (S+0x463) — between +0x462 range and +0x464
+  value.
+- captured function (1 B): **0x20000609** (S+0x471); captured range (1 B):
+  **0x2000060A** (S+0x472); spare (1 B): 0x2000060B (S+0x473) — gap between HOLD
+  (+0x470, byte) and the word at +0x474.
+- These collide with nothing: dmm-first adds no RAM globals (only LED word
+  0x2000341A), lang_* add none, and the Goal-4 cave used no globals. Not the
+  transient scratch 0x200036B8.
+- (The REL flag can instead be encoded as a NaN sentinel in the offset float to
+  save the flag byte, but a dedicated byte is clearer.)
+
+**4. Stale-offset / auto-clear.** The meter autoranges: 0x142C8 maps
+function (+0x460) and **range +0x462 (0..3)** → unit (+0x46C) and decimals via
++0x461; the DMM task writes +0x460 @0x43CBC, **+0x462 @0x43C50**, +0x468 @0x43C0E
+each packet, then `bl 0x142C8` @0x43E88. So a range change under a fixed function
+changes +0x462 (and +0x46C/+0x468). **Auto-clear REL when current +0x460 ≠
+captured fn OR +0x462 ≠ captured range.** Capture both at REL-on time; do the
+compare inside the display value-cave (self-healing) or in the DMM task. +0x462
+is the cleanest single range indicator.
+
+**5. Capture source.** +0x464 (0x200005FC) is the final **signed, display-unit**
+float (0x43C32, sign applied via vneg 0x43C42). Valid to snapshot as the offset.
+**Block capture when token +0x469 ≠ 0** (OL=2, CAL, Er…): no numeric value then,
+and the number path is skipped anyway.
+
+**Risks / device-test items.**
+- Interaction with MIN/MAX (+0x46A==2) and HOLD: REL subtracts from whatever is
+  in +0x464 at display time; combining REL with MIN/MAX or HOLD is untested.
+- Units like Ω/℃ are UTF-8; the "REL" label is pure ASCII so it renders in all
+  fonts (confirmed fonts carry ASCII), no new glyph needed.
+- Exact "REL" label coordinates need a visual check so it doesn't overlap the big
+  digits or the unit.
+- Long-press threshold feel (0x46 ticks ≈ scan periods) — confirm on the unit it
+  reads as a comfortable "press and hold to zero".
+- Confirm +0x462 actually changes on autorange for every DMM function (some
+  functions may be single-range); if a function never changes +0x462, auto-clear
+  still fires correctly on function change.
+
+### Goal 2: DMM REL / probe-zero — IMPLEMENTED (firmware/dmm-rel.json), verified, NOT yet flashed (2026-10-07)
+Long-press HOLD (raw bit16) zeros the meter; same long-press clears; auto-clears
+on function/range change. Owner chose long-press HOLD.
+- **Key:** long raw table[16] @file 0x4438A 0->16 (fires id16); id16 handler
+  table[15] @file 0x443D4 0x2CA95(dead bx lr stub) -> rel_toggle cave. Short
+  HOLD (id5) unchanged; long/short mutually exclusive (scan 0x44ED0, 0x46-tick
+  threshold).
+- **rel_toggle @0x66498:** page==1 only; if flag set -> clear; else if token
+  +0x469==0 capture offset=+0x464, capfn=+0x460, caprng=+0x462, flag=1; then
+  invalidate reading widget 0x10 (0x13C84). Blocked on OL and on the scope page.
+- **rel_value @0x66404** replaces the display value load `ldr.w r0,[r7,#0x464]`
+  @0x26A2E: returns +0x464, or +0x464 - offset (VFP vsub.f32) when flag set and
+  capfn/caprng still match; auto-clears flag and passes through on mismatch.
+- **rel_ind @0x66458** replaces the unit draw `bl 0x1984C` @0x26AF0: draws the
+  unit then, if flag set, draws "REL" (font 0x20001164) at (12,46) — position
+  tentative, needs a visual check. Uses r4 to save lr (display routine restores
+  r4 via its pop; 0x1984C preserves r4).
+- **RAM (proven unused, no refs):** offset float 0x20000FDC, flag 0x200005FB,
+  capfn 0x20000609, caprng 0x2000060A.
+- **Cave** 0x66400..0x664F0 (240 B incl "REL\0") in dead CJK glyphs, after the
+  streaming cave (ends 0x66224); no overlap with dmm-first/layout/lang/stream.
+- **Verified (unicorn):** passthrough/subtract/auto-clear, capture/toggle/
+  page-gate/OL-block all correct. **CRCs:** stock+rel EC86E0D0;
+  dmm-first+tr+stream+rel 4A3F524C. **Device-test items:** "REL" marker
+  position, long-press feel, REL×MIN/MAX×HOLD interaction.
