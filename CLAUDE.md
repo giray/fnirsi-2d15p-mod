@@ -76,9 +76,15 @@ Anything beyond these is out of scope unless the owner asks.
   (en/tr/de/nl). New strings live in the dead CJK glyph bitmaps; layout patches
   (EN constants for slot 1, 3-row top menu, English default) in
   `lang/layout.json`. String/font map in `notes/hardware.md`
-  "Language/string system". Translations are drafts awaiting native review.
-- **Stock DMM has no REL/relative mode** (manual §3.3 and firmware strings both
-  confirm; it has HOLD and MIN/MAX only). Goal 2 therefore means adding one,
+  "Language/string system". Translations reviewed against vendor manuals.
+- **Goal 4 (DMM readings on Linux) done, device-tested 2026-10-07:**
+  `firmware/dmm-stream.json` + `host/dmm_read.py`. **Goal 2 (REL/probe-zero)
+  done, device-tested 2026-10-07:** `firmware/dmm-rel.json` (long-press Run
+  zeros the meter). Both folded into all variants at mod 1.4; design in
+  `notes/re-plan.md`, USB command map/safety in `notes/hardware.md`. All four
+  original goals plus languages are now complete and on the unit.
+- **Stock DMM had no REL/relative mode** (manual §3.3 and firmware strings both
+  confirm; it has HOLD and MIN/MAX only). Goal 2 therefore meant adding one,
   not surfacing one. Entering the DMM is Menu → multimeter.
 
 ## Feasibility, honestly

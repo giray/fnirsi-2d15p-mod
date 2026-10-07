@@ -11,7 +11,9 @@ NAME=2D15P_V2.7.0.7_260826.bin
 mkdir -p firmware/work/release firmware/work/dmm-first
 
 python3 tools/fw_patch.py "$STOCK" firmware/dmm-first.json -o firmware/work/dmm-first/$NAME | tail -1
-python3 tools/fw_patch.py firmware/work/dmm-first/$NAME <(python3 -c "import json;j=json.load(open('firmware/dmm-stream.json'));j.pop('input_crc32');j.pop('require_size');print(json.dumps(j))") -o firmware/work/dmm-first/$NAME
+for ADDON in dmm-stream dmm-rel; do
+  python3 tools/fw_patch.py firmware/work/dmm-first/$NAME <(python3 -c "import json;j=json.load(open('firmware/$ADDON.json'));j.pop('input_crc32');j.pop('require_size');print(json.dumps(j))") -o firmware/work/dmm-first/$NAME
+done
 python3 tools/bps_make.py "$STOCK" firmware/work/dmm-first/$NAME firmware/work/release/2D15P_V2.7.0.7_dmm-first.bps
 
 for f in lang/*.json; do

@@ -130,3 +130,8 @@ checklist item 1 can be ticked. Unit firmware: V2.7.0.7 = our stock image.
   mod 1.3 (streaming folded into all variants); the 1.3 images differ from the
   tested one only by the version label "1.2"->"1.3" (2 bytes), streaming code
   byte-identical.
+- 2026-10-07 — REL / probe-zero **device-tested** (dmm-first+tr+stream+rel,
+  3C192668): long-press Run zeros the meter, "REL" marker shows top-left
+  (screenshots), auto-clears; .OL->live confirmed. Owner approved marker
+  position. Released as mod 1.4 (REL folded into all variants); 1.4 images
+  differ from the tested one only by the version label (2 bytes).

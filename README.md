@@ -3,7 +3,7 @@
 [![check](https://github.com/giray/fnirsi-2d15p-mod/actions/workflows/check.yml/badge.svg)](https://github.com/giray/fnirsi-2d15p-mod/actions/workflows/check.yml)
 **Project:** <https://github.com/giray/fnirsi-2d15p-mod>, with downloads on the
 [Releases](https://github.com/giray/fnirsi-2d15p-mod/releases) page. Current
-version: **mod 1.3**.
+version: **mod 1.4**.
 
 An unofficial modification of the **FNIRSI 2D15P** (100 MHz 2-channel scope +
 True RMS multimeter + DDS generator) firmware for people who mainly use it as a
@@ -45,7 +45,7 @@ Dutch** UI.
 - **Three-row top menu**, so full labels fit without covering the submenu;
   the touch zones are moved to match.
 - English is the default after a factory reset.
-- **Settings → About** shows the mod version (`Version (mod 1.3):V2.7.0.7`),
+- **Settings → About** shows the mod version (`Version (mod 1.4):V2.7.0.7`),
   so you can always tell which build is installed.
 
 Measurement, calibration and the FPGA are not touched.
@@ -54,11 +54,11 @@ Measurement, calibration and the FPGA are not touched.
 
 | Variant | Patch set | Result CRC32 |
 |---|---|---|
-| Multimeter-first only, stock languages | `firmware/dmm-first.json` | `0859047B` |
-| + English fixes, no second language | `firmware/build/dmm-first+en.json` | `950836FA` |
-| + English fixes + Turkish | `firmware/build/dmm-first+tr.json` | `12873EB1` |
-| + English fixes + German | `firmware/build/dmm-first+de.json` | `101C467A` |
-| + English fixes + Dutch | `firmware/build/dmm-first+nl.json` | `B25C2FC2` |
+| Multimeter-first only, stock languages | `firmware/dmm-first.json` | `26C71CA2` |
+| + English fixes, no second language | `firmware/build/dmm-first+en.json` | `45358968` |
+| + English fixes + Turkish | `firmware/build/dmm-first+tr.json` | `8D8C2168` |
+| + English fixes + German | `firmware/build/dmm-first+de.json` | `630E5396` |
+| + English fixes + Dutch | `firmware/build/dmm-first+nl.json` | `BE4AF67E` |
 
 ## Install
 
@@ -163,6 +163,12 @@ everything else is plain Python 3.
 
 ## Changelog
 
+- **mod 1.4:** multimeter REL / probe-zero. On the multimeter page, **long-press
+  the Run/Stop key** to null the current reading (lead resistance, a DC offset);
+  a **REL** marker shows and readings are relative. Long-press again to clear;
+  it auto-clears if you change function or range. A short tap of Run/Stop is
+  still HOLD.
+
 - **mod 1.3:** multimeter readings can be streamed to a Linux PC over the USB
   serial port (`host/dmm_read.py`). While the multimeter page is shown and a PC
   has the port open, the device sends `DMM,<function>,<value>,<unit>,<hold>`
@@ -180,8 +186,6 @@ everything else is plain Python 3.
 
 ## Not done (yet)
 
-- **REL / probe zero for the DMM:** the stock firmware has no relative mode, so
-  this needs new code.
 - Status-bar words (`Trig'd`, `Stop`, `Roll`, `HOLD`) are English in every
   language; they are not localized in the stock firmware either.
 - Scope artefacts below ~4.19 MHz come from the FPGA and can't be fixed here.
