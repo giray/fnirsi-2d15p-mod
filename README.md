@@ -7,8 +7,9 @@ version: **mod 1.4**.
 
 An unofficial modification of the **FNIRSI 2D15P** (100 MHz 2-channel scope +
 True RMS multimeter + DDS generator) firmware for people who mainly use it as a
-**multimeter**, with **corrected English** and an optional **Turkish, German or
-Dutch** UI.
+**multimeter**. It boots into the meter, adds one-touch **probe-zero (REL)**,
+remaps the DDS key, fixes the **English** text and adds an optional **Turkish,
+German or Dutch** UI, and can **stream readings to a Linux PC**.
 
 > **Firmware V2.7.0.7 only** (`2D15P_V2.7.0.7_260826.bin`, CRC32 `B43E8C2D`).
 > Every patch checks this and refuses any other file. Not affiliated with
@@ -23,6 +24,8 @@ Dutch** UI.
 | ![Turkish vertical panel](docs/screenshots/tr-vertical.png) | ![Dutch settings](docs/screenshots/nl-settings.png) |
 | **Turkish: About** | **Turkish: generator** |
 | ![Turkish About page showing the mod version](docs/screenshots/tr-about.png) | ![Turkish signal generator page](docs/screenshots/tr-generator.png) |
+| **Probe-zero (REL) active** | |
+| ![Multimeter with the REL marker top-left](docs/screenshots/tr-rel.png) | |
 
 ## What it changes
 
@@ -34,6 +37,18 @@ Dutch** UI.
   the generator output is on).
 - The **Menu key** works on the multimeter page: it returns to the scope with
   the main menu open (stock ignores it there).
+
+**Probe-zero / REL** (`firmware/dmm-rel.json`)
+- On the multimeter page, **long-press the Run/Stop key** to null the current
+  reading (lead resistance, a DC offset). A **REL** marker shows and readings
+  become relative. Long-press again to clear; it auto-clears if you change
+  function or range. A short tap of Run/Stop is still HOLD.
+
+**Multimeter readings on a PC** (`firmware/dmm-stream.json`, `host/dmm_read.py`)
+- While the multimeter page is shown and a program has the USB serial port open,
+  the device streams each reading as a text line, so a Linux PC can display or
+  log it. See [Multimeter readings on Linux](#multimeter-readings-on-linux)
+  below. No effect if unused.
 
 **Languages** (`lang/`)
 - Corrected English, e.g. Level → Horizontal, Ramp → Triangle, Skew → Offset,
@@ -101,7 +116,7 @@ Corrections from native speakers are still very welcome.
 
 ## Multimeter readings on Linux
 
-With any mod 1.3 image, the multimeter can stream its readings to a PC. On the
+With any mod 1.3 or newer image, the multimeter can stream its readings to a PC. On the
 device, show the multimeter page and turn USB Sharing **off** (so it enumerates
 as a serial port, not a USB drive). Then:
 
@@ -139,10 +154,12 @@ program for an ARMv8-M (Cortex-M33-class) Synwit MCU, linked at `0x12000`
 patches** applied by `tools/fw_patch.py`, which refuses to run unless the input
 CRC32 matches the stock image.
 
-- The secondary language uses the Chinese slot (language byte `1`). The new
-  strings are stored in the bitmap area of the Chinese glyphs in the six UI
-  fonts, which nothing draws any more. Slot pointers are redirected, and Chinese-mode layout
-  constants are set to the English values.
+- New code and strings (the language text, the REL and streaming routines) live
+  in the bitmap area of the Chinese glyphs in the UI fonts, which nothing draws
+  once Chinese is replaced. For languages, the slot pointers are redirected and
+  the Chinese-mode layout constants are set to the English values; REL and
+  streaming add small Thumb routines hooked into the reading display and the
+  USB task.
 - The UI/event model, key tables, LED driver, string tables, fonts and DMM data
   path are documented in [notes/](notes/), the lab notebook of this project.
 

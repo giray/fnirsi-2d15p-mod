@@ -11,14 +11,24 @@ addresses; for the APP part `file offset = address - 0x11000`.
   data we overwrite but don't redistribute). Always run `--dry-run` first:
   `python3 tools/fw_patch.py <stock.bin> <set.json> --dry-run`
 - `lang_build.py`: builds English (with the fixes) plus one secondary language
-  from `lang/*.json` into a stock-CRC-gated patch set merged with
-  `firmware/dmm-first.json` and `lang/layout.json`. It checks ASCII, byte limits
-  and pixel limits, and self-checks the patched image. See `lang/README.md`.
+  from `lang/*.json` into a stock-CRC-gated patch set, merging
+  `firmware/dmm-first.json`, `lang/layout.json`, `firmware/dmm-stream.json`
+  (Goal 4) and `firmware/dmm-rel.json` (Goal 2), so every build is a complete
+  mod image. It checks ASCII, byte limits, pixel limits and menu rows, and
+  self-checks the patched image. See `lang/README.md`.
 - `build_all.sh`: rebuilds every variant (`firmware/build/*.json`, images in
-  `firmware/work/`), makes the `.bps` release files and `SHA256SUMS` in
-  `firmware/work/release/`.
+  `firmware/work/`) plus the no-language base (dmm-first + stream + rel), makes
+  the `.bps` release files and `SHA256SUMS` in `firmware/work/release/`.
 - `bps_make.py` / `bps_apply.py`: create / apply BPS patches (the format used
   by Rom Patcher JS and Flips), with source/target/patch CRC32 checks.
+- `check_repo.py`: firmware-free sanity checks run by CI (JSON valid, patch sets
+  CRC/size-gated, translations ASCII and within limits, no vendor binaries
+  tracked). Run it before committing.
+
+The firmware features themselves are hand-written patch sets:
+`firmware/dmm-first.json` (Goals 1+3), `firmware/dmm-stream.json` (Goal 4) and
+`firmware/dmm-rel.json` (Goal 2). Their Thumb code lives in the dead CJK glyph
+area and is verified with the unicorn harness `firmware/work/scratch/emu.py`.
 
 **Analysis**
 - `fw_inspect.py`: first look at an image. Parses the container header, lists
@@ -39,4 +49,7 @@ Use `Cs(CS_ARCH_ARM, CS_MODE_THUMB|CS_MODE_MCLASS)`. Keystone mis-encodes
 Thumb-2 *conditional* wide branches (`bne.w` etc.), so hand-encode those and
 always check new code by disassembling it with capstone.
 
-Planned: `host/cdc_sniff.py` (read-only USB serial listener, Goal 4).
+Host side: `host/dmm_read.py` reads/logs the Goal-4 DMM stream over USB (live
+view or CSV); it can also send the read-only `*IDN?` query and nothing else.
+`host/99-fnirsi-2d15p.rules` keeps ModemManager off the port and adds
+`/dev/fnirsi-2d15p`.
