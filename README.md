@@ -128,6 +128,10 @@ python3 host/dmm_read.py              # live readings
 python3 host/dmm_read.py --csv log.csv   # also log (identical consecutive readings collapsed; --all keeps every sample)
 ```
 
+**GUI:** for a graphical live view (large reading, min/max/avg, scrolling chart, CSV
+recording) on GNOME, use
+[fnirsi-2d15p-gui](https://github.com/giray/fnirsi-2d15p-gui).
+
 The device sends one `DMM,<function>,<value>,<unit>,<hold>` line per update
 while the port is open (e.g. `DMM,DCV,12.345,V,0`, overrange `DMM,RES,OL,Ohm,0`).
 The reader can also send the read-only `*IDN?` query (`--idn`); it never sends
@@ -173,6 +177,7 @@ CRC32 matches the stock image.
 | `tools/fw_xref.py` | capstone cross-reference database and disassembly queries |
 | `tools/bps_apply.py`, `tools/bps_make.py` | apply / create BPS patches |
 | `host/dmm_read.py` | read/log multimeter readings over USB (mod 1.3) |
+| [fnirsi-2d15p-gui](https://github.com/giray/fnirsi-2d15p-gui) | separate repo: GTK4/libadwaita live viewer for the stream |
 | `tools/check_repo.py` | firmware-free checks run by CI |
 
 Disassembly tools need `python3 -m venv tools/.venv && tools/.venv/bin/pip install capstone keystone-engine`;
