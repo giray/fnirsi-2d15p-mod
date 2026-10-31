@@ -458,3 +458,30 @@ on function/range change. Owner chose long-press HOLD.
   page-gate/OL-block all correct. **CRCs:** stock+rel EC86E0D0;
   dmm-first+tr+stream+rel 4A3F524C. **Device-test items:** "REL" marker
   position, long-press feel, REL×MIN/MAX×HOLD interaction.
+
+### 2026-10-30 — REL autorange bug (GitHub issue #1) and fix (mod 1.4.1)
+- **Report:** zero at ~0.21 Ω, then 49.9 kΩ read 49.59 kΩ and 340 kΩ read
+  0.1296 MΩ: REL stayed on across autorange and subtracted 0.21 in kΩ/MΩ.
+- **Root cause:** §4 above was wrong. **+0x462 is not the range.** The DMM task
+  writes the constant 0xFF to it every packet (`movs r0,#0xff` /
+  `strb r0,[r8,#0x462]` @0x43C4A/0x43C50; only a few paths later store 2/3 at
+  0x43E4E/0x43EE4), so caprng always matched and auto-clear never fired on
+  autorange. The SI prefix is **+0x46B** (0/1/2), decoded per packet from the
+  chip's range bits in the per-function switch 0x43CD8..0x43E48; 0x142C8 then
+  sets **unit +0x46C = base + +0x46B** (e.g. resistance base 2 → Ω/kΩ/MΩ, also
+  +2 / +9 / +0xD families) and invalidates widget 0x10 (0x143AC), so +0x46C is
+  current when the display redraws.
+- **Fix:** the cave now captures/compares **unit +0x46C** instead of +0x462
+  (0x66426 `ldrb.w r2,[r7,#0x46c]` = 97 f8 6c 24; 0x664D8 `ldrb.w r0,[r4,#0x46c]`
+  = 94 f8 6c 04). RAM byte 0x2000060A is now "capunit". Same length, nothing
+  else moved. Value stays in display units, so ranges that keep the unit
+  (6 kΩ vs 60 kΩ) still subtract correctly.
+- **Verified (unicorn, scratchpad rel_test.py):** issue #1 scenario passes
+  (49.81 kΩ / 0.3396 MΩ pass through, flag cleared); same-unit subtract, fn
+  change, OL block, toggle-off all pass. Against the 1.4 patch the same test
+  reproduces the bug (49.6 kΩ, flag stays set). stock+rel crc32 05537F13.
+- **Residual:** the value (+0x464, 0x43C32) is stored before the unit
+  (0x142C8 @0x43E88) in the same packet; a redraw landing in between could show
+  one stale-subtracted frame before REL clears. Watch for it on the device.
+- **Possible follow-up (not done):** keep REL across autorange by scaling the
+  offset ×1000^(capunit−unit) within 1000-step unit families, clear otherwise.

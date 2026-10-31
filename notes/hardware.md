@@ -396,3 +396,8 @@ Streams DMM readings over the CDC port. Single hook, no new global RAM.
   +stream 6A7DE5AA. Composes with dmm-first and the language builds (lang
   strings end 0x65AB5, below the cave). Standalone patch; stack it last.
 - **Host:** host/dmm_read.py (live view + CSV, consecutive-dedup unless --all).
+
+- 2026-10-30 — **Correction (issue #1):** the DMM range/SI prefix is **+0x46B**
+  (0/1/2, set per packet in 0x43CD8..0x43E48), not +0x462. +0x462 is written
+  0xFF every packet @0x43C50 (2/3 only on a few paths). Unit +0x46C = family
+  base + +0x46B (0x142C8). Use +0x46C to detect range changes.

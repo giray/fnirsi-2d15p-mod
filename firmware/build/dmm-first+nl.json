@@ -633,7 +633,7 @@
    "note": "REL cave+string @0x66400 (240 B) in dead CJK glyphs",
    "offset": "0x55400",
    "find_crc32": "3A4DFEAC",
-   "replace": "52 45 4c 00 d7 f8 64 04 40 f2 fb 51 c2 f2 00 01 0a 78 02 b3 97 f8 60 24 40 f2 09 63 c2 f2 00 03 19 78 8a 42 11 d1 97 f8 62 24 59 78 8a 42 0c d1 00 ee 10 0a 40 f6 dc 71 c2 f2 00 01 d1 ed 00 0a 30 ee 60 0a 10 ee 10 0a 70 47 00 22 40 f2 fb 51 c2 f2 00 01 0a 70 70 47 74 46 b3 f7 f7 f9 40 f2 fb 50 c2 f2 00 00 00 78 a0 b1 46 f2 00 40 c0 f2 06 00 00 90 41 f2 a4 00 c2 f2 00 00 01 90 4f f6 ff 70 02 90 01 20 03 90 0c 20 2e 21 28 22 12 23 b3 f7 dc f9 a6 46 70 47 10 b5 40 f2 98 14 c2 f2 00 04 94 f8 33 0e 01 28 21 d1 40 f2 fb 51 c2 f2 00 01 08 78 b0 b9 94 f8 69 04 c0 b9 d4 f8 64 04 40 f6 dc 72 c2 f2 00 02 10 60 94 f8 60 04 40 f2 09 62 c2 f2 00 02 10 70 94 f8 62 04 50 70 01 20 08 70 01 e0 00 20 08 70 10 20 ad f7 cb fb 10 bd"
+   "replace": "52 45 4c 00 d7 f8 64 04 40 f2 fb 51 c2 f2 00 01 0a 78 02 b3 97 f8 60 24 40 f2 09 63 c2 f2 00 03 19 78 8a 42 11 d1 97 f8 6c 24 59 78 8a 42 0c d1 00 ee 10 0a 40 f6 dc 71 c2 f2 00 01 d1 ed 00 0a 30 ee 60 0a 10 ee 10 0a 70 47 00 22 40 f2 fb 51 c2 f2 00 01 0a 70 70 47 74 46 b3 f7 f7 f9 40 f2 fb 50 c2 f2 00 00 00 78 a0 b1 46 f2 00 40 c0 f2 06 00 00 90 41 f2 a4 00 c2 f2 00 00 01 90 4f f6 ff 70 02 90 01 20 03 90 0c 20 2e 21 28 22 12 23 b3 f7 dc f9 a6 46 70 47 10 b5 40 f2 98 14 c2 f2 00 04 94 f8 33 0e 01 28 21 d1 40 f2 fb 51 c2 f2 00 01 08 78 b0 b9 94 f8 69 04 c0 b9 d4 f8 64 04 40 f6 dc 72 c2 f2 00 02 10 60 94 f8 60 04 40 f2 09 62 c2 f2 00 02 10 70 94 f8 6c 04 50 70 01 20 08 70 01 e0 00 20 08 70 10 20 ad f7 cb fb 10 bd"
   },
   {
    "note": "trig.mode.0 slot1 -> 'Auto' @0x6545C",
@@ -1086,178 +1086,178 @@
    "replace": "24 57 06 00"
   },
   {
-   "note": "about.3 slot1 -> 'Versie (mod 1.4)' @0x65731",
+   "note": "about.3 slot1 -> 'Versie (mod 1.4.1)' @0x65731",
    "offset": "0x492D0",
    "find": "69 c1 07 00",
    "replace": "31 57 06 00"
   },
   {
-   "note": "about.3 slot2 -> 'Version (mod 1.4)' @0x65742",
+   "note": "about.3 slot2 -> 'Version (mod 1.4.1)' @0x65744",
    "offset": "0x492E0",
    "find": "0e b6 07 00",
-   "replace": "42 57 06 00"
+   "replace": "44 57 06 00"
   },
   {
-   "note": "settings.0 slot1 -> 'Taal' @0x65754",
+   "note": "settings.0 slot1 -> 'Taal' @0x65758",
    "offset": "0x492E4",
    "find": "e1 b8 07 00",
-   "replace": "54 57 06 00"
+   "replace": "58 57 06 00"
   },
   {
-   "note": "settings.1 slot1 -> 'Volume' @0x65759",
+   "note": "settings.1 slot1 -> 'Volume' @0x6575D",
    "offset": "0x492E8",
    "find": "99 ba 07 00",
-   "replace": "59 57 06 00"
+   "replace": "5d 57 06 00"
   },
   {
-   "note": "settings.2 slot1 -> 'Helderheid' @0x65760",
+   "note": "settings.2 slot1 -> 'Helderheid' @0x65764",
    "offset": "0x492EC",
    "find": "c1 bd 07 00",
-   "replace": "60 57 06 00"
+   "replace": "64 57 06 00"
   },
   {
-   "note": "settings.3 slot1 -> 'Auto-uit' @0x6576B",
+   "note": "settings.3 slot1 -> 'Auto-uit' @0x6576F",
    "offset": "0x492F0",
    "find": "ac c2 07 00",
-   "replace": "6b 57 06 00"
+   "replace": "6f 57 06 00"
   },
   {
-   "note": "settings.3 slot2 -> 'Auto Off' @0x65774",
+   "note": "settings.3 slot2 -> 'Auto Off' @0x65778",
    "offset": "0x49308",
    "find": "b2 b7 07 00",
-   "replace": "74 57 06 00"
+   "replace": "78 57 06 00"
   },
   {
-   "note": "settings.4 slot1 -> 'Over' @0x6577D",
+   "note": "settings.4 slot1 -> 'Over' @0x65781",
    "offset": "0x492F4",
    "find": "84 ba 07 00",
-   "replace": "7d 57 06 00"
+   "replace": "81 57 06 00"
   },
   {
-   "note": "settings.4 slot2 -> 'About' @0x65782",
+   "note": "settings.4 slot2 -> 'About' @0x65786",
    "offset": "0x4930C",
    "find": "b7 b4 07 00",
-   "replace": "82 57 06 00"
+   "replace": "86 57 06 00"
   },
   {
-   "note": "settings.5 slot1 -> 'Fabrieksreset' @0x65788",
+   "note": "settings.5 slot1 -> 'Fabrieksreset' @0x6578C",
    "offset": "0x492F8",
    "find": "05 bf 07 00",
-   "replace": "88 57 06 00"
+   "replace": "8c 57 06 00"
   },
   {
-   "note": "settings.5 slot2 -> 'Factory Reset' @0x65796",
+   "note": "settings.5 slot2 -> 'Factory Reset' @0x6579A",
    "offset": "0x49310",
    "find": "9d b7 07 00",
-   "replace": "96 57 06 00"
+   "replace": "9a 57 06 00"
   },
   {
-   "note": "reset.warn slot1 -> 'Fabrieksreset maakt alle wijzigingen ongedaan!' @0x657A4",
+   "note": "reset.warn slot1 -> 'Fabrieksreset maakt alle wijzigingen ongedaan!' @0x657A8",
    "offset": "0x49314",
    "find": "ee ac 07 00",
-   "replace": "a4 57 06 00"
+   "replace": "a8 57 06 00"
   },
   {
-   "note": "btn.confirm slot1 -> 'Bevestig' @0x657D3",
+   "note": "btn.confirm slot1 -> 'Bevestig' @0x657D7",
    "offset": "0x4931C",
    "find": "23 bb 07 00",
-   "replace": "d3 57 06 00"
+   "replace": "d7 57 06 00"
   },
   {
-   "note": "cal.disconnect slot1 -> 'Koppel alle kanalen los' @0x657DC",
+   "note": "cal.disconnect slot1 -> 'Koppel alle kanalen los' @0x657E0",
    "offset": "0x49324",
    "find": "a7 ba 07 00",
-   "replace": "dc 57 06 00"
+   "replace": "e0 57 06 00"
   },
   {
-   "note": "cal.done slot1 -> 'Kalibratie voltooid. Tik op het scherm om af te sluiten.' @0x657F4",
+   "note": "cal.done slot1 -> 'Kalibratie voltooid. Tik op het scherm om af te sluiten.' @0x657F8",
    "offset": "0x4932C",
    "find": "b3 c1 07 00",
-   "replace": "f4 57 06 00"
+   "replace": "f8 57 06 00"
   },
   {
-   "note": "btn.back slot1 -> 'Terug' @0x6582D",
+   "note": "btn.back slot1 -> 'Terug' @0x65831",
    "offset": "0x49334",
    "find": "65 bb 07 00",
-   "replace": "2d 58 06 00"
+   "replace": "31 58 06 00"
   },
   {
-   "note": "dmm.func.0 slot1 -> 'DC-spanning' @0x65833",
+   "note": "dmm.func.0 slot1 -> 'DC-spanning' @0x65837",
    "offset": "0x4933C",
    "find": "16 ba 07 00",
-   "replace": "33 58 06 00"
+   "replace": "37 58 06 00"
   },
   {
-   "note": "dmm.func.1 slot1 -> 'AC-spanning' @0x6583F",
+   "note": "dmm.func.1 slot1 -> 'AC-spanning' @0x65843",
    "offset": "0x49340",
    "find": "09 ba 07 00",
-   "replace": "3f 58 06 00"
+   "replace": "43 58 06 00"
   },
   {
-   "note": "dmm.func.2 slot1 -> 'Weerstand' @0x6584B",
+   "note": "dmm.func.2 slot1 -> 'Weerstand' @0x6584F",
    "offset": "0x49344",
    "find": "c0 c2 07 00",
-   "replace": "4b 58 06 00"
+   "replace": "4f 58 06 00"
   },
   {
-   "note": "dmm.func.3 slot1 -> 'Doorgang' @0x65855",
+   "note": "dmm.func.3 slot1 -> 'Doorgang' @0x65859",
    "offset": "0x49348",
    "find": "22 be 07 00",
-   "replace": "55 58 06 00"
+   "replace": "59 58 06 00"
   },
   {
-   "note": "dmm.func.3 slot2 -> 'Continuity' @0x6585E",
+   "note": "dmm.func.3 slot2 -> 'Continuity' @0x65862",
    "offset": "0x4938C",
    "find": "ab b4 07 00",
-   "replace": "5e 58 06 00"
+   "replace": "62 58 06 00"
   },
   {
-   "note": "dmm.func.4 slot1 -> 'Diode' @0x65869",
+   "note": "dmm.func.4 slot1 -> 'Diode' @0x6586D",
    "offset": "0x4934C",
    "find": "32 bc 07 00",
-   "replace": "69 58 06 00"
+   "replace": "6d 58 06 00"
   },
   {
-   "note": "dmm.func.5 slot1 -> 'Inductiviteit' @0x6586F",
+   "note": "dmm.func.5 slot1 -> 'Inductiviteit' @0x65873",
    "offset": "0x49350",
    "find": "6c bb 07 00",
-   "replace": "6f 58 06 00"
+   "replace": "73 58 06 00"
   },
   {
-   "note": "dmm.func.6 slot1 -> 'Capaciteit' @0x6587D",
+   "note": "dmm.func.6 slot1 -> 'Capaciteit' @0x65881",
    "offset": "0x49354",
    "find": "ac c1 07 00",
-   "replace": "7d 58 06 00"
+   "replace": "81 58 06 00"
   },
   {
-   "note": "dmm.func.7 slot1 -> 'DC-stroom mA' @0x65888",
+   "note": "dmm.func.7 slot1 -> 'DC-stroom mA' @0x6588C",
    "offset": "0x49358",
    "find": "f4 b1 07 00",
-   "replace": "88 58 06 00"
+   "replace": "8c 58 06 00"
   },
   {
-   "note": "dmm.func.8 slot1 -> 'AC-stroom mA' @0x65895",
+   "note": "dmm.func.8 slot1 -> 'AC-stroom mA' @0x65899",
    "offset": "0x4935C",
    "find": "e4 b1 07 00",
-   "replace": "95 58 06 00"
+   "replace": "99 58 06 00"
   },
   {
-   "note": "dmm.func.9 slot1 -> 'DC-stroom A' @0x658A2",
+   "note": "dmm.func.9 slot1 -> 'DC-stroom A' @0x658A6",
    "offset": "0x49360",
    "find": "b6 b1 07 00",
-   "replace": "a2 58 06 00"
+   "replace": "a6 58 06 00"
   },
   {
-   "note": "dmm.func.10 slot1 -> 'AC-stroom A' @0x658AE",
+   "note": "dmm.func.10 slot1 -> 'AC-stroom A' @0x658B2",
    "offset": "0x49364",
    "find": "a7 b1 07 00",
-   "replace": "ae 58 06 00"
+   "replace": "b2 58 06 00"
   },
   {
-   "note": "dmm.func.11 slot1 -> 'Temperatuur' @0x658BA",
+   "note": "dmm.func.11 slot1 -> 'Temperatuur' @0x658BE",
    "offset": "0x49368",
    "find": "ba bd 07 00",
-   "replace": "ba 58 06 00"
+   "replace": "be 58 06 00"
   },
   {
    "note": "dmm.func.12 slot1 -> 'Frequentie' @0x6569A",
@@ -1266,262 +1266,262 @@
    "replace": "9a 56 06 00"
   },
   {
-   "note": "dmm.func.13 slot1 -> 'NCV' @0x658C6",
+   "note": "dmm.func.13 slot1 -> 'NCV' @0x658CA",
    "offset": "0x49370",
    "find": "2a ba 07 00",
-   "replace": "c6 58 06 00"
-  },
-  {
-   "note": "dmm.func.14 slot1 -> 'LIVE' @0x658CA",
-   "offset": "0x49374",
-   "find": "40 ba 07 00",
    "replace": "ca 58 06 00"
   },
   {
-   "note": "dmm.func.15 slot1 -> 'Automatisch' @0x658CF",
+   "note": "dmm.func.14 slot1 -> 'LIVE' @0x658CE",
+   "offset": "0x49374",
+   "find": "40 ba 07 00",
+   "replace": "ce 58 06 00"
+  },
+  {
+   "note": "dmm.func.15 slot1 -> 'Automatisch' @0x658D3",
    "offset": "0x49378",
    "find": "ce bd 07 00",
-   "replace": "cf 58 06 00"
+   "replace": "d3 58 06 00"
   },
   {
-   "note": "dmm.func.16 slot1 -> 'Zelftest' @0x658DB",
+   "note": "dmm.func.16 slot1 -> 'Zelftest' @0x658DF",
    "offset": "0x4937C",
    "find": "d4 b8 07 00",
-   "replace": "db 58 06 00"
+   "replace": "df 58 06 00"
   },
   {
-   "note": "dmm.func.16 slot2 -> 'Self-Test' @0x658E4",
+   "note": "dmm.func.16 slot2 -> 'Self-Test' @0x658E8",
    "offset": "0x493C0",
    "find": "cd b4 07 00",
-   "replace": "e4 58 06 00"
+   "replace": "e8 58 06 00"
   },
   {
-   "note": "dmm.minmax.0 slot1 -> 'MIN:' @0x658EE",
+   "note": "dmm.minmax.0 slot1 -> 'MIN:' @0x658F2",
    "offset": "0x49440",
    "find": "89 b0 07 00",
-   "replace": "ee 58 06 00"
+   "replace": "f2 58 06 00"
   },
   {
-   "note": "dmm.minmax.1 slot1 -> 'MAX:' @0x658F3",
+   "note": "dmm.minmax.1 slot1 -> 'MAX:' @0x658F7",
    "offset": "0x49444",
    "find": "94 b0 07 00",
-   "replace": "f3 58 06 00"
+   "replace": "f7 58 06 00"
   },
   {
-   "note": "btn.cancel slot1 -> 'Annuleer' @0x658F8",
+   "note": "btn.cancel slot1 -> 'Annuleer' @0x658FC",
    "offset": "0x49450",
    "find": "f7 b9 07 00",
-   "replace": "f8 58 06 00"
+   "replace": "fc 58 06 00"
   },
   {
-   "note": "meas.0 slot1 -> 'Alles aan' @0x65901",
+   "note": "meas.0 slot1 -> 'Alles aan' @0x65905",
    "offset": "0x494BC",
    "find": "e8 b8 07 00",
-   "replace": "01 59 06 00"
+   "replace": "05 59 06 00"
   },
   {
-   "note": "meas.0 slot2 -> 'All On' @0x6590B",
+   "note": "meas.0 slot2 -> 'All On' @0x6590F",
    "offset": "0x494F8",
    "find": "a1 b5 07 00",
-   "replace": "0b 59 06 00"
+   "replace": "0f 59 06 00"
   },
   {
-   "note": "meas.1 slot1 -> 'Alles uit' @0x65912",
+   "note": "meas.1 slot1 -> 'Alles uit' @0x65916",
    "offset": "0x494C0",
    "find": "f5 c0 07 00",
-   "replace": "12 59 06 00"
+   "replace": "16 59 06 00"
   },
   {
-   "note": "meas.1 slot2 -> 'All Off' @0x6591C",
+   "note": "meas.1 slot2 -> 'All Off' @0x65920",
    "offset": "0x494FC",
    "find": "a5 b4 07 00",
-   "replace": "1c 59 06 00"
+   "replace": "20 59 06 00"
   },
   {
-   "note": "meas.2 slot1 -> 'Freq' @0x65924",
+   "note": "meas.2 slot1 -> 'Freq' @0x65928",
    "offset": "0x494C4",
    "find": "e2 b9 07 00",
-   "replace": "24 59 06 00"
+   "replace": "28 59 06 00"
   },
   {
-   "note": "meas.3 slot1 -> 'Periode' @0x65929",
+   "note": "meas.3 slot1 -> 'Periode' @0x6592D",
    "offset": "0x494C8",
    "find": "80 bb 07 00",
-   "replace": "29 59 06 00"
+   "replace": "2d 59 06 00"
   },
   {
-   "note": "meas.3 slot2 -> 'Period' @0x65931",
+   "note": "meas.3 slot2 -> 'Period' @0x65935",
    "offset": "0x49504",
    "find": "f4 b4 07 00",
-   "replace": "31 59 06 00"
+   "replace": "35 59 06 00"
   },
   {
-   "note": "meas.4 slot1 -> 'Duty+' @0x65938",
+   "note": "meas.4 slot1 -> 'Duty+' @0x6593C",
    "offset": "0x494CC",
    "find": "ce ba 07 00",
-   "replace": "38 59 06 00"
+   "replace": "3c 59 06 00"
   },
   {
-   "note": "meas.5 slot1 -> 'Duty-' @0x6593E",
+   "note": "meas.5 slot1 -> 'Duty-' @0x65942",
    "offset": "0x494D0",
    "find": "c1 ba 07 00",
-   "replace": "3e 59 06 00"
+   "replace": "42 59 06 00"
   },
   {
-   "note": "meas.6 slot1 -> 'Breedte+' @0x65944",
+   "note": "meas.6 slot1 -> 'Breedte+' @0x65948",
    "offset": "0x494D4",
    "find": "13 c3 07 00",
-   "replace": "44 59 06 00"
+   "replace": "48 59 06 00"
   },
   {
-   "note": "meas.7 slot1 -> 'Breedte-' @0x6594D",
+   "note": "meas.7 slot1 -> 'Breedte-' @0x65951",
    "offset": "0x494D8",
    "find": "09 c3 07 00",
-   "replace": "4d 59 06 00"
+   "replace": "51 59 06 00"
   },
   {
-   "note": "meas.8 slot1 -> 'Nre' @0x65956",
+   "note": "meas.8 slot1 -> 'Nre' @0x6595A",
    "offset": "0x494DC",
    "find": "d1 c0 07 00",
-   "replace": "56 59 06 00"
-  },
-  {
-   "note": "meas.9 slot1 -> 'Nfe' @0x6595A",
-   "offset": "0x494E0",
-   "find": "e1 c0 07 00",
    "replace": "5a 59 06 00"
   },
   {
-   "note": "meas.10 slot1 -> 'Vrms' @0x6595E",
-   "offset": "0x494E4",
-   "find": "e1 c2 07 00",
+   "note": "meas.9 slot1 -> 'Nfe' @0x6595E",
+   "offset": "0x494E0",
+   "find": "e1 c0 07 00",
    "replace": "5e 59 06 00"
   },
   {
-   "note": "meas.11 slot1 -> 'Avg' @0x65963",
-   "offset": "0x494E8",
-   "find": "d7 c2 07 00",
-   "replace": "63 59 06 00"
+   "note": "meas.10 slot1 -> 'Vrms' @0x65962",
+   "offset": "0x494E4",
+   "find": "e1 c2 07 00",
+   "replace": "62 59 06 00"
   },
   {
-   "note": "meas.12 slot1 -> 'Vp-p' @0x65967",
-   "offset": "0x494EC",
-   "find": "ff c2 07 00",
+   "note": "meas.11 slot1 -> 'Avg' @0x65967",
+   "offset": "0x494E8",
+   "find": "d7 c2 07 00",
    "replace": "67 59 06 00"
   },
   {
-   "note": "meas.13 slot1 -> 'Vmax' @0x6596C",
+   "note": "meas.12 slot1 -> 'Vp-p' @0x6596B",
+   "offset": "0x494EC",
+   "find": "ff c2 07 00",
+   "replace": "6b 59 06 00"
+  },
+  {
+   "note": "meas.13 slot1 -> 'Vmax' @0x65970",
    "offset": "0x494F0",
    "find": "f5 c2 07 00",
-   "replace": "6c 59 06 00"
+   "replace": "70 59 06 00"
   },
   {
-   "note": "meas.14 slot1 -> 'Vmin' @0x65971",
+   "note": "meas.14 slot1 -> 'Vmin' @0x65975",
    "offset": "0x494F4",
    "find": "eb c2 07 00",
-   "replace": "71 59 06 00"
+   "replace": "75 59 06 00"
   },
   {
-   "note": "msg.await_trig slot1 -> 'Wacht op trigger...' @0x65976",
+   "note": "msg.await_trig slot1 -> 'Wacht op trigger...' @0x6597A",
    "offset": "0x0AE34",
    "find": "90 ad 07 00",
-   "replace": "76 59 06 00"
+   "replace": "7a 59 06 00"
   },
   {
-   "note": "msg.await_trig slot2 -> 'Waiting for trigger...' @0x6598A",
+   "note": "msg.await_trig slot2 -> 'Waiting for trigger...' @0x6598E",
    "offset": "0x0AE38",
    "find": "62 ad 07 00",
-   "replace": "8a 59 06 00"
+   "replace": "8e 59 06 00"
   },
   {
-   "note": "msg.await_auto slot1 -> 'Auto meten...' @0x659A1",
+   "note": "msg.await_auto slot1 -> 'Auto meten...' @0x659A5",
    "offset": "0x0AE3C",
    "find": "a0 ad 07 00",
-   "replace": "a1 59 06 00"
+   "replace": "a5 59 06 00"
   },
   {
-   "note": "msg.await_auto slot2 -> 'Auto measuring...' @0x659AF",
+   "note": "msg.await_auto slot2 -> 'Auto measuring...' @0x659B3",
    "offset": "0x0AE40",
    "find": "73 ad 07 00",
-   "replace": "af 59 06 00"
+   "replace": "b3 59 06 00"
   },
   {
-   "note": "cal.begin slot1 -> 'Start' @0x659C1",
+   "note": "cal.begin slot1 -> 'Start' @0x659C5",
    "offset": "0x10720",
    "find": "23 ba 07 00",
-   "replace": "c1 59 06 00"
+   "replace": "c5 59 06 00"
   },
   {
-   "note": "cal.begin slot2 -> 'Start' @0x659C1",
+   "note": "cal.begin slot2 -> 'Start' @0x659C5",
    "offset": "0x10724",
    "find": "96 b5 07 00",
-   "replace": "c1 59 06 00"
+   "replace": "c5 59 06 00"
   },
   {
-   "note": "btn.remove slot1 -> 'Verwijder' @0x659C7",
+   "note": "btn.remove slot1 -> 'Verwijder' @0x659CB",
    "offset": "0x13828",
    "find": "89 bc 07 00",
-   "replace": "c7 59 06 00"
+   "replace": "cb 59 06 00"
   },
   {
-   "note": "msg.deleting slot1 -> 'Verwijderen...' @0x659D1",
+   "note": "msg.deleting slot1 -> 'Verwijderen...' @0x659D5",
    "offset": "0x1639C",
    "find": "c6 ad 07 00",
-   "replace": "d1 59 06 00"
+   "replace": "d5 59 06 00"
   },
   {
-   "note": "msg.delete_q slot1 -> 'Echt verwijderen?' @0x659E0",
+   "note": "msg.delete_q slot1 -> 'Echt verwijderen?' @0x659E4",
    "offset": "0x163A4",
    "find": "79 b1 07 00",
-   "replace": "e0 59 06 00"
+   "replace": "e4 59 06 00"
   },
   {
-   "note": "msg.usb slot1 -> 'USB-schijf. Tik om af te sluiten.' @0x659F2",
+   "note": "msg.usb slot1 -> 'USB-schijf. Tik om af te sluiten.' @0x659F6",
    "offset": "0x19714",
    "find": "de c1 07 00",
-   "replace": "f2 59 06 00"
+   "replace": "f6 59 06 00"
   },
   {
-   "note": "msg.usb slot2 -> 'USB drive mode. Tap anywhere to exit.' @0x65A14",
+   "note": "msg.usb slot2 -> 'USB drive mode. Tap anywhere to exit.' @0x65A18",
    "offset": "0x19718",
    "find": "d7 ad 07 00",
-   "replace": "14 5a 06 00"
+   "replace": "18 5a 06 00"
   },
   {
-   "note": "msg.saved slot1 -> 'Opgeslagen' @0x65A3A",
+   "note": "msg.saved slot1 -> 'Opgeslagen' @0x65A3E",
    "offset": "0x199CC",
    "find": "73 bb 07 00",
-   "replace": "3a 5a 06 00"
+   "replace": "3e 5a 06 00"
   },
   {
-   "note": "msg.save_failed slot1 -> 'Opslaan mislukt' @0x65A45",
+   "note": "msg.save_failed slot1 -> 'Opslaan mislukt' @0x65A49",
    "offset": "0x199D4",
    "find": "ad bd 07 00",
-   "replace": "45 5a 06 00"
+   "replace": "49 5a 06 00"
   },
   {
-   "note": "msg.saving slot1 -> 'Opslaan...' @0x65A55",
+   "note": "msg.saving slot1 -> 'Opslaan...' @0x65A59",
    "offset": "0x199DC",
    "find": "b9 ad 07 00",
-   "replace": "55 5a 06 00"
+   "replace": "59 5a 06 00"
   },
   {
-   "note": "msg.low_batt slot1 -> 'Batterij leeg, schakelt uit.' @0x65A60",
+   "note": "msg.low_batt slot1 -> 'Batterij leeg, schakelt uit.' @0x65A64",
    "offset": "0x1A388",
    "find": "87 c2 07 00",
-   "replace": "60 5a 06 00"
+   "replace": "64 5a 06 00"
   },
   {
-   "note": "msg.low_batt slot2 -> 'Low battery, shutting down.' @0x65A7D",
+   "note": "msg.low_batt slot2 -> 'Low battery, shutting down.' @0x65A81",
    "offset": "0x1A38C",
    "find": "69 ae 07 00",
-   "replace": "7d 5a 06 00"
+   "replace": "81 5a 06 00"
   },
   {
-   "note": "dds.title slot1 -> 'Signaalgenerator' @0x65A99",
+   "note": "dds.title slot1 -> 'Signaalgenerator' @0x65A9D",
    "offset": "0x17780",
    "find": "d5 bd 07 00",
-   "replace": "99 5a 06 00"
+   "replace": "9d 5a 06 00"
   },
   {
    "note": "rw.onoff.0 slot1 [rw_data_table] in place: 'AAN'",
@@ -1596,10 +1596,10 @@
    "replace": "4f 4b 00 00 00 00 00 00"
   },
   {
-   "note": "lang.name 'Nederlands': movw r1 lo -> 0x65AAA",
+   "note": "lang.name 'Nederlands': movw r1 lo -> 0x65AAE",
    "offset": "0x11820",
    "find": "4b f6 e9 11",
-   "replace": "45 f6 aa 21"
+   "replace": "45 f6 ae 21"
   },
   {
    "note": "lang.name 'Nederlands': movt r1 hi",
@@ -1608,10 +1608,10 @@
    "replace": "c0 f2 06 01"
   },
   {
-   "note": "lang.name 'Nederlands': movw r0 lo -> 0x65AAA",
+   "note": "lang.name 'Nederlands': movw r0 lo -> 0x65AAE",
    "offset": "0x1AA98",
    "find": "4b f6 e9 10",
-   "replace": "45 f6 aa 20"
+   "replace": "45 f6 ae 20"
   },
   {
    "note": "lang.name 'Nederlands': movt r0 hi",
@@ -2064,435 +2064,435 @@
    "replace": "4d 6f 64 65 6c 3a 20 32 44 31 35 50 00"
   },
   {
-   "note": "heap string 'Versie (mod 1.4)'",
+   "note": "heap string 'Versie (mod 1.4.1)'",
    "offset": "0x54731",
-   "find_crc32": "7FAF9DF2",
-   "replace": "56 65 72 73 69 65 20 28 6d 6f 64 20 31 2e 34 29 00"
+   "find_crc32": "E9ED0196",
+   "replace": "56 65 72 73 69 65 20 28 6d 6f 64 20 31 2e 34 2e 31 29 00"
   },
   {
-   "note": "heap string 'Version (mod 1.4)'",
-   "offset": "0x54742",
-   "find_crc32": "25F942B9",
-   "replace": "56 65 72 73 69 6f 6e 20 28 6d 6f 64 20 31 2e 34 29 00"
+   "note": "heap string 'Version (mod 1.4.1)'",
+   "offset": "0x54744",
+   "find_crc32": "1BA6237C",
+   "replace": "56 65 72 73 69 6f 6e 20 28 6d 6f 64 20 31 2e 34 2e 31 29 00"
   },
   {
    "note": "heap string 'Taal'",
-   "offset": "0x54754",
-   "find_crc32": "1AF4FAD2",
+   "offset": "0x54758",
+   "find_crc32": "7AC9D206",
    "replace": "54 61 61 6c 00"
   },
   {
    "note": "heap string 'Volume'",
-   "offset": "0x54759",
-   "find_crc32": "6CD63FFE",
+   "offset": "0x5475D",
+   "find_crc32": "2A641162",
    "replace": "56 6f 6c 75 6d 65 00"
   },
   {
    "note": "heap string 'Helderheid'",
-   "offset": "0x54760",
-   "find_crc32": "BBC606B1",
+   "offset": "0x54764",
+   "find_crc32": "92D31902",
    "replace": "48 65 6c 64 65 72 68 65 69 64 00"
   },
   {
    "note": "heap string 'Auto-uit'",
-   "offset": "0x5476B",
-   "find_crc32": "0FCA1761",
+   "offset": "0x5476F",
+   "find_crc32": "29BB7760",
    "replace": "41 75 74 6f 2d 75 69 74 00"
   },
   {
    "note": "heap string 'Auto Off'",
-   "offset": "0x54774",
-   "find_crc32": "E4E68911",
+   "offset": "0x54778",
+   "find_crc32": "D499357C",
    "replace": "41 75 74 6f 20 4f 66 66 00"
   },
   {
    "note": "heap string 'Over'",
-   "offset": "0x5477D",
-   "find_crc32": "00D87987",
+   "offset": "0x54781",
+   "find_crc32": "C622F71D",
    "replace": "4f 76 65 72 00"
   },
   {
    "note": "heap string 'About'",
-   "offset": "0x54782",
-   "find_crc32": "B1C2A1A3",
+   "offset": "0x54786",
+   "find_crc32": "A1DE2177",
    "replace": "41 62 6f 75 74 00"
   },
   {
    "note": "heap string 'Fabrieksreset'",
-   "offset": "0x54788",
-   "find_crc32": "2C70E45C",
+   "offset": "0x5478C",
+   "find_crc32": "1F695E20",
    "replace": "46 61 62 72 69 65 6b 73 72 65 73 65 74 00"
   },
   {
    "note": "heap string 'Factory Reset'",
-   "offset": "0x54796",
-   "find_crc32": "E7DFBDE0",
+   "offset": "0x5479A",
+   "find_crc32": "6A68CB05",
    "replace": "46 61 63 74 6f 72 79 20 52 65 73 65 74 00"
   },
   {
    "note": "heap string 'Fabrieksreset maakt alle wijzigingen ongedaan!'",
-   "offset": "0x547A4",
-   "find_crc32": "95D8A2FC",
+   "offset": "0x547A8",
+   "find_crc32": "E4AA835B",
    "replace": "46 61 62 72 69 65 6b 73 72 65 73 65 74 20 6d 61 61 6b 74 20 61 6c 6c 65 20 77 69 6a 7a 69 67 69 6e 67 65 6e 20 6f 6e 67 65 64 61 61 6e 21 00"
   },
   {
    "note": "heap string 'Bevestig'",
-   "offset": "0x547D3",
-   "find_crc32": "20F39A34",
+   "offset": "0x547D7",
+   "find_crc32": "430B4D56",
    "replace": "42 65 76 65 73 74 69 67 00"
   },
   {
    "note": "heap string 'Koppel alle kanalen los'",
-   "offset": "0x547DC",
-   "find_crc32": "7FB5580A",
+   "offset": "0x547E0",
+   "find_crc32": "56EFCBE9",
    "replace": "4b 6f 70 70 65 6c 20 61 6c 6c 65 20 6b 61 6e 61 6c 65 6e 20 6c 6f 73 00"
   },
   {
    "note": "heap string 'Kalibratie voltooid. Tik op het scherm om af te sluiten.'",
-   "offset": "0x547F4",
-   "find_crc32": "AEF8D7AE",
+   "offset": "0x547F8",
+   "find_crc32": "233CD34D",
    "replace": "4b 61 6c 69 62 72 61 74 69 65 20 76 6f 6c 74 6f 6f 69 64 2e 20 54 69 6b 20 6f 70 20 68 65 74 20 73 63 68 65 72 6d 20 6f 6d 20 61 66 20 74 65 20 73 6c 75 69 74 65 6e 2e 00"
   },
   {
    "note": "heap string 'Terug'",
-   "offset": "0x5482D",
-   "find_crc32": "31E6091F",
+   "offset": "0x54831",
+   "find_crc32": "69199981",
    "replace": "54 65 72 75 67 00"
   },
   {
    "note": "heap string 'DC-spanning'",
-   "offset": "0x54833",
-   "find_crc32": "3892B7BA",
+   "offset": "0x54837",
+   "find_crc32": "1BCFF5BD",
    "replace": "44 43 2d 73 70 61 6e 6e 69 6e 67 00"
   },
   {
    "note": "heap string 'AC-spanning'",
-   "offset": "0x5483F",
-   "find_crc32": "CCD08FD5",
+   "offset": "0x54843",
+   "find_crc32": "F05B5031",
    "replace": "41 43 2d 73 70 61 6e 6e 69 6e 67 00"
   },
   {
    "note": "heap string 'Weerstand'",
-   "offset": "0x5484B",
-   "find_crc32": "2D7B5EC7",
+   "offset": "0x5484F",
+   "find_crc32": "E7E370ED",
    "replace": "57 65 65 72 73 74 61 6e 64 00"
   },
   {
    "note": "heap string 'Doorgang'",
-   "offset": "0x54855",
-   "find_crc32": "E018B597",
+   "offset": "0x54859",
+   "find_crc32": "039B3819",
    "replace": "44 6f 6f 72 67 61 6e 67 00"
   },
   {
    "note": "heap string 'Continuity'",
-   "offset": "0x5485E",
-   "find_crc32": "90699500",
+   "offset": "0x54862",
+   "find_crc32": "377BD8C4",
    "replace": "43 6f 6e 74 69 6e 75 69 74 79 00"
   },
   {
    "note": "heap string 'Diode'",
-   "offset": "0x54869",
-   "find_crc32": "FB693DFA",
+   "offset": "0x5486D",
+   "find_crc32": "289EF252",
    "replace": "44 69 6f 64 65 00"
   },
   {
    "note": "heap string 'Inductiviteit'",
-   "offset": "0x5486F",
-   "find_crc32": "1777C0B5",
+   "offset": "0x54873",
+   "find_crc32": "DBD12602",
    "replace": "49 6e 64 75 63 74 69 76 69 74 65 69 74 00"
   },
   {
    "note": "heap string 'Capaciteit'",
-   "offset": "0x5487D",
-   "find_crc32": "B40F24DD",
+   "offset": "0x54881",
+   "find_crc32": "D9993E1C",
    "replace": "43 61 70 61 63 69 74 65 69 74 00"
   },
   {
    "note": "heap string 'DC-stroom mA'",
-   "offset": "0x54888",
-   "find_crc32": "263F4E46",
+   "offset": "0x5488C",
+   "find_crc32": "33FE7615",
    "replace": "44 43 2d 73 74 72 6f 6f 6d 20 6d 41 00"
   },
   {
    "note": "heap string 'AC-stroom mA'",
-   "offset": "0x54895",
-   "find_crc32": "3FBECCB2",
+   "offset": "0x54899",
+   "find_crc32": "E036EF9C",
    "replace": "41 43 2d 73 74 72 6f 6f 6d 20 6d 41 00"
   },
   {
    "note": "heap string 'DC-stroom A'",
-   "offset": "0x548A2",
-   "find_crc32": "C8D39D03",
+   "offset": "0x548A6",
+   "find_crc32": "CAC0378A",
    "replace": "44 43 2d 73 74 72 6f 6f 6d 20 41 00"
   },
   {
    "note": "heap string 'AC-stroom A'",
-   "offset": "0x548AE",
-   "find_crc32": "CF0E935A",
+   "offset": "0x548B2",
+   "find_crc32": "EC745B1E",
    "replace": "41 43 2d 73 74 72 6f 6f 6d 20 41 00"
   },
   {
    "note": "heap string 'Temperatuur'",
-   "offset": "0x548BA",
-   "find_crc32": "AC2C7721",
+   "offset": "0x548BE",
+   "find_crc32": "E0B42FD9",
    "replace": "54 65 6d 70 65 72 61 74 75 75 72 00"
   },
   {
    "note": "heap string 'NCV'",
-   "offset": "0x548C6",
-   "find_crc32": "FF41D9ED",
+   "offset": "0x548CA",
+   "find_crc32": "157DCECF",
    "replace": "4e 43 56 00"
   },
   {
    "note": "heap string 'LIVE'",
-   "offset": "0x548CA",
-   "find_crc32": "B37C6D90",
+   "offset": "0x548CE",
+   "find_crc32": "A8FEF9E5",
    "replace": "4c 49 56 45 00"
   },
   {
    "note": "heap string 'Automatisch'",
-   "offset": "0x548CF",
-   "find_crc32": "2820DE2A",
+   "offset": "0x548D3",
+   "find_crc32": "627F2DE7",
    "replace": "41 75 74 6f 6d 61 74 69 73 63 68 00"
   },
   {
    "note": "heap string 'Zelftest'",
-   "offset": "0x548DB",
-   "find_crc32": "0AE0357E",
+   "offset": "0x548DF",
+   "find_crc32": "8E7C320C",
    "replace": "5a 65 6c 66 74 65 73 74 00"
   },
   {
    "note": "heap string 'Self-Test'",
-   "offset": "0x548E4",
-   "find_crc32": "88FB49A8",
+   "offset": "0x548E8",
+   "find_crc32": "96150DA5",
    "replace": "53 65 6c 66 2d 54 65 73 74 00"
   },
   {
    "note": "heap string 'MIN:'",
-   "offset": "0x548EE",
-   "find_crc32": "8A3B8DB7",
+   "offset": "0x548F2",
+   "find_crc32": "1E5DDB36",
    "replace": "4d 49 4e 3a 00"
   },
   {
    "note": "heap string 'MAX:'",
-   "offset": "0x548F3",
-   "find_crc32": "5251A494",
+   "offset": "0x548F7",
+   "find_crc32": "5B915DF7",
    "replace": "4d 41 58 3a 00"
   },
   {
    "note": "heap string 'Annuleer'",
-   "offset": "0x548F8",
-   "find_crc32": "838DB139",
+   "offset": "0x548FC",
+   "find_crc32": "22F9BF22",
    "replace": "41 6e 6e 75 6c 65 65 72 00"
   },
   {
    "note": "heap string 'Alles aan'",
-   "offset": "0x54901",
-   "find_crc32": "716D3C81",
+   "offset": "0x54905",
+   "find_crc32": "BB01B978",
    "replace": "41 6c 6c 65 73 20 61 61 6e 00"
   },
   {
    "note": "heap string 'All On'",
-   "offset": "0x5490B",
-   "find_crc32": "F8D02ECE",
+   "offset": "0x5490F",
+   "find_crc32": "E1CB1F86",
    "replace": "41 6c 6c 20 4f 6e 00"
   },
   {
    "note": "heap string 'Alles uit'",
-   "offset": "0x54912",
-   "find_crc32": "7E09AB51",
+   "offset": "0x54916",
+   "find_crc32": "D8C1CC6B",
    "replace": "41 6c 6c 65 73 20 75 69 74 00"
   },
   {
    "note": "heap string 'All Off'",
-   "offset": "0x5491C",
-   "find_crc32": "BBA6DA7D",
+   "offset": "0x54920",
+   "find_crc32": "6522DF69",
    "replace": "41 6c 6c 20 4f 66 66 00"
   },
   {
    "note": "heap string 'Freq'",
-   "offset": "0x54924",
+   "offset": "0x54928",
    "find_crc32": "C622F71D",
    "replace": "46 72 65 71 00"
   },
   {
    "note": "heap string 'Periode'",
-   "offset": "0x54929",
-   "find_crc32": "A433A836",
+   "offset": "0x5492D",
+   "find_crc32": "F6460E52",
    "replace": "50 65 72 69 6f 64 65 00"
   },
   {
    "note": "heap string 'Period'",
-   "offset": "0x54931",
-   "find_crc32": "5D9E8C03",
+   "offset": "0x54935",
+   "find_crc32": "BB4C1083",
    "replace": "50 65 72 69 6f 64 00"
   },
   {
    "note": "heap string 'Duty+'",
-   "offset": "0x54938",
-   "find_crc32": "A4C7C241",
+   "offset": "0x5493C",
+   "find_crc32": "CFDAB60F",
    "replace": "44 75 74 79 2b 00"
   },
   {
    "note": "heap string 'Duty-'",
-   "offset": "0x5493E",
-   "find_crc32": "41D9ED00",
+   "offset": "0x54942",
+   "find_crc32": "9F62CDE3",
    "replace": "44 75 74 79 2d 00"
   },
   {
    "note": "heap string 'Breedte+'",
-   "offset": "0x54944",
-   "find_crc32": "E60914AE",
+   "offset": "0x54948",
+   "find_crc32": "890AD2D8",
    "replace": "42 72 65 65 64 74 65 2b 00"
   },
   {
    "note": "heap string 'Breedte-'",
-   "offset": "0x5494D",
-   "find_crc32": "6F96362C",
+   "offset": "0x54951",
+   "find_crc32": "CA51E264",
    "replace": "42 72 65 65 64 74 65 2d 00"
   },
   {
    "note": "heap string 'Nre'",
-   "offset": "0x54956",
-   "find_crc32": "E4023B44",
+   "offset": "0x5495A",
+   "find_crc32": "6C255834",
    "replace": "4e 72 65 00"
   },
   {
    "note": "heap string 'Nfe'",
-   "offset": "0x5495A",
-   "find_crc32": "6C255834",
+   "offset": "0x5495E",
+   "find_crc32": "E4023B44",
    "replace": "4e 66 65 00"
   },
   {
    "note": "heap string 'Vrms'",
-   "offset": "0x5495E",
-   "find_crc32": "9239E6D0",
+   "offset": "0x54962",
+   "find_crc32": "DED8D1ED",
    "replace": "56 72 6d 73 00"
   },
   {
    "note": "heap string 'Avg'",
-   "offset": "0x54963",
-   "find_crc32": "F6A9D81B",
+   "offset": "0x54967",
+   "find_crc32": "88F8CF69",
    "replace": "41 76 67 00"
   },
   {
    "note": "heap string 'Vp-p'",
-   "offset": "0x54967",
-   "find_crc32": "E6E4CEBE",
+   "offset": "0x5496B",
+   "find_crc32": "8F396257",
    "replace": "56 70 2d 70 00"
   },
   {
    "note": "heap string 'Vmax'",
-   "offset": "0x5496C",
-   "find_crc32": "850205E2",
+   "offset": "0x54970",
+   "find_crc32": "292DCE94",
    "replace": "56 6d 61 78 00"
   },
   {
    "note": "heap string 'Vmin'",
-   "offset": "0x54971",
-   "find_crc32": "35CF8810",
+   "offset": "0x54975",
+   "find_crc32": "D2FD1072",
    "replace": "56 6d 69 6e 00"
   },
   {
    "note": "heap string 'Wacht op trigger...'",
-   "offset": "0x54976",
-   "find_crc32": "C1D4260D",
+   "offset": "0x5497A",
+   "find_crc32": "EF6D6F9E",
    "replace": "57 61 63 68 74 20 6f 70 20 74 72 69 67 67 65 72 2e 2e 2e 00"
   },
   {
    "note": "heap string 'Waiting for trigger...'",
-   "offset": "0x5498A",
-   "find_crc32": "A5183402",
+   "offset": "0x5498E",
+   "find_crc32": "4EEE08D7",
    "replace": "57 61 69 74 69 6e 67 20 66 6f 72 20 74 72 69 67 67 65 72 2e 2e 2e 00"
   },
   {
    "note": "heap string 'Auto meten...'",
-   "offset": "0x549A1",
-   "find_crc32": "10BAAFB7",
+   "offset": "0x549A5",
+   "find_crc32": "C095F799",
    "replace": "41 75 74 6f 20 6d 65 74 65 6e 2e 2e 2e 00"
   },
   {
    "note": "heap string 'Auto measuring...'",
-   "offset": "0x549AF",
-   "find_crc32": "881B04A0",
+   "offset": "0x549B3",
+   "find_crc32": "D303208F",
    "replace": "41 75 74 6f 20 6d 65 61 73 75 72 69 6e 67 2e 2e 2e 00"
   },
   {
    "note": "heap string 'Start'",
-   "offset": "0x549C1",
-   "find_crc32": "EE1A1995",
+   "offset": "0x549C5",
+   "find_crc32": "451CF8D6",
    "replace": "53 74 61 72 74 00"
   },
   {
    "note": "heap string 'Verwijder'",
-   "offset": "0x549C7",
-   "find_crc32": "1CA6A4A5",
+   "offset": "0x549CB",
+   "find_crc32": "06D20B25",
    "replace": "56 65 72 77 69 6a 64 65 72 00"
   },
   {
    "note": "heap string 'Verwijderen...'",
-   "offset": "0x549D1",
-   "find_crc32": "83184E4E",
+   "offset": "0x549D5",
+   "find_crc32": "7DA811B0",
    "replace": "56 65 72 77 69 6a 64 65 72 65 6e 2e 2e 2e 00"
   },
   {
    "note": "heap string 'Echt verwijderen?'",
-   "offset": "0x549E0",
-   "find_crc32": "4C12CE2C",
+   "offset": "0x549E4",
+   "find_crc32": "A256058E",
    "replace": "45 63 68 74 20 76 65 72 77 69 6a 64 65 72 65 6e 3f 00"
   },
   {
    "note": "heap string 'USB-schijf. Tik om af te sluiten.'",
-   "offset": "0x549F2",
-   "find_crc32": "17B978EE",
+   "offset": "0x549F6",
+   "find_crc32": "7E079180",
    "replace": "55 53 42 2d 73 63 68 69 6a 66 2e 20 54 69 6b 20 6f 6d 20 61 66 20 74 65 20 73 6c 75 69 74 65 6e 2e 00"
   },
   {
    "note": "heap string 'USB drive mode. Tap anywhere to exit.'",
-   "offset": "0x54A14",
-   "find_crc32": "AC034D3B",
+   "offset": "0x54A18",
+   "find_crc32": "AC3C1F36",
    "replace": "55 53 42 20 64 72 69 76 65 20 6d 6f 64 65 2e 20 54 61 70 20 61 6e 79 77 68 65 72 65 20 74 6f 20 65 78 69 74 2e 00"
   },
   {
    "note": "heap string 'Opgeslagen'",
-   "offset": "0x54A3A",
-   "find_crc32": "5C434B2F",
+   "offset": "0x54A3E",
+   "find_crc32": "68B799B2",
    "replace": "4f 70 67 65 73 6c 61 67 65 6e 00"
   },
   {
    "note": "heap string 'Opslaan mislukt'",
-   "offset": "0x54A45",
-   "find_crc32": "5C9208A0",
+   "offset": "0x54A49",
+   "find_crc32": "D109F51F",
    "replace": "4f 70 73 6c 61 61 6e 20 6d 69 73 6c 75 6b 74 00"
   },
   {
    "note": "heap string 'Opslaan...'",
-   "offset": "0x54A55",
-   "find_crc32": "D65726D1",
+   "offset": "0x54A59",
+   "find_crc32": "977C9FC5",
    "replace": "4f 70 73 6c 61 61 6e 2e 2e 2e 00"
   },
   {
    "note": "heap string 'Batterij leeg, schakelt uit.'",
-   "offset": "0x54A60",
-   "find_crc32": "4826EB05",
+   "offset": "0x54A64",
+   "find_crc32": "19EE8EF3",
    "replace": "42 61 74 74 65 72 69 6a 20 6c 65 65 67 2c 20 73 63 68 61 6b 65 6c 74 20 75 69 74 2e 00"
   },
   {
    "note": "heap string 'Low battery, shutting down.'",
-   "offset": "0x54A7D",
-   "find_crc32": "57B1AFEA",
+   "offset": "0x54A81",
+   "find_crc32": "EB3298FF",
    "replace": "4c 6f 77 20 62 61 74 74 65 72 79 2c 20 73 68 75 74 74 69 6e 67 20 64 6f 77 6e 2e 00"
   },
   {
    "note": "heap string 'Signaalgenerator'",
-   "offset": "0x54A99",
-   "find_crc32": "3883D49D",
+   "offset": "0x54A9D",
+   "find_crc32": "1174A989",
    "replace": "53 69 67 6e 61 61 6c 67 65 6e 65 72 61 74 6f 72 00"
   },
   {
    "note": "heap string 'Nederlands'",
-   "offset": "0x54AAA",
-   "find_crc32": "DDA21480",
+   "offset": "0x54AAE",
+   "find_crc32": "370C855B",
    "replace": "4e 65 64 65 72 6c 61 6e 64 73 00"
   }
  ]

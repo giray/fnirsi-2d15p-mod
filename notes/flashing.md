@@ -135,3 +135,10 @@ checklist item 1 can be ticked. Unit firmware: V2.7.0.7 = our stock image.
   (screenshots), auto-clears; .OL->live confirmed. Owner approved marker
   position. Released as mod 1.4 (REL folded into all variants); 1.4 images
   differ from the tested one only by the version label (2 bytes).
+- 2026-10-31 — **mod 1.4.1** (REL autorange fix, GitHub issue #1) flashed by
+  the owner via the recovery bootloader volume and **device-tested: works.**
+  REL zeros in Ω and clears when the meter autoranges; About shows
+  "Version (mod 1.4.1)V2.7.0.7" (same layout as 1.2/1.4, so the 2-byte string
+  shift from the longer label rendered fine). Screenshots `screenshots/21.bmp`
+  (About) and `22.bmp` (REL on, 0.02 Ω) → `docs/screenshots/en-about.png`,
+  `en-rel.png`.

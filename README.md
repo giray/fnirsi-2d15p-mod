@@ -3,7 +3,7 @@
 [![check](https://github.com/giray/fnirsi-2d15p-mod/actions/workflows/check.yml/badge.svg)](https://github.com/giray/fnirsi-2d15p-mod/actions/workflows/check.yml)
 **Project:** <https://github.com/giray/fnirsi-2d15p-mod>, with downloads on the
 [Releases](https://github.com/giray/fnirsi-2d15p-mod/releases) page. Current
-version: **mod 1.4**.
+version: **mod 1.4.1**.
 
 An unofficial modification of the **FNIRSI 2D15P** (100 MHz 2-channel scope +
 True RMS multimeter + DDS generator) firmware for people who mainly use it as a
@@ -42,7 +42,7 @@ German or Dutch** UI, and can **stream readings to a Linux PC**.
 - On the multimeter page, **long-press the Run/Stop key** to null the current
   reading (lead resistance, a DC offset). A **REL** marker shows and readings
   become relative. Long-press again to clear; it auto-clears if you change
-  function or range. A short tap of Run/Stop is still HOLD.
+  function or the meter changes range (e.g. Ω to kΩ). A short tap of Run/Stop is still HOLD.
 
 **Multimeter readings on a PC** (`firmware/dmm-stream.json`, `host/dmm_read.py`)
 - While the multimeter page is shown and a program has the USB serial port open,
@@ -184,6 +184,11 @@ Disassembly tools need `python3 -m venv tools/.venv && tools/.venv/bin/pip insta
 everything else is plain Python 3.
 
 ## Changelog
+
+- **mod 1.4.1:** fixes REL staying on after the meter autoranged (e.g. zeroed
+  at 0.2 Ω, then a 340 kΩ resistor read 0.1296 MΩ because 0.2 was subtracted
+  in MΩ). REL now clears whenever the displayed unit changes
+  ([#1](https://github.com/giray/fnirsi-2d15p-mod/issues/1)).
 
 - **mod 1.4:** multimeter REL / probe-zero. On the multimeter page, **long-press
   the Run/Stop key** to null the current reading (lead resistance, a DC offset);

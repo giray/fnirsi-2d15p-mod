@@ -83,6 +83,8 @@ Anything beyond these is out of scope unless the owner asks.
   zeros the meter). Both folded into all variants at mod 1.4; design in
   `notes/re-plan.md`, USB command map/safety in `notes/hardware.md`. All four
   original goals plus languages are now complete and on the unit.
+- **mod 1.4.1 (2026-10-31, issue #1):** REL now clears on a unit change
+  (+0x46C); +0x462 is NOT the DMM range (prefix is +0x46B). Device-tested.
 - **Stock DMM had no REL/relative mode** (manual §3.3 and firmware strings both
   confirm; it has HOLD and MIN/MAX only). Goal 2 therefore meant adding one,
   not surfacing one. Entering the DMM is Menu → multimeter.
