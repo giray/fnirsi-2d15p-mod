@@ -24,8 +24,9 @@ German or Dutch** UI, and can **stream readings to a Linux PC**.
 | ![Turkish vertical panel](docs/screenshots/tr-vertical.png) | ![Dutch settings](docs/screenshots/nl-settings.png) |
 | **Turkish: About** | **Turkish: generator** |
 | ![Turkish About page showing the mod version](docs/screenshots/tr-about.png) | ![Turkish signal generator page](docs/screenshots/tr-generator.png) |
-| **Probe-zero (REL) active** | |
-| ![Multimeter with the REL marker top-left](docs/screenshots/tr-rel.png) | |
+| **Probe-zero (REL) active** | **REL in English, About showing mod 1.4.1** |
+| ![Multimeter with the REL marker top-left](docs/screenshots/tr-rel.png) | ![English multimeter with REL on, 0.02 ohm](docs/screenshots/en-rel.png) |
+| | ![English About page showing mod 1.4.1](docs/screenshots/en-about.png) |
 
 ## What it changes
 
@@ -60,20 +61,22 @@ German or Dutch** UI, and can **stream readings to a Linux PC**.
 - **Three-row top menu**, so full labels fit without covering the submenu;
   the touch zones are moved to match.
 - English is the default after a factory reset.
-- **Settings → About** shows the mod version (`Version (mod 1.4):V2.7.0.7`),
+- **Settings → About** shows the mod version (`Version (mod 1.4.1)V2.7.0.7`),
   so you can always tell which build is installed.
 
 Measurement, calibration and the FPGA are not touched.
 
 ## Variants
 
+CRC32s are for mod 1.4.1.
+
 | Variant | Patch set | Result CRC32 |
 |---|---|---|
-| Multimeter-first only, stock languages | `firmware/dmm-first.json` | `26C71CA2` |
-| + English fixes, no second language | `firmware/build/dmm-first+en.json` | `45358968` |
-| + English fixes + Turkish | `firmware/build/dmm-first+tr.json` | `8D8C2168` |
-| + English fixes + German | `firmware/build/dmm-first+de.json` | `630E5396` |
-| + English fixes + Dutch | `firmware/build/dmm-first+nl.json` | `BE4AF67E` |
+| Multimeter-first only, stock languages | `firmware/dmm-first.json` + `dmm-stream.json` + `dmm-rel.json` | `B934F745` |
+| + English fixes, no second language | `firmware/build/dmm-first+en.json` | `020C6781` |
+| + English fixes + Turkish | `firmware/build/dmm-first+tr.json` | `476669BC` |
+| + English fixes + German | `firmware/build/dmm-first+de.json` | `F5A53979` |
+| + English fixes + Dutch | `firmware/build/dmm-first+nl.json` | `7D63F027` |
 
 ## Install
 

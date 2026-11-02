@@ -142,3 +142,6 @@ checklist item 1 can be ticked. Unit firmware: V2.7.0.7 = our stock image.
   shift from the longer label rendered fine). Screenshots `screenshots/21.bmp`
   (About) and `22.bmp` (REL on, 0.02 Ω) → `docs/screenshots/en-about.png`,
   `en-rel.png`.
+- 2026-10-31 — Released as **mod 1.4.1** (GitHub release v1.4.1, all five
+  variants as `.bps` + SHA256SUMS; v1.4 retitled "superseded"). Issue #1 closed
+  by the fix commit; replies posted on #1 and #2.

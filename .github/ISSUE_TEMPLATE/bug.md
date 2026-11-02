@@ -4,7 +4,7 @@ about: Something looks or behaves wrong after flashing the mod
 labels: bug
 ---
 
-**Variant and mod version** (Settings → About shows e.g. `Version (mod 1.0):V2.7.0.7`):
+**Variant and mod version** (Settings → About shows e.g. `Version (mod 1.4.1)V2.7.0.7`):
 
 **Result CRC32 of the file you flashed** (see the table in the README):
 
